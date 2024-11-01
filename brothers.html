@@ -36,175 +36,7 @@
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
       
-      /* Override Brothers Section Styles */
-
-/* Ensure the grid covers the entire width with approximately four images per row */
-.photo-grid .grid {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important; /* Four columns */
-    gap: 12% !important; /* Space between grid items */
-    padding: 0 !important; /* Remove padding to cover entire width */
-    width: 100% !important; /* Ensure full width */
-    box-sizing: border-box !important; /* Include padding and border in element's total width and height */
-}
-
-/* Profile Container: Center align text */
-.profile-container {
-    text-align: center !important;
-    width: 100% !important; /* Ensure each profile takes full width of its grid cell */
-}
-
-/* Profile Photo: Rectangular and Larger Size */
-.profile-photo {
-    position: relative !important;
-    width: 250px !important; /* Increased width */
-    height: 300px !important; /* Increased height */
-    margin: 0 auto !important;
-    border-radius: 0 !important; /* Make images rectangular */
-    overflow: hidden !important;
-}
-
-/* Brother Image: Ensure the image covers the container */
-.brother-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 0 !important; /* Ensure images are rectangular */
-}
-
-/* LinkedIn Overlay: Adjust size if needed */
-.linkedin-overlay {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    opacity: 0 !important;
-    transition: opacity 0.3s ease !important;
-    background-color: rgba(47, 74, 138, 0.6) !important; /* Semi-transparent background */
-}
-
-/* Show LinkedIn Overlay on Hover */
-.profile-photo:hover .linkedin-overlay {
-    opacity: 1 !important;
-}
-
-/* LinkedIn Icon: Ensure it's appropriately sized */
-.linkedin-overlay a {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 50px !important; /* Adjusted size for larger images */
-    height: 50px !important;
-}
-
-.linkedin-overlay img.linkedin-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-}
-
-/* Profile Name: No Background and Styled Text */
-.profile-name {
-    margin-top: 10px !important;
-    font-size: 1.3em !important; /* Increased font size for better visibility */
-    font-weight: bold !important;
-    color: #2F4A8A !important; /* Optional: Change text color as needed */
-    background-color: transparent !important; /* Ensure no background color */
-}
-
-/* Responsive Adjustments */
-
-/* Large Screens */
-@media (min-width: 1201px) {
-    .photo-grid .grid {
-        grid-template-columns: repeat(4, 1fr) !important; /* Four columns */
-    }
-}
-
-/* Medium Screens (Tablets) */
-@media (max-width: 1200px) and (min-width: 768px) {
-    .photo-grid .grid {
-        grid-template-columns: repeat(3, 1fr) !important; /* Three columns */
-    }
-
-    .profile-photo {
-        width: 220px !important; /* Slightly smaller on tablets */
-        height: 270px !important;
-    }
-
-    .linkedin-overlay a {
-        width: 45px !important;
-        height: 45px !important;
-    }
-
-    .profile-name {
-        font-size: 1.2em !important;
-    }
-}
-
-/* Small Screens (Mobile Devices) */
-@media (max-width: 767px) {
-    .photo-grid .grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
-    }
-
-    .profile-photo {
-        width: 180px !important; /* Smaller size for mobile */
-        height: 220px !important;
-    }
-
-    .linkedin-overlay a {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-    .profile-name {
-        font-size: 1em !important;
-    }
-}
-
-/* Ensure the Executive and Alumni sections are also adjusted if needed */
-
-/* Executive Section: Make photos rectangular and larger */
-.exec-profile-container .exec-profile-photo {
-    width: 250px !important;
-    height: 300px !important;
-    border-radius: 0 !important; /* Rectangular */
-}
-
-.exec-profile-container .exec-profile-photo img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 0 !important; /* Rectangular */
-}
-
-/* Alumni Section: Make photos rectangular and larger */
-.alumni-profile-container {
-    position: relative !important;
-    width: 250px !important;
-    height: 300px !important;
-    border-radius: 0 !important; /* Rectangular */
-    margin: 0 auto !important;
-    overflow: hidden !important;
-}
-
-.alumni-photo {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 0 !important; /* Rectangular */
-}
-
-.alumni-linkedicon-container a {
-    width: 50px !important;
-    height: 50px !important;
-}
-
+ 
       @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
       .content-wrapper[data-v-f926e7dc] {
         position: fixed;
@@ -906,667 +738,122 @@
                     </div>
                   </div>
                   
-                  <div class="new-content-wrapper" style="position: relative; z-index: 10; padding: 20px; color: black;">
-                    <!-- start coding here -->
-                    
-<!-- start coding here -->
-
-<!-- Brothers Section Start -->
-<div class="brothers-about-container">
-  <div class="white-background">
-      <div class="brothers-title">Meet our Members</div>
-      <div class="brothers-subtitle">Connected by a love for technology, strengthened by each of our unique interests.</div>
-  </div>
-</div>
-
-<div class="brothers-flex-container"> 
-    <button class="brothers-button selected-title" onclick="showSection('Actives')"> Actives </button>
-    <button class="brothers-button" onclick="showSection('E-Board')">E-Board</button>
-    <button class="brothers-button" onclick="showSection('Alumni')">Alumni</button>
-</div>
-
-<!-- Actives Section -->
-<div class="photo-grid" id="Actives" style="display: block;">
-  <div class="grid">
-    <!-- Member 1: Mason Anton -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Mason.jpg" alt="Mason Anton" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/mason-anton/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Mason Anton</div>
-    </div>
-
-    <!-- Member 2: Naya Bakaes -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Naya.jpg" alt="Naya Bakaes" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/nayabakaes/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Naya Bakaes</div>
-    </div>
-
-    <!-- Member 3: Lin Borland -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/LinBorland.jpg" alt="Lin Borland" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/linborland/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Lin Borland</div>
-    </div>
-
-    <!-- Member 4: Eva Cheraisi -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Eva.jpg" alt="Eva Cheraisi" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Eva Cheraisi</div>
-    </div>
-
-    <!-- Member 5: Bennett Davis -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Bennett.jpg" alt="Bennett Davis" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/bennett-davis36/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Bennett Davis</div>
-    </div>
-
-    <!-- Member 6: Ludvig Denker -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Ludvig.jpg" alt="Ludvig Denker" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ludvig-denker/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Ludvig Denker</div>
-    </div>
-
-    <!-- Member 7: Sophie Desmarais -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Sophie.jpg" alt="Sophie Desmarais" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/sophie-desmarais/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Sophie Desmarais</div>
-    </div>
-
-    <!-- Member 8: Isa Dominguez -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/IshaDominguez.jpg" alt="Isa Dominguez" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/isa-dominguez/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Isa Dominguez</div>
-    </div>
-
-    <!-- Member 9: Kate Fischer -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/KateFischer.jpg" alt="Kate Fischer" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/kate-fischer/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Kate Fischer</div>
-    </div>
-
-    <!-- Member 10: Caroline Ford -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/CarolineFord.jpg" alt="Caroline Ford" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ford-caroline/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Caroline Ford</div>
-    </div>
-
-    <!-- Member 11: Citiana Frew -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/CitianaFrew.jpg" alt="Citiana Frew" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/citiana-a-frew/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Citiana Frew</div>
-    </div>
-
-    <!-- Member 12: Sarah Goldstein -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/SarahGoldstein.jpg" alt="Sarah Goldstein" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/goldstein-sarah/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Sarah Goldstein</div>
-    </div>
-
-    <!-- Member 13: Brody Haar -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/BrodyHaar.jpg" alt="Brody Haar" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/brodyjghaar/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Brody Haar</div>
-    </div>
-
-    <!-- Member 14: Kaitlyn Hannon -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/KaitlynHannon.jpg" alt="Kaitlyn Hannon" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/kaitlyn-hannon/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Kaitlyn Hannon</div>
-    </div>
-
-    <!-- Member 15: Jolie Hawthorne -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/JolieHawthorne.jpg" alt="Jolie Hawthorne" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/jolie-hawthorne/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Jolie Hawthorne</div>
-    </div>
-
-    <!-- Member 16: Sophia Hooley -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/SophiaHooley.jpg" alt="Sophia Hooley" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/sophia-hooley/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Sophia Hooley</div>
-    </div>
-
-    <!-- Member 17: Chance Ineza -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/ChanceIneza.jpg" alt="Chance Ineza" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/chance-ineza/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Chance Ineza</div>
-    </div>
-
-    <!-- Member 18: Ethan Joslin -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/EthanJoslin.jpg" alt="Ethan Joslin" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ethan-joslin-vanderbilt/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Ethan Joslin</div>
-    </div>
-
-    <!-- Member 19: Haley Kahn -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/HaleyKahn.jpg" alt="Haley Kahn" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/haley-kahn/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Haley Kahn</div>
-    </div>
-
-    <!-- Member 20: Lena Lawal -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/LenaLawal.jpg" alt="Lena Lawal" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/lena-lawal/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Lena Lawal</div>
-    </div>
-
-    <!-- Member 21: Mai-Xuan Mantwill -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/MaiXuanMantwill.jpg" alt="Mai-Xuan Mantwill" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/maixuanmantwill/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Mai-Xuan Mantwill</div>
-    </div>
-
-    <!-- Member 22: Katherine Oung -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/KatherineOung.jpg" alt="Katherine Oung" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/katherine-oung/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Katherine Oung</div>
-    </div>
-
-    <!-- Member 23: Ethan Paik -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/EthanPaik.jpg" alt="Ethan Paik" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ethan-paik-b308962b5/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Ethan Paik</div>
-    </div>
-
-    <!-- Member 24: Parker Palermo -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/ParkerPalermo.jpg" alt="Parker Palermo" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/parker-palermo/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Parker Palermo</div>
-    </div>
-
-    <!-- Member 25: Walker Pence -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/WalkerPence.jpg" alt="Walker Pence" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/walker-pence/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Walker Pence</div>
-    </div>
-
-    <!-- Member 26: Sophia Pieri -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/SophiaPieri.jpg" alt="Sophia Pieri" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/sophia-pieri-vanderbilt/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Sophia Pieri</div>
-    </div>
-
-    <!-- Member 27: Vittoria Riedling -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/VittoriaRiedling.jpg" alt="Vittoria Riedling" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/vittoria-riedling/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Vittoria Riedling</div>
-    </div>
-
-    <!-- Member 28: Lolita Rozenbaum -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/LolitaRozenbaum.jpg" alt="Lolita Rozenbaum" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/lolitarozenbaum/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Lolita Rozenbaum</div>
-    </div>
-
-    <!-- Member 29: Benjamin Schiff -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/BenjaminSchiff.jpg" alt="Benjamin Schiff" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/benjaminmschiff/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Benjamin Schiff</div>
-    </div>
-
-    <!-- Member 30: Lucas Slater -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/LucasSlater.jpg" alt="Lucas Slater" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/lucas-slater/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Lucas Slater</div>
-    </div>
-
-    <!-- Member 31: Grayson Smith -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/GraysonSmith.jpg" alt="Grayson Smith" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/grayson-m-smith/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Grayson Smith</div>
-    </div>
-
-    <!-- Member 32: Yehan Subasinghe -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/YehanSubasinghe.jpg" alt="Yehan Subasinghe" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/yehansubasinghe/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Yehan Subasinghe</div>
-    </div>
-
-    <!-- Member 33: Ishita Sujan -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/IshitaSujan.jpg" alt="Ishita Sujan" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ishita-sujan/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Ishita Sujan</div>
-    </div>
-
-    <!-- Member 34: Daphney Talekar -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/DaphneyTalekar.jpg" alt="Daphney Talekar" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/daphney-talekar/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Daphney Talekar</div>
-    </div>
-
-    <!-- Member 35: Lizzie Tucker -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/Lizzie.jpg" alt="Elizabeth Tucker" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/elizabethtuckerr/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Elizabeth Tucker</div>
-    </div>
-
-    <!-- Member 36: Megan Wang -->
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="./assets/brother-images/MeganWang.jpg" alt="Megan Wang" class="brother-image"/>
-            <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/meganzwang/" target="_blank" rel="noopener noreferrer">
-                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
-                </a>
-            </div>
-        </div>
-        <div class="profile-name">Megan Wang</div>
-    </div>
-
-    <!-- Add more Actives members as needed -->
-  </div>
-</div>
-
-<!-- E-Board Section -->
-<div class="photo-grid" id="E-Board" style="display: none;">
-    <div class="exec">
-      <div class="exec-grid"> 
-          <!-- E-Board Member 1: Haley Kahn -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/HaleyKahn.jpg" alt="Haley Kahn" class="brother-image"/>
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Haley Kahn</div>
-                  <div class="profile-bio-subtitle">President - Founder</div>
-                  <div class="profile-bio">Oversees large scale changes in KTP and runs the Executive Board. Ensures that all KTP members have an enjoyable and impactful experience in the fraternity.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 2: Elizabeth Tucker -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/ElizabethTucker.jpg" alt="Elizabeth Tucker" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Elizabeth Tucker</div>
-                  <div class="profile-bio-subtitle">VP of External Affairs - Founder</div>
-                  <div class="profile-bio">Acts as a liaison between KTP and external bodies, including alumni, nationals, recruiters, and corporations. Assists president in performing their duties.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 3: Parker Palermo -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/ParkerPalermo.jpg" alt="Parker Palermo" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Parker Palermo</div>
-                  <div class="profile-bio-subtitle">VP of Internal Affairs - Founder</div>
-                  <div class="profile-bio">Acts as a liaison between potential members, current members, and the executive board. Organizes recruitment and new member education programming.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 4: Ludvig Denker -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/LudvigDenker.jpg" alt="Ludvig Denker" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Ludvig Denker</div>
-                  <div class="profile-bio-subtitle">VP of Finance - Founder</div>
-                  <div class="profile-bio">Manages finances for all internal KTP matters, facilitates corporate sponsorships and fundraising.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 5: Sophia Pieri -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/SophiaPieri.jpg" alt="Sophia Pieri" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Sophia Pieri</div>
-                  <div class="profile-bio-subtitle">VP of Marketing - Founder</div>
-                  <div class="profile-bio">Establishes consistent branding, develops marketing strategies, and responsible for promoting KTP on campus. Runs KTP social media and apparel.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 6: Brody Haar -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/BrodyHaar.jpg" alt="Brody Haar" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Brody Haar</div>
-                  <div class="profile-bio-subtitle">VP of Professional Development - Founder</div>
-                  <div class="profile-bio">Responsible for facilitating educational workshops, providing resources, and giving guidance to help members achieve their professional career goals.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 7: Bennett Davis -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/BennettDavis.jpg" alt="Bennett Davis" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Bennett Davis</div>
-                  <div class="profile-bio-subtitle">VP of Technical Development</div>
-                  <div class="profile-bio">Oversees committee, plans technical workshops and guest speaker events, supports members in staying up to date on the newest trends in technology.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 8: Eva Cheraisi -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/EvaCheraisi.jpg" alt="Eva Cheraisi" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Eva Cheraisi</div>
-                  <div class="profile-bio-subtitle">VP of DEI</div>
-                  <div class="profile-bio">Ensures KTP is a diverse, equitable and inclusive environment for all members through creation of affinity groups, DEI training, and collaboration with campus identity centers.</div>
-              </div>
-          </div>
-
-          <!-- E-Board Member 9: Walker Pence -->
-          <div class="exec-profile-container">
-              <div class="exec-profile-photo">
-                  <img src="./assets/founders-images/WalkerPence.jpg" alt="Walker Pence" class="brother-image" />
-              </div>
-              <div class="exec-profile-text">
-                  <div class="profile-bio-title">Walker Pence</div>
-                  <div class="profile-bio-subtitle">VP of Social Engagement and Operations</div>
-                  <div class="profile-bio">Coordinates events to promote bonding and engagement within the fraternity and community, maintains fraternity calendar, manages attendance, keeps record of all events.</div>
-              </div>
-          </div>
-
-      </div>
-    </div>
-</div>
-
-<!-- Alumni Section -->
-<div class="photo-grid" id="Alumni" style="display: none;">
-    <div class="alumni-grid"> 
-        <div class="alumni-class">
-            <div class="class-name">Alpha Class</div>
-            <!-- Alumni Member 1: Kendelle Grubbs -->
-            <div class="alumni-profile-container">
-                    <img src="./assets/brother-images/KendelleGrubbs.jpg" alt="Kendelle Grubbs" class="alumni-photo" />
-                        <div class="alumni-linkedicon-container">
-                        <a href="https://www.linkedin.com/in/kendelle-grubbs/" target="_blank" rel="noopener noreferrer">
-                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
-                        </a>
+                  <div class="new-content-wrapper" style="position: relative; z-index: 10; padding: 20px; color: black; width: 100vw; max-width: 100%; margin: 0; box-sizing: border-box;">
+                    <!-- Start Coding Here -->
+                
+                    <!-- Brothers Section Start -->
+                    <div class="brothers-about-container" style="text-align: center; max-width: 1200px; margin: 0 auto;">
+                        <div style="background: #fff; width: 100%;">
+                            <h2 style="font-size: 2em; font-weight: bold; margin-top: 20px;">Meet our Members</h2>
+                            <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;">
+                                Connected by a love for technology, strengthened by each of our unique interests.
+                            </p>
                         </div>
-                <div class="alumni-text">
-                    <div class="alumni-title">Kendelle Grubbs</div>
-                </div>
-            </div>
-            <!-- Alumni Member 2: Jenna Holland -->
-            <div class="alumni-profile-container">
-                    <img src="./assets/brother-images/JennaHolland.jpg" alt="Jenna Holland" class="alumni-photo" />
-                        <div class="alumni-linkedicon-container">
-                        <a href="https://www.linkedin.com/in/jennavholland/" target="_blank" rel="noopener noreferrer">
-                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
-                        </a>
                     </div>
-                <div class="alumni-text">
-                    <div class="alumni-title">Jenna Holland</div>
-                </div>    
-            </div>
-            <!-- Alumni Member 3: Zofia Luther -->
-            <div class="alumni-profile-container">
-                    <img src="./assets/brother-images/ZofiaLuther.jpg" alt="Zofia Luther" class="alumni-photo" />
-                        <div class="alumni-linkedicon-container">
-                        <a href="https://www.linkedin.com/in/zofialuther/" target="_blank" rel="noopener noreferrer">
-                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
-                        </a>
+                
+                    <!-- Tab Buttons Container (Separate from Content) -->
+                    <div class="brothers-flex-container" style="display: flex; justify-content: center; gap: 20px; margin: 20px auto; text-align: center; width: 100%;">
+                        <button class="brothers-button" onclick="showSection('Actives')" style="padding: 10px 20px; cursor: pointer; background-color: transparent; color: #333; border: none; font-size: 1em; font-weight: bold;">
+                            Actives
+                        </button>
+                        <button class="brothers-button" onclick="showSection('E-Board')" style="padding: 10px 20px; cursor: pointer; background-color: transparent; color: #333; border: none; font-size: 1em; font-weight: bold;">
+                            E-Board
+                        </button>
+                        <button class="brothers-button" onclick="showSection('Alumni')" style="padding: 10px 20px; cursor: pointer; background-color: transparent; color: #333; border: none; font-size: 1em; font-weight: bold;">
+                            Alumni
+                        </button>
                     </div>
-                <div class="alumni-text">
-                    <div class="alumni-title">Zofia Luther</div>
+                
+                    <!-- Content Container with Fixed Minimum Height -->
+                    <div class="content-container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; box-sizing: border-box; min-height: 600px;">
+                        <!-- Actives Section -->
+                        <div class="photo-grid" id="Actives" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                            <div class="grid">
+                                <!-- Example Member -->
+                                <div class="profile-container" style="position: relative; text-align: center;">
+                                    <div class="profile-photo" style="position: relative; overflow: hidden; border-radius: 0;">
+                                        <img src="./assets/brother-images/Mason.jpg" alt="Mason Anton" class="brother-image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0;">
+                                        <div class="linkedin-overlay" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.6); opacity: 0; transition: opacity 0.3s; border-radius: 0;">
+                                            <a href="https://www.linkedin.com/in/mason-anton/" target="_blank" rel="noopener noreferrer">
+                                                <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="profile-name" style="margin-top: 10px; font-size: 1.1em; font-weight: bold;">Mason Anton</div>
+                                </div>
+                                <!-- Additional Members... Replicate the structure above for each member -->
+                            </div>
+                        </div>
+                
+                        <!-- E-Board Section -->
+                        <div class="photo-grid" id="E-Board" style="display: none; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                            <!-- E-Board Members Here -->
+                            <div class="grid">
+                                <!-- Example E-Board Member -->
+                                <div class="profile-container" style="position: relative; text-align: center;">
+                                    <div class="profile-photo" style="position: relative; overflow: hidden; border-radius: 0;">
+                                        <img src="./assets/brother-images/EBoard1.jpg" alt="E-Board Member" class="brother-image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0;">
+                                        <div class="linkedin-overlay" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.6); opacity: 0; transition: opacity 0.3s; border-radius: 0;">
+                                            <a href="https://www.linkedin.com/in/eboard-member/" target="_blank" rel="noopener noreferrer">
+                                                <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="profile-name" style="margin-top: 10px; font-size: 1.1em; font-weight: bold;">E-Board Member</div>
+                                </div>
+                                <!-- Additional E-Board Members... -->
+                            </div>
+                        </div>
+                
+                        <!-- Alumni Section -->
+                        <div class="photo-grid" id="Alumni" style="display: none; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+                            <!-- Alumni Members Here -->
+                            <div class="grid">
+                                <!-- Example Alumni Member -->
+                                <div class="profile-container" style="position: relative; text-align: center;">
+                                    <div class="profile-photo" style="position: relative; overflow: hidden; border-radius: 0;">
+                                        <img src="./assets/brother-images/Alumni1.jpg" alt="Alumni Member" class="brother-image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0;">
+                                        <div class="linkedin-overlay" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.6); opacity: 0; transition: opacity 0.3s; border-radius: 0;">
+                                            <a href="https://www.linkedin.com/in/alumni-member/" target="_blank" rel="noopener noreferrer">
+                                                <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" style="width: 40px; height: 40px;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="profile-name" style="margin-top: 10px; font-size: 1.1em; font-weight: bold;">Alumni Member</div>
+                                </div>
+                                <!-- Additional Alumni Members... -->
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // JavaScript function to show the selected section
+                        function showSection(sectionId) {
+                            // Hide all sections
+                            document.getElementById("Actives").style.display = "none";
+                            document.getElementById("E-Board").style.display = "none";
+                            document.getElementById("Alumni").style.display = "none";
+                
+                            // Show the selected section
+                            document.getElementById(sectionId).style.display = "grid";
+                        }
+                
+                        // Add hover effect for LinkedIn overlay
+                        document.querySelectorAll('.profile-photo').forEach(photo => {
+                            photo.addEventListener('mouseenter', () => {
+                                photo.querySelector('.linkedin-overlay').style.opacity = '1';
+                            });
+                            photo.addEventListener('mouseleave', () => {
+                                photo.querySelector('.linkedin-overlay').style.opacity = '0';
+                            });
+                        });
+                    </script>
+                
+                    <!-- Brothers Section End -->
+                
+                    <!-- End Coding Here -->
                 </div>
-            </div>            
-        </div>
-        <!-- Add more alumni classes and members as needed -->
-    </div>    
-</div>
-<!-- Brothers Section End -->
-
-<!-- end coding here -->
-
-
-                  </div>
+                
                     
                 
                 </section>
