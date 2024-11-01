@@ -36,6 +36,175 @@
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
       
+      /* Override Brothers Section Styles */
+
+/* Ensure the grid covers the entire width with approximately four images per row */
+.photo-grid .grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important; /* Four columns */
+    gap: 12% !important; /* Space between grid items */
+    padding: 0 !important; /* Remove padding to cover entire width */
+    width: 100% !important; /* Ensure full width */
+    box-sizing: border-box !important; /* Include padding and border in element's total width and height */
+}
+
+/* Profile Container: Center align text */
+.profile-container {
+    text-align: center !important;
+    width: 100% !important; /* Ensure each profile takes full width of its grid cell */
+}
+
+/* Profile Photo: Rectangular and Larger Size */
+.profile-photo {
+    position: relative !important;
+    width: 250px !important; /* Increased width */
+    height: 300px !important; /* Increased height */
+    margin: 0 auto !important;
+    border-radius: 0 !important; /* Make images rectangular */
+    overflow: hidden !important;
+}
+
+/* Brother Image: Ensure the image covers the container */
+.brother-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important; /* Ensure images are rectangular */
+}
+
+/* LinkedIn Overlay: Adjust size if needed */
+.linkedin-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    background-color: rgba(47, 74, 138, 0.6) !important; /* Semi-transparent background */
+}
+
+/* Show LinkedIn Overlay on Hover */
+.profile-photo:hover .linkedin-overlay {
+    opacity: 1 !important;
+}
+
+/* LinkedIn Icon: Ensure it's appropriately sized */
+.linkedin-overlay a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 50px !important; /* Adjusted size for larger images */
+    height: 50px !important;
+}
+
+.linkedin-overlay img.linkedin-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Profile Name: No Background and Styled Text */
+.profile-name {
+    margin-top: 10px !important;
+    font-size: 1.3em !important; /* Increased font size for better visibility */
+    font-weight: bold !important;
+    color: #2F4A8A !important; /* Optional: Change text color as needed */
+    background-color: transparent !important; /* Ensure no background color */
+}
+
+/* Responsive Adjustments */
+
+/* Large Screens */
+@media (min-width: 1201px) {
+    .photo-grid .grid {
+        grid-template-columns: repeat(4, 1fr) !important; /* Four columns */
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1200px) and (min-width: 768px) {
+    .photo-grid .grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* Three columns */
+    }
+
+    .profile-photo {
+        width: 220px !important; /* Slightly smaller on tablets */
+        height: 270px !important;
+    }
+
+    .linkedin-overlay a {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .profile-name {
+        font-size: 1.2em !important;
+    }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 767px) {
+    .photo-grid .grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
+    }
+
+    .profile-photo {
+        width: 180px !important; /* Smaller size for mobile */
+        height: 220px !important;
+    }
+
+    .linkedin-overlay a {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .profile-name {
+        font-size: 1em !important;
+    }
+}
+
+/* Ensure the Executive and Alumni sections are also adjusted if needed */
+
+/* Executive Section: Make photos rectangular and larger */
+.exec-profile-container .exec-profile-photo {
+    width: 250px !important;
+    height: 300px !important;
+    border-radius: 0 !important; /* Rectangular */
+}
+
+.exec-profile-container .exec-profile-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important; /* Rectangular */
+}
+
+/* Alumni Section: Make photos rectangular and larger */
+.alumni-profile-container {
+    position: relative !important;
+    width: 250px !important;
+    height: 300px !important;
+    border-radius: 0 !important; /* Rectangular */
+    margin: 0 auto !important;
+    overflow: hidden !important;
+}
+
+.alumni-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important; /* Rectangular */
+}
+
+.alumni-linkedicon-container a {
+    width: 50px !important;
+    height: 50px !important;
+}
+
       @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
       .content-wrapper[data-v-f926e7dc] {
         position: fixed;
@@ -411,6 +580,7 @@
               </a>
               
               <style>
+                
                 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
                     .header-blur-background {
                         /* Your styles here */
@@ -614,6 +784,7 @@
                   </div>
                 
                   <style>
+                    
                     .top-bun, 
                     .patty, 
                     .bottom-bun {
