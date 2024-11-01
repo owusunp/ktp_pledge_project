@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
+      
       @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
       .content-wrapper[data-v-f926e7dc] {
         position: fixed;
@@ -160,6 +161,201 @@
       footer a:hover {
           color: #555 !important;
       }
+
+      /* Additional Styles for Brothers Section */
+      .brothers-about-container {
+          padding: 50px 20px;
+          text-align: center;
+      }
+
+      .white-background {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+      }
+
+      .brothers-title {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+      }
+
+      .brothers-subtitle {
+          font-size: 1.2em;
+          color: #555;
+      }
+
+      .brothers-flex-container {
+          display: flex;
+          justify-content: center;
+          margin: 30px 0;
+          gap: 20px;
+      }
+
+      .brothers-button {
+          padding: 10px 20px;
+          border: none;
+          background-color: #f0f0f0;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 1em;
+          transition: background-color 0.3s;
+      }
+
+      .brothers-button:hover {
+          background-color: #e0e0e0;
+      }
+
+      .selected-title {
+          background-color: #2F4A8A !important;
+          color: white;
+      }
+
+      .photo-grid {
+          padding: 20px;
+      }
+
+      .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 20px;
+      }
+
+      .profile-container {
+          text-align: center;
+      }
+
+      .profile-photo {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+          border-radius: 50%;
+          overflow: hidden;
+      }
+
+      .brother-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .linkedicon-container {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+      }
+
+      .linkedin-image {
+          width: 30px;
+          height: 30px;
+      }
+
+      .profile-name {
+          margin-top: 10px;
+          font-size: 1.1em;
+          font-weight: bold;
+      }
+
+      /* Executive Section Styles */
+      .exec {
+          padding: 50px 20px;
+          background-color: #f9f9f9;
+      }
+
+      .exec-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 30px;
+      }
+
+      .exec-profile-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+
+      .exec-profile-photo {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-bottom: 15px;
+      }
+
+      .exec-profile-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .exec-profile-text {
+          max-width: 300px;
+      }
+
+      .profile-bio-title {
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+
+      .profile-bio-subtitle {
+          font-size: 1em;
+          color: #555;
+          margin-bottom: 10px;
+      }
+
+      .profile-bio- {
+          font-size: 0.95em;
+          color: #666;
+      }
+
+      /* Alumni Section Styles */
+      .alumni-grid {
+          padding: 50px 20px;
+      }
+
+      .alumni-class {
+          margin-bottom: 40px;
+      }
+
+      .class-name {
+          font-size: 1.8em;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      .alumni-profile-container {
+          display: inline-block;
+          width: 200px;
+          margin: 10px;
+          text-align: center;
+      }
+
+      .alumni-photo {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+          position: relative;
+      }
+
+      .alumni-linkedicon-container {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+      }
+
+      .alumni-linkedin-image {
+          width: 30px;
+          height: 30px;
+      }
+
+      .alumni-text {
+          margin-top: 10px;
+          font-size: 1em;
+          font-weight: bold;
+      }
     </style>
   </head>
 
@@ -204,369 +400,1022 @@
       
       
         --gradientHeaderNavigationColor: hsla(var(--black-hsl), 1);
-      
     " data-controllers-bound="Header,Header">
-    
-          <div class="sqs-announcement-bar-dropzone"></div>
       
-          <div class="header-announcement-bar-wrapper">
+            <div class="sqs-announcement-bar-dropzone"></div>
+        
+            <div class="header-announcement-bar-wrapper">
+              
+              <a href="#page" class="header-skip-link sqs-button-element--primary">
+                Skip to Content
+              </a>
+              
+              <style>
+                @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+                    .header-blur-background {
+                        /* Your styles here */
+                    }
+                }
+              </style>
+              <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
+                border-width: 0px !important;
+              "></div>
+              <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
+              </div>
             
-            <a href="#page" class="header-skip-link sqs-button-element--primary">
-              Skip to Content
-            </a>
-            
-            <style>
-              @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-                  .header-blur-background {
-                      /* Your styles here */
-                  }
-              }
-            </style>
-            <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
-              border-width: 0px !important;
-            "></div>
-            <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
-            </div>
-          
-            <div class="header-inner container--fluid
-              header-mobile-layout-logo-left-nav-right
-              header-layout-nav-right
-              " style="
-              padding: 0;
-            " data-test="header-inner">
-              <!-- Background -->
-              <div class="header-background theme-bg--primary"></div>
+              <div class="header-inner container--fluid
+                header-mobile-layout-logo-left-nav-right
+                header-layout-nav-right
+                " style="
+                padding: 0;
+              " data-test="header-inner">
+                <!-- Background -->
+                <div class="header-background theme-bg--primary"></div>
 
-              <div class="header-display-desktop" data-content-field="site-title">
-                
-                <!-- Title and nav wrapper -->
-                <div class="header-title-nav-wrapper">
+                <div class="header-display-desktop" data-content-field="site-title">
                   
-                  <!-- Title -->
-                  <div class="header-title" data-animation-role="header-element">
-                    <div class="header-title-logo">
-                      <a href="home.html" data-animation-role="header-element">
-                        <img elementtiming="nbf-header-logo-desktop" 
-                             src="images/logo.png" 
-                             alt="Kappa Theta Pi - Vanderbilt" 
-                             style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
-                             fetchpriority="high" 
-                             loading="eager" 
-                             decoding="async" 
-                             data-loader="raw">
-                      </a>
-                    </div>
-                  </div>
-                  
-                  
-                  <!-- Nav -->
-                  <div class="header-nav">
-                    <div class="header-nav-wrapper">
-                      <nav class="header-nav-list">
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="about.html" data-animation-role="header-element">
-                            About
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="Recruitment.html" data-animation-role="header-element">
-                            Recruitment
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="brothers.html" data-animation-role="header-element">
-                            Brothers
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="ktp_in_action.html" data-animation-role="header-element">
-                            KTP in Action
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="contact.html" data-animation-role="header-element">
-                            Contact
-                          </a>
-                        </div>
-                        
-                      </nav>
-                    </div>
-                  </div>
-                  
-                </div>
-              
-                <!-- Actions -->
-                <div class="header-actions header-actions--right">
-                  
-                  <div class="header-actions-action header-actions-action--social">
-                    <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
-                      <svg viewBox="23 23 64 64">
-                        <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                      </svg>
-                    </a>
-                  </div>
-                  
-                  <div class="showOnMobile">
-                  </div>
-                  
-                  <div class="showOnDesktop">
-                  </div>
-                  
-                </div>
-              
-                <style>
-                  .top-bun, 
-                  .patty, 
-                  .bottom-bun {
-                    height: 1px;
-                  }
-                </style>
-              
-                <!-- Burger -->
-                <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
-                  <button class="header-burger-btn burger" data-test="header-burger">
-                    <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                    <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                    <div class="burger-box">
-                      <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                        <div class="top-bun"></div>
-                        <div class="patty"></div>
-                        <div class="bottom-bun"></div>
+                  <!-- Title and nav wrapper -->
+                  <div class="header-title-nav-wrapper">
+                    
+                    <!-- Title -->
+                    <div class="header-title" data-animation-role="header-element">
+                      <div class="header-title-logo">
+                        <a href="home.html" data-animation-role="header-element">
+                          <img elementtiming="nbf-header-logo-desktop" 
+                               src="images/logo.png" 
+                               alt="Kappa Theta Pi - Vanderbilt" 
+                               style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
+                               fetchpriority="high" 
+                               loading="eager" 
+                               decoding="async" 
+                               data-loader="raw">
+                        </a>
                       </div>
                     </div>
-                  </button>
-                </div>
-              
-              </div>
-              
-              <div class="header-display-mobile" data-content-field="site-title">
-                
-                <!-- Title and nav wrapper -->
-                <div class="header-title-nav-wrapper">
-                  
-                  <!-- Title -->
-                  <div class="header-title" data-animation-role="header-element">
-                    <div class="header-title-logo">
-                      <a href="/" data-animation-role="header-element">
-                        <img elementtiming="nbf-header-logo-desktop" src="images/logo.png" alt="Kappa Theta Pi - Vanderbilt" style="display:block; border-radius: 50%; width: 100px; height: 100px;" fetchpriority="high" loading="eager" decoding="async" data-loader="raw">
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <!-- Nav -->
-                  <div class="header-nav">
-                    <div class="header-nav-wrapper">
-                      <nav class="header-nav-list">
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="about.html" data-animation-role="header-element">
-                            About
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="Recruitment.html" data-animation-role="header-element">
-                            Recruitment
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="brothers.html" data-animation-role="header-element">
-                            Brothers
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="ktp_in_action.html" data-animation-role="header-element">
-                            KTP in Action
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="contact.html" data-animation-role="header-element">
-                            Contact
-                          </a>
-                        </div>
-                        
-                      </nav>
-                    </div>
-                  </div>
-                  
-                </div>
-              
-                <!-- Actions -->
-                <div class="header-actions header-actions--right">
-                  
-                  <div class="header-actions-action header-actions-action--social">
-                    <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
-                      <svg viewBox="23 23 64 64">
-                        <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                      </svg>
-                    </a>
-                  </div>
-                  
-                  <div class="showOnMobile">
-                  </div>
-                  
-                  <div class="showOnDesktop">
-                  </div>
-                  
-                </div>
-              
-                <style>
-                  .top-bun, 
-                  .patty, 
-                  .bottom-bun {
-                    height: 1px;
-                  }
-                </style>
-              
-                <!-- Burger -->
-                <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
-                  <button class="header-burger-btn burger" data-test="header-burger">
-                    <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                    <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                    <div class="burger-box">
-                      <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                        <div class="top-bun"></div>
-                        <div class="patty"></div>
-                        <div class="bottom-bun"></div>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              
-              </div>
-            
-            </div>
-            
-            <!-- (Mobile) Menu Navigation -->
-            <div class="header-menu header-menu--folder-list" data-section-theme="" data-current-styles="{...}" data-section-id="overlay-nav" data-show-account-login="false" data-test="header-menu" style="padding-top: 97.5938px;">
-              <div class="header-menu-bg theme-bg--primary"></div>
-              <div class="header-menu-nav">
-                <nav class="header-menu-nav-list">
-                  
-                  <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
-                      <div class="header-menu-nav-folder-content">
-                        <!-- Menu Navigation -->
-                        <div class="header-menu-nav-wrapper">
+                    
+                    
+                    <!-- Nav -->
+                    <div class="header-nav">
+                      <div class="header-nav-wrapper">
+                        <nav class="header-nav-list">
                           
-                            <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                              <a href="about.html">
-                                <div class="header-menu-nav-item-content">
-                                  About
-                                </div>
-                              </a>
-                            </div>
-                          
-                            <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                              <a href="Recruitment.html">
-                                <div class="header-menu-nav-item-content">
-                                  Recruitment
-                                </div>
-                              </a>
-                            </div>
-                          
-                            <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                              <a href="brothers.html">
-                                <div class="header-menu-nav-item-content">
-                                  Brothers
-                                </div>
-                              </a>
-                            </div>
-                          
-                            <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                              <a href="ktp_in_action.html">
-                                <div class="header-menu-nav-item-content">
-                                  KTP in Action
-                                </div>
-                              </a>
-                            </div>
-                          
-                            <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                              <a href="contact.html">
-                                <div class="header-menu-nav-item-content">
-                                  Contact
-                                </div>
-                              </a>
-                            </div>
-                          
-                        </div>
-                      
-                      </div>
-                      
-                      <div class="header-menu-actions social-accounts">
-                        
-                          <div class="header-menu-actions-action header-menu-actions-action--social mobile">
-                            <a class="icon icon--lg icon--fill  header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
-                              <svg viewBox="23 23 64 64">
-                                <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                              </svg>
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="about.html" data-animation-role="header-element">
+                              About
                             </a>
                           </div>
-                        
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="Recruitment.html" data-animation-role="header-element">
+                              Recruitment
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="brothers.html" data-animation-role="header-element">
+                              Brothers
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="ktp_in_action.html" data-animation-role="header-element">
+                              KTP in Action
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="contact.html" data-animation-role="header-element">
+                              Contact
+                            </a>
+                          </div>
+                          
+                        </nav>
                       </div>
+                    </div>
                     
                   </div>
-                </nav>
+                
+                  <!-- Actions -->
+                  <div class="header-actions header-actions--right">
+                    
+                    <div class="header-actions-action header-actions-action--social">
+                      <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
+                        <svg viewBox="23 23 64 64">
+                          <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    
+                    <div class="showOnMobile">
+                    </div>
+                    
+                    <div class="showOnDesktop">
+                    </div>
+                    
+                  </div>
+                
+                  <style>
+                    .top-bun, 
+                    .patty, 
+                    .bottom-bun {
+                      height: 1px;
+                    }
+                  </style>
+                
+                  <!-- Burger -->
+                  <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                    <button class="header-burger-btn burger" data-test="header-burger">
+                      <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
+                      <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
+                      <div class="burger-box">
+                        <div class="burger-inner header-menu-icon-doubleLineHamburger">
+                          <div class="top-bun"></div>
+                          <div class="patty"></div>
+                          <div class="bottom-bun"></div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                
+                </div>
+                
+                <div class="header-display-mobile" data-content-field="site-title">
+                  
+                  <!-- Title and nav wrapper -->
+                  <div class="header-title-nav-wrapper">
+                    
+                    <!-- Title -->
+                    <div class="header-title" data-animation-role="header-element">
+                      <div class="header-title-logo">
+                        <a href="/" data-animation-role="header-element">
+                          <img elementtiming="nbf-header-logo-desktop" src="images/logo.png" alt="Kappa Theta Pi - Vanderbilt" style="display:block; border-radius: 50%; width: 100px; height: 100px;" fetchpriority="high" loading="eager" decoding="async" data-loader="raw">
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <!-- Nav -->
+                    <div class="header-nav">
+                      <div class="header-nav-wrapper">
+                        <nav class="header-nav-list">
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="about.html" data-animation-role="header-element">
+                              About
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="Recruitment.html" data-animation-role="header-element">
+                              Recruitment
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="brothers.html" data-animation-role="header-element">
+                              Brothers
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="ktp_in_action.html" data-animation-role="header-element">
+                              KTP in Action
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="contact.html" data-animation-role="header-element">
+                              Contact
+                            </a>
+                          </div>
+                          
+                        </nav>
+                      </div>
+                    </div>
+                    
+                  </div>
+                
+                  <!-- Actions -->
+                  <div class="header-actions header-actions--right">
+                    
+                    <div class="header-actions-action header-actions-action--social">
+                      <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
+                        <svg viewBox="23 23 64 64">
+                          <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    
+                    <div class="showOnMobile">
+                    </div>
+                    
+                    <div class="showOnDesktop">
+                    </div>
+                    
+                  </div>
+                
+                  <style>
+                    .top-bun, 
+                    .patty, 
+                    .bottom-bun {
+                      height: 1px;
+                    }
+                  </style>
+                
+                  <!-- Burger -->
+                  <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                    <button class="header-burger-btn burger" data-test="header-burger">
+                      <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
+                      <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
+                      <div class="burger-box">
+                        <div class="burger-inner header-menu-icon-doubleLineHamburger">
+                          <div class="top-bun"></div>
+                          <div class="patty"></div>
+                          <div class="bottom-bun"></div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                
+                </div>
+              
               </div>
-            </div>
-          </header>
-
-          <main id="page" class="container" role="main">
-            
-            <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
               
-              <section data-test="page-section" data-section-theme="primary" class="page-section 
-                layout-engine-section
-                background-width--full-bleed
-                section-height--large
-                content-width--narrow
-                horizontal-alignment--left
-                vertical-alignment--middle
-                has-background
-                primary" data-section-id="60ee545f77e2cd4113f18f3b" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" style="padding-top: 97.5938px;" data-active="true">
-                <div class="section-border">
-                  <div class="section-background" style="background-color: white;">
+              <!-- (Mobile) Menu Navigation -->
+              <div class="header-menu header-menu--folder-list" data-section-theme="" data-current-styles="{...}" data-section-id="overlay-nav" data-show-account-login="false" data-test="header-menu" style="padding-top: 97.5938px;">
+                <div class="header-menu-bg theme-bg--primary"></div>
+                <div class="header-menu-nav">
+                  <nav class="header-menu-nav-list">
                     
-                    <!-- Removed all background images -->
-                    <div class="section-background-overlay" style="opacity: 0.35;"></div>
-                  
-                  </div>
+                    <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
+                        <div class="header-menu-nav-folder-content">
+                          <!-- Menu Navigation -->
+                          <div class="header-menu-nav-wrapper">
+                            
+                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                                <a href="about.html">
+                                  <div class="header-menu-nav-item-content">
+                                    About
+                                  </div>
+                                </a>
+                              </div>
+                            
+                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                                <a href="Recruitment.html">
+                                  <div class="header-menu-nav-item-content">
+                                    Recruitment
+                                  </div>
+                                </a>
+                              </div>
+                            
+                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                                <a href="brothers.html">
+                                  <div class="header-menu-nav-item-content">
+                                    Brothers
+                                  </div>
+                                </a>
+                              </div>
+                            
+                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                                <a href="ktp_in_action.html">
+                                  <div class="header-menu-nav-item-content">
+                                    KTP in Action
+                                  </div>
+                                </a>
+                              </div>
+                            
+                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                                <a href="contact.html">
+                                  <div class="header-menu-nav-item-content">
+                                    Contact
+                                  </div>
+                                </a>
+                              </div>
+                            
+                          </div>
+                        
+                        </div>
+                        
+                        <div class="header-menu-actions social-accounts">
+                          
+                            <div class="header-menu-actions-action header-menu-actions-action--social mobile">
+                              <a class="icon icon--lg icon--fill  header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" aria-label="instagram-unauth">
+                                <svg viewBox="23 23 64 64">
+                                  <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                                </svg>
+                              </a>
+                            </div>
+                          
+                        </div>
+                      
+                    </div>
+                  </nav>
                 </div>
+              </div>
+            </header>
+
+            <main id="page" class="container" role="main">
+              
+              <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
                 
-                <div class="new-content-wrapper" style="position: relative; z-index: 10; padding: 20px; color: black;">
-                  <!-- start coding here -->
-                  
-                  <!-- You can add your custom content here -->
-                  
-                  <!-- end coding here -->
-                </div>
-                  
-              
-              </section>
-              
-            </article>
-            
-          </main>
-          
-          <footer class="sections" id="footer-sections" data-footer-sections="">
-            
-            <section data-test="page-section" data-section-theme="light" class="page-section 
-              
+                <section data-test="page-section" data-section-theme="primary" class="page-section 
                   layout-engine-section
+                  background-width--full-bleed
+                  section-height--large
+                  content-width--narrow
+                  horizontal-alignment--left
+                  vertical-alignment--middle
+                  has-background
+                  primary" data-section-id="60ee545f77e2cd4113f18f3b" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" style="padding-top: 97.5938px;" data-active="true">
+                  <div class="section-border">
+                    <div class="section-background" style="background-color: white;">
+                      
+                      <!-- Removed all background images -->
+                      <div class="section-background-overlay" style="opacity: 0.35;"></div>
+                    
+                    </div>
+                  </div>
+                  
+                  <div class="new-content-wrapper" style="position: relative; z-index: 10; padding: 20px; color: black;">
+                    <!-- start coding here -->
+                    
+<!-- start coding here -->
+
+<!-- Brothers Section Start -->
+<div class="brothers-about-container">
+  <div class="white-background">
+      <div class="brothers-title">Meet our Members</div>
+      <div class="brothers-subtitle">Connected by a love for technology, strengthened by each of our unique interests.</div>
+  </div>
+</div>
+
+<div class="brothers-flex-container"> 
+    <button class="brothers-button selected-title" onclick="showSection('Actives')"> Actives </button>
+    <button class="brothers-button" onclick="showSection('E-Board')">E-Board</button>
+    <button class="brothers-button" onclick="showSection('Alumni')">Alumni</button>
+</div>
+
+<!-- Actives Section -->
+<div class="photo-grid" id="Actives" style="display: block;">
+  <div class="grid">
+    <!-- Member 1: Mason Anton -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Mason.jpg" alt="Mason Anton" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/mason-anton/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Mason Anton</div>
+    </div>
+
+    <!-- Member 2: Naya Bakaes -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Naya.jpg" alt="Naya Bakaes" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/nayabakaes/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Naya Bakaes</div>
+    </div>
+
+    <!-- Member 3: Lin Borland -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/LinBorland.jpg" alt="Lin Borland" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/linborland/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Lin Borland</div>
+    </div>
+
+    <!-- Member 4: Eva Cheraisi -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Eva.jpg" alt="Eva Cheraisi" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Eva Cheraisi</div>
+    </div>
+
+    <!-- Member 5: Bennett Davis -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Bennett.jpg" alt="Bennett Davis" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/bennett-davis36/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Bennett Davis</div>
+    </div>
+
+    <!-- Member 6: Ludvig Denker -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Ludvig.jpg" alt="Ludvig Denker" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/ludvig-denker/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Ludvig Denker</div>
+    </div>
+
+    <!-- Member 7: Sophie Desmarais -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Sophie.jpg" alt="Sophie Desmarais" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/sophie-desmarais/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Sophie Desmarais</div>
+    </div>
+
+    <!-- Member 8: Isa Dominguez -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/IshaDominguez.jpg" alt="Isa Dominguez" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/isa-dominguez/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Isa Dominguez</div>
+    </div>
+
+    <!-- Member 9: Kate Fischer -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/KateFischer.jpg" alt="Kate Fischer" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/kate-fischer/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Kate Fischer</div>
+    </div>
+
+    <!-- Member 10: Caroline Ford -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/CarolineFord.jpg" alt="Caroline Ford" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/ford-caroline/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Caroline Ford</div>
+    </div>
+
+    <!-- Member 11: Citiana Frew -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/CitianaFrew.jpg" alt="Citiana Frew" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/citiana-a-frew/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Citiana Frew</div>
+    </div>
+
+    <!-- Member 12: Sarah Goldstein -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/SarahGoldstein.jpg" alt="Sarah Goldstein" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/goldstein-sarah/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Sarah Goldstein</div>
+    </div>
+
+    <!-- Member 13: Brody Haar -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/BrodyHaar.jpg" alt="Brody Haar" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/brodyjghaar/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Brody Haar</div>
+    </div>
+
+    <!-- Member 14: Kaitlyn Hannon -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/KaitlynHannon.jpg" alt="Kaitlyn Hannon" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/kaitlyn-hannon/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Kaitlyn Hannon</div>
+    </div>
+
+    <!-- Member 15: Jolie Hawthorne -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/JolieHawthorne.jpg" alt="Jolie Hawthorne" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/jolie-hawthorne/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Jolie Hawthorne</div>
+    </div>
+
+    <!-- Member 16: Sophia Hooley -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/SophiaHooley.jpg" alt="Sophia Hooley" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/sophia-hooley/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Sophia Hooley</div>
+    </div>
+
+    <!-- Member 17: Chance Ineza -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/ChanceIneza.jpg" alt="Chance Ineza" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/chance-ineza/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Chance Ineza</div>
+    </div>
+
+    <!-- Member 18: Ethan Joslin -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/EthanJoslin.jpg" alt="Ethan Joslin" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/ethan-joslin-vanderbilt/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Ethan Joslin</div>
+    </div>
+
+    <!-- Member 19: Haley Kahn -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/HaleyKahn.jpg" alt="Haley Kahn" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/haley-kahn/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Haley Kahn</div>
+    </div>
+
+    <!-- Member 20: Lena Lawal -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/LenaLawal.jpg" alt="Lena Lawal" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/lena-lawal/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Lena Lawal</div>
+    </div>
+
+    <!-- Member 21: Mai-Xuan Mantwill -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/MaiXuanMantwill.jpg" alt="Mai-Xuan Mantwill" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/maixuanmantwill/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Mai-Xuan Mantwill</div>
+    </div>
+
+    <!-- Member 22: Katherine Oung -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/KatherineOung.jpg" alt="Katherine Oung" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/katherine-oung/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Katherine Oung</div>
+    </div>
+
+    <!-- Member 23: Ethan Paik -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/EthanPaik.jpg" alt="Ethan Paik" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/ethan-paik-b308962b5/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Ethan Paik</div>
+    </div>
+
+    <!-- Member 24: Parker Palermo -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/ParkerPalermo.jpg" alt="Parker Palermo" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/parker-palermo/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Parker Palermo</div>
+    </div>
+
+    <!-- Member 25: Walker Pence -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/WalkerPence.jpg" alt="Walker Pence" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/walker-pence/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Walker Pence</div>
+    </div>
+
+    <!-- Member 26: Sophia Pieri -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/SophiaPieri.jpg" alt="Sophia Pieri" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/sophia-pieri-vanderbilt/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Sophia Pieri</div>
+    </div>
+
+    <!-- Member 27: Vittoria Riedling -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/VittoriaRiedling.jpg" alt="Vittoria Riedling" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/vittoria-riedling/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Vittoria Riedling</div>
+    </div>
+
+    <!-- Member 28: Lolita Rozenbaum -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/LolitaRozenbaum.jpg" alt="Lolita Rozenbaum" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/lolitarozenbaum/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Lolita Rozenbaum</div>
+    </div>
+
+    <!-- Member 29: Benjamin Schiff -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/BenjaminSchiff.jpg" alt="Benjamin Schiff" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/benjaminmschiff/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Benjamin Schiff</div>
+    </div>
+
+    <!-- Member 30: Lucas Slater -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/LucasSlater.jpg" alt="Lucas Slater" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/lucas-slater/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Lucas Slater</div>
+    </div>
+
+    <!-- Member 31: Grayson Smith -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/GraysonSmith.jpg" alt="Grayson Smith" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/grayson-m-smith/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Grayson Smith</div>
+    </div>
+
+    <!-- Member 32: Yehan Subasinghe -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/YehanSubasinghe.jpg" alt="Yehan Subasinghe" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/yehansubasinghe/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Yehan Subasinghe</div>
+    </div>
+
+    <!-- Member 33: Ishita Sujan -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/IshitaSujan.jpg" alt="Ishita Sujan" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/ishita-sujan/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Ishita Sujan</div>
+    </div>
+
+    <!-- Member 34: Daphney Talekar -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/DaphneyTalekar.jpg" alt="Daphney Talekar" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/daphney-talekar/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Daphney Talekar</div>
+    </div>
+
+    <!-- Member 35: Lizzie Tucker -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/Lizzie.jpg" alt="Elizabeth Tucker" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/elizabethtuckerr/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Elizabeth Tucker</div>
+    </div>
+
+    <!-- Member 36: Megan Wang -->
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="./assets/brother-images/MeganWang.jpg" alt="Megan Wang" class="brother-image"/>
+            <div class="linkedin-overlay">
+                <a href="https://www.linkedin.com/in/meganzwang/" target="_blank" rel="noopener noreferrer">
+                    <img class="linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+        <div class="profile-name">Megan Wang</div>
+    </div>
+
+    <!-- Add more Actives members as needed -->
+  </div>
+</div>
+
+<!-- E-Board Section -->
+<div class="photo-grid" id="E-Board" style="display: none;">
+    <div class="exec">
+      <div class="exec-grid"> 
+          <!-- E-Board Member 1: Haley Kahn -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/HaleyKahn.jpg" alt="Haley Kahn" class="brother-image"/>
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Haley Kahn</div>
+                  <div class="profile-bio-subtitle">President - Founder</div>
+                  <div class="profile-bio">Oversees large scale changes in KTP and runs the Executive Board. Ensures that all KTP members have an enjoyable and impactful experience in the fraternity.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 2: Elizabeth Tucker -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/ElizabethTucker.jpg" alt="Elizabeth Tucker" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Elizabeth Tucker</div>
+                  <div class="profile-bio-subtitle">VP of External Affairs - Founder</div>
+                  <div class="profile-bio">Acts as a liaison between KTP and external bodies, including alumni, nationals, recruiters, and corporations. Assists president in performing their duties.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 3: Parker Palermo -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/ParkerPalermo.jpg" alt="Parker Palermo" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Parker Palermo</div>
+                  <div class="profile-bio-subtitle">VP of Internal Affairs - Founder</div>
+                  <div class="profile-bio">Acts as a liaison between potential members, current members, and the executive board. Organizes recruitment and new member education programming.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 4: Ludvig Denker -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/LudvigDenker.jpg" alt="Ludvig Denker" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Ludvig Denker</div>
+                  <div class="profile-bio-subtitle">VP of Finance - Founder</div>
+                  <div class="profile-bio">Manages finances for all internal KTP matters, facilitates corporate sponsorships and fundraising.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 5: Sophia Pieri -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/SophiaPieri.jpg" alt="Sophia Pieri" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Sophia Pieri</div>
+                  <div class="profile-bio-subtitle">VP of Marketing - Founder</div>
+                  <div class="profile-bio">Establishes consistent branding, develops marketing strategies, and responsible for promoting KTP on campus. Runs KTP social media and apparel.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 6: Brody Haar -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/BrodyHaar.jpg" alt="Brody Haar" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Brody Haar</div>
+                  <div class="profile-bio-subtitle">VP of Professional Development - Founder</div>
+                  <div class="profile-bio">Responsible for facilitating educational workshops, providing resources, and giving guidance to help members achieve their professional career goals.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 7: Bennett Davis -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/BennettDavis.jpg" alt="Bennett Davis" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Bennett Davis</div>
+                  <div class="profile-bio-subtitle">VP of Technical Development</div>
+                  <div class="profile-bio">Oversees committee, plans technical workshops and guest speaker events, supports members in staying up to date on the newest trends in technology.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 8: Eva Cheraisi -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/EvaCheraisi.jpg" alt="Eva Cheraisi" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Eva Cheraisi</div>
+                  <div class="profile-bio-subtitle">VP of DEI</div>
+                  <div class="profile-bio">Ensures KTP is a diverse, equitable and inclusive environment for all members through creation of affinity groups, DEI training, and collaboration with campus identity centers.</div>
+              </div>
+          </div>
+
+          <!-- E-Board Member 9: Walker Pence -->
+          <div class="exec-profile-container">
+              <div class="exec-profile-photo">
+                  <img src="./assets/founders-images/WalkerPence.jpg" alt="Walker Pence" class="brother-image" />
+              </div>
+              <div class="exec-profile-text">
+                  <div class="profile-bio-title">Walker Pence</div>
+                  <div class="profile-bio-subtitle">VP of Social Engagement and Operations</div>
+                  <div class="profile-bio">Coordinates events to promote bonding and engagement within the fraternity and community, maintains fraternity calendar, manages attendance, keeps record of all events.</div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+</div>
+
+<!-- Alumni Section -->
+<div class="photo-grid" id="Alumni" style="display: none;">
+    <div class="alumni-grid"> 
+        <div class="alumni-class">
+            <div class="class-name">Alpha Class</div>
+            <!-- Alumni Member 1: Kendelle Grubbs -->
+            <div class="alumni-profile-container">
+                    <img src="./assets/brother-images/KendelleGrubbs.jpg" alt="Kendelle Grubbs" class="alumni-photo" />
+                        <div class="alumni-linkedicon-container">
+                        <a href="https://www.linkedin.com/in/kendelle-grubbs/" target="_blank" rel="noopener noreferrer">
+                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
+                        </a>
+                        </div>
+                <div class="alumni-text">
+                    <div class="alumni-title">Kendelle Grubbs</div>
+                </div>
+            </div>
+            <!-- Alumni Member 2: Jenna Holland -->
+            <div class="alumni-profile-container">
+                    <img src="./assets/brother-images/JennaHolland.jpg" alt="Jenna Holland" class="alumni-photo" />
+                        <div class="alumni-linkedicon-container">
+                        <a href="https://www.linkedin.com/in/jennavholland/" target="_blank" rel="noopener noreferrer">
+                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
+                        </a>
+                    </div>
+                <div class="alumni-text">
+                    <div class="alumni-title">Jenna Holland</div>
+                </div>    
+            </div>
+            <!-- Alumni Member 3: Zofia Luther -->
+            <div class="alumni-profile-container">
+                    <img src="./assets/brother-images/ZofiaLuther.jpg" alt="Zofia Luther" class="alumni-photo" />
+                        <div class="alumni-linkedicon-container">
+                        <a href="https://www.linkedin.com/in/zofialuther/" target="_blank" rel="noopener noreferrer">
+                            <img class="alumni-linkedin-image" src="./assets/brother-images/linkedin.png" alt="LinkedIn"/>
+                        </a>
+                    </div>
+                <div class="alumni-text">
+                    <div class="alumni-title">Zofia Luther</div>
+                </div>
+            </div>            
+        </div>
+        <!-- Add more alumni classes and members as needed -->
+    </div>    
+</div>
+<!-- Brothers Section End -->
+
+<!-- end coding here -->
+
+
+                  </div>
+                    
                 
+                </section>
+                
+              </article>
+              
+            </main>
+            
+            <footer class="sections" id="footer-sections" data-footer-sections="">
+              
+              <section data-test="page-section" data-section-theme="light" class="page-section 
+                
+                      layout-engine-section
+                  
                 background-width--full-bleed
                 
-                  section-height--small
+                      section-height--small
                 
                 
-                  content-width--wide
+                      content-width--wide
                 
                 horizontal-alignment--left
                 vertical-alignment--middle
@@ -575,101 +1424,129 @@
                 
                 
                 light" data-section-id="60ee4f3db240f96f8b2d1242" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" data-active="true">
-              <div class="section-border">
-                <div class="section-background" style="background-color: white;">
-                  <!-- No images in the footer background -->
+                <div class="section-border">
+                  <div class="section-background" style="background-color: white;">
+                    <!-- No images in the footer background -->
+                  </div>
                 </div>
-              </div>
-              <div class="content-wrapper" style="background-color: #2F4A8A !important;">
-                <div class="content">
-                  
-                  <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
-                    <div class="row sqs-row">
-                      <div class="col sqs-col-10 span-10">
-                        <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" data-block-type="2" data-border-radii="{...}" id="block-1dc5f0c7232f9c0befd8">
-                          <div class="sqs-block-content">
-                            <!-- Removed image blocks if any -->
+                <div class="content-wrapper" style="background-color: #2F4A8A !important;">
+                  <div class="content">
+                    
+                    <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
+                      <div class="row sqs-row">
+                        <div class="col sqs-col-10 span-10">
+                          <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" data-block-type="2" data-border-radii="{...}" id="block-1dc5f0c7232f9c0befd8">
+                            <div class="sqs-block-content">
+                              <!-- Removed image blocks if any -->
+                            </div>
                           </div>
-                        </div>
-                        <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-efcfd78bd8d6e66904f1">
-                          <div class="sqs-block-content">
-                            <div class="sqs-html-content">
-                              <h3 style="white-space: pre-wrap; color: black;">Kappa Theta Pi - Vanderbilt</h3>
+                          <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-efcfd78bd8d6e66904f1">
+                            <div class="sqs-block-content">
+                              <div class="sqs-html-content">
+                                <h3 style="white-space: pre-wrap; color: black;">Kappa Theta Pi - Vanderbilt</h3>
+                                
+                                <p class="" style="white-space: pre-wrap; color: black;">© Kappa Theta Pi</p>
+                                
+                              <p class="" style="white-space:pre-wrap;"></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1626457237565_14419">
+                            <div class="sqs-block-content">
                               
-                              <p class="" style="white-space: pre-wrap; color: black;">© Kappa Theta Pi</p>
                               
-                            <p class="" style="white-space:pre-wrap;"></p>
+                              <div class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color- social-icons-size-small social-icons-style-regular ">
+                              <style>
+                                #block-yui_3_17_2_1_1626457237565_14419 .social-icons-style-border .sqs-svg-icon--wrapper {
+                                  
+                                    box-shadow: 0 0 0 2px inset;
+                                  
+                                  border: none; 
+                                }
+                              </style>
+                              <nav class="sqs-svg-icon--list">
+                                <a href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
+                                  <div>
+                                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+                                      <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
+                                      <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
+                                    </svg>
+                                  </div>
+                                </a>
+                              </nav>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1626457237565_14419">
-                          <div class="sqs-block-content">
-                            
-                            
-                            <div class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color- social-icons-size-small social-icons-style-regular ">
-                            <style>
-                              #block-yui_3_17_2_1_1626457237565_14419 .social-icons-style-border .sqs-svg-icon--wrapper {
-                                
-                                  box-shadow: 0 0 0 2px inset;
-                                
-                                border: none; 
-                              }
-                            </style>
-                            <nav class="sqs-svg-icon--list">
-                              <a href="https://www.instagram.com/theta.tau.Vanderbilt/" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
-                                <div>
-                                  <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                    <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
-                                    <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
-                                  </svg>
-                                </div>
-                              </a>
-                            </nav>
+                        <div class="col sqs-col-2 span-2">
+                          <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-763c164cea46603b42d4">
+                            <div class="sqs-block-content">
+                              
+                              <div class="sqs-html-content" style="color: black;">
+                                <p class="" style="white-space: pre-wrap;"><strong>Links</strong></p>
+                                <p class="" style="white-space: pre-wrap;"><a href="about.html" style="color: black;">About</a></p>
+                                <p class="" style="white-space: pre-wrap;"><a href="recruitment.html" style="color: black;">Recruitment</a></p>
+                                <p class="" style="white-space: pre-wrap;"></p>
+                                <p class="" style="white-space: pre-wrap;"><a href="ktp_in_action.html" style="color: black;">KTP in Action</a></p>
+                                <p class="" style="white-space: pre-wrap;"><a href="contact.html" style="color: black;">Contact</a></p>
+                                <p class="" style="white-space: pre-wrap;"></p>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col sqs-col-2 span-2">
-                        <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-763c164cea46603b42d4">
-                          <div class="sqs-block-content">
-                            
-                            <div class="sqs-html-content" style="color: black;">
-                              <p class="" style="white-space: pre-wrap;"><strong>Links</strong></p>
-                              <p class="" style="white-space: pre-wrap;"><a href="about.html" style="color: black;">About</a></p>
-                              <p class="" style="white-space: pre-wrap;"><a href="recruitment.html" style="color: black;">Recruitment</a></p>
-                              <p class="" style="white-space: pre-wrap;"></p>
-                              <p class="" style="white-space: pre-wrap;"><a href="ktp_in_action.html" style="color: black;">KTP in Action</a></p>
-                              <p class="" style="white-space: pre-wrap;"><a href="contact.html" style="color: black;">Contact</a></p>
-                              <p class="" style="white-space: pre-wrap;"></p>
-                          </div>
-                            
+                              
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                  
                   </div>
                 
                 </div>
               
-              </div>
+              </section>
             
-            </section>
-          
-          </footer>
-          
+            </footer>
             
-          </div>
-        
-          <!-- SVG Icons -->
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg">
-            <symbol id="instagram-unauth-icon" viewBox="0 0 64 64">
-              <path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.347-1.67,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"></path>
-            </symbol>
-            <symbol id="instagram-unauth-mask" viewBox="0 0 64 64">
-              <path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s1.025-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.67,1.347,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z"></path>
-            </symbol>
-          </svg>
+              
+            </div>
           
-          <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
-        </body>
-      </html>
+            <!-- SVG Icons -->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg">
+              <symbol id="instagram-unauth-icon" viewBox="0 0 64 64">
+                <path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.67-1.347,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"></path>
+              </symbol>
+              <symbol id="instagram-unauth-mask" viewBox="0 0 64 64">
+                <path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s1.025-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.67,1.347,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z"></path>
+              </symbol>
+            </svg>
+            
+            <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
+          <!-- JavaScript for Tab Functionality -->
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    document.getElementById('Actives').style.display = 'none';
+    document.getElementById('E-Board').style.display = 'none';
+    document.getElementById('Alumni').style.display = 'none';
+
+    // Remove 'selected-title' class from all buttons
+    var buttons = document.getElementsByClassName('brothers-button');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('selected-title');
+    }
+
+    // Show the selected section
+    document.getElementById(sectionId).style.display = 'block';
+
+    // Add 'selected-title' class to the clicked button
+    event.currentTarget.classList.add('selected-title');
+  }
+
+  // Optional: Set default active section on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    showSection('Actives');
+  });
+</script>
+
+          
+          </body>
+        </html>
