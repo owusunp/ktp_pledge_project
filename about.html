@@ -35,7 +35,138 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
-      
+ 
+  /* Presidential Welcome Section */
+  .presidential-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+  }
+
+  .presidential-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .presidential-content {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .presidential-content .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2F4A8A;
+  }
+
+  .presidential-letter {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Pillars Carousel Section */
+  .pillars-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+  }
+
+  .carousel-slide.active {
+    display: block;
+  }
+
+  .pillar-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .pillar-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2F4A8A;
+  }
+
+  .pillar-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* Carousel Controls */
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(47, 74, 138, 0.8);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+  }
+
+  .carousel-control:hover {
+    background-color: rgba(47, 74, 138, 1);
+  }
+
+  .carousel-control.prev {
+    left: 10px;
+  }
+
+  .carousel-control.next {
+    right: 10px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .presidential-section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .presidential-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .presidential-content {
+      min-width: unset;
+    }
+
+    .pillar-box {
+      padding: 20px;
+    }
+
+    .carousel-control {
+      padding: 8px 12px;
+      font-size: 1.2em;
+    }
+  }
  
       @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
       .content-wrapper[data-v-f926e7dc] {
@@ -747,77 +878,86 @@
             </main>
     </div>
     
-         <!-- start coding here -->
-           <div class="about-container">
-            <!-- Presidential Welcome Section -->
-            <div class="white-background">
-              <div class="presidential-section">
-                <img src="./assets/brother-images/Haley.JPG" alt="Presidential Image" class="presidential-image">
-                <div class="presidential-content">
-                  <h2 class="title">A Presidential Welcome</h2>
-                  <p class="presidential-letter">
-                    Welcome to Kappa Theta Pi! We’re excited to share our mission with you. Our fraternity is dedicated to fostering professional growth, building strong alumni connections, encouraging social growth, advancing technological skills, and providing academic support. Join us in shaping the future of engineering leadership.
-                  </p>
-                </div>
-              </div>
-            </div>
+<!-- start coding here -->
+<div class="about-container">
+  <!-- Presidential Welcome Section -->
+  <div class="white-background">
+    <div class="presidential-section">
+      <img src="./assets/brother-images/Haley.JPG" alt="Presidential Image" class="presidential-image">
+      <div class="presidential-content">
+        <h2 class="title">A Presidential Welcome</h2>
+        <p class="presidential-letter">
+          Welcome to Kappa Theta Pi! We’re excited to share our mission with you. Our fraternity is dedicated to fostering professional growth, building strong alumni connections, encouraging social growth, advancing technological skills, and providing academic support. Join us in shaping the future of engineering leadership.
+        </p>
+      </div>
+    </div>
+  </div>
 
-            <!-- Our Pillars Section -->
-            <div class="blue-background-section">
-              <h2 class="title">Our Pillars</h2>
-              <p class="paragraph">
-                The mission of Kappa Theta Pi is built around five key pillars:
-              </p>
-             
-              <div class="pillars">
-               
-                <!-- Pillar 1 -->
-                <div class="pillar-box">
-                  <h3 class="pillar-title">Professional Development</h3>
-                  <p class="pillar-description">
-                    Through events like interview training, resume building, one-on-one mentorship, and more, Kappa Theta Pi prepares members for success in technology-related careers. We take pride in developing the tech leaders of the future.
-                  </p>
-                </div>
-
-                <!-- Pillar 2 -->
-                <div class="pillar-box">
-                  <h3 class="pillar-title">Alumni Connections</h3>
-                  <p class="pillar-description">
-                    Our alumni work in diverse fields from tech giants to startups, consulting, and financial tech, offering a global network of professional connections. They provide invaluable insights and opportunities for current members.
-                  </p>
-                </div>
-
-                <!-- Pillar 3 -->
-                <div class="pillar-box">
-                  <h3 class="pillar-title">Social Growth</h3>
-                  <p class="pillar-description">
-                    Kappa Theta Pi hosts exclusive social events for members to build lasting friendships, including formals, tailgates, retreats, and more. These events foster a strong sense of community and camaraderie.
-                  </p>
-                </div>
-
-                <!-- Pillar 4 -->
-                <div class="pillar-box">
-                  <h3 class="pillar-title">Technological Advancement</h3>
-                  <p class="pillar-description">
-                    Members can enhance their technical skills through project teams and workshops, making it easy to expand their expertise. Whether participating in coding challenges or attending tech seminars, growth is continuous.
-                  </p>
-                </div>
-
-                <!-- Pillar 5 -->
-                <div class="pillar-box">
-                  <h3 class="pillar-title">Academic Support</h3>
-                  <p class="pillar-description">
-                    We foster academic growth by creating a network where members can rely on each other for help in classes and beyond. Study groups, tutoring sessions, and academic workshops ensure that every member excels.
-                  </p>
-                </div>
-
-              </div>
-            </div>
+  <!-- Our Pillars Section -->
+  <div class="blue-background-section">
+    <h2 class="title">Our Pillars</h2>
+    <p class="paragraph">
+      The mission of Kappa Theta Pi is built around five key pillars:
+    </p>
+   
+    <div class="pillars-carousel">
+      <!-- Carousel Wrapper -->
+      <div class="carousel">
+        <!-- Carousel Slides -->
+        <div class="carousel-slide active">
+          <div class="pillar-box">
+            <h3 class="pillar-title">Professional Development</h3>
+            <p class="pillar-description">
+              Through events like interview training, resume building, one-on-one mentorship, and more, Kappa Theta Pi prepares members for success in technology-related careers. We take pride in developing the tech leaders of the future.
+            </p>
           </div>
-          
-          <!-- end coding here -->
+        </div>
 
+        <div class="carousel-slide">
+          <div class="pillar-box">
+            <h3 class="pillar-title">Alumni Connections</h3>
+            <p class="pillar-description">
+              Our alumni work in diverse fields from tech giants to startups, consulting, and financial tech, offering a global network of professional connections. They provide invaluable insights and opportunities for current members.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="pillar-box">
+            <h3 class="pillar-title">Social Growth</h3>
+            <p class="pillar-description">
+              Kappa Theta Pi hosts exclusive social events for members to build lasting friendships, including formals, tailgates, retreats, and more. These events foster a strong sense of community and camaraderie.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="pillar-box">
+            <h3 class="pillar-title">Technological Advancement</h3>
+            <p class="pillar-description">
+              Members can enhance their technical skills through project teams and workshops, making it easy to expand their expertise. Whether participating in coding challenges or attending tech seminars, growth is continuous.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="pillar-box">
+            <h3 class="pillar-title">Academic Support</h3>
+            <p class="pillar-description">
+              We foster academic growth by creating a network where members can rely on each other for help in classes and beyond. Study groups, tutoring sessions, and academic workshops ensure that every member excels.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control prev" aria-label="Previous Pillar">&#10094;</button>
+      <button class="carousel-control next" aria-label="Next Pillar">&#10095;</button>
+    </div>
+  </div>
+</div>
 <!-- end coding here -->
+
               </div>
                 
             
@@ -949,6 +1089,39 @@
         <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <!-- JavaScript for Tab Functionality -->
 
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const slides = document.querySelectorAll('.carousel-slide');
+          const prevButton = document.querySelector('.carousel-control.prev');
+          const nextButton = document.querySelector('.carousel-control.next');
+          let currentSlide = 0;
       
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.remove('active');
+              if (i === index) {
+                slide.classList.add('active');
+              }
+            });
+          }
+      
+          prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+            showSlide(currentSlide);
+          });
+      
+          nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+            showSlide(currentSlide);
+          });
+      
+          // Optional: Auto-slide functionality
+          // Uncomment the following lines to enable auto-sliding every 5 seconds
+      
+          // setInterval(() => {
+          //   nextButton.click();
+          // }, 5000);
+        });
+      </script>
       </body>
     </html>
