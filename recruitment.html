@@ -35,7 +35,9 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
-      .slideshow-container {
+
+/* Slideshow Container */
+.slideshow-container {
   position: relative;
   width: 100%;
   height: 400px; /* Adjust height as needed */
@@ -61,35 +63,33 @@
 .slideshow-container .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;  /* Ensures the image covers the container without distortion */
+  object-fit: contain; /* Ensures the image covers the container without distortion */
 }
 
-/* Navigation Buttons */
-.slideshow-container .prev,
+.white-heading {
+    color: white;
+}
+
+/* Navigation Button: Next Only */
 .slideshow-container .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+  right: 10px; /* Adjust as needed */
   padding: 16px;
-
-  color: white;
+  color: white; /* Arrow color */
   font-weight: bold;
   font-size: 24px;
   transition: background-color 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 3px;
   user-select: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent; /* Remove background color */
 }
 
-.slideshow-container .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.slideshow-container .prev:hover,
+/* Remove hover background color */
 .slideshow-container .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: transparent; /* Ensure no background color on hover */
+  color: #ddd; /* Optional: Change arrow color on hover for visibility */
 }
 
 /* Responsive Height Adjustments */
@@ -961,15 +961,7 @@
               
               <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
                 
-
-                         
-       
-    </div> 
-
-
-
-    
-                            
+                    
     <div class="content-wrapper" style="background-color: black !important; color: #2F4A8A !important; text-align: center !important;">
       <div class="content">
         <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60f3b9ead68f3225905df9b7">
@@ -978,6 +970,8 @@
               <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-c5552964afa5af59e180">
                 <div class="sqs-block-content">
                   <div class="sqs-html-content">
+                    <div style="height: 180px;"></div>
+
                     <h1 style="text-align:center; white-space:pre-wrap;color: #2F4A8A !important"><em>Why rush Kappa Theta Pi?</em></h1>
                     <p class="" data-rte-preserve-empty="true" style="white-space:pre-wrap;"></p>
                     <h2 style="text-align:center; white-space:pre-wrap;color: #2F4A8A">Academic &amp; Professional Development</h2>
@@ -1006,17 +1000,17 @@
   <div class="slide">
     <img src="google.jpg" alt="Slide 4">
   </div>
-
   <div class="slide">
     <img src="microsoft.png" alt="Slide 6">
   </div>
   <div class="slide">
     <img src="nvidia.png" alt="Slide 7">
   </div>
-  <!-- Navigation Buttons (Optional) -->
-  <a class="prev">&#10094;</a>
+
+  <!-- Only the Next Arrow -->
   <a class="next">&#10095;</a>
 </div>
+
 
 <div class="content-wrapper" style="background-color: #2F4A8A; color: white; text-align: center; width: 100%; padding: 40px 0;">
   <div class="content">
@@ -1026,7 +1020,8 @@
                   <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-32d258441881e2cf1856">
                       <div class="sqs-block-content">
                           <div class="sqs-html-content" style="padding: 20px;">
-                              <h2>Brotherhood</h2>
+                            <h2 class="white-heading">Brotherhood</h2>
+
                               <p>
                                   We at Theta Tau celebrate many brotherhood events to strengthen our bonds and debate if Lebron could beat McGregor in a fight.<br>See some of our traditions below:
                               </p>
@@ -1043,7 +1038,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slideshow-container .slide');
-    const prevButton = document.querySelector('.slideshow-container .prev');
     const nextButton = document.querySelector('.slideshow-container .next');
     let currentSlide = 0;
     const totalSlides = slides.length;
@@ -1063,12 +1057,6 @@
       showSlide(currentSlide);
     }
 
-    // Function to show the previous slide
-    function prevSlideFunc() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      showSlide(currentSlide);
-    }
-
     // Function to start the automatic slideshow
     function startSlideshow() {
       slideInterval = setInterval(nextSlide, slideDuration);
@@ -1079,16 +1067,10 @@
       clearInterval(slideInterval);
     }
 
-    // Event listeners for navigation buttons
-    if (nextButton && prevButton) {
+    // Event listener for the next button
+    if (nextButton) {
       nextButton.addEventListener('click', () => {
         nextSlide();
-        stopSlideshow(); // Restart the interval to reset timing
-        startSlideshow();
-      });
-
-      prevButton.addEventListener('click', () => {
-        prevSlideFunc();
         stopSlideshow(); // Restart the interval to reset timing
         startSlideshow();
       });
@@ -1103,11 +1085,13 @@
     startSlideshow();
   });
 </script>
+
  
     <div class="new-content-wrapper">
       <section class="Main-content" id="main-content">
         <div class="sqs-layout sqs-grid-12 columns-12">
-          
+          <div style="height: 50px;"></div>
+
           <!-- Center-aligned button with margin below -->
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSMqfr1vWMKGza5eFLu6ZCiZbRTu2LLSR1CWJzomNgmcJSUg/viewform?usp=sf_link" 
              class="sqs-button-element--large sqs-button-element--secondary" 
@@ -1449,7 +1433,39 @@
         <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <!-- JavaScript for Tab Functionality -->
 
-
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const slides = document.querySelectorAll('.carousel-slide');
+          const prevButton = document.querySelector('.carousel-control.prev');
+          const nextButton = document.querySelector('.carousel-control.next');
+          let currentSlide = 0;
       
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.remove('active');
+              if (i === index) {
+                slide.classList.add('active');
+              }
+            });
+          }
+      
+          prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+            showSlide(currentSlide);
+          });
+      
+          nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+            showSlide(currentSlide);
+          });
+      
+          // Optional: Auto-slide functionality
+          // Uncomment the following lines to enable auto-sliding every 5 seconds
+      
+          // setInterval(() => {
+          //   nextButton.click();
+          // }, 5000);
+        });
+      </script>
       </body>
     </html>
