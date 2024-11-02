@@ -738,6 +738,11 @@
                     
                     </div>
                   </div>
+                </section>
+              </article>
+            </main>
+    </div>
+    
                             
 <!-- start coding here -->
 <div class="new-content-wrapper" style="display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; padding: 20px; color: white;">
@@ -892,41 +897,7 @@
         
         <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <!-- JavaScript for Tab Functionality -->
-<script>
-function showSection(sectionId) {
-// Hide all sections
-document.getElementById('Actives').style.display = 'none';
-document.getElementById('E-Board').style.display = 'none';
-document.getElementById('Alumni').style.display = 'none';
 
-// Remove 'selected-title' class from all buttons
-var buttons = document.getElementsByClassName('brothers-button');
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].classList.remove('selected-title');
-}
-
-// Show the selected section
-document.getElementById(sectionId).style.display = 'block';
-
-// Add 'selected-title' class to the clicked button
-event.currentTarget.classList.add('selected-title');
-}
-
-// Optional: Set default active section on page load
-document.addEventListener('DOMContentLoaded', function() {
-showSection('Actives');
-});
-
-      // Add hover effect for LinkedIn overlay
-      document.querySelectorAll('.profile-photo').forEach(photo => {
-        photo.addEventListener('mouseenter', () => {
-            photo.querySelector('.linkedin-overlay').style.opacity = '1';
-        });
-        photo.addEventListener('mouseleave', () => {
-            photo.querySelector('.linkedin-overlay').style.opacity = '0';
-        });
-    });
-</script>
 
       
       </body>

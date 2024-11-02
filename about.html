@@ -739,9 +739,83 @@
                     </div>
                   </div>
                             
-<!-- start coding here -->
 
-   
+
+  
+                </section>
+              </article>
+            </main>
+    </div>
+    
+         <!-- start coding here -->
+           <div class="about-container">
+            <!-- Presidential Welcome Section -->
+            <div class="white-background">
+              <div class="presidential-section">
+                <img src="./assets/brother-images/Haley.JPG" alt="Presidential Image" class="presidential-image">
+                <div class="presidential-content">
+                  <h2 class="title">A Presidential Welcome</h2>
+                  <p class="presidential-letter">
+                    Welcome to Kappa Theta Pi! We’re excited to share our mission with you. Our fraternity is dedicated to fostering professional growth, building strong alumni connections, encouraging social growth, advancing technological skills, and providing academic support. Join us in shaping the future of engineering leadership.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Our Pillars Section -->
+            <div class="blue-background-section">
+              <h2 class="title">Our Pillars</h2>
+              <p class="paragraph">
+                The mission of Kappa Theta Pi is built around five key pillars:
+              </p>
+             
+              <div class="pillars">
+               
+                <!-- Pillar 1 -->
+                <div class="pillar-box">
+                  <h3 class="pillar-title">Professional Development</h3>
+                  <p class="pillar-description">
+                    Through events like interview training, resume building, one-on-one mentorship, and more, Kappa Theta Pi prepares members for success in technology-related careers. We take pride in developing the tech leaders of the future.
+                  </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-box">
+                  <h3 class="pillar-title">Alumni Connections</h3>
+                  <p class="pillar-description">
+                    Our alumni work in diverse fields from tech giants to startups, consulting, and financial tech, offering a global network of professional connections. They provide invaluable insights and opportunities for current members.
+                  </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-box">
+                  <h3 class="pillar-title">Social Growth</h3>
+                  <p class="pillar-description">
+                    Kappa Theta Pi hosts exclusive social events for members to build lasting friendships, including formals, tailgates, retreats, and more. These events foster a strong sense of community and camaraderie.
+                  </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="pillar-box">
+                  <h3 class="pillar-title">Technological Advancement</h3>
+                  <p class="pillar-description">
+                    Members can enhance their technical skills through project teams and workshops, making it easy to expand their expertise. Whether participating in coding challenges or attending tech seminars, growth is continuous.
+                  </p>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="pillar-box">
+                  <h3 class="pillar-title">Academic Support</h3>
+                  <p class="pillar-description">
+                    We foster academic growth by creating a network where members can rely on each other for help in classes and beyond. Study groups, tutoring sessions, and academic workshops ensure that every member excels.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+          <!-- end coding here -->
 
 <!-- end coding here -->
               </div>
@@ -874,41 +948,6 @@
         
         <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <!-- JavaScript for Tab Functionality -->
-<script>
-function showSection(sectionId) {
-// Hide all sections
-document.getElementById('Actives').style.display = 'none';
-document.getElementById('E-Board').style.display = 'none';
-document.getElementById('Alumni').style.display = 'none';
-
-// Remove 'selected-title' class from all buttons
-var buttons = document.getElementsByClassName('brothers-button');
-for (var i = 0; i < buttons.length; i++) {
-  buttons[i].classList.remove('selected-title');
-}
-
-// Show the selected section
-document.getElementById(sectionId).style.display = 'block';
-
-// Add 'selected-title' class to the clicked button
-event.currentTarget.classList.add('selected-title');
-}
-
-// Optional: Set default active section on page load
-document.addEventListener('DOMContentLoaded', function() {
-showSection('Actives');
-});
-
-      // Add hover effect for LinkedIn overlay
-      document.querySelectorAll('.profile-photo').forEach(photo => {
-        photo.addEventListener('mouseenter', () => {
-            photo.querySelector('.linkedin-overlay').style.opacity = '1';
-        });
-        photo.addEventListener('mouseleave', () => {
-            photo.querySelector('.linkedin-overlay').style.opacity = '0';
-        });
-    });
-</script>
 
       
       </body>
