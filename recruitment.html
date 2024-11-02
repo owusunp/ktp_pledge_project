@@ -35,14 +35,12 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
-      
-/* Slideshow Container */
-.slideshow-container {
+      .slideshow-container {
   position: relative;
   width: 100%;
   height: 400px; /* Adjust height as needed */
   overflow: hidden;
-  margin-bottom: 20px; /* Optional: Space below the slideshow */
+  margin-bottom: 0px; /* Optional: Space below the slideshow */
 }
 
 /* Individual Slides */
@@ -74,7 +72,7 @@
   top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: -22px;
+
   color: white;
   font-weight: bold;
   font-size: 24px;
@@ -152,7 +150,7 @@
     /* Button Styling */
     .sqs-button-element--large {
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
       text-decoration: none;
       padding: 10px 20px;
       background-color: #007BFF; /* Button background color */
@@ -173,98 +171,8 @@
       border-radius: 10px; /* Rounded corners */
     }
 
-    /* Slideshow Styling */
-    .gallery-slideshow {
-      width: 100%; /* Full width */
-      height: 300px; /* Reduced height */
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
 
-    .gallery-slideshow-wrapper {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    .gallery-slideshow-list {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      height: 100%;
-      width: 100%;
-    }
-
-    .gallery-slideshow-item {
-      min-width: 100%;
-      height: 100%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .gallery-slideshow-item-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Maintain aspect ratio */
-      display: block;
-    }
-
-    /* Slideshow Controls */
-    .gallery-slideshow-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none; /* Allow clicks on buttons */
-    }
-
-    .gallery-slideshow-control-btn {
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      pointer-events: all; /* Enable pointer events on buttons */
-      border-radius: 50%;
-      transition: background 0.3s;
-    }
-
-    .gallery-slideshow-control-btn:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Thumbnails Styling */
-    .gallery-slideshow-thumbnails {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-
-    .gallery-slideshow-thumbnails-thumb {
-      width: 60px;
-      height: 40px;
-      margin: 0 5px;
-      border: 2px solid transparent;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 5px;
-      transition: border 0.3s;
-    }
-
-    .gallery-slideshow-thumbnails-thumb.active {
-      border: 2px solid #007BFF; /* Highlight active thumbnail */
-    }
-
-    .gallery-slideshow-thumbnails-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  
 
     /* Responsive Adjustments */
     @media (max-width: 768px) {
@@ -430,6 +338,281 @@
       @media (max-width: 768px) {
           /* Adjust padding to prevent content overlap */
           body {
+              padding-top: 0px; /* Adjust based on header height */
+          }
+
+          /* Navigation Links on Specific Pages (Mobile) */
+          body#collection-about header .header-nav-list a,
+          body#collection-recruitment header .header-nav-list a,
+          body#collection-brothers header .header-nav-list a,
+          body#collection-ktp_in_action header .header-nav-list a,
+          body#collection-contact header .header-nav-list a {
+              color: black !important;
+          }
+
+          body#collection-about header .header-nav-list a:hover,
+          body#collection-recruitment header .header-nav-list a:hover,
+          body#collection-brothers header .header-nav-list a:hover,
+          body#collection-ktp_in_action header .header-nav-list a:hover,
+          body#collection-contact header .header-nav-list a:hover {
+              color: #555 !important;
+          }
+      }
+      
+      /* Additional styles to ensure overall background and text colors are updated */
+      body {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      main {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      footer {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Update any other elements that might have specific background or text colors */
+      .section-background {
+          background-color: white !important;
+      }
+
+      .new-content-wrapper {
+          color: black !important;
+      }
+
+      /* Update links in the footer */
+      footer a {
+          color: black !important;
+      }
+
+      footer a:hover {
+          color: #555 !important;
+      }
+
+    
+
+      .brothers-button:hover {
+          background-color: #e0e0e0;
+      }
+
+      .selected-title {
+          background-color: #2F4A8A !important;
+          color: white;
+      }
+
+ 
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
+      .content-wrapper[data-v-f926e7dc] {
+        position: fixed;
+        top: 20px;
+        right: 0;
+      }
+      .content-wrapper .button[data-v-f926e7dc] {
+        height: 100px;
+      }
+      p[data-v-f926e7dc] {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      /* Custom Header Styles for Specific Pages */
+
+      /* About Page */
+      body#collection-about header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Recruitment Page */
+      body#collection-recruitment header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Brothers Page */
+      body#collection-brothers header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* KTP in Action Page */
+      body#collection-ktp_in_action header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Contact Page */
+      body#collection-contact header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Navigation Links on Specific Pages */
+      body#collection-about header a,
+      body#collection-recruitment header a,
+      body#collection-brothers header a,
+      body#collection-ktp_in_action header a,
+      body#collection-contact header a {
+          color: black !important;
+      }
+
+      body#collection-about header a:hover,
+      body#collection-recruitment header a:hover,
+      body#collection-brothers header a:hover,
+      body#collection-ktp_in_action header a:hover,
+      body#collection-contact header a:hover {
+          color: #555 !important;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 768px) {
+          /* Adjust padding to prevent content overlap */
+          body {
+              padding-top: 80px; /* Adjust based on header height */
+          }
+
+          /* Navigation Links on Specific Pages (Mobile) */
+          body#collection-about header .header-nav-list a,
+          body#collection-recruitment header .header-nav-list a,
+          body#collection-brothers header .header-nav-list a,
+          body#collection-ktp_in_action header .header-nav-list a,
+          body#collection-contact header .header-nav-list a {
+              color: black !important;
+          }
+
+          body#collection-about header .header-nav-list a:hover,
+          body#collection-recruitment header .header-nav-list a:hover,
+          body#collection-brothers header .header-nav-list a:hover,
+          body#collection-ktp_in_action header .header-nav-list a:hover,
+          body#collection-contact header .header-nav-list a:hover {
+              color: #555 !important;
+          }
+      }
+      
+      /* Additional styles to ensure overall background and text colors are updated */
+      body {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      main {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      footer {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Update any other elements that might have specific background or text colors */
+      .section-background {
+          background-color: white !important;
+      }
+
+      .new-content-wrapper {
+          color: black !important;
+      }
+
+      /* Update links in the footer */
+      footer a {
+          color: black !important;
+      }
+
+      footer a:hover {
+          color: #555 !important;
+      }
+
+
+    
+
+
+
+
+
+
+ 
+
+ 
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
+      .content-wrapper[data-v-f926e7dc] {
+        position: fixed;
+        top: 20px;
+        right: 0;
+      }
+      .content-wrapper .button[data-v-f926e7dc] {
+        height: 100px;
+      }
+      p[data-v-f926e7dc] {
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+
+      /* Custom Header Styles for Specific Pages */
+
+      /* About Page */
+      body#collection-about header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Recruitment Page */
+      body#collection-recruitment header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Brothers Page */
+      body#collection-brothers header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* KTP in Action Page */
+      body#collection-ktp_in_action header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Contact Page */
+      body#collection-contact header {
+          background-color: white !important;
+          color: black !important;
+      }
+
+      /* Navigation Links on Specific Pages */
+      body#collection-about header a,
+      body#collection-recruitment header a,
+      body#collection-brothers header a,
+      body#collection-ktp_in_action header a,
+      body#collection-contact header a {
+          color: black !important;
+      }
+
+      body#collection-about header a:hover,
+      body#collection-recruitment header a:hover,
+      body#collection-brothers header a:hover,
+      body#collection-ktp_in_action header a:hover,
+      body#collection-contact header a:hover {
+          color: #555 !important;
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 768px) {
+          /* Adjust padding to prevent content overlap */
+          body {
               padding-top: 80px; /* Adjust based on header height */
           }
 
@@ -502,42 +685,6 @@
           border-radius: 8px;
       }
 
-      .brothers-title {
-          font-size: 2.5em;
-          margin-bottom: 10px;
-      }
-
-      .brothers-subtitle {
-          font-size: 1.2em;
-          color: #555;
-      }
-
-      .brothers-flex-container {
-          display: flex;
-          justify-content: center;
-          margin: 30px 0;
-          gap: 20px;
-      }
-
-      .brothers-button {
-          padding: 10px 20px;
-          border: none;
-          background-color: #f0f0f0;
-          cursor: pointer;
-          border-radius: 5px;
-          font-size: 1em;
-          transition: background-color 0.3s;
-      }
-
-      .brothers-button:hover {
-          background-color: #e0e0e0;
-      }
-
-      .selected-title {
-          background-color: #2F4A8A !important;
-          color: white;
-      }
-
       .photo-grid {
           padding: 20px;
       }
@@ -548,164 +695,20 @@
           gap: 20px;
       }
 
-      .profile-container {
-          text-align: center;
-      }
 
-      .profile-photo {
-          position: relative;
-          width: 200px;
-          height: 200px;
-          margin: 0 auto;
-          border-radius: 50%;
-          overflow: hidden;
-      }
 
-      .brother-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
+ 
 
-      .linkedicon-container {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-      }
+ 
 
-      .linkedin-image {
-          width: 30px;
-          height: 30px;
-      }
 
-      .profile-name {
-          margin-top: 10px;
-          font-size: 1.1em;
-          font-weight: bold;
-      }
-
-      /* Executive Section Styles */
-      .exec {
-          padding: 50px 20px;
-          background-color: #f9f9f9;
-      }
-
-      .exec-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          gap: 30px;
-      }
-
-      .exec-profile-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-      }
-
-      .exec-profile-photo {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          overflow: hidden;
-          margin-bottom: 15px;
-      }
-
-      .exec-profile-photo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-
-      .exec-profile-text {
-          max-width: 300px;
-      }
-
-      .profile-bio-title {
-          font-size: 1.2em;
-          font-weight: bold;
-          margin-bottom: 5px;
-      }
-
-      .profile-bio-subtitle {
-          font-size: 1em;
-          color: #555;
-          margin-bottom: 10px;
-      }
-
-      .profile-bio- {
-          font-size: 0.95em;
-          color: #666;
-      }
-
-      /* Alumni Section Styles */
-      .alumni-grid {
-          padding: 50px 20px;
-      }
-
-      .alumni-class {
-          margin-bottom: 40px;
-      }
-
-      .class-name {
-          font-size: 1.8em;
-          margin-bottom: 20px;
-          text-align: center;
-      }
-
-      .alumni-profile-container {
-          display: inline-block;
-          width: 200px;
-          margin: 10px;
-          text-align: center;
-      }
-
-      .alumni-photo {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          object-fit: cover;
-          position: relative;
-      }
-
-      .alumni-linkedicon-container {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-      }
-
-      .alumni-linkedin-image {
-          width: 30px;
-          height: 30px;
-      }
-
-      .alumni-text {
-          margin-top: 10px;
-          font-size: 1em;
-          font-weight: bold;
-      }
     </style>
   </head>
 
   <body id="collection-60ee545f77e2cd4113f18f39" class="primary-button-style-solid primary-button-shape-square secondary-button-style-solid secondary-button-shape-square tertiary-button-style-solid tertiary-button-shape-square form-field-style-solid form-field-shape-square form-field-border-all form-field-checkbox-type-icon form-field-checkbox-fill-solid form-field-checkbox-color-inverted form-field-checkbox-shape-square form-field-checkbox-layout-stack form-field-radio-type-icon form-field-radio-fill-solid form-field-radio-color-normal form-field-radio-shape-pill form-field-radio-layout-stack form-field-survey-fill-solid form-field-survey-color-normal form-field-survey-shape-pill form-field-hover-focus-outline form-subVanderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbilt-button-style-label header-overlay-alignment-center header-width-full tweak-transparent-header tweak-fixed-header tweak-fixed-header-style-basic tweak-blog-alternating-side-by-side-width-full tweak-blog-alternating-side-by-side-image-aspect-ratio-11-square tweak-blog-alternating-side-by-side-text-alignment-left tweak-blog-alternating-side-by-side-read-more-style-show tweak-blog-alternating-side-by-side-image-text-alignment-middle tweak-blog-alternating-side-by-side-deliVanderbilter-bullet tweak-blog-alternating-side-by-side-meta-position-top tweak-blog-alternating-side-by-side-primary-meta-categories tweak-blog-alternating-side-by-side-secondary-meta-date tweak-blog-alternating-side-by-side-excerpt-show tweak-blog-basic-grid-width-inset tweak-blog-basic-grid-image-aspect-ratio-23-standard-vertical tweak-blog-basic-grid-text-alignment-left tweak-blog-basic-grid-deliVanderbilter-bullet tweak-blog-basic-grid-image-placement-above tweak-blog-basic-grid-read-more-style-show tweak-blog-basic-grid-primary-meta-categories tweak-blog-basic-grid-secondary-meta-date tweak-blog-basic-grid-excerpt-hide tweak-blog-item-width-narrow tweak-blog-item-text-alignment-center tweak-blog-item-meta-position-above-title tweak-blog-item-show-categories tweak-blog-item-show-date tweak-blog-item-deliVanderbilter-bullet tweak-blog-masonry-width-full tweak-blog-masonry-text-alignment-left tweak-blog-masonry-primary-meta-categories tweak-blog-masonry-secondary-meta-date tweak-blog-masonry-meta-position-top tweak-blog-masonry-read-more-style-show tweak-blog-masonry-deliVanderbilter-space tweak-blog-masonry-image-placement-above tweak-blog-masonry-excerpt-show tweak-blog-side-by-side-width-full tweak-blog-side-by-side-image-placement-left tweak-blog-side-by-side-image-aspect-ratio-11-square tweak-blog-side-by-side-primary-meta-categories tweak-blog-side-by-side-secondary-meta-date tweak-blog-side-by-side-meta-position-top tweak-blog-side-by-side-text-alignment-left tweak-blog-side-by-side-read-more-style-show tweak-blog-side-by-side-deliVanderbilter-bullet tweak-blog-side-by-side-excerpt-show tweak-blog-single-column-width-full tweak-blog-single-column-text-alignment-center tweak-blog-single-column-image-placement-above tweak-blog-single-column-deliVanderbilter-bullet tweak-blog-single-column-read-more-style-show tweak-blog-single-column-primary-meta-categories tweak-blog-single-column-secondary-meta-date tweak-blog-single-column-meta-position-top tweak-blog-single-column-content-full-post tweak-events-stacked-width-full tweak-events-stacked-height-large tweak-events-stacked-show-thumbnails tweak-events-stacked-thumbnail-size-32-standard tweak-events-stacked-date-style-with-text tweak-events-stacked-show-time tweak-events-stacked-show-location tweak-events-stacked-show-excerpt tweak-global-animations-complexity-level-detailed tweak-global-animations-animation-style-fade tweak-global-animations-animation-type-none tweak-global-animations-animation-curve-ease tweak-portfolio-grid-basic-width-full tweak-portfolio-grid-basic-height-large tweak-portfolio-grid-basic-image-aspect-ratio-11-square tweak-portfolio-grid-basic-text-alignment-left tweak-portfolio-grid-basic-hover-effect-fade tweak-portfolio-grid-overlay-width-full tweak-portfolio-grid-overlay-height-large tweak-portfolio-grid-overlay-image-aspect-ratio-11-square tweak-portfolio-grid-overlay-text-placement-center tweak-portfolio-grid-overlay-show-text-after-hover tweak-portfolio-index-background-link-format-stacked tweak-portfolio-index-background-width-full tweak-portfolio-index-background-height-large tweak-portfolio-index-background-vertical-alignment-middle tweak-portfolio-index-background-horizontal-alignment-center tweak-portfolio-index-background-deliVanderbilter-none tweak-portfolio-index-background-animation-type-fade tweak-portfolio-index-background-animation-duration-medium tweak-portfolio-hover-follow-layout-inline tweak-portfolio-hover-follow-deliVanderbilter-forward-slash tweak-portfolio-hover-follow-animation-type-fade tweak-portfolio-hover-follow-animation-duration-medium tweak-portfolio-hover-static-layout-stacked tweak-portfolio-hover-static-deliVanderbilter-forward-slash tweak-portfolio-hover-static-animation-type-scale-up tweak-portfolio-hover-static-animation-duration-medium tweak-product-basic-item-product-variant-display-dropdown tweak-product-basic-item-product-subscription-display-radio tweak-product-basic-item-product-subscription-border-shape-square tweak-product-basic-item-width-full tweak-product-basic-item-gallery-aspect-ratio-34-three-four-vertical tweak-product-basic-item-text-alignment-left tweak-product-basic-item-navigation-breadcrumbs tweak-product-basic-item-description-position-below-price tweak-product-basic-item-description-position-mobile-below-add-to-cart-button tweak-product-basic-item-content-alignment-top tweak-product-basic-item-gallery-design-slideshow tweak-product-basic-item-gallery-placement-left tweak-product-basic-item-thumbnail-placement-side tweak-product-basic-item-click-action-none tweak-product-basic-item-hover-action-none tweak-product-basic-item-variant-picker-layout-dropdowns tweak-product-basic-item-add-to-cart-standalone tweak-product-basic-item-add-to-cart-mobile-standalone tweak-products-width-full tweak-products-image-aspect-ratio-23-standard-vertical tweak-products-text-alignment-left tweak-products-price-show tweak-products-nested-category-type-top tweak-products-category-title tweak-products-header-text-alignment-middle tweak-products-breadcrumbs image-block-poster-text-alignment-left image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-content-position-center image-block-collage-text-alignment-left hide-opentable-icons opentable-style-dark tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-60ee545f77e2cd4113f18f39 collection-type-page collection-layout-default homepage mobile-style-available sqs-seven-one-global-animations" tabindex="-1" data-animation-state="booted">
     <div id="siteWrapper" class="clearfix site-wrapper">
       
-      <!-- Floating Cart -->
-      <div id="floatingCart" class="floating-cart hidden">
-        <a href="/cart" class="icon icon--stroke icon--fill icon--cart sqs-custom-cart">
-          <span class="Cart-inner">
-            <svg class="icon icon--cart" width="61" height="49" viewBox="0 0 61 49">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H13.6362C14.3878 0.5 15.0234 1.05632 15.123 1.80135L16.431 11.5916H59C59.5122 11.5916 59.989 11.8529 60.2645 12.2847C60.54 12.7165 60.5762 13.2591 60.3604 13.7236L50.182 35.632C49.9361 36.1614 49.4054 36.5 48.8217 36.5H18.0453C17.2937 36.5 16.6581 35.9437 16.5585 35.1987L12.3233 3.5H2C1.17157 3.5 0.5 2.82843 0.5 2ZM16.8319 14.5916L19.3582 33.5H47.8646L56.6491 14.5916H16.8319Z"></path>
-              <path d="M18.589 35H49.7083L60 13H16L18.589 35Z"></path>
-              <path d="M21 49C23.2091 49 25 47.2091 25 45C25 42.7909 23.2091 41 21 41C18.7909 41 17 42.7909 17 45C17 47.2091 18.7909 49 21 49Z"></path>
-              <path d="M45 49C47.2091 49 49 47.2091 49 45C49 42.7909 47.2091 41 45 41C42.7909 41 41 42.7909 41 45C41 47.2091 42.7909 49 45 49Z"></path>
-            </svg>
-            <div class="legacy-cart icon-cart-quantity">
-              <span class="sqs-cart-quantity">0</span>
-            </div>
-          </span>
-        </a>
-      </div>
+
     
       <!-- Header -->
       <header data-test="header" id="header" class="header theme-col--primary" data-section-theme="primary" data-controller="Header" data-current-styles="{...}" data-section-id="header" data-header-style="dynamic" data-language-picker="{...}" data-first-focusable-element="" tabindex="-1" style="
@@ -884,7 +887,43 @@
                     </div>
                     
                     <!-- Nav -->
- 
+                    <div class="header-nav">
+                      <div class="header-nav-wrapper">
+                        <nav class="header-nav-list">
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="about.html" data-animation-role="header-element">
+                              About
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="Recruitment.html" data-animation-role="header-element">
+                              Recruitment
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="brothers.html" data-animation-role="header-element">
+                              Brothers
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="ktp_in_action.html" data-animation-role="header-element">
+                              KTP in Action
+                            </a>
+                          </div>
+                          
+                          <div class="header-nav-item header-nav-item--collection">
+                            <a href="contact.html" data-animation-role="header-element">
+                              Contact
+                            </a>
+                          </div>
+                          
+                        </nav>
+                      </div>
+                    </div>
                     
                   </div>
                 
@@ -907,132 +946,29 @@
                     
                   </div>
                 
-                  <style>
-                    
-                    .top-bun, 
-                    .patty, 
-                    .bottom-bun {
-                      height: 1px;
-                    }
-                  </style>
+
                 
-                  <!-- Burger -->
-                  <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
-                    <button class="header-burger-btn burger" data-test="header-burger">
-                      <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                      <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                      <div class="burger-box">
-                        <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                          <div class="top-bun"></div>
-                          <div class="patty"></div>
-                          <div class="bottom-bun"></div>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+
                 
                 </div>
               
               </div>
               
-              <!-- (Mobile) Menu Navigation -->
-              <div class="header-menu header-menu--folder-list" data-section-theme="" data-current-styles="{...}" data-section-id="overlay-nav" data-show-account-login="false" data-test="header-menu" style="padding-top: 97.5938px;">
-                <div class="header-menu-bg theme-bg--primary"></div>
-                <div class="header-menu-nav">
-                  <nav class="header-menu-nav-list">
-                    
-                    <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
-                        <div class="header-menu-nav-folder-content">
-                          <!-- Menu Navigation -->
-                          <div class="header-menu-nav-wrapper">
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="about.html">
-                                  <div class="header-menu-nav-item-content">
-                                    About
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="Recruitment.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Recruitment
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="brothers.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Brothers
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="ktp_in_action.html">
-                                  <div class="header-menu-nav-item-content">
-                                    KTP in Action
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="contact.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Contact
-                                  </div>
-                                </a>
-                              </div>
-                            
-                          </div>
-                        
-                        </div>
-                        
-                        <div class="header-menu-actions social-accounts">
-                          
-                            <div class="header-menu-actions-action header-menu-actions-action--social mobile">
-                              <a class="icon icon--lg icon--fill  header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
-                                <svg viewBox="23 23 64 64">
-                                  <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                                </svg>
-                              </a>
-                            </div>
-                          
-                        </div>
-                      
-                    </div>
-                  </nav>
-                </div>
-              </div>
+
             </header>
 
             <main id="page" class="container" role="main">
               
               <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
                 
-                <section data-test="page-section" data-section-theme="primary" class="page-section 
-                  layout-engine-section
-                  background-width--full-bleed
-                  section-height--large
-                  content-width--narrow
-                  horizontal-alignment--left
-                  vertical-alignment--middle
-                  has-background
-                  primary" data-section-id="60ee545f77e2cd4113f18f3b" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" style="padding-top: 97.5938px;" data-active="true">
-                  <div class="section-border">
-                    <div class="section-background" style="background-color: white;">
-                      
-                      <!-- Removed all background images -->
-                      <div class="section-background-overlay" style="opacity: 0.35;"></div>
-                    
-                    </div>
-                  </div>
-                </section>
-              </article>
-            </main>
-    </div>
+
+                         
+       
+    </div> 
+
+
+
+    
                             
     <div class="content-wrapper" style="background-color: black !important; color: #2F4A8A !important; text-align: center !important;">
       <div class="content">
@@ -1042,7 +978,7 @@
               <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-c5552964afa5af59e180">
                 <div class="sqs-block-content">
                   <div class="sqs-html-content">
-                    <h1 style="text-align:center; white-space:pre-wrap;color: #2F4A8A !important"><em>Why rush Kappa Theta Tau?</em></h1>
+                    <h1 style="text-align:center; white-space:pre-wrap;color: #2F4A8A !important"><em>Why rush Kappa Theta Pi?</em></h1>
                     <p class="" data-rte-preserve-empty="true" style="white-space:pre-wrap;"></p>
                     <h2 style="text-align:center; white-space:pre-wrap;color: #2F4A8A">Academic &amp; Professional Development</h2>
                     <p style="text-align:center; white-space:pre-wrap;" class="">
@@ -1081,6 +1017,29 @@
   <a class="prev">&#10094;</a>
   <a class="next">&#10095;</a>
 </div>
+
+<div class="content-wrapper" style="background-color: #2F4A8A; color: white; text-align: center; width: 100%; padding: 40px 0;">
+  <div class="content">
+      <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60f3b984ce637c25833ee9f3" style="max-width: 100% !important; margin: 0 !important; padding: 0 !important;">
+          <div class="row sqs-row" style="margin: 0; padding: 0;">
+              <div class="col sqs-col-12 span-12" style="padding: 0;">
+                  <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-32d258441881e2cf1856">
+                      <div class="sqs-block-content">
+                          <div class="sqs-html-content" style="padding: 20px;">
+                              <h2>Brotherhood</h2>
+                              <p>
+                                  We at Theta Tau celebrate many brotherhood events to strengthen our bonds and debate if Lebron could beat McGregor in a fight.<br>See some of our traditions below:
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> <!-- end sqs-layout -->
+  </div> <!-- end content -->
+</div> <!-- end content-wrapper -->
+
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slideshow-container .slide');
