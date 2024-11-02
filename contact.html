@@ -10,6 +10,10 @@
     <meta http-equiv="Accept-CH" content="Sec-CH-UA-Platform-Version, Sec-CH-UA-Model">
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="canonical" href="https://www.thetatau.Vanderbilt.edu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVYtCzC/b/dAbcqE1C+xMgT0lMBc/EgME0z/jQp0A3DhzzH4X0+pq09S4ZdQh3Zd+CiFwrbXVfqMClncbU3z0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <meta property="og:site_name" content="Kappa Theta Pi - Vanderbilt">
     <meta property="og:title" content="Kappa Theta Pi - Vanderbilt">
     <meta property="og:url" content="https://www.thetatau.Vanderbilt.edu">
@@ -35,8 +39,107 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
-      
-      #footer-sections {
+/* Ensure the sign-up section spans the full width of the screen */
+#mailing-list-signup {
+  width: 100% !important;                /* Span full width */
+  display: flex !important;              /* Use Flexbox for alignment */
+  justify-content: center !important;    /* Center content horizontally */
+  align-items: center !important;        /* Center content vertically */
+  padding: 20px !important;              /* Optional padding for spacing */
+  background: none !important;           /* Remove any background color */
+  box-sizing: border-box !important;     /* Include padding in width calculations */
+}
+
+/* Center the content within the full-width sign-up section */
+#mailing-list-signup .signup-container {
+  max-width: 500px !important;           /* Limit the content width for readability */
+  width: 100% !important;                /* Make it responsive */
+  text-align: center !important;         /* Center the text within the container */
+  
+  /* Remove box styling to eliminate the surrounding box */
+  background: none !important;           /* No background */
+  box-shadow: none !important;           /* Remove shadow */
+  border-radius: 0 !important;           /* Remove rounded corners */
+  
+  padding: 20px !important;              /* Adjust padding as needed */
+  
+  margin: 0 auto !important;             /* Center the container horizontally */
+}
+
+/* Title Styling */
+#mailing-list-signup .signup-title {
+  font-size: 2rem !important;
+  color: #2d3748 !important;
+  margin-bottom: 20px !important;
+  font-weight: 700 !important;
+}
+
+/* Subtitle Styling */
+#mailing-list-signup .signup-subtitle {
+  font-size: 1rem !important;
+  color: #4a5568 !important;
+  margin-bottom: 30px !important;
+  line-height: 1.6 !important;
+}
+
+/* Email Section Styling */
+#mailing-list-signup .signup-email {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #2b6cb0 !important;
+  font-size: 1rem !important;
+  margin-bottom: 30px !important;
+}
+
+/* Email Icon Styling */
+#mailing-list-signup .signup-email i {
+  margin-right: 8px !important;
+  font-size: 1.2rem !important;
+}
+
+/* Button Styling */
+#mailing-list-signup .signup-button {
+  display: inline-block !important;
+  padding: 12px 30px !important;
+  background: #2b6cb0 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 25px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#mailing-list-signup .signup-button:hover {
+  background: #2c5282 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 5px 15px rgba(43, 108, 176, 0.3) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #mailing-list-signup .signup-container {
+    padding: 30px 20px !important;
+  }
+
+  #mailing-list-signup .signup-title {
+    font-size: 1.5rem !important;
+  }
+
+  #mailing-list-signup .signup-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  #mailing-list-signup .signup-button {
+    width: 100% !important;
+    padding: 12px 0 !important;
+  }
+}
+
+
+ #footer-sections {
     color: white !important;
 }
 
@@ -44,6 +147,8 @@
     color: white !important;
 }
 
+  
+ 
       @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
       .content-wrapper[data-v-f926e7dc] {
         position: fixed;
@@ -182,195 +287,17 @@
           border-radius: 8px;
       }
 
-      .brothers-title {
-          font-size: 2.5em;
-          margin-bottom: 10px;
-      }
 
-      .brothers-subtitle {
-          font-size: 1.2em;
-          color: #555;
-      }
-
-      .brothers-flex-container {
-          display: flex;
-          justify-content: center;
-          margin: 30px 0;
-          gap: 20px;
-      }
-
-      .brothers-button {
-          padding: 10px 20px;
-          border: none;
-          background-color: #f0f0f0;
-          cursor: pointer;
-          border-radius: 5px;
-          font-size: 1em;
-          transition: background-color 0.3s;
-      }
-
-      .brothers-button:hover {
-          background-color: #e0e0e0;
-      }
-
-      .selected-title {
-          background-color: #2F4A8A !important;
-          color: white;
-      }
-
-      .photo-grid {
-          padding: 20px;
-      }
-
-      .grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: 20px;
-      }
-
-      .profile-container {
-          text-align: center;
-      }
-
-      .profile-photo {
-          position: relative;
-          width: 200px;
-          height: 200px;
-          margin: 0 auto;
-          border-radius: 50%;
-          overflow: hidden;
-      }
-
-      .brother-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-
-      .linkedicon-container {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-      }
-
-      .linkedin-image {
-          width: 30px;
-          height: 30px;
-      }
-
-      .profile-name {
-          margin-top: 10px;
-          font-size: 1.1em;
-          font-weight: bold;
-      }
-
-      /* Executive Section Styles */
-      .exec {
-          padding: 50px 20px;
-          background-color: #f9f9f9;
-      }
-
-      .exec-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-          gap: 30px;
-      }
-
-      .exec-profile-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-      }
-
-      .exec-profile-photo {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          overflow: hidden;
-          margin-bottom: 15px;
-      }
-
-      .exec-profile-photo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-
-      .exec-profile-text {
-          max-width: 300px;
-      }
-
-      .profile-bio-title {
-          font-size: 1.2em;
-          font-weight: bold;
-          margin-bottom: 5px;
-      }
-
-      .profile-bio-subtitle {
-          font-size: 1em;
-          color: #555;
-          margin-bottom: 10px;
-      }
-
-      .profile-bio- {
-          font-size: 0.95em;
-          color: #666;
-      }
-
-      /* Alumni Section Styles */
-      .alumni-grid {
-          padding: 50px 20px;
-      }
-
-      .alumni-class {
-          margin-bottom: 40px;
-      }
-
-      .class-name {
-          font-size: 1.8em;
-          margin-bottom: 20px;
-          text-align: center;
-      }
-
-      .alumni-profile-container {
-          display: inline-block;
-          width: 200px;
-          margin: 10px;
-          text-align: center;
-      }
-
-      .alumni-photo {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          object-fit: cover;
-          position: relative;
-      }
-
-      .alumni-linkedicon-container {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-      }
-
-      .alumni-linkedin-image {
-          width: 30px;
-          height: 30px;
-      }
-
-      .alumni-text {
-          margin-top: 10px;
-          font-size: 1em;
-          font-weight: bold;
-      }
+  
     </style>
   </head>
 
   <body id="collection-60ee545f77e2cd4113f18f39" class="primary-button-style-solid primary-button-shape-square secondary-button-style-solid secondary-button-shape-square tertiary-button-style-solid tertiary-button-shape-square form-field-style-solid form-field-shape-square form-field-border-all form-field-checkbox-type-icon form-field-checkbox-fill-solid form-field-checkbox-color-inverted form-field-checkbox-shape-square form-field-checkbox-layout-stack form-field-radio-type-icon form-field-radio-fill-solid form-field-radio-color-normal form-field-radio-shape-pill form-field-radio-layout-stack form-field-survey-fill-solid form-field-survey-color-normal form-field-survey-shape-pill form-field-hover-focus-outline form-subVanderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbilt-button-style-label header-overlay-alignment-center header-width-full tweak-transparent-header tweak-fixed-header tweak-fixed-header-style-basic tweak-blog-alternating-side-by-side-width-full tweak-blog-alternating-side-by-side-image-aspect-ratio-11-square tweak-blog-alternating-side-by-side-text-alignment-left tweak-blog-alternating-side-by-side-read-more-style-show tweak-blog-alternating-side-by-side-image-text-alignment-middle tweak-blog-alternating-side-by-side-deliVanderbilter-bullet tweak-blog-alternating-side-by-side-meta-position-top tweak-blog-alternating-side-by-side-primary-meta-categories tweak-blog-alternating-side-by-side-secondary-meta-date tweak-blog-alternating-side-by-side-excerpt-show tweak-blog-basic-grid-width-inset tweak-blog-basic-grid-image-aspect-ratio-23-standard-vertical tweak-blog-basic-grid-text-alignment-left tweak-blog-basic-grid-deliVanderbilter-bullet tweak-blog-basic-grid-image-placement-above tweak-blog-basic-grid-read-more-style-show tweak-blog-basic-grid-primary-meta-categories tweak-blog-basic-grid-secondary-meta-date tweak-blog-basic-grid-excerpt-hide tweak-blog-item-width-narrow tweak-blog-item-text-alignment-center tweak-blog-item-meta-position-above-title tweak-blog-item-show-categories tweak-blog-item-show-date tweak-blog-item-deliVanderbilter-bullet tweak-blog-masonry-width-full tweak-blog-masonry-text-alignment-left tweak-blog-masonry-primary-meta-categories tweak-blog-masonry-secondary-meta-date tweak-blog-masonry-meta-position-top tweak-blog-masonry-read-more-style-show tweak-blog-masonry-deliVanderbilter-space tweak-blog-masonry-image-placement-above tweak-blog-masonry-excerpt-show tweak-blog-side-by-side-width-full tweak-blog-side-by-side-image-placement-left tweak-blog-side-by-side-image-aspect-ratio-11-square tweak-blog-side-by-side-primary-meta-categories tweak-blog-side-by-side-secondary-meta-date tweak-blog-side-by-side-meta-position-top tweak-blog-side-by-side-text-alignment-left tweak-blog-side-by-side-read-more-style-show tweak-blog-side-by-side-deliVanderbilter-bullet tweak-blog-side-by-side-excerpt-show tweak-blog-single-column-width-full tweak-blog-single-column-text-alignment-center tweak-blog-single-column-image-placement-above tweak-blog-single-column-deliVanderbilter-bullet tweak-blog-single-column-read-more-style-show tweak-blog-single-column-primary-meta-categories tweak-blog-single-column-secondary-meta-date tweak-blog-single-column-meta-position-top tweak-blog-single-column-content-full-post tweak-events-stacked-width-full tweak-events-stacked-height-large tweak-events-stacked-show-thumbnails tweak-events-stacked-thumbnail-size-32-standard tweak-events-stacked-date-style-with-text tweak-events-stacked-show-time tweak-events-stacked-show-location tweak-events-stacked-show-excerpt tweak-global-animations-complexity-level-detailed tweak-global-animations-animation-style-fade tweak-global-animations-animation-type-none tweak-global-animations-animation-curve-ease tweak-portfolio-grid-basic-width-full tweak-portfolio-grid-basic-height-large tweak-portfolio-grid-basic-image-aspect-ratio-11-square tweak-portfolio-grid-basic-text-alignment-left tweak-portfolio-grid-basic-hover-effect-fade tweak-portfolio-grid-overlay-width-full tweak-portfolio-grid-overlay-height-large tweak-portfolio-grid-overlay-image-aspect-ratio-11-square tweak-portfolio-grid-overlay-text-placement-center tweak-portfolio-grid-overlay-show-text-after-hover tweak-portfolio-index-background-link-format-stacked tweak-portfolio-index-background-width-full tweak-portfolio-index-background-height-large tweak-portfolio-index-background-vertical-alignment-middle tweak-portfolio-index-background-horizontal-alignment-center tweak-portfolio-index-background-deliVanderbilter-none tweak-portfolio-index-background-animation-type-fade tweak-portfolio-index-background-animation-duration-medium tweak-portfolio-hover-follow-layout-inline tweak-portfolio-hover-follow-deliVanderbilter-forward-slash tweak-portfolio-hover-follow-animation-type-fade tweak-portfolio-hover-follow-animation-duration-medium tweak-portfolio-hover-static-layout-stacked tweak-portfolio-hover-static-deliVanderbilter-forward-slash tweak-portfolio-hover-static-animation-type-scale-up tweak-portfolio-hover-static-animation-duration-medium tweak-product-basic-item-product-variant-display-dropdown tweak-product-basic-item-product-subscription-display-radio tweak-product-basic-item-product-subscription-border-shape-square tweak-product-basic-item-width-full tweak-product-basic-item-gallery-aspect-ratio-34-three-four-vertical tweak-product-basic-item-text-alignment-left tweak-product-basic-item-navigation-breadcrumbs tweak-product-basic-item-description-position-below-price tweak-product-basic-item-description-position-mobile-below-add-to-cart-button tweak-product-basic-item-content-alignment-top tweak-product-basic-item-gallery-design-slideshow tweak-product-basic-item-gallery-placement-left tweak-product-basic-item-thumbnail-placement-side tweak-product-basic-item-click-action-none tweak-product-basic-item-hover-action-none tweak-product-basic-item-variant-picker-layout-dropdowns tweak-product-basic-item-add-to-cart-standalone tweak-product-basic-item-add-to-cart-mobile-standalone tweak-products-width-full tweak-products-image-aspect-ratio-23-standard-vertical tweak-products-text-alignment-left tweak-products-price-show tweak-products-nested-category-type-top tweak-products-category-title tweak-products-header-text-alignment-middle tweak-products-breadcrumbs image-block-poster-text-alignment-left image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-content-position-center image-block-collage-text-alignment-left hide-opentable-icons opentable-style-dark tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-60ee545f77e2cd4113f18f39 collection-type-page collection-layout-default homepage mobile-style-available sqs-seven-one-global-animations" tabindex="-1" data-animation-state="booted">
+
+
+
     <div id="siteWrapper" class="clearfix site-wrapper">
-      
-      <!-- Floating Cart -->
+    
       <div id="floatingCart" class="floating-cart hidden">
         <a href="/cart" class="icon icon--stroke icon--fill icon--cart sqs-custom-cart">
           <span class="Cart-inner">
@@ -387,506 +314,992 @@
         </a>
       </div>
     
-      <!-- Header -->
-      <header data-test="header" id="header" class="header theme-col--primary" data-section-theme="primary" data-controller="Header" data-current-styles="{...}" data-section-id="header" data-header-style="dynamic" data-language-picker="{...}" data-first-focusable-element="" tabindex="-1" style="
-        
+      <header data-test="header" id="header" class="black header theme-col--primary" data-section-theme="white" data-controller="Header" data-current-styles="{
+        &quot;layout&quot;: &quot;navRight&quot;,
+        &quot;action&quot;: {
+        &quot;href&quot;: &quot;/donate&quot;,
+        &quot;buttonText&quot;: &quot;Donate Now&quot;,
+        &quot;newWindow&quot;: false
+        },
+        &quot;showSocial&quot;: true,
+        &quot;socialOptions&quot;: {
+        &quot;socialBorderShape&quot;: &quot;none&quot;,
+        &quot;socialBorderStyle&quot;: &quot;outline&quot;,
+        &quot;socialBorderThickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 1.0
+        }
+        },
+        &quot;sectionTheme&quot;: &quot;&quot;,
+        &quot;menuOverlayAnimation&quot;: &quot;fade&quot;,
+        &quot;cartStyle&quot;: &quot;cart&quot;,
+        &quot;cartText&quot;: &quot;Cart&quot;,
+        &quot;showEmptyCartState&quot;: true,
+        &quot;cartOptions&quot;: {
+        &quot;iconType&quot;: &quot;solid-7&quot;,
+        &quot;cartBorderShape&quot;: &quot;none&quot;,
+        &quot;cartBorderStyle&quot;: &quot;outline&quot;,
+        &quot;cartBorderThickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 1.0
+        }
+        },
+        &quot;showButton&quot;: false,
+        &quot;showCart&quot;: false,
+        &quot;showAccountLogin&quot;: false,
+        &quot;headerStyle&quot;: &quot;dynamic&quot;,
+        &quot;languagePicker&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;iconEnabled&quot;: false,
+        &quot;iconType&quot;: &quot;globe&quot;,
+        &quot;flagShape&quot;: &quot;shiny&quot;,
+        &quot;languageFlags&quot;: [ ]
+        },
+        &quot;mobileOptions&quot;: {
+        &quot;layout&quot;: &quot;logoLeftNavRight&quot;,
+        &quot;menuIcon&quot;: &quot;doubleLineHamburger&quot;,
+        &quot;menuIconOptions&quot;: {
+        &quot;style&quot;: &quot;doubleLineHamburger&quot;,
+        &quot;thickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 1.0
+        }
+        }
+        },
+        &quot;dynamicOptions&quot;: {
+        &quot;border&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;position&quot;: &quot;allSides&quot;,
+        &quot;thickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 4.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        }
+        },
+        &quot;solidOptions&quot;: {
+        &quot;headerOpacity&quot;: {
+        &quot;unit&quot;: &quot;%&quot;,
+        &quot;value&quot;: 100.0
+        },
+        &quot;border&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;position&quot;: &quot;allSides&quot;,
+        &quot;thickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 4.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;dropShadow&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blur&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 30.0
+        },
+        &quot;spread&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 0.0
+        },
+        &quot;distance&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 0.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;blurBackground&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blurRadius&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 12.0
+        }
+        },
+        &quot;backgroundColor&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;white&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        },
+        &quot;navigationColor&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;gradientOptions&quot;: {
+        &quot;gradientType&quot;: &quot;faded&quot;,
+        &quot;headerOpacity&quot;: {
+        &quot;unit&quot;: &quot;%&quot;,
+        &quot;value&quot;: 90.0
+        },
+        &quot;border&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;position&quot;: &quot;allSides&quot;,
+        &quot;thickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 4.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;dropShadow&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blur&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 30.0
+        },
+        &quot;spread&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 0.0
+        },
+        &quot;distance&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 0.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;blurBackground&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blurRadius&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 12.0
+        }
+        },
+        &quot;backgroundColor&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;white&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        },
+        &quot;navigationColor&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;dropShadowOptions&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blur&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 12.0
+        },
+        &quot;spread&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 0.0
+        },
+        &quot;distance&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 12.0
+        }
+        },
+        &quot;borderOptions&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;position&quot;: &quot;allSides&quot;,
+        &quot;thickness&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 4.0
+        },
+        &quot;color&quot;: {
+        &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+        &quot;sitePaletteColor&quot;: {
+        &quot;colorName&quot;: &quot;black&quot;,
+        &quot;alphaModifier&quot;: 1.0
+        }
+        }
+        },
+        &quot;showPromotedElement&quot;: false,
+        &quot;buttonVariant&quot;: &quot;primary&quot;,
+        &quot;blurBackground&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;blurRadius&quot;: {
+        &quot;unit&quot;: &quot;px&quot;,
+        &quot;value&quot;: 12.0
+        }
+        },
+        &quot;headerOpacity&quot;: {
+        &quot;unit&quot;: &quot;%&quot;,
+        &quot;value&quot;: 100.0
+        }
+        }" data-section-id="header" data-header-style="dynamic" data-language-picker="{
+        &quot;enabled&quot;: false,
+        &quot;iconEnabled&quot;: false,
+        &quot;iconType&quot;: &quot;globe&quot;,
+        &quot;flagShape&quot;: &quot;shiny&quot;,
+        &quot;languageFlags&quot;: [ ]
+        }" data-first-focusable-element="" tabindex="-1" style="
           
-        --headerBorderColor: hsla(var(--white-hsl), 1);
+            
+            
+              --headerBorderColor: hsla(var(--black-hsl), 1);
+            
+          
+          
+            --solidHeaderBackgroundColor: hsla(var(--white-hsl), 1);
+          
+          
+            --solidHeaderNavigationColor: hsla(var(--black-hsl), 1);
+          
+          
+            --gradientHeaderBackgroundColor: hsla(var(--white-hsl), 1);
+          
+          
+            --gradientHeaderNavigationColor: hsla(var(--black-hsl), 1);
+          
+        " data-controllers-bound="Header,Header">
       
+        <div class="sqs-announcement-bar-dropzone"></div>
       
-      
-        --solidHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-      
-      
-      
-        --solidHeaderNavigationColor: hsla(var(--black-hsl), 1);
-      
-      
-      
-        --gradientHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-      
-      
-      
-        --gradientHeaderNavigationColor: hsla(var(--black-hsl), 1);
-    " data-controllers-bound="Header,Header">
-      
-            <div class="sqs-announcement-bar-dropzone"></div>
+        <div class="header-announcement-bar-wrapper">
+          
+          <a href="#page" class="header-skip-link sqs-button-element--primary">
+            Skip to Content
+          </a>
+          
+          <style>
+            @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+                .header-blur-background {
+                    /* Your styles here */
+                }
+            }
+          </style>
+          <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
+            border-width: 0px !important;
+          "></div>
+          <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
+          </div>
         
-            <div class="header-announcement-bar-wrapper" style="background-color: white;">
-
+          <div class="header-inner container--fluid
+            
+            
+            
+             header-mobile-layout-logo-left-nav-right
+            
+            
+            
+            
+            
+            
+             header-layout-nav-right
+            
+            
+            
+            
+            
+            
+            
+            
+            " style="
+            padding: 0;
+          " data-test="header-inner">
+            <!-- Background -->
+            <div class="header-background theme-bg--primary"></div>
+  
+            <div class="header-display-desktop" data-content-field="site-title">
               
-              <a href="#page" class="header-skip-link sqs-button-element--primary">
-                Skip to Content
-              </a>
-              
-              <style>
+              <!-- Title and nav wrapper -->
+              <div class="header-title-nav-wrapper">
                 
-                @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-                    .header-blur-background {
-                        /* Your styles here */
-                    }
+                <!-- Title -->
+                <div class="header-title" data-animation-role="header-element">
+                  <div class="header-title-logo">
+                    <a href="home.html" data-animation-role="header-element">
+                      <img elementtiming="nbf-header-logo-desktop" 
+                           src="images/logo.png" 
+                           alt="Kappa Theta Pi - Vanderbilt" 
+                           style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
+                           fetchpriority="high" 
+                           loading="eager" 
+                           decoding="async" 
+                           data-loader="raw">
+                    </a>
+                  </div>
+                </div>
+                
+                
+                <!-- Nav -->
+                <div class="header-nav">
+                  <div class="header-nav-wrapper">
+                    <nav class="header-nav-list">
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="about.html" data-animation-role="header-element">
+                          About
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="Recruitment.html" data-animation-role="header-element">
+                          Recruitment
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="brothers.html" data-animation-role="header-element">
+                          Brothers
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="ktp_in_action.html" data-animation-role="header-element">
+                          KTP in Action
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="contact.html" data-animation-role="header-element">
+                          Contact
+                        </a>
+                      </div>
+                      
+                    </nav>
+                  </div>
+                </div>
+                
+              </div>
+            
+              <!-- Actions -->
+              <div class="header-actions header-actions--right">
+                
+                <div class="header-actions-action header-actions-action--social">
+                  <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
+                    <svg viewBox="23 23 64 64">
+                      <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                    </svg>
+                  </a>
+                </div>
+                
+                <div class="showOnMobile">
+                </div>
+                
+                <div class="showOnDesktop">
+                </div>
+                
+              </div>
+            
+              <style>
+                .top-bun, 
+                .patty, 
+                .bottom-bun {
+                  height: 1px;
                 }
               </style>
-              <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
-                border-width: 0px !important;
-              "></div>
-              <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
+            
+              <!-- Burger -->
+              <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                <button class="header-burger-btn burger" data-test="header-burger">
+                  <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
+                  <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
+                  <div class="burger-box">
+                    <div class="burger-inner header-menu-icon-doubleLineHamburger">
+                      <div class="top-bun"></div>
+                      <div class="patty"></div>
+                      <div class="bottom-bun"></div>
+                    </div>
+                  </div>
+                </button>
               </div>
             
-              <div class="header-inner container--fluid
-                header-mobile-layout-logo-left-nav-right
-                header-layout-nav-right
-                " style="
-                padding: 0;
-              " data-test="header-inner">
-                <!-- Background -->
-                <div class="header-background theme-bg--primary"></div>
-
-                <div class="header-display-desktop" data-content-field="site-title">
-                  
-                  <!-- Title and nav wrapper -->
-                  <div class="header-title-nav-wrapper">
-                    
-                    <!-- Title -->
-                    <div class="header-title" data-animation-role="header-element">
-                      <div class="header-title-logo">
-                        <a href="home.html" data-animation-role="header-element">
-                          <img elementtiming="nbf-header-logo-desktop" 
-                               src="images/logo.png" 
-                               alt="Kappa Theta Pi - Vanderbilt" 
-                               style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
-                               fetchpriority="high" 
-                               loading="eager" 
-                               decoding="async" 
-                               data-loader="raw">
-                        </a>
-                      </div>
-                    </div>
-                    
-                    
-                    <!-- Nav -->
-                    <div class="header-nav">
-                      <div class="header-nav-wrapper">
-                        <nav class="header-nav-list">
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="about.html" data-animation-role="header-element">
-                              About
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="Recruitment.html" data-animation-role="header-element">
-                              Recruitment
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="brothers.html" data-animation-role="header-element">
-                              Brothers
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="ktp_in_action.html" data-animation-role="header-element">
-                              KTP in Action
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="contact.html" data-animation-role="header-element">
-                              Contact
-                            </a>
-                          </div>
-                          
-                        </nav>
-                      </div>
-                    </div>
-                    
-                  </div>
-                
-                  <!-- Actions -->
-                  <div class="header-actions header-actions--right">
-                    
-                    <div class="header-actions-action header-actions-action--social">
-                      <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
-                        <svg viewBox="23 23 64 64">
-                          <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    
-                    <div class="showOnMobile">
-                    </div>
-                    
-                    <div class="showOnDesktop">
-                    </div>
-                    
-                  </div>
-                
-                  <style>
-                    .top-bun, 
-                    .patty, 
-                    .bottom-bun {
-                      height: 1px;
-                    }
-                  </style>
-                
-                  <!-- Burger -->
-                  <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
-                    <button class="header-burger-btn burger" data-test="header-burger">
-                      <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                      <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                      <div class="burger-box">
-                        <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                          <div class="top-bun"></div>
-                          <div class="patty"></div>
-                          <div class="bottom-bun"></div>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                
-                </div>
-                
-                <div class="header-display-mobile" data-content-field="site-title">
-                  
-                  <!-- Title and nav wrapper -->
-                  <div class="header-title-nav-wrapper">
-                    
-                    <!-- Title -->
-                    <div class="header-title" data-animation-role="header-element">
-                      <div class="header-title-logo">
-                        <a href="/" data-animation-role="header-element">
-                          <img elementtiming="nbf-header-logo-desktop" src="images/logo.png" alt="Kappa Theta Pi - Vanderbilt" style="display:block; border-radius: 50%; width: 100px; height: 100px;" fetchpriority="high" loading="eager" decoding="async" data-loader="raw">
-                        </a>
-                      </div>
-                    </div>
-                    
-                    <!-- Nav -->
-                    <div class="header-nav">
-                      <div class="header-nav-wrapper">
-                        <nav class="header-nav-list">
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="about.html" data-animation-role="header-element">
-                              About
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="Recruitment.html" data-animation-role="header-element">
-                              Recruitment
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="brothers.html" data-animation-role="header-element">
-                              Brothers
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="ktp_in_action.html" data-animation-role="header-element">
-                              KTP in Action
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="contact.html" data-animation-role="header-element">
-                              Contact
-                            </a>
-                          </div>
-                          
-                        </nav>
-                      </div>
-                    </div>
-                    
-                  </div>
-                
-                  <!-- Actions -->
-                  <div class="header-actions header-actions--right">
-                    
-                    <div class="header-actions-action header-actions-action--social">
-                      <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
-                        <svg viewBox="23 23 64 64">
-                          <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    
-                    <div class="showOnMobile">
-                    </div>
-                    
-                    <div class="showOnDesktop">
-                    </div>
-                    
-                  </div>
-                
-                  <style>
-                    
-                    .top-bun, 
-                    .patty, 
-                    .bottom-bun {
-                      height: 1px;
-                    }
-                  </style>
-                
-                  <!-- Burger -->
-                  <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
-                    <button class="header-burger-btn burger" data-test="header-burger">
-                      <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
-                      <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
-                      <div class="burger-box">
-                        <div class="burger-inner header-menu-icon-doubleLineHamburger">
-                          <div class="top-bun"></div>
-                          <div class="patty"></div>
-                          <div class="bottom-bun"></div>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                
-                </div>
-              
-              </div>
-              
-              <!-- (Mobile) Menu Navigation -->
-              <div class="header-menu header-menu--folder-list" data-section-theme="" data-current-styles="{...}" data-section-id="overlay-nav" data-show-account-login="false" data-test="header-menu" style="padding-top: 97.5938px;">
-                <div class="header-menu-bg theme-bg--primary"></div>
-                <div class="header-menu-nav">
-                  <nav class="header-menu-nav-list">
-                    
-                    <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
-                        <div class="header-menu-nav-folder-content">
-                          <!-- Menu Navigation -->
-                          <div class="header-menu-nav-wrapper">
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="about.html">
-                                  <div class="header-menu-nav-item-content">
-                                    About
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="Recruitment.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Recruitment
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="brothers.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Brothers
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="ktp_in_action.html">
-                                  <div class="header-menu-nav-item-content">
-                                    KTP in Action
-                                  </div>
-                                </a>
-                              </div>
-                            
-                              <div class="container header-menu-nav-item header-menu-nav-item--collection">
-                                <a href="contact.html">
-                                  <div class="header-menu-nav-item-content">
-                                    Contact
-                                  </div>
-                                </a>
-                              </div>
-                            
-                          </div>
-                        
-                        </div>
-                        
-                        <div class="header-menu-actions social-accounts">
-                          
-                            <div class="header-menu-actions-action header-menu-actions-action--social mobile">
-                              <a class="icon icon--lg icon--fill  header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
-                                <svg viewBox="23 23 64 64">
-                                  <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
-                                </svg>
-                              </a>
-                            </div>
-                          
-                        </div>
-                      
-                    </div>
-                  </nav>
-                </div>
-              </div>
-            </header>
-
-            <main id="page" class="container" role="main">
-              
-              <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
-                
-                <section data-test="page-section" data-section-theme="primary" class="page-section 
-                  layout-engine-section
-                  background-width--full-bleed
-                  section-height--large
-                  content-width--narrow
-                  horizontal-alignment--left
-                  vertical-alignment--middle
-                  has-background
-                  primary" data-section-id="60ee545f77e2cd4113f18f3b" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" style="padding-top: 97.5938px;" data-active="true">
-                  <div class="section-border">
-                    <div class="section-background" style="background-color: white;">
-                      
-                      <!-- Removed all background images -->
-                      <div class="section-background-overlay" style="opacity: 0.35;"></div>
-                    
-                    </div>
-                  </div>
-                         
-                </section>
-              </article>
-            </main>
-    </div>     
-<!-- start coding here -->
-
-   
-
-<!-- end coding here -->
-              </div>
-                
-            
-            </section>
-            
-          </article>
-          
-        </main>
-        
-        <footer class="sections" id="footer-sections" data-footer-sections="">
-          
-          <section data-test="page-section" data-section-theme="dark-bold" class="page-section 
-            
-                layout-engine-section
-              
-              background-width--full-bleed
-              
-                section-height--small
-              
-              
-                content-width--wide
-              
-              horizontal-alignment--left
-              vertical-alignment--middle
-              
-                
-              
-              
-              dark-bold" data-section-id="60ee4f3db240f96f8b2d1242" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" data-active="true">
-            <div class="section-border">
-              <div class="section-background" style="background-color: black;">
-                <!-- No images in the footer background -->
-              </div>
             </div>
-
-
-
-                   
-            <div class="content-wrapper" style="background-color: #2F4A8A !important;">
-              <div class="content">
+            
+            <div class="header-display-mobile" data-content-field="site-title">
+              
+              <!-- Title and nav wrapper -->
+              <div class="header-title-nav-wrapper">
                 
-                <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
-                  <div class="row sqs-row">
-                    <div class="col sqs-col-10 span-10">
-                      <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" data-block-type="2" data-border-radii="{...}" id="block-1dc5f0c7232f9c0befd8">
-                        <div class="sqs-block-content">
-                          <!-- Removed image blocks if any -->
-                        </div>
-                      </div>
-                      <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-efcfd78bd8d6e66904f1">
-                        <div class="sqs-block-content">
-                          <div class="sqs-html-content">
-                            <h3 style="white-space: pre-wrap; color: black;">Kappa Theta Pi - Vanderbilt</h3>
-                            
-                            <p class="" style="white-space: pre-wrap; color: black;">© Kappa Theta Pi</p>
-                            
-                          <p class="" style="white-space:pre-wrap;"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1626457237565_14419">
-                        <div class="sqs-block-content">
-                          
-                          
-                          <div class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color- social-icons-size-small social-icons-style-regular ">
-                          <style>
-                            #block-yui_3_17_2_1_1626457237565_14419 .social-icons-style-border .sqs-svg-icon--wrapper {
-                              
-                                box-shadow: 0 0 0 2px inset;
-                              
-                              border: none; 
-                            }
-                          </style>
-                          <nav class="sqs-svg-icon--list">
-                            <a href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
-                              <div>
-                                <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                  <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
-                                  <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
-                                </svg>
-                              </div>
-                            </a>
-                          </nav>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col sqs-col-2 span-2">
-                      <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-763c164cea46603b42d4">
-                        <div class="sqs-block-content">
-                          
-                          <div class="sqs-html-content" style="color: black;">
-                            <p class="" style="white-space: pre-wrap;"><strong>Links</strong></p>
-                            <p class="" style="white-space: pre-wrap;"><a href="about.html" style="color: black;">About</a></p>
-                            <p class="" style="white-space: pre-wrap;"><a href="recruitment.html" style="color: black;">Recruitment</a></p>
-                            <p class="" style="white-space: pre-wrap;"></p>
-                            <p class="" style="white-space: pre-wrap;"><a href="ktp_in_action.html" style="color: black;">KTP in Action</a></p>
-                            <p class="" style="white-space: pre-wrap;"><a href="contact.html" style="color: black;">Contact</a></p>
-                            <p class="" style="white-space: pre-wrap;"></p>
-                        </div>
-                          
-                        </div>
-                      </div>
-                    </div>
+                <!-- Title -->
+                <div class="header-title" data-animation-role="header-element">
+                  <div class="header-title-logo">
+                    <a href="/" data-animation-role="header-element">
+                      <img elementtiming="nbf-header-logo-desktop" src="//images.squarespace-cdn.com/content/v1/60ee4f3db240f96f8b2d1216/d600a45c-a77e-4906-80bd-a86cce09aaf7/192px-ThetaTau.png?format=1500w" alt="Kappa Theta Pi - Vanderbilt" style="display:block" fetchpriority="high" loading="eager" decoding="async" data-loader="raw">
+                    </a>
                   </div>
                 </div>
-              
+                
+                <!-- Nav -->
+                <div class="header-nav">
+                  <div class="header-nav-wrapper">
+                    <nav class="header-nav-list">
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="about.html" data-animation-role="header-element">
+                          About
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="Recruitment.html" data-animation-role="header-element">
+                          Recruitment
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="brothers.html" data-animation-role="header-element">
+                          Brothers
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="ktp_in_action.html" data-animation-role="header-element">
+                          KTP in Action
+                        </a>
+                      </div>
+                      
+                      <div class="header-nav-item header-nav-item--collection">
+                        <a href="contact.html" data-animation-role="header-element">
+                          Contact
+                        </a>
+                      </div>
+                      
+                    </nav>
+                  </div>
+                </div>
+                
+              </div>
+            
+              <!-- Actions -->
+              <div class="header-actions header-actions--right">
+                
+                <div class="header-actions-action header-actions-action--social">
+                  <a class="icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
+                    <svg viewBox="23 23 64 64">
+                      <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                    </svg>
+                  </a>
+                </div>
+                
+                <div class="showOnMobile">
+                </div>
+                
+                <div class="showOnDesktop">
+                </div>
+                
+              </div>
+            
+              <style>
+                .top-bun, 
+                .patty, 
+                .bottom-bun {
+                  height: 1px;
+                }
+              </style>
+            
+              <!-- Burger -->
+              <div class="header-burger menu-overlay-has-visible-non-navigation-items" data-animation-role="header-element">
+                <button class="header-burger-btn burger" data-test="header-burger">
+                  <span class="js-header-burger-open-title visually-hidden">Open Menu</span>
+                  <span hidden class="js-header-burger-close-title visually-hidden">Close Menu</span>
+                  <div class="burger-box">
+                    <div class="burger-inner header-menu-icon-doubleLineHamburger">
+                      <div class="top-bun"></div>
+                      <div class="patty"></div>
+                      <div class="bottom-bun"></div>
+                    </div>
+                  </div>
+                </button>
               </div>
             
             </div>
           
-          </section>
-        
-        </footer>
-        
+          </div>
           
+          <!-- (Mobile) Menu Navigation -->
+          <div class="header-menu header-menu--folder-list" data-section-theme="" data-current-styles="{
+            &quot;layout&quot;: &quot;navRight&quot;,
+            &quot;action&quot;: {
+            &quot;href&quot;: &quot;/donate&quot;,
+            &quot;buttonText&quot;: &quot;Donate Now&quot;,
+            &quot;newWindow&quot;: false
+            },
+            &quot;showSocial&quot;: true,
+            &quot;socialOptions&quot;: {
+            &quot;socialBorderShape&quot;: &quot;none&quot;,
+            &quot;socialBorderStyle&quot;: &quot;outline&quot;,
+            &quot;socialBorderThickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 1.0
+            }
+            },
+            &quot;sectionTheme&quot;: &quot;&quot;,
+            &quot;menuOverlayAnimation&quot;: &quot;fade&quot;,
+            &quot;cartStyle&quot;: &quot;cart&quot;,
+            &quot;cartText&quot;: &quot;Cart&quot;,
+            &quot;showEmptyCartState&quot;: true,
+            &quot;cartOptions&quot;: {
+            &quot;iconType&quot;: &quot;solid-7&quot;,
+            &quot;cartBorderShape&quot;: &quot;none&quot;,
+            &quot;cartBorderStyle&quot;: &quot;outline&quot;,
+            &quot;cartBorderThickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 1.0
+            }
+            },
+            &quot;showButton&quot;: false,
+            &quot;showCart&quot;: false,
+            &quot;showAccountLogin&quot;: false,
+            &quot;headerStyle&quot;: &quot;dynamic&quot;,
+            &quot;languagePicker&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;iconEnabled&quot;: false,
+            &quot;iconType&quot;: &quot;globe&quot;,
+            &quot;flagShape&quot;: &quot;shiny&quot;,
+            &quot;languageFlags&quot;: [ ]
+            },
+            &quot;mobileOptions&quot;: {
+            &quot;layout&quot;: &quot;logoLeftNavRight&quot;,
+            &quot;menuIcon&quot;: &quot;doubleLineHamburger&quot;,
+            &quot;menuIconOptions&quot;: {
+            &quot;style&quot;: &quot;doubleLineHamburger&quot;,
+            &quot;thickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 1.0
+            }
+            }
+            },
+            &quot;dynamicOptions&quot;: {
+            &quot;border&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;position&quot;: &quot;allSides&quot;,
+            &quot;thickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 4.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            }
+            },
+            &quot;solidOptions&quot;: {
+            &quot;headerOpacity&quot;: {
+            &quot;unit&quot;: &quot;%&quot;,
+            &quot;value&quot;: 100.0
+            },
+            &quot;border&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;position&quot;: &quot;allSides&quot;,
+            &quot;thickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 4.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;dropShadow&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blur&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 30.0
+            },
+            &quot;spread&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 0.0
+            },
+            &quot;distance&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 0.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;blurBackground&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blurRadius&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 12.0
+            }
+            },
+            &quot;backgroundColor&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;white&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            },
+            &quot;navigationColor&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;gradientOptions&quot;: {
+            &quot;gradientType&quot;: &quot;faded&quot;,
+            &quot;headerOpacity&quot;: {
+            &quot;unit&quot;: &quot;%&quot;,
+            &quot;value&quot;: 90.0
+            },
+            &quot;border&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;position&quot;: &quot;allSides&quot;,
+            &quot;thickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 4.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;dropShadow&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blur&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 30.0
+            },
+            &quot;spread&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 0.0
+            },
+            &quot;distance&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 0.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;blurBackground&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blurRadius&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 12.0
+            }
+            },
+            &quot;backgroundColor&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;white&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            },
+            &quot;navigationColor&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;dropShadowOptions&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blur&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 12.0
+            },
+            &quot;spread&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 0.0
+            },
+            &quot;distance&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 12.0
+            }
+            },
+            &quot;borderOptions&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;position&quot;: &quot;allSides&quot;,
+            &quot;thickness&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 4.0
+            },
+            &quot;color&quot;: {
+            &quot;type&quot;: &quot;SITE_PALETTE_COLOR&quot;,
+            &quot;sitePaletteColor&quot;: {
+            &quot;colorName&quot;: &quot;black&quot;,
+            &quot;alphaModifier&quot;: 1.0
+            }
+            }
+            },
+            &quot;showPromotedElement&quot;: false,
+            &quot;buttonVariant&quot;: &quot;primary&quot;,
+            &quot;blurBackground&quot;: {
+            &quot;enabled&quot;: false,
+            &quot;blurRadius&quot;: {
+            &quot;unit&quot;: &quot;px&quot;,
+            &quot;value&quot;: 12.0
+            }
+            },
+            &quot;headerOpacity&quot;: {
+            &quot;unit&quot;: &quot;%&quot;,
+            &quot;value&quot;: 100.0
+            }
+            }" data-section-id="overlay-nav" data-show-account-login="false" data-test="header-menu" style="padding-top: 97.5938px;">
+            <div class="header-menu-bg theme-bg--primary"></div>
+            <div class="header-menu-nav">
+              <nav class="header-menu-nav-list">
+                
+                <div data-folder="root" class="header-menu-nav-folder header-menu-nav-folder--active">
+                    <div class="header-menu-nav-folder-content">
+                      <!-- Menu Navigation -->
+                      <div class="header-menu-nav-wrapper">
+                        
+                          <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                            <a href="about.html">
+                              <div class="header-menu-nav-item-content">
+                                About
+                              </div>
+                            </a>
+                          </div>
+                        
+                          <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                            <a href="Recruitment.html">
+                              <div class="header-menu-nav-item-content">
+                                Recruitment
+                              </div>
+                            </a>
+                          </div>
+                        
+                          <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                            <a href="brothers.html">
+                              <div class="header-menu-nav-item-content">
+                                Brothers
+                              </div>
+                            </a>
+                          </div>
+                        
+                          <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                            <a href="ktp_in_action.html">
+                              <div class="header-menu-nav-item-content">
+                                KTP in Action
+                              </div>
+                            </a>
+                          </div>
+                        
+                          <div class="container header-menu-nav-item header-menu-nav-item--collection">
+                            <a href="contact.html">
+                              <div class="header-menu-nav-item-content">
+                                Contact
+                              </div>
+                            </a>
+                          </div>
+                        
+                      </div>
+                    
+                    </div>
+                    
+                    <div class="header-menu-actions social-accounts">
+                      
+                        <div class="header-menu-actions-action header-menu-actions-action--social mobile">
+                          <a class="icon icon--lg icon--fill  header-icon header-icon-border-shape-none header-icon-border-style-outline" href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" aria-label="instagram-unauth">
+                            <svg viewBox="23 23 64 64">
+                              <use xlink:href="#instagram-unauth-icon" width="110" height="110"></use>
+                            </svg>
+                          </a>
+                        </div>
+                      
+                    </div>
+                  
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+    
+        <div style="height: 130px;"></div>
+
+<!-- Start of Mailing List Sign-Up Section -->
+<div class="about-container">
+  <section id="mailing-list-signup">
+    <div class="signup-container">
+      <h2 class="signup-title">Join Our Mailing List</h2>
+      <p class="signup-subtitle">
+        Stay updated with the latest KTP events and recruitment opportunities. Have questions? Feel free to reach out to us!
+      </p>
+      <div class="signup-email">
+        <i class="fas fa-envelope"></i> ktp@vanderbilt.edu
+      </div>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeH9UwXIKiSN3uVs2Usze5wS3zAdEUMF3w9vID_rC1pRsNYrg/viewform?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="signup-button"
+      >
+        Join Now
+      </a>
+    </div>
+  </section>
+</div>
+<!-- End of Mailing List Sign-Up Section -->
+
+
+<footer class="sections" id="footer-sections" data-footer-sections="">
+
+<section data-test="page-section" data-section-theme="dark-bold" class="page-section 
+
+    layout-engine-section
+  
+  background-width--full-bleed
+  
+    section-height--small
+  
+  
+    content-width--wide
+  
+  horizontal-alignment--left
+  vertical-alignment--middle
+  
+    
+  
+  
+  dark-bold" data-section-id="60ee4f3db240f96f8b2d1242" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" data-active="true">
+<div class="section-border">
+  <div class="section-background" style="background-color: black;">
+    <!-- No images in the footer background -->
+  </div>
+</div>
+
+
+
+       
+<div class="content-wrapper" style="background-color: #2F4A8A !important;">
+  <div class="content">
+    
+    <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
+      <div class="row sqs-row">
+        <div class="col sqs-col-10 span-10">
+          <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" data-block-type="2" data-border-radii="{...}" id="block-1dc5f0c7232f9c0befd8">
+            <div class="sqs-block-content">
+              <!-- Removed image blocks if any -->
+            </div>
+          </div>
+          <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-efcfd78bd8d6e66904f1">
+            <div class="sqs-block-content">
+              <div class="sqs-html-content">
+                <h3 style="white-space: pre-wrap; color: black;">Kappa Theta Pi - Vanderbilt</h3>
+                
+                <p class="" style="white-space: pre-wrap; color: black;">© Kappa Theta Pi</p>
+                
+              <p class="" style="white-space:pre-wrap;"></p>
+              </div>
+            </div>
+          </div>
+          <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1626457237565_14419">
+            <div class="sqs-block-content">
+              
+              
+              <div class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color- social-icons-size-small social-icons-style-regular ">
+              <style>
+                #block-yui_3_17_2_1_1626457237565_14419 .social-icons-style-border .sqs-svg-icon--wrapper {
+                  
+                    box-shadow: 0 0 0 2px inset;
+                  
+                  border: none; 
+                }
+              </style>
+              <nav class="sqs-svg-icon--list">
+                <a href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
+                  <div>
+                    <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+                      <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
+                      <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
+                    </svg>
+                  </div>
+                </a>
+              </nav>
+              </div>
+            </div>
+          </div>
         </div>
-      
-        <!-- SVG Icons -->
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg">
-          <symbol id="instagram-unauth-icon" viewBox="0 0 64 64">
-            <path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.67-1.347,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"></path>
-          </symbol>
-          <symbol id="instagram-unauth-mask" viewBox="0 0 64 64">
-            <path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s1.025-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.67,1.347,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z"></path>
-          </symbol>
-        </svg>
-        
-        <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
-      <!-- JavaScript for Tab Functionality -->
+        <div class="col sqs-col-2 span-2">
+          <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-763c164cea46603b42d4">
+            <div class="sqs-block-content">
+              
+              <div class="sqs-html-content" style="color: black;">
+                <p class="" style="white-space: pre-wrap;"><strong>Links</strong></p>
+                <p class="" style="white-space: pre-wrap;"><a href="about.html" style="color: black;">About</a></p>
+                <p class="" style="white-space: pre-wrap;"><a href="recruitment.html" style="color: black;">Recruitment</a></p>
+                <p class="" style="white-space: pre-wrap;"></p>
+                <p class="" style="white-space: pre-wrap;"><a href="ktp_in_action.html" style="color: black;">KTP in Action</a></p>
+                <p class="" style="white-space: pre-wrap;"><a href="contact.html" style="color: black;">Contact</a></p>
+                <p class="" style="white-space: pre-wrap;"></p>
+            </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+</div>
+
+</section>
+
+</footer>
 
 
-      
-      </body>
-    </html>
+</div>
+
+<!-- SVG Icons -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg">
+<symbol id="instagram-unauth-icon" viewBox="0 0 64 64">
+<path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.67-1.347,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"></path>
+</symbol>
+<symbol id="instagram-unauth-mask" viewBox="0 0 64 64">
+<path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s1.025-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.67,1.347,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z"></path>
+</symbol>
+</svg>
+
+<div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
+<!-- JavaScript for Tab Functionality -->
+
+
+</body>
+</html>

@@ -35,6 +35,50 @@
     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
     <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
     <style type="text/css">
+      /* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Hide all slides by default */
+.slideshow-container .slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  position: absolute; /* Stack slides on top of each other */
+  top: 0;
+  left: 0;
+}
+
+/* Show the active slide */
+.slideshow-container .slide.active {
+  display: block;
+  position: relative;
+}
+
+/* Next button styling */
+.slideshow-container .next {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.slideshow-container .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
 #footer-sections {
     color: white !important;
 }
@@ -998,25 +1042,26 @@
 <!-- Slideshow Container -->
 <div class="slideshow-container">
 
-  <div class="slide">
-    <img src="apple.png" alt="Slide 2">
+  <div class="slide active"> <!-- First slide is active by default -->
+    <img src="apple.png" alt="Slide 1" style="width:100%">
   </div>
   <div class="slide">
-    <img src="epichire.png" alt="Slide 3">
+    <img src="epichire.png" alt="Slide 2" style="width:100%">
   </div>
   <div class="slide">
-    <img src="google.jpg" alt="Slide 4">
+    <img src="google.jpg" alt="Slide 3" style="width:100%">
   </div>
   <div class="slide">
-    <img src="microsoft.png" alt="Slide 6">
+    <img src="microsoft.png" alt="Slide 4" style="width:100%">
   </div>
   <div class="slide">
-    <img src="nvidia.png" alt="Slide 7">
+    <img src="nvidia.png" alt="Slide 5" style="width:100%">
   </div>
 
   <!-- Only the Next Arrow -->
   <a class="next">&#10095;</a>
 </div>
+
 
 
 <div class="content-wrapper" style="background-color: #2F4A8A; color: white; text-align: center; width: 100%; padding: 40px 0;">
@@ -1066,6 +1111,7 @@
 
     // Function to start the automatic slideshow
     function startSlideshow() {
+      showSlide(currentSlide); // Display the first slide immediately
       slideInterval = setInterval(nextSlide, slideDuration);
     }
 
