@@ -1093,52 +1093,52 @@
     const nextButton = document.querySelector('.slideshow-container .next');
     let currentSlide = 0;
     const totalSlides = slides.length;
-    const slideDuration = 3000; // 3 seconds in milliseconds
+    const slideDuration = 3000; // 3 seconds
+    const initialDuration = 1000; // 1 second for the first transition
     let slideInterval;
-
-    // Function to display a specific slide
+  
+    // Display a specific slide by index
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
       });
     }
-
-    // Function to show the next slide
+  
+    // Show the next slide
     function nextSlide() {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide(currentSlide);
     }
-
-    // Function to start the automatic slideshow
-    function startSlideshow() {
+  
+    // Start the automatic slideshow
+    function startSlideshow(initial = false) {
       showSlide(currentSlide); // Display the first slide immediately
-      slideInterval = setInterval(nextSlide, slideDuration);
+      if (slideInterval) clearInterval(slideInterval); // Clear any existing intervals
+  
+      // Use a shorter duration for the first transition, then continue with the regular interval
+      slideInterval = setTimeout(() => {
+        nextSlide();
+        slideInterval = setInterval(nextSlide, slideDuration);
+      }, initial ? initialDuration : slideDuration);
     }
-
-    // Function to stop the automatic slideshow
-    function stopSlideshow() {
-      clearInterval(slideInterval);
-    }
-
+  
     // Event listener for the next button
     if (nextButton) {
       nextButton.addEventListener('click', () => {
         nextSlide();
-        stopSlideshow(); // Restart the interval to reset timing
-        startSlideshow();
+        startSlideshow(); // Restart the slideshow interval
       });
     }
-
+  
     // Pause slideshow on mouse enter and resume on mouse leave
     const slideshowContainer = document.querySelector('.slideshow-container');
-    slideshowContainer.addEventListener('mouseenter', stopSlideshow);
-    slideshowContainer.addEventListener('mouseleave', startSlideshow);
-
-    // Initialize the slideshow
-    startSlideshow();
+    slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    slideshowContainer.addEventListener('mouseleave', () => startSlideshow());
+  
+    // Start the slideshow with the initial delay for the first transition
+    startSlideshow(true);
   });
-</script>
-
+  </script>
  
     <div class="new-content-wrapper">
       <section class="Main-content" id="main-content">
@@ -1244,116 +1244,8 @@
   
 
     
-    <!-- Slideshow JavaScript -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const slideshow = document.querySelector('.gallery-slideshow-list');
-        const slides = document.querySelectorAll('.gallery-slideshow-item');
-        const prevBtn = document.querySelector('.gallery-slideshow-control-prev .gallery-slideshow-control-btn');
-        const nextBtn = document.querySelector('.gallery-slideshow-control-next .gallery-slideshow-control-btn');
-        const thumbnails = document.querySelectorAll('.gallery-slideshow-thumbnails-thumb');
-  
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-        let slideInterval;
-  
-        // Function to go to a specific slide
-        function goToSlide(index) {
-          if(index >= totalSlides) { index = 0; }
-          if(index < 0) { index = totalSlides - 1; }
-          slideshow.style.transform = `translateX(-${index * 100}%)`;
-          currentIndex = index;
-          updateThumbnails();
-        }
-  
-        // Function to go to the next slide
-        function nextSlide() {
-          goToSlide(currentIndex + 1);
-        }
-  
-        // Function to go to the previous slide
-        function prevSlide() {
-          goToSlide(currentIndex - 1);
-        }
-  
-        // Function to update thumbnail active state
-        function updateThumbnails() {
-          thumbnails.forEach((thumb, index) => {
-            if(index === currentIndex) {
-              thumb.classList.add('active');
-            } else {
-              thumb.classList.remove('active');
-            }
-          });
-        }
-  
-        // Event listeners for controls
-        nextBtn.addEventListener('click', () => {
-          nextSlide();
-          resetInterval();
-        });
-  
-        prevBtn.addEventListener('click', () => {
-          prevSlide();
-          resetInterval();
-        });
-  
-        // Event listeners for thumbnails
-        thumbnails.forEach((thumb, index) => {
-          thumb.addEventListener('click', () => {
-            goToSlide(index);
-            resetInterval();
-          });
-        });
-  
-        // Autoplay functionality
-        function startAutoplay() {
-          slideInterval = setInterval(nextSlide, 3000); // 3 seconds
-        }
-  
-        function resetInterval() {
-          clearInterval(slideInterval);
-          startAutoplay();
-        }
-  
-        // Initialize
-        goToSlide(0);
-        startAutoplay();
-      });
-    </script>
-  
-    <!-- Accordion JavaScript -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const headers = document.querySelectorAll('.accordion-header');
-        
-        headers.forEach(header => {
-          header.addEventListener('click', function() {
-            const currentlyActiveHeader = document.querySelector('.accordion-header.active');
-            
-            // If there is an active header and it's not the one being clicked, remove active class and close its content
-            if (currentlyActiveHeader && currentlyActiveHeader !== this) {
-              currentlyActiveHeader.classList.remove('active');
-              const activeContent = currentlyActiveHeader.nextElementSibling;
-              activeContent.style.maxHeight = null;
-            }
-            
-            // Toggle active class on the clicked header
-            this.classList.toggle('active');
-            
-            // Toggle the corresponding content
-            const content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-              // If content is open, close it
-              content.style.maxHeight = null;
-            } else {
-              // If content is closed, open it
-              content.style.maxHeight = content.scrollHeight + "px";
-            }
-          });
-        });
-      });
-    </script>
+
+
 
               </div>
                 
@@ -1486,39 +1378,6 @@
         <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <!-- JavaScript for Tab Functionality -->
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const slides = document.querySelectorAll('.carousel-slide');
-          const prevButton = document.querySelector('.carousel-control.prev');
-          const nextButton = document.querySelector('.carousel-control.next');
-          let currentSlide = 0;
-      
-          function showSlide(index) {
-            slides.forEach((slide, i) => {
-              slide.classList.remove('active');
-              if (i === index) {
-                slide.classList.add('active');
-              }
-            });
-          }
-      
-          prevButton.addEventListener('click', () => {
-            currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
-            showSlide(currentSlide);
-          });
-      
-          nextButton.addEventListener('click', () => {
-            currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
-            showSlide(currentSlide);
-          });
-      
-          // Optional: Auto-slide functionality
-          // Uncomment the following lines to enable auto-sliding every 5 seconds
-      
-          // setInterval(() => {
-          //   nextButton.click();
-          // }, 5000);
-        });
-      </script>
+   
       </body>
     </html>
