@@ -1096,32 +1096,32 @@
     const slideDuration = 3000; // 3 seconds
     const initialDuration = 1000; // 1 second for the first transition
     let slideInterval;
-  
+
     // Display a specific slide by index
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
       });
     }
-  
+
     // Show the next slide
     function nextSlide() {
       currentSlide = (currentSlide + 1) % totalSlides;
       showSlide(currentSlide);
     }
-  
+
     // Start the automatic slideshow
     function startSlideshow(initial = false) {
       showSlide(currentSlide); // Display the first slide immediately
       if (slideInterval) clearInterval(slideInterval); // Clear any existing intervals
-  
+
       // Use a shorter duration for the first transition, then continue with the regular interval
       slideInterval = setTimeout(() => {
         nextSlide();
         slideInterval = setInterval(nextSlide, slideDuration);
       }, initial ? initialDuration : slideDuration);
     }
-  
+
     // Event listener for the next button
     if (nextButton) {
       nextButton.addEventListener('click', () => {
@@ -1129,17 +1129,12 @@
         startSlideshow(); // Restart the slideshow interval
       });
     }
-  
-    // Pause slideshow on mouse enter and resume on mouse leave
-    const slideshowContainer = document.querySelector('.slideshow-container');
-    slideshowContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    slideshowContainer.addEventListener('mouseleave', () => startSlideshow());
-  
+
     // Start the slideshow with the initial delay for the first transition
     startSlideshow(true);
   });
-  </script>
- 
+</script>
+
     <div class="new-content-wrapper">
       <section class="Main-content" id="main-content">
         <div class="sqs-layout sqs-grid-12 columns-12">
