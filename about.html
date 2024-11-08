@@ -46,12 +46,24 @@
   }
 
   .presidential-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 30vw; /* 30% of the viewport width */
+  max-width: 400px; /* Maximum width */
+  height: 30vw;
+  max-height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .presidential-image {
+    width: 40vw; /* 40% of the viewport width on smaller screens */
+    max-width: 280px;
+    height: 40vw;
+    max-height: 280px;
   }
+}
 
   .presidential-content {
     flex: 1;
@@ -70,8 +82,8 @@
     color: #333;
   }
 
-  /* Pillars Carousel Section */
-  .pillars-carousel {
+   /* Pillars Carousel Section */
+   .pillars-carousel {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
@@ -141,9 +153,9 @@
   .carousel-control.next {
     right: 10px;
   }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
+  
+ /* Responsive Design */
+ @media (max-width: 768px) {
     .presidential-section {
       flex-direction: column;
       text-align: center;
@@ -1262,17 +1274,22 @@
   
 
 
-    
 <!-- start coding here -->
 <div class="about-container">
   <!-- Presidential Welcome Section -->
-  <div class="white-background">
+  <div class="white-background" id="presidential-section">
     <div class="presidential-section">
-      <img src="./assets/brother-images/Haley.JPG" alt="Presidential Image" class="presidential-image">
+      <img src="./assets/brother-images/Haley.JPG" alt="Presidential Image" class="presidential-image" loading="lazy">
       <div class="presidential-content">
         <h2 class="title">A Presidential Welcome</h2>
         <p class="presidential-letter">
-          Welcome to Kappa Theta Pi! We’re excited to share our mission with you. Our fraternity is dedicated to fostering professional growth, building strong alumni connections, encouraging social growth, advancing technological skills, and providing academic support. Join us in shaping the future of engineering leadership.
+          Welcome to KTP’s official website! My name is Haley Kahn, and I am a founder of KTP and the presiding president of KTP’s Rho Chapter. I decided to found KTP at Vandy in order to fill a whitespace. I noticed that despite CS being one of the largest and fastest growing majors at Vandy, there lacked a community for tech-oriented individuals. While there existed organizations that focused specifically on programming or niches in computer science, there was little in the way of professional development combined with a social community.<br><br>
+          
+          In KTP’s short time as an organization on campus, we have welcomed many new members and held official recruitment events, workshops, speaker events, and we are looking forward to events with recruiters this fall! Being a pre-professional fraternity, we value having amazing opportunities for our members. This means connecting with faculty, networking with other students, and even getting amazing speakers from Fortune 500 companies to come speak and connect with us.<br><br>
+          
+          As professional as we are, we also want to build a social organization here on campus! We have hosted really fun events for our members such as Big-Little, bonding activities, study breaks, and a date party! While we wanted to give members opportunities for professional development, building a community of supportive brothers was a big priority when creating this organization.<br><br>
+          
+          As president, I hope to leave a lasting impression on the Vanderbilt community. With new KTP chapters popping up around the country, I am excited to help grow KTP both nationally and here at Vanderbilt. I hope you’ll follow our journey and consider joining us!
         </p>
       </div>
     </div>
@@ -1338,10 +1355,29 @@
       <!-- Carousel Controls -->
       <button class="carousel-control prev" aria-label="Previous Pillar">&#10094;</button>
       <button class="carousel-control next" aria-label="Next Pillar">&#10095;</button>
+
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <span class="indicator active" data-slide="0" aria-label="Professional Development"></span>
+        <span class="indicator" data-slide="1" aria-label="Alumni Connections"></span>
+        <span class="indicator" data-slide="2" aria-label="Social Growth"></span>
+        <span class="indicator" data-slide="3" aria-label="Technological Advancement"></span>
+        <span class="indicator" data-slide="4" aria-label="Academic Support"></span>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Custom Scrollbar with Pillar Indicators -->
+<div class="custom-scrollbar">
+  <div class="scroll-indicators">
+    <div class="scroll-indicator active" data-target="#presidential-section" title="Welcome"></div>
+    <div class="scroll-indicator" data-target="#our-pillars" title="Our Pillars"></div>
+  </div>
+</div>
 <!-- end coding here -->
+
+
 
               </div>
                 
