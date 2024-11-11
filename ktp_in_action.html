@@ -800,37 +800,62 @@
             </main>
     </div>     
 <!-- start coding here -->
-  
 <h1 style="text-align: center; padding: 20px;">KTP In Action</h1>
 <div class="gallery-container">
     <div class="gallery-item">
         <img src="images/ktp1.JPEG" alt="Gallery Image 1">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp2.JPEG" alt="Gallery Image 2">
+        <img src="images/ktp2.png" alt="Gallery Image 2">
     </div>
     <div class="gallery-item">
         <img src="images/ktp3.JPEG" alt="Gallery Image 3">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp6.jpg" alt="Gallery Image 4">
+        <img src="images/ktp6.jpeg" alt="Gallery Image 4">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp5.jpeg" alt="Gallery Image 5">
+        <img src="images/ktp5.jpg" alt="Gallery Image 5">
     </div>
     <div class="gallery-item">
         <img src="images/ktp10.jpg" alt="Gallery Image 6">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp7.jpg" alt="Gallery Image 4">
+        <img src="images/ktp7.jpg" alt="Gallery Image 7">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp8.jpg" alt="Gallery Image 5">
+        <img src="images/ktp8.jpg" alt="Gallery Image 8">
     </div>
     <div class="gallery-item">
-        <img src="images/ktp9.jpg" alt="Gallery Image 6">
+        <img src="images/ktp9.jpg" alt="Gallery Image 9">
     </div>
 </div>
+
+<style>
+  .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Increased min width */
+      gap: 20px;
+      padding: 20px;
+  }
+
+  .gallery-item {
+      width: 100%;
+      height: 350px; /* Increased height for even larger images */
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures images fill box while maintaining aspect ratio */
+  }
+</style>
+
+
 
 
 <!-- end coding here -->
