@@ -696,8 +696,8 @@
 }
 
 </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".slide");
   const indicators = document.querySelectorAll(".indicator");
   const carousel = document.querySelector(".why-ktp-carousel");
@@ -714,20 +714,9 @@
       indicators[i].classList.toggle("active", i === index);
     });
     currentIndex = index;
+    // Save currentIndex to localStorage (Optional)
+    localStorage.setItem("carouselCurrentIndex", index);
   }
-
-  // Function to calculate the current slide based on time
-  function calculateCurrentSlide() {
-    const now = Date.now();
-    const rotationStart = new Date("2024-01-01T00:00:00Z").getTime(); // Fixed reference point
-    const elapsed = now - rotationStart;
-    const slidesPassed = Math.floor(elapsed / rotationInterval);
-    return slidesPassed % totalSlides;
-  }
-
-  // Initialize the carousel based on the current time
-  currentIndex = calculateCurrentSlide();
-  showSlide(currentIndex);
 
   // Function to move to the next slide
   function nextSlide() {
@@ -748,6 +737,15 @@
     }
   }
 
+  // Retrieve saved currentIndex from localStorage (Optional)
+  const savedIndex = localStorage.getItem("carouselCurrentIndex");
+  if (savedIndex !== null && !isNaN(savedIndex) && savedIndex < totalSlides) {
+    currentIndex = parseInt(savedIndex, 10);
+  }
+
+  // Initialize the carousel at the saved or first slide
+  showSlide(currentIndex);
+
   // Start rotation immediately
   startAutoRotate();
 
@@ -764,19 +762,18 @@
     });
   });
 
-  // Optional: Adjust current slide based on when the tab becomes visible again
+  // Visibility Change Handling
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) {
-      const newIndex = calculateCurrentSlide();
-      if (newIndex !== currentIndex) {
-        showSlide(newIndex);
-      }
+    if (document.hidden) {
+      stopAutoRotate();
+    } else {
+      startAutoRotate();
     }
   });
 });
 
+</script>
 
-    </script>
     
     
   </body>
