@@ -1,0 +1,481 @@
+body,
+p,
+.content-wrapper,
+.header,
+.header a,
+.header-nav-list a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}   
+/* Global Reset and Base  Styels*/ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* You’ll locally load this below */
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: #2F4A8A;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #22366c;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+/* Hero section */
+.header-logo img {
+  border-radius: 50%; /* circular logo */
+  width: 80px;        /* slightly smaller */
+  height: 80px;
+  object-fit: cover;  /* ensures the image fills the box nicely */
+  display: block;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+}
+
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.header-logo {
+  position: absolute;  /* <-- changed from 'relative' */
+  top: 20px;
+  left: 20px;
+  z-index: 10;         /* <-- raised above background */
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.40); /* Adjust the darkness here */
+  z-index: 1;
+}
+/* WELCOME TO KTP */
+.intro {
+  background-color: #fff;
+  padding: 6rem 1rem;
+  text-align: center;
+}
+
+.intro-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.intro p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #222;
+}
+/* Get Involved Section */
+.involvement-hero {
+  position: relative;
+  height: 75vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.involvement-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.involvement-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.involvement-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  z-index: 2;
+  max-width: 600px;
+  color: white;
+  text-align: left;
+}
+
+.involvement-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.involvement-content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Learn Abt Brothers Section */
+
+.brothers-fullscreen {
+  position: relative;
+  height: 60vh;             /* ↓ reduce height from 100vh */
+  width: 100%;
+  overflow: hidden;
+  margin-top: -100px;          /* Decrease this if the gray space is still visible */
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right; 
+}
+
+.brothers-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+.brothers-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* darken image for contrast */
+  z-index: 1;
+}
+
+.brothers-content {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  z-index: 2;
+  max-width: 600px;
+  color: white;
+  text-align: right;
+}
+
+.brothers-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.brothers-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Get Comfortable Section */
+.comfortable-section {
+  background-color: white;
+  padding: 4rem 2rem;
+}
+
+.comfortable-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.comfortable-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.comfortable-text h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.comfortable-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+}
+
+.comfortable-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.comfortable-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2F4A8A;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sections */
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.section img {
+  max-width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+.section div {
+  flex: 1;
+  padding: 1rem;
+}
+
+.section h4 {
+  color: #2F4A8A;
+  font-size: 1rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+/*Learn More Section */
+.learn-more-hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.learn-more-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; 
+  z-index: 0;
+}
+
+.learn-more-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(82, 0, 88, 0.4); /* Purple-tinted overlay */
+  z-index: 1;
+}
+
+.learn-more-content {
+  position: absolute;
+  top: 37%;
+  right: 11%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+  text-align: left;
+}
+
+
+.learn-more-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.learn-more-content .btn {
+  background-color:  #2F4A8A;
+  color: white;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.learn-more-content .btn:hover {
+  background-color: #ddd;
+}
+
+
+/* Footer */
+footer {
+  background-color: #2F4A8A;
+  color: white;
+  padding: 4rem 1rem;
+  margin-top: -7rem; /* adjust this value as needed */
+  position: relative;
+  z-index: 2; /* make sure it sits above the image */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline;
+}
+footer h3 {
+  font-size: 2rem; /* or try 2.5rem or larger */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Sticky Top Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: transparent; /* Start fully transparent */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 999;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.navbar .header-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-right: 1rem;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #2F4A8A;
+}
+
+/* Prevent navbar from overlapping hero */
+.hero {
+  padding-top: 100px; /* Same as navbar height */
+}
+
+
+  
