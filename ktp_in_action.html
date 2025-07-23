@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kappa Theta Pi - Vanderbilt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTP in Action - Kappa Theta Pi Vanderbilt</title>
   
     <link rel="icon" type="image/x-icon" href="images/logo.png">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700&family=Inter:wght@400;600&display=swap">
-    <link rel="stylesheet" href="https://static1.squarespace.com/static/versioned-site-css/60ee4f3db240f96f8b2d1216/31/5c5a519771c10ba3470d8101/60ee4f3db240f96f8b2d1230/1573/site.css">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Cache Manager for instant loading -->
+    <script src="js/cache-manager.js"></script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
+    <!-- Header Styles will be loaded by the header component -->
     <!-- Footer Styles -->
     <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
 
@@ -21,6 +26,17 @@
             --gray: #f4f4f4;
         }
 
+        /* Hide scrollbar on all browsers */
+        html {
+            overflow-y: scroll;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        html::-webkit-scrollbar {
+            display: none; /* WebKit browsers (Chrome, Safari, etc.) */
+        }
+
         /* General Reset for Margin and Padding */
         * {
             margin: 0;
@@ -28,454 +44,244 @@
             box-sizing: border-box;
         }
 
-
-
-        /* Custom Header Styles for Specific Pages */
-        body#collection-about header,
-        body#collection-recruitment header,
-        body#collection-brothers header,
-        body#collection-ktp_in_action header,
-        body#collection-contact header {
-            background-color: white !important;
-            color: black !important;
-            margin-bottom: 0 !important; /* Ensure no bottom margin */
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            font-weight: 300;
+            background-color: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
         }
 
-        /* Navigation Links on Specific Pages */
-        body#collection-about header a,
-        body#collection-recruitment header a,
-        body#collection-brothers header a,
-        body#collection-ktp_in_action header a,
-        body#collection-contact header a {
-            color: black !important;
+        /* Smooth animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        body#collection-about header a:hover,
-        body#collection-recruitment header a:hover,
-        body#collection-brothers header a:hover,
-        body#collection-ktp_in_action header a:hover,
-        body#collection-contact header a:hover {
-            color: #555 !important;
+        .page-title {
+            animation: slideInUp 0.8s ease-out;
         }
 
-        /* Removed Mobile Adjustments */
-
-        /* Additional styles to ensure overall background and text colors are updated */
-        body,
-        header,
-        main,
-        footer {
-            background-color: white !important;
-            color: black !important;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        .page-subtitle {
+            animation: slideInUp 0.8s ease-out 0.2s both;
         }
 
-
-
-        /* Additional Styles for Brothers Section */
-        .brothers-about-container {
-            padding: 50px 20px;
-            text-align: center;
+        /* Main Content Styling */
+        .main-content {
+            padding-top: 40px;
         }
 
-        .white-background {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .brothers-title {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .brothers-subtitle {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        .brothers-flex-container {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-            gap: 20px;
-        }
-
-        .brothers-button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #f0f0f0;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-
-        .brothers-button:hover {
-            background-color: #e0e0e0;
-        }
-
-        .selected-title {
-            background-color: #2F4A8A !important;
-            color: white;
-        }
-
-        /* Consolidated Gallery Styles */
+        /* Gallery Container */
         .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Ensure this matches your design */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
-            justify-items: center;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .gallery-item {
-            max-width: 500px;
-            width: 100%;
-            height: 350px;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
             display: block;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        /* Executive Section Styles */
-        .exec {
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .exec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .exec-profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* Page Title */
+        .page-title {
             text-align: center;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--primary);
+            margin: 40px 0;
         }
 
-        .exec-profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 20px 15px;
+            }
 
-        .exec-profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .exec-profile-text {
-            max-width: 300px;
-        }
-
-        .profile-bio-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .profile-bio-subtitle {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .profile-bio- {
-            font-size: 0.95em;
-            color: #666;
-        }
-
-        /* Alumni Section Styles */
-        .alumni-grid {
-            padding: 50px 20px;
-        }
-
-        .alumni-class {
-            margin-bottom: 40px;
-        }
-
-        .class-name {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .alumni-profile-container {
-            display: inline-block;
-            width: 200px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        .alumni-photo {
-            width: 200px;
+            .gallery-item img {
             height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            position: relative;
+            }
+
+            .page-title {
+                font-size: 2rem;
+                margin: 30px 0;
+            }
         }
 
-        .alumni-linkedicon-container {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-        }
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 20px 10px;
+            }
 
-        .alumni-linkedin-image {
-            width: 30px;
-            height: 30px;
-        }
+            .gallery-item img {
+                height: 180px;
+            }
 
-        .alumni-text {
-            margin-top: 10px;
-            font-size: 1em;
-            font-weight: bold;
-        }
-
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        /* New Styles to Ensure All Writings and Instagram Icon Are Black */
-        /* General navigation link styling */
-        .header-nav a {
-            color: black !important;
-        }
-
-        /* Change Instagram icon color to black */
-        .header-actions--social svg {
-            fill: black !important;
-        }
-
-        /* If the SVG has paths, ensure they are also black */
-        .header-actions--social svg path {
-            fill: black !important;
-        }
-
-        /* Override styles for the section-height--large class to remove extra space */
-        .page-section.section-height--large {
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-            height: auto !important;
-            margin: 0 !important;
-        }
-
-        /* Additional adjustment to the main container to remove any top margin */
-        main#page {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-
-        /* Ensure no additional spacing around the H1 */
-        h1 {
-            margin-top: 0 !important;
-            margin-bottom: 20px !important; /* Optional: Adjust as needed */
-            padding: 0 !important;
-            text-align: center;
+            .page-title {
+                font-size: 1.8rem;
+                margin: 20px 0;
+            }
         }
     </style>
 </head>
 
-<body id="collection-60ee545f77e2cd4113f18f39" class="primary-button-style-solid primary-button-shape-square secondary-button-style-solid secondary-button-shape-square tertiary-button-style-solid tertiary-button-shape-square form-field-style-solid form-field-shape-square form-field-border-all form-field-checkbox-type-icon form-field-checkbox-fill-solid form-field-checkbox-color-inverted form-field-checkbox-shape-square form-field-checkbox-layout-stack form-field-radio-type-icon form-field-radio-fill-solid form-field-radio-color-normal form-field-radio-shape-pill form-field-radio-layout-stack form-field-survey-fill-solid form-field-survey-color-normal form-field-survey-shape-pill form-field-hover-focus-outline form-subVanderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbilt-button-style-label header-overlay-alignment-center header-width-full tweak-transparent-header tweak-fixed-header tweak-fixed-header-style-basic tweak-blog-alternating-side-by-side-width-full tweak-blog-alternating-side-by-side-image-aspect-ratio-11-square tweak-blog-alternating-side-by-side-text-alignment-left tweak-blog-alternating-side-by-side-read-more-style-show tweak-blog-alternating-side-by-side-image-text-alignment-middle tweak-blog-alternating-side-by-side-deliVanderbilter-bullet tweak-blog-alternating-side-by-side-meta-position-top tweak-blog-alternating-side-by-side-primary-meta-categories tweak-blog-alternating-side-by-side-secondary-meta-date tweak-blog-alternating-side-by-side-excerpt-show tweak-blog-basic-grid-width-inset tweak-blog-basic-grid-image-aspect-ratio-23-standard-vertical tweak-blog-basic-grid-text-alignment-left tweak-blog-basic-grid-deliVanderbilter-bullet tweak-blog-basic-grid-image-placement-above tweak-blog-basic-grid-read-more-style-show tweak-blog-basic-grid-primary-meta-categories tweak-blog-basic-grid-secondary-meta-date tweak-blog-basic-grid-excerpt-hide tweak-blog-item-width-narrow tweak-blog-item-text-alignment-center tweak-blog-item-meta-position-above-title tweak-blog-item-show-categories tweak-blog-item-show-date tweak-blog-item-deliVanderbilter-bullet tweak-blog-masonry-width-full tweak-blog-masonry-text-alignment-left tweak-blog-masonry-primary-meta-categories tweak-blog-masonry-secondary-meta-date tweak-blog-masonry-meta-position-top tweak-blog-masonry-read-more-style-show tweak-blog-masonry-deliVanderbilter-space tweak-blog-masonry-image-placement-above tweak-blog-masonry-excerpt-show tweak-blog-side-by-side-width-full tweak-blog-side-by-side-image-placement-left tweak-blog-side-by-side-image-aspect-ratio-11-square tweak-blog-side-by-side-primary-meta-categories tweak-blog-side-by-side-secondary-meta-date tweak-blog-side-by-side-meta-position-top tweak-blog-side-by-side-text-alignment-left tweak-blog-side-by-side-read-more-style-show tweak-blog-side-by-side-deliVanderbilter-bullet tweak-blog-side-by-side-excerpt-show tweak-blog-single-column-width-full tweak-blog-single-column-text-alignment-center tweak-blog-single-column-image-placement-above tweak-blog-single-column-deliVanderbilter-bullet tweak-blog-single-column-read-more-style-show tweak-blog-single-column-primary-meta-categories tweak-blog-single-column-secondary-meta-date tweak-blog-single-column-meta-position-top tweak-blog-single-column-content-full-post tweak-events-stacked-width-full tweak-events-stacked-height-large tweak-events-stacked-show-thumbnails tweak-events-stacked-thumbnail-size-32-standard tweak-events-stacked-date-style-with-text tweak-events-stacked-show-time tweak-events-stacked-show-location tweak-events-stacked-show-excerpt tweak-global-animations-complexity-level-detailed tweak-global-animations-animation-style-fade tweak-global-animations-animation-type-none tweak-global-animations-animation-curve-ease tweak-portfolio-grid-basic-width-full tweak-portfolio-grid-basic-height-large tweak-portfolio-grid-basic-image-aspect-ratio-11-square tweak-portfolio-grid-basic-text-alignment-left tweak-portfolio-grid-basic-hover-effect-fade tweak-portfolio-grid-overlay-width-full tweak-portfolio-grid-overlay-height-large tweak-portfolio-grid-overlay-image-aspect-ratio-11-square tweak-portfolio-grid-overlay-text-placement-center tweak-portfolio-grid-overlay-show-text-after-hover tweak-portfolio-index-background-link-format-stacked tweak-portfolio-index-background-width-full tweak-portfolio-index-background-height-large tweak-portfolio-index-background-vertical-alignment-middle tweak-portfolio-index-background-horizontal-alignment-center tweak-portfolio-index-background-deliVanderbilter-none tweak-portfolio-index-background-animation-type-fade tweak-portfolio-index-background-animation-duration-medium tweak-portfolio-hover-follow-layout-inline tweak-portfolio-hover-follow-deliVanderbilter-forward-slash tweak-portfolio-hover-follow-animation-type-fade tweak-portfolio-hover-follow-animation-duration-medium tweak-portfolio-hover-static-layout-stacked tweak-portfolio-hover-static-deliVanderbilter-forward-slash tweak-portfolio-hover-static-animation-type-scale-up tweak-portfolio-hover-static-animation-duration-medium tweak-product-basic-item-product-variant-display-dropdown tweak-product-basic-item-product-subscription-display-radio tweak-product-basic-item-product-subscription-border-shape-square tweak-product-basic-item-width-full tweak-product-basic-item-gallery-aspect-ratio-34-three-four-vertical tweak-product-basic-item-text-alignment-left tweak-product-basic-item-navigation-breadcrumbs tweak-product-basic-item-description-position-below-price tweak-product-basic-item-description-position-mobile-below-add-to-cart-button tweak-product-basic-item-content-alignment-top tweak-product-basic-item-gallery-design-slideshow tweak-product-basic-item-gallery-placement-left tweak-product-basic-item-thumbnail-placement-side tweak-product-basic-item-click-action-none tweak-product-basic-item-hover-action-none tweak-product-basic-item-variant-picker-layout-dropdowns tweak-product-basic-item-add-to-cart-standalone tweak-product-basic-item-add-to-cart-mobile-standalone tweak-products-width-full tweak-products-image-aspect-ratio-23-standard-vertical tweak-products-text-alignment-left tweak-products-price-show tweak-products-nested-category-type-top tweak-products-category-title tweak-products-header-text-alignment-middle tweak-products-breadcrumbs image-block-poster-text-alignment-left image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-content-position-center image-block-collage-text-alignment-left hide-opentable-icons opentable-style-dark tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-60ee545f77e2cd4113f18f39 collection-type-page collection-layout-default homepage mobile-style-available sqs-seven-one-global-animations" tabindex="-1" data-animation-state="booted">
-    <div id="siteWrapper" class="clearfix site-wrapper">
-      
-
-      <!-- Header -->
-      <header data-test="header" id="header" class="header theme-col--primary" data-section-theme="primary" data-controller="Header" data-section-id="header" data-header-style="dynamic" data-language-picker="" tabindex="-1" style="
-        --headerBorderColor: hsla(var(--white-hsl), 1);
-        --solidHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-        --solidHeaderNavigationColor: hsla(var(--black-hsl), 1);
-        --gradientHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-        --gradientHeaderNavigationColor: hsla(var(--black-hsl), 1);
-      ">
-          
-  
-          <div class="header-announcement-bar-wrapper" style="background-color: white;">
-
-              
-            <a href="#page" class="header-skip-link sqs-button-element--primary">
-              Skip to Content
-            </a>
-            
-            <style>
-              
-              @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-                  .header-blur-background {
-                      /* Your styles here */
-                  }
-              }
-            </style>
-            <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
-              border-width: 0px !important;
-            "></div>
-            <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
-            </div>
-          
-            <div class="header-inner container--fluid
-              header-mobile-layout-logo-left-nav-right
-              header-layout-nav-right
-              " style="
-              padding: 0;
-            " data-test="header-inner">
-              <!-- Background -->
-              <div class="header-background theme-bg--primary"></div>
-
-              <!-- Desktop Header -->
-              <div class="header-display-desktop" data-content-field="site-title">
-                
-                <!-- Title and nav wrapper -->
-                <div class="header-title-nav-wrapper">
-                  
-                  <!-- Title -->
-                  <div class="header-title" data-animation-role="header-element">
-                    <div class="header-title-logo">
-                      <a href="index.html" data-animation-role="header-element">
-                        <img elementtiming="nbf-header-logo-desktop" 
-                             src="images/logo.png" 
-                             alt="Kappa Theta Pi - Vanderbilt" 
-                             style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
-                             fetchpriority="high" 
-                             loading="eager" 
-                             decoding="async" 
-                             data-loader="raw">
-                      </a>
-                    </div>
-                  </div>
-                  
-                  
-                  <!-- Nav -->
-                  <div class="header-nav">
-                    <div class="header-nav-wrapper">
-                      <nav class="header-nav-list">
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="about.html" data-animation-role="header-element">
-                            About
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="recruitment.html" data-animation-role="header-element">
-                            Recruitment
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="brothers.html" data-animation-role="header-element">
-                            Brothers
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="ktp_in_action.html" data-animation-role="header-element">
-                            KTP in Action
-                          </a>
-                        </div>
-                        
-                        <div class="header-nav-item header-nav-item--collection">
-                          <a href="contact.html" data-animation-role="header-element">
-                            Contact
-                          </a>
-                        </div>
-                        
-                      </nav>
-                    </div>
-                  </div>
-                  
-                </div>
-              
-            
-
-                
-              
-                <style>
-                  .top-bun, 
-                  .patty, 
-                  .bottom-bun {
-                    height: 1px;
-                  }
-                </style>
-              
-                <!-- Removed Burger Menu -->
-              
-              </div>
-            
-            </div>
+<body>
+    <!-- Header will be injected here by header.js -->
     
-            <!-- Removed Mobile Menu Navigation -->
-    
-          </header>
-
-          
-
-        <main id="page" class="container" role="main">
-            <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
-                
-              <div style="height: 200px;"></div> <!-- Creates vertical space -->
+    <main class="main-content">
+        <div class="page-title">KTP in Action</div>
+        
                 <div class="gallery-container">
                     <div class="gallery-item">
-                        <img src="images/ktp1.JPEG" alt="Gallery Image 1">
+                <img src="images/ktp1.JPEG" alt="KTP Event 1">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp2.png" alt="Gallery Image 2">
+                <img src="images/ktp2.png" alt="KTP Event 2">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp3.JPEG" alt="Gallery Image 3">
+                <img src="images/ktp3.JPEG" alt="KTP Event 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp6.jpeg" alt="Gallery Image 4">
+                <img src="images/ktp6.jpeg" alt="KTP Event 4">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp5.jpg" alt="Gallery Image 5">
+                <img src="images/ktp5.jpg" alt="KTP Event 5">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp10.jpg" alt="Gallery Image 6">
+                <img src="images/ktp10.jpg" alt="KTP Event 6">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp7.jpg" alt="Gallery Image 7">
+                <img src="images/ktp7.jpg" alt="KTP Event 7">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp8.jpg" alt="Gallery Image 8">
+                <img src="images/ktp8.jpg" alt="KTP Event 8">
                     </div>
                     <div class="gallery-item">
-                        <img src="images/ktp9.jpg" alt="Gallery Image 9">
+                <img src="images/ktp9.jpg" alt="KTP Event 9">
                     </div>
                 </div>
-                <!-- End Custom Gallery Section -->
-            </article>
         </main>
 
+    <!-- Footer will be injected here by footer.js -->
 
-  
+    <!-- Smooth Animations JavaScript -->
+    <script>
+    // Enhanced scroll animations
+    document.addEventListener("DOMContentLoaded", function () {
+        // Enhanced scroll animation observer with bi-directional animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -100px 0px"
+        };
 
-    </div>
+                 const animationObserver = new IntersectionObserver((entries) => {
+             entries.forEach(entry => {
+                 // Skip footer elements completely
+                 if (entry.target.closest('footer') || entry.target.matches('footer *')) {
+                     return;
+                 }
+                 
+                 if (entry.isIntersecting) {
+                    // Animate in
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0) scale(1)";
+                    entry.target.classList.add('in-view');
+                } else {
+                    // Animate out when scrolling away
+                    entry.target.style.opacity = "0.4";
+                    entry.target.style.transform = "translateY(20px) scale(0.98)";
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, observerOptions);
 
-<!-- Footer Component -->
-<script src="js/footer.js"></script>
+        // Add parallax and scroll effects
+        let ticking = false;
+        function updateScrollAnimations() {
+            const scrolled = window.pageYOffset;
+            
+            // Parallax effect on gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach((item, index) => {
+                const offset = scrolled * 0.1 * (index + 1);
+                if (item.classList.contains('in-view')) {
+                    item.style.transform = `translateY(${Math.sin(offset * 0.01) * 8}px) scale(${1 + Math.sin(offset * 0.02) * 0.01})`;
+                }
+            });
+            
+            ticking = false;
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollAnimations);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+                 // Observe elements for animation with staggered effects (excluding footer)
+         const animatedElements = document.querySelectorAll('.hero-section, .gallery-container, .gallery-item');
+         const filteredElements = Array.from(animatedElements).filter(el => {
+             // Exclude footer elements
+             return !el.closest('footer') && !el.matches('footer *');
+         });
+         
+         filteredElements.forEach((el, index) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(50px) scale(0.95)";
+            el.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+            el.style.transitionDelay = `${index * 0.08}s`;
+            animationObserver.observe(el);
+        });
+
+                 // Progress bar removed as requested
+
+        // Add loading state animations
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+            
+            // Animate page title
+            const pageTitle = document.querySelector("h1");
+            if (pageTitle) {
+                pageTitle.style.animation = "slideInUp 0.8s ease-out";
+            }
+        });
+    });
+    </script>
+
+    <!-- Header Component -->
+    <script src="js/header.js"></script>
+    
+    <!-- Footer Component -->
+    <script src="js/footer.js"></script>
 </body>
 </html>

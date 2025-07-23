@@ -4,8 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kappa Theta Pi – Vanderbilt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" href="images/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Cache Manager for instant loading -->
+  <script src="js/cache-manager.js"></script>
+  
+  <!-- Header Styles -->
+  <link rel="stylesheet" type="text/css" href="css/header-styles/header.css">
   
   <!-- Footer Styles -->
   <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
@@ -18,6 +25,21 @@
       --gray: #f4f4f4;
     }
 
+    /* Hide scrollbar on all browsers */
+    html {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+    html::-webkit-scrollbar {
+      display: none; /* WebKit browsers (Chrome, Safari, etc.) */
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -25,10 +47,31 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-weight: 300;
       background-color: var(--white);
       color: var(--black);
       line-height: 1.6;
+    }
+
+    /* Smooth animations */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .page-title {
+        animation: slideInUp 0.8s ease-out;
+    }
+
+    .page-subtitle {
+        animation: slideInUp 0.8s ease-out 0.2s both;
     }
 
     a {
@@ -41,39 +84,7 @@
       height: auto;
     }
 
-    /* HEADER */
-    header {
-      background: var(--white);
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-    }
 
-    header img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      font-weight: 500;
-      color: var(--black);
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #555;
-    }
 
     /* HERO */
     .hero {
@@ -106,8 +117,11 @@
     .slideshow-container {
       position: relative;
       height: 400px;
-      overflow: auto;
+      overflow: hidden;
       margin-bottom: 10px;
+      background: white;
+      border-radius: 12px;
+      will-change: auto;
     }
 
     .slide {
@@ -121,15 +135,16 @@
       align-items: center;
       justify-content: center;
       transition: opacity 1s ease-in-out;
+      transform: none !important;
     }
 
-
     .slide img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 85%;
+      max-height: 85%;
       height: auto;
       width: auto;
       object-fit: contain;
+      transform: none !important;
     }
 
 
@@ -205,6 +220,21 @@
       font-size: 1.8rem;
     }
 
+    /* Ensure FAQ section has no animations */
+    #faq,
+    #faq *,
+    #faq h2,
+    #faq .accordion-container,
+    #faq .accordion-item,
+    #faq .accordion-header,
+    #faq .accordion-content,
+    #faq p {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+
     .accordion-container {
       max-width: 800px;
       margin: auto;
@@ -241,7 +271,6 @@
     .accordion-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease;
       padding: 0 16px;
     }
 
@@ -266,16 +295,7 @@
 </head>
 <body>
 
-<header>
-  <a href="index.html"><img src="images/logo.png" alt="KTP Logo" /></a>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="recruitment.html">Recruitment</a>
-    <a href="brothers.html">Brothers</a>
-    <a href="ktp_in_action.html">KTP in Action</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+
 
 <section class="hero">
   <h1>Why rush Kappa Theta Pi?</h1>
@@ -343,10 +363,85 @@
   </div>
 </section>
 
+<!-- Header Component -->
+<script src="js/header.js"></script>
+
 <!-- Footer Component -->
 <script src="js/footer.js"></script>
 
 <script>
+// Enhanced scroll animations
+document.addEventListener("DOMContentLoaded", function () {
+    // Enhanced scroll animation observer with bi-directional animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px"
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Skip FAQ section and footer elements completely
+            if (entry.target.closest('#faq') || entry.target.matches('#faq *') ||
+                entry.target.closest('footer') || entry.target.matches('footer *')) {
+                return;
+            }
+            
+            if (entry.isIntersecting) {
+                // Animate in
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0) scale(1)";
+                entry.target.classList.add('in-view');
+            } else {
+                // Animate out when scrolling away
+                entry.target.style.opacity = "0.4";
+                entry.target.style.transform = "translateY(20px) scale(0.98)";
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, observerOptions);
+
+         // Removed parallax effects to prevent image shifting issues
+
+         // Observe elements for animation with staggered effects (excluding slideshow, FAQ, and footer to prevent shifting/unwanted animations)
+     const animatedElements = document.querySelectorAll('.main-content, .content-section, h1, h2, p');
+     const filteredElements = Array.from(animatedElements).filter(el => {
+         // Exclude FAQ section elements and footer elements
+         return !el.closest('#faq') && !el.matches('#faq *') && 
+                !el.closest('footer') && !el.matches('footer *');
+     });
+     
+     filteredElements.forEach((el, index) => {
+         el.style.opacity = "0";
+         el.style.transform = "translateY(50px) scale(0.95)";
+         el.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+         el.style.transitionDelay = `${index * 0.05}s`;
+         animationObserver.observe(el);
+     });
+
+     // Handle slideshow separately with no transform animations
+     const slideshow = document.querySelector('.slideshow-container');
+     if (slideshow) {
+         slideshow.style.opacity = "0";
+         slideshow.style.transition = "opacity 0.8s ease-out";
+         setTimeout(() => {
+             slideshow.style.opacity = "1";
+         }, 300);
+     }
+
+         // Progress bar removed as requested
+
+    // Add loading state animations
+    window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+        
+        // Animate page elements
+        const pageTitle = document.querySelector("h1");
+        if (pageTitle) {
+            pageTitle.style.animation = "slideInUp 0.8s ease-out";
+        }
+    });
+});
+
   // Slideshow
   document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
