@@ -1,780 +1,1358 @@
-<!DOCTYPE html>
+<!-- Enhanced JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Interactive SVG benefit points
+      const benefitPoints = document.querySelectorAll('.benefit-point');
+      const benefitDetails = document.querySelectorAll('.benefit-detail');
+      
+      benefitPoints.forEach(point => {
+          const benefitType = point.getAttribute('data-benefit');
+          const detailElement = document.getElementById(`${benefitType}-detail`);
+          
+          if (detailElement) {
+              point.addEventListener('mouseenter', () => {
+                  // Hide all other details
+                  benefitDetails.forEach(detail => {
+                      if (detail !== detailElement) {
+                          detail.classList.remove('active');
+                      }
+                  });
+                  
+                  // Show current detail
+                  detailElement.classList.add('active');
+              });
+              
+              point.addEventListener('mouseleave', () => {
+                  setTimeout(() => {
+                      if (!detailElement.matches(':hover')) {
+                          detailElement.classList.remove('active');
+                      }
+                  }, 100);
+              });
+              
+              // Keep detail visible when hovering over it
+              detailElement.addEventListener('mouseenter', () => {
+                  detailElement.classList.add('active');
+              });
+              
+              detailElement.addEventListener('mouseleave', () => {
+                  detailElement.classList.remove('active');
+              });
+          }
+      });
+
+      // Animate connecting lines on scroll
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  const lines = entry.target.querySelectorAll('.connecting-line');
+                  lines.forEach(line => {
+                      line.style.animation = 'drawLine 2s ease-in-out forwards';
+                  });
+              }
+          });
+      }, { threshold: 0.5 });
+
+      const benefitsIllustration = document.querySelector('.ktp-benefits-illustration');
+      if (benefitsIllustration) {
+          observer.observe(benefitsIllustration);
+      }
+
+      // Smooth scroll animation observer
+      const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+      };
+
+      const animationObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = "1";
+                  entry.target.style.transform = "translateY(0)";
+              }
+          });
+      }, observerOptions);
+
+      // Observe elements for animation
+      const animatedElements = document.querySelectorAll('.presidential-section, .why-ktp-section');
+      animatedElements.forEach(el => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(40px)";
+          el.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+          animationObserver.observe(el);
+      });
+
+      // Add loading state
+      window.addEventListener("load", () => {
+          document.body.classList.add("loaded");
+          
+          // Animate page title
+          const pageTitle = document.querySelector(".page-title");
+          if (pageTitle) {
+              pageTitle.style.animation = "slideInUp 0.8s ease-out";
+          }
+
+          // Animate subtitle
+          const pageSubtitle = document.querySelector(".page-subtitle");
+          if (pageSubtitle) {
+              pageSubtitle.style.animation = "slideInUp 0.8s ease-out 0.2s both";
+          }
+      });
+
+      // Performance optimization: Pause animations when not visible
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (mediaQuery.matches) {
+          // Disable animations for users who prefer reduced motion
+          document.documentElement.style.setProperty("--animation-duration", "0s");
+      }
+
+      // Add resize handler for responsive behavior
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+              // Recalculate benefit detail positions if needed
+              const details = document.querySelectorAll(".benefit-detail");
+              details.forEach(detail => {
+                  detail.classList.remove('active');
+              });
+          }, 250);
+      });
+
+      // Add click interactions for mobile
+      if (window.innerWidth <= 768) {
+          benefitPoints.forEach(point => {
+              point.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const benefitType = point.getAttribute('data-benefit');
+                  const detailElement = document.getElementById(`${benefitType}-detail`);
+                  
+                  // Toggle current detail
+                  if (detailElement) {
+                      const isActive = detailElement.classList.contains('active');
+                      
+                      // Hide all details
+                      benefitDetails.forEach(detail => {
+                          detail.classList.remove('active');
+                      });
+                      
+                      // Show current detail if it wasn't active
+                      if (!isActive) {
+                          detailElement.classList.add('active');
+                          
+                          // Auto-hide after 4 seconds on mobile
+                          setTimeout(() => {
+                              detailElement.classList.remove('active');
+                          }, 4000);
+                      }
+                  }
+              });
+          });
+      }
+
+      // Add parallax effect (removed particles)
+      let ticking = false;
+
+      function requestTick() {
+          if (!ticking) {
+              requestAnimationFrame(() => ticking = false);
+              ticking = true;
+          }
+      }
+
+      window.addEventListener('scroll', requestTick);
+  });
+
+  // Add custom cursor effects
+  document.addEventListener("DOMContentLoaded", () => {
+      const benefitPoints = document.querySelectorAll(".benefit-point");
+      const presidentialImage = document.querySelector(".presidential-image");
+
+      // Add cursor effects to interactive elements
+      [...benefitPoints, presidentialImage].forEach(element => {
+          if (element) {
+              element.style.cursor = "pointer";
+              element.addEventListener("mouseenter", () => {
+                  document.body.style.cursor = "pointer";
+              });
+              element.addEventListener("mouseleave", () => {
+                  document.body.style.cursor = "default";
+              });
+          }
+      });
+
+      // Add pulse animation to center KTP circle
+      const centerCircle = document.querySelector('circle[cx="500"][cy="300"]');
+      if (centerCircle) {
+          centerCircle.style.animation = 'pulse 3s ease-in-out infinite';
+      }
+  });
+</script><!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- This is Squarespace. --><!-- sunfish-guava-ccbg -->
-  <base href="">
-  <meta charset="utf-8">
-  <title>Kappa Theta Pi - Vanderbilt</title>
-  <link rel="icon" type="image/x-icon" href="images/logo.png">
-  
-  <!-- Google Fonts -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Kappa Theta Pi Vanderbilt</title>
+<meta name="description" content="Learn about Kappa Theta Pi at Vanderbilt University - our mission, leadership, and what makes us unique">
 
-  <!-- Squarespace Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/versioned-site-css/60ee4f3db240f96f8b2d1216/31/5c5a519771c10ba3470d8101/60ee4f3db240f96f8b2d1230/1573/site.css">
-  <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
-  <link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/2356ee25bed07678b7ee-min.en-US.css">
+<link rel="icon" type="image/x-icon" href="images/logo.png">
+<link rel="manifest" href="/manifest.json">
 
-  <!-- Custom Styles -->
-  <style type="text/css">
-    /* Presidential Welcome Section */
-    .presidential-section {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding: 40px 20px;
-      flex-wrap: wrap;
-      justify-content: center; /* Center alignment */
-    }
-  
-    .presidential-image {
-      width: 30vw; /* 30% of the viewport width */
-      max-width: 400px; /* Maximum width */
-      height: 30vw;
-      max-height: 400px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .presidential-image:hover {
-      transform: scale(1.05);
-    }
-  
-    @media (max-width: 768px) {
-      .presidential-section {
-        flex-direction: column;
-        text-align: center;
-      }
-  
-      .presidential-image {
-        width: 40vw; /* 40% of the viewport width on smaller screens */
-        max-width: 280px;
-        height: 40vw;
-        max-height: 280px;
-      }
+<!-- Cache Manager for instant loading -->
+<script src="js/cache-manager.js"></script>
 
-      .presidential-content {
-        min-width: unset;
-      }
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap">
 
-      /* Hide carousel indicators on mobile if necessary */
-      .carousel-control {
-        padding: 8px 12px;
-        font-size: 1.2em;
-      }
+<!-- Header Styles - preload to prevent header shift -->
+<link rel="stylesheet" type="text/css" href="css/header-styles/header.css">
 
-      /* Hide custom scrollbar on mobile */
-      .custom-scrollbar {
-        display: none;
-      }
-    }
-  
-    .presidential-content {
-      flex: 1;
-      min-width: 250px;
-      text-align: left; /* Left align text */
-      font-size: 1em; /* Reduce text size */
-    }
-  
-    .presidential-content .title {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #2F4A8A;
-    }
-  
-    .presidential-letter {
-      font-size: 0.95em; /* Reduced font size */
-      line-height: 1.6;
-      color: #333;
-    }
-  
-    /* Why KTP? Section */
-    .why-ktp-section {
-      background-color: #1E1E1E; /* New distinct background color */
-      padding: 60px 20px;
-      color: #FFFFFF;
-      text-align: center; /* Center align text */
-      width: 100%; /* Full width to cover entire screen */
+<!-- Footer Styles -->
+<link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
+
+<style>
+  :root {
+      --primary: #2F4A8A;
+      --primary-light: #4A68B8;
+      --primary-dark: #1E3B73;
+      --accent: #6366F1;
+      --accent-light: #818CF8;
+      --white: #ffffff;
+      --black: #0F172A;
+      --gray: #f8fafc;
+      --light-gray: #f1f5f9;
+      --text-primary: #1a202c;
+      --text-secondary: #2d3748;
+      --text-muted: #4a5568;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --border-light: #f7fafc;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --gradient-primary: linear-gradient(135deg, #2F4A8A 0%, #4A68B8 100%);
+      --gradient-accent: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+      --gradient-hero: linear-gradient(135deg, rgba(47, 74, 138, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+  }
+
+  /* Hide scrollbar on all browsers - consistent with other pages */
+  html {
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+
+  html::-webkit-scrollbar {
+      display: none; /* WebKit browsers (Chrome, Safari, etc.) */
+  }
+
+    /* General Reset */
+  * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    .why-ktp-content {
-      width: 25%; /* Occupy 25% of the parent width */
-      margin: 0 auto; /* Center the content */
-      box-sizing: border-box;
-    }
 
-    .why-ktp-section .title {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #FFFFFF;
-    }
 
-    .why-ktp-section .paragraph {
-      font-size: 1.2em;
-      margin-bottom: 40px;
-      color: #FFFFFF;
-    }
+  body {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-weight: 300;
+      background: linear-gradient(180deg, var(--white) 0%, var(--gray) 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+      letter-spacing: normal;
+      max-width: 100vw;
+  }
 
-    .why-ktp-carousel {
+
+
+  /* Main Content */
+  .main-content {
+      padding-top: 5px;
+      min-height: 100vh;
       position: relative;
-      width: 100%;
-      max-width: 1200px; /* Optional: Limit max width for larger screens */
-      margin: 0 auto; /* Center align the carousel */
+      z-index: 1;
+  }
+
+  /* Hero Section */
+  .hero-section {
+      background: var(--gradient-hero);
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
       overflow: hidden;
     }
 
-    .why-ktp-carousel .slides {
+  .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="25" cy="75" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="75" cy="25" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+      z-index: -1;
+  }
+
+  .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      animation: slideInUp 0.8s ease-out;
+      text-shadow: 0 4px 20px rgba(47, 74, 138, 0.2);
+  }
+
+  .page-subtitle {
+      font-size: 1.3rem;
+      color: #2d3748;
+      font-weight: 400;
+      animation: slideInUp 0.8s ease-out 0.2s both;
+      max-width: 600px;
+      margin: 0 auto;
+  }
+
+  @keyframes slideInUp {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Presidential Welcome Section */
+  .presidential-section {
       display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .why-ktp-carousel .slide {
-      min-width: 100%;
-      box-sizing: border-box;
+      align-items: center;
+      gap: 60px;
       padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+  }
+
+  .presidential-image-container {
+      position: relative;
+      flex-shrink: 0;
+      flex-basis: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .presidential-image {
+      width: 500px;
+      height: 500px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: var(--shadow-xl);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 4px solid var(--white);
+      position: relative;
+      z-index: 2;
+  }
+
+  .presidential-image::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+  }
+
+  .presidential-image-container:hover .presidential-image {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 25px 50px -12px rgba(47, 74, 138, 0.4);
+  }
+
+  .presidential-image-container:hover .presidential-image::before {
+      opacity: 1;
+  }
+
+  .presidential-content {
+      flex: 2;
+      min-width: 600px;
+      max-width: 1200px;
+      animation: slideInRight 0.8s ease-out;
+  }
+
+  .presidential-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 30px;
+      line-height: 1.2;
+  }
+
+  .presidential-content p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #1a202c;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+  }
+
+  .presidential-content p:last-child {
+      margin-bottom: 0;
+  }
+
+  @keyframes slideInRight {
+      from {
+          opacity: 0;
+          transform: translateX(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  /* Why KTP Section */
+  .why-ktp-section {
+      background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 50%, #f0f8ff 100%);
+      padding: 15px 20px 25px 20px;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .why-ktp-section::before {
       display: none;
-    }
+  }
 
-    .why-ktp-carousel .slide.active {
-      display: block;
-    }
+      .why-ktp-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+  }
 
-    /* Center align text within slides */
-    .why-ktp-carousel .slide-content {
+  .why-ktp-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 25px;
+      position: relative;
+  }
+
+  .why-ktp-content h2::after {
+      display: none;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+  }
+
+  /* Creative SVG Drawing Design */
+  .ktp-benefits-illustration {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      background: var(--white);
+      border-radius: 32px;
+      box-shadow: var(--shadow-xl);
+      padding: 60px 40px;
+      overflow: hidden;
+  }
+
+  .ktp-benefits-illustration::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(47, 74, 138, 0.02) 0%, rgba(99, 102, 241, 0.02) 100%);
+      pointer-events: none;
+  }
+
+  .benefits-svg {
+      width: 100%;
+      height: 600px;
+      position: relative;
+      z-index: 2;
+  }
+
+  /* Interactive benefit points */
+  .benefit-point {
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+
+  .benefit-point:hover .benefit-circle {
+      r: 25;
+      fill: #4A68B8;
+  }
+
+  .benefit-point:hover .benefit-text {
+      font-size: 18px;
+      font-weight: 600;
+  }
+
+  .benefit-detail {
+      position: absolute;
+      background: var(--white);
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 280px;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+  }
+
+  .benefit-detail.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+  }
+
+  .benefit-detail h4 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+  .benefit-detail p {
+      color: var(--black);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 500;
+  }
+
+  /* Animated connecting lines */
+  .connecting-line {
+      stroke: var(--primary);
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: drawLine 2s ease-in-out forwards;
+  }
+
+  @keyframes drawLine {
+      to {
+          stroke-dashoffset: 0;
+      }
+  }
+
+  /* Center KTP logo/text */
+  .center-ktp {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      fill: var(--primary);
+      text-anchor: middle;
+      dominant-baseline: middle;
+  }
+
+
+
+  /* Enhanced animations */
+  @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+  }
+
+  .presidential-section {
+      animation: fadeInUp 1s ease-out;
+  }
+
+  .why-ktp-section {
+      animation: fadeInUp 1s ease-out 0.3s both;
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(40px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .page-title {
+          font-size: 2.8rem;
+          margin-bottom: 15px;
+      }
+
+      .page-subtitle {
+          font-size: 1.1rem;
+      }
+
+      .hero-section {
+          padding: 60px 15px;
+      }
+
+      .presidential-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px 15px;
+          gap: 30px;
+      }
+
+      .presidential-image {
+          width: 350px;
+          height: 350px;
+      }
+
+      .why-ktp-section {
+          padding: 8px 10px 12px 10px;
+      }
+
+      .why-ktp-content h2 {
+          font-size: 1.8rem;
+          margin-bottom: 12px;
+      }
+
+      .ktp-circle {
+          width: 200px;
+          height: 200px;
+          padding: 20px;
+      }
+
+      .circle-icon {
+          font-size: 2rem;
+      }
+
+      .circle-title {
+          font-size: 0.95rem;
+      }
+
+      .circle-description {
+          font-size: 0.75rem;
+      }
+
+      .presidential-content {
+          min-width: unset;
+          max-width: 100%;
+      }
+
+      .presidential-image {
+          width: 400px;
+          height: 400px;
+      }
+
+      .presidential-content h2 {
+          font-size: 2.2rem;
+          text-align: center;
+      }
+
+      .presidential-content p {
+          font-size: 1.05rem;
+          text-align: left;
+      }
+
+      .why-ktp-section {
+          padding: 80px 15px;
+      }
+
+      .why-ktp-content h2 {
+          font-size: 2.5rem;
+          margin-bottom: 50px;
+      }
+
+      .ktp-benefits-illustration {
+          padding: 40px 20px;
+      }
+
+      .benefits-svg {
+          height: 400px;
+      }
+
+      .benefit-detail {
+          max-width: 200px;
+          padding: 15px;
+          font-size: 0.85rem;
+      }
+
+      .benefit-detail h4 {
+          font-size: 1rem;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .page-title {
+          font-size: 2.2rem;
+      }
+
+      .presidential-image {
+          width: 260px;
+          height: 260px;
+      }
+
+      .presidential-content h2 {
+          font-size: 1.9rem;
+      }
+
+      .presidential-content p {
+          color: #1a202c;
+          font-weight: 400;
+      }
+
+      .why-ktp-section {
+          padding: 12px 15px 18px 15px;
+      }
+
+      .why-ktp-content h2 {
+          font-size: 2.2rem;
+          margin-bottom: 18px;
+      }
+
+      .ktp-circle {
+          width: 220px;
+          height: 220px;
+          padding: 22px;
+      }
+
+      .circle-icon {
+          font-size: 2.2rem;
+      }
+
+      .circle-title {
+          font-size: 1rem;
+      }
+
+      .circle-description {
+          font-size: 0.8rem;
+      }
+
+      .why-ktp-section {
+          padding: 60px 10px;
+      }
+
+      .why-ktp-content h2 {
+          font-size: 2rem;
+          margin-bottom: 40px;
+      }
+
+      .ktp-benefits-illustration {
+          padding: 30px 15px;
+          border-radius: 20px;
+      }
+
+      .benefits-svg {
+          height: 350px;
+      }
+
+      .benefit-detail {
+          max-width: 180px;
+          padding: 12px;
+          font-size: 0.8rem;
+      }
+
+      .benefit-detail h4 {
+          font-size: 0.95rem;
+          margin-bottom: 8px;
+      }
+
+      .center-ktp {
+          font-size: 24px;
+      }
+  }
+
+  /* Why KTP Creative Circle Design */
+  .why-ktp-circles {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 15px;
+  }
+
+  /* Connection Lines */
+  .why-ktp-circles::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--primary) 10%, var(--primary) 90%, transparent 100%);
+      transform: translateY(-50%);
+      z-index: 0;
+      opacity: 0.2;
+      border-radius: 2px;
+  }
+
+  .ktp-circle {
+      width: 290px;
+      height: 290px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 3px solid var(--primary);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-    }
-
-    .why-ktp-carousel .slide-content h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #FFFFFF;
-    }
-
-    .why-ktp-carousel .slide-content p {
-      font-size: 1em;
-      line-height: 1.8;
-      color: #FFFFFF;
-      max-width: 800px; /* Optional: Limit the width for better readability */
-    }
-
-    /* Carousel Indicators */
-    .why-ktp-carousel .carousel-indicators {
+      align-items: center;
       text-align: center;
-      margin-top: 20px;
-    }
-  
-    .why-ktp-carousel .carousel-indicators .indicator {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin: 0 5px;
-      background-color: #ccc;
-      border-radius: 50%;
+      padding: 32px;
+      box-sizing: border-box;
       cursor: pointer;
-      transition: background-color 0.3s;
-    }
-  
-    .why-ktp-carousel .carousel-indicators .indicator.active {
-      background-color: #FFFFFF;
-    }
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(47, 74, 138, 0.2);
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+  }
 
-    /* Footer Text Color */
-    footer .sqs-html-content p,
-    footer .sqs-html-content h3,
-    footer .sqs-html-content a {
-      color: #FFFFFF !important; /* Make footer text white */
-    }
+  .ktp-circle::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-conic-gradient(
+          from 0deg at 50% 50%,
+          transparent 0deg,
+          rgba(47, 74, 138, 0.1) 10deg,
+          transparent 20deg,
+          transparent 30deg
+      );
+      animation: rotate 10s linear infinite;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  }
 
-    /* Responsive Adjustments for "Why KTP?" Section */
-    @media (max-width: 1200px) {
-      .why-ktp-content {
-        width: 35%; /* Adjust width for medium screens */
+  .ktp-circle:hover::after {
+      opacity: 1;
+  }
+
+  @keyframes rotate {
+      from {
+          transform: rotate(0deg);
       }
-    }
-
-    @media (max-width: 1024px) {
-      .why-ktp-content {
-        width: 50%; /* Adjust width for tablets */
+      to {
+          transform: rotate(360deg);
       }
-    }
+  }
 
-    @media (max-width: 768px) {
-      .why-ktp-content {
-        width: 80%; /* Adjust width for mobile devices */
+  .ktp-circle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+  }
+
+  .ktp-circle:hover::before {
+      opacity: 0.1;
+  }
+
+  .ktp-circle:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(47, 74, 138, 0.3);
+      border-color: var(--primary-light);
+  }
+
+  .circle-content {
+      position: relative;
+      z-index: 2;
+  }
+
+  .circle-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 3;
+  }
+
+  .ktp-circle:hover .circle-icon {
+      transform: scale(1.2) rotate(5deg);
+  }
+
+  .circle-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 12px;
+      line-height: 1.2;
+      position: relative;
+      z-index: 3;
+  }
+
+  .circle-description {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #1a202c;
+      font-weight: 400;
+      position: relative;
+      z-index: 3;
+  }
+
+  /* Animation for circles */
+  @keyframes float {
+      0%, 100% {
+          transform: translateY(0px);
       }
-    }
-  </style>
-  </head>
+      50% {
+          transform: translateY(-10px);
+      }
+  }
 
-  <body id="collection-60ee545f77e2cd4113f18f39" class="primary-button-style-solid primary-button-shape-square secondary-button-style-solid secondary-button-shape-square tertiary-button-style-solid tertiary-button-shape-square form-field-style-solid form-field-shape-square form-field-border-all form-field-checkbox-type-icon form-field-checkbox-fill-solid form-field-checkbox-color-inverted form-field-checkbox-shape-square form-field-checkbox-layout-stack form-field-radio-type-icon form-field-radio-fill-solid form-field-radio-color-normal form-field-radio-shape-pill form-field-radio-layout-stack form-field-survey-fill-solid form-field-survey-color-normal form-field-survey-shape-pill form-field-hover-focus-outline form-subVanderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbiltderbilt-button-style-label header-overlay-alignment-center header-width-full tweak-transparent-header tweak-fixed-header tweak-fixed-header-style-basic tweak-blog-alternating-side-by-side-width-full tweak-blog-alternating-side-by-side-image-aspect-ratio-11-square tweak-blog-alternating-side-by-side-text-alignment-left tweak-blog-alternating-side-by-side-read-more-style-show tweak-blog-alternating-side-by-side-image-text-alignment-middle tweak-blog-alternating-side-by-side-deliVanderbilter-bullet tweak-blog-alternating-side-by-side-meta-position-top tweak-blog-alternating-side-by-side-primary-meta-categories tweak-blog-alternating-side-by-side-secondary-meta-date tweak-blog-alternating-side-by-side-excerpt-show tweak-blog-basic-grid-width-inset tweak-blog-basic-grid-image-aspect-ratio-23-standard-vertical tweak-blog-basic-grid-text-alignment-left tweak-blog-basic-grid-deliVanderbilter-bullet tweak-blog-basic-grid-image-placement-above tweak-blog-basic-grid-read-more-style-show tweak-blog-basic-grid-primary-meta-categories tweak-blog-basic-grid-secondary-meta-date tweak-blog-basic-grid-excerpt-hide tweak-blog-item-width-narrow tweak-blog-item-text-alignment-center tweak-blog-item-meta-position-above-title tweak-blog-item-show-categories tweak-blog-item-show-date tweak-blog-item-deliVanderbilter-bullet tweak-blog-masonry-width-full tweak-blog-masonry-text-alignment-left tweak-blog-masonry-primary-meta-categories tweak-blog-masonry-secondary-meta-date tweak-blog-masonry-meta-position-top tweak-blog-masonry-read-more-style-show tweak-blog-masonry-deliVanderbilter-space tweak-blog-masonry-image-placement-above tweak-blog-masonry-excerpt-show tweak-blog-side-by-side-width-full tweak-blog-side-by-side-image-placement-left tweak-blog-side-by-side-image-aspect-ratio-11-square tweak-blog-side-by-side-primary-meta-categories tweak-blog-side-by-side-secondary-meta-date tweak-blog-side-by-side-meta-position-top tweak-blog-side-by-side-text-alignment-left tweak-blog-side-by-side-read-more-style-show tweak-blog-side-by-side-deliVanderbilter-bullet tweak-blog-side-by-side-excerpt-show tweak-blog-single-column-width-full tweak-blog-single-column-text-alignment-center tweak-blog-single-column-image-placement-above tweak-blog-single-column-deliVanderbilter-bullet tweak-blog-single-column-read-more-style-show tweak-blog-single-column-primary-meta-categories tweak-blog-single-column-secondary-meta-date tweak-blog-single-column-meta-position-top tweak-blog-single-column-content-full-post tweak-events-stacked-width-full tweak-events-stacked-height-large tweak-events-stacked-show-thumbnails tweak-events-stacked-thumbnail-size-32-standard tweak-events-stacked-date-style-with-text tweak-events-stacked-show-time tweak-events-stacked-show-location tweak-events-stacked-show-excerpt tweak-global-animations-complexity-level-detailed tweak-global-animations-animation-style-fade tweak-global-animations-animation-type-none tweak-global-animations-animation-curve-ease tweak-portfolio-grid-basic-width-full tweak-portfolio-grid-basic-height-large tweak-portfolio-grid-basic-image-aspect-ratio-11-square tweak-portfolio-grid-basic-text-alignment-left tweak-portfolio-grid-basic-hover-effect-fade tweak-portfolio-grid-overlay-width-full tweak-portfolio-grid-overlay-height-large tweak-portfolio-grid-overlay-image-aspect-ratio-11-square tweak-portfolio-grid-overlay-text-placement-center tweak-portfolio-grid-overlay-show-text-after-hover tweak-portfolio-index-background-link-format-stacked tweak-portfolio-index-background-width-full tweak-portfolio-index-background-height-large tweak-portfolio-index-background-vertical-alignment-middle tweak-portfolio-index-background-horizontal-alignment-center tweak-portfolio-index-background-deliVanderbilter-none tweak-portfolio-index-background-animation-type-fade tweak-portfolio-index-background-animation-duration-medium tweak-portfolio-hover-follow-layout-inline tweak-portfolio-hover-follow-deliVanderbilter-forward-slash tweak-portfolio-hover-follow-animation-type-fade tweak-portfolio-hover-follow-animation-duration-medium tweak-portfolio-hover-static-layout-stacked tweak-portfolio-hover-static-deliVanderbilter-forward-slash tweak-portfolio-hover-static-animation-type-scale-up tweak-portfolio-hover-static-animation-duration-medium tweak-product-basic-item-product-variant-display-dropdown tweak-product-basic-item-product-subscription-display-radio tweak-product-basic-item-product-subscription-border-shape-square tweak-product-basic-item-width-full tweak-product-basic-item-gallery-aspect-ratio-34-three-four-vertical tweak-product-basic-item-text-alignment-left tweak-product-basic-item-navigation-breadcrumbs tweak-product-basic-item-description-position-below-price tweak-product-basic-item-description-position-mobile-below-add-to-cart-button tweak-product-basic-item-content-alignment-top tweak-product-basic-item-gallery-design-slideshow tweak-product-basic-item-gallery-placement-left tweak-product-basic-item-thumbnail-placement-side tweak-product-basic-item-click-action-none tweak-product-basic-item-hover-action-none tweak-product-basic-item-variant-picker-layout-dropdowns tweak-product-basic-item-add-to-cart-standalone tweak-product-basic-item-add-to-cart-mobile-standalone tweak-products-width-full tweak-products-image-aspect-ratio-23-standard-vertical tweak-products-text-alignment-left tweak-products-price-show tweak-products-nested-category-type-top tweak-products-category-title tweak-products-header-text-alignment-middle tweak-products-breadcrumbs image-block-poster-text-alignment-left image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-content-position-center image-block-collage-text-alignment-left hide-opentable-icons opentable-style-dark tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-60ee545f77e2cd4113f18f39 collection-type-page collection-layout-default homepage mobile-style-available sqs-seven-one-global-animations" tabindex="-1" data-animation-state="booted">
-    <div id="siteWrapper" class="clearfix site-wrapper">
-      
+  .ktp-circle:nth-child(1) {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 0s;
+  }
 
-    
-      <!-- Header -->
-      <header data-test="header" id="header" class="header theme-col--primary" data-section-theme="primary" data-controller="Header" data-current-styles="{...}" data-section-id="header" data-header-style="dynamic" data-language-picker="{...}" data-first-focusable-element="" tabindex="-1" style="
-        
-          
-        --headerBorderColor: hsla(var(--white-hsl), 1);
-      
-      
-      
-        --solidHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-      
-      
-      
-        --solidHeaderNavigationColor: hsla(var(--black-hsl), 1);
-      
-      
-      
-        --gradientHeaderBackgroundColor: hsla(var(--white-hsl), 1);
-      
-      
-      
-        --gradientHeaderNavigationColor: hsla(var(--black-hsl), 1);
-    " data-controllers-bound="Header,Header">
-      
-            <div class="sqs-announcement-bar-dropzone"></div>
-        
-            <div class="header-announcement-bar-wrapper" style="background-color: white;">
+  .ktp-circle:nth-child(2) {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 0.6s;
+  }
 
-              
-              <a href="#page" class="header-skip-link sqs-button-element--primary">
-                Skip to Content
-              </a>
-              
-              <style>
-                
-                @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-                    .header-blur-background {
-                        /* Your styles here */
-                    }
-                }
-              </style>
-              <div class="header-border" data-header-style="dynamic" data-header-usability-enabled="true" data-header-border="false" data-test="header-border" style="
-                border-width: 0px !important;
-              "></div>
-              <div class="header-dropshadow" data-header-style="dynamic" data-header-usability-enabled="true" data-header-dropshadow="false" data-test="header-dropshadow" style="">
-              </div>
-            
-              <div class="header-inner container--fluid
-                header-mobile-layout-logo-left-nav-right
-                header-layout-nav-right
-                " style="
-                padding: 0;
-              " data-test="header-inner">
-                <!-- Background -->
-                <div class="header-background theme-bg--primary"></div>
-  
-                <!-- Desktop Header -->
-                <div class="header-display-desktop" data-content-field="site-title">
-                  
-                  <!-- Title and nav wrapper -->
-                  <div class="header-title-nav-wrapper">
-                    
-                    <!-- Title -->
-                    <div class="header-title" data-animation-role="header-element">
-                      <div class="header-title-logo">
-                        <a href="index.html" data-animation-role="header-element">
-                          <img elementtiming="nbf-header-logo-desktop" 
-                               src="images/logo.png" 
-                               alt="Kappa Theta Pi - Vanderbilt" 
-                               style="display:block; border-radius: 50%; width: 100px; height: 100px;" 
-                               fetchpriority="high" 
-                               loading="eager" 
-                               decoding="async" 
-                               data-loader="raw">
-                        </a>
-                      </div>
+  .ktp-circle:nth-child(3) {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 1.2s;
+  }
+
+  .ktp-circle:nth-child(4) {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 1.8s;
+  }
+
+  .ktp-circle:nth-child(5) {
+      animation: float 3s ease-in-out infinite;
+      animation-delay: 2.4s;
+  }
+
+  /* Responsive design for circles */
+  @media (max-width: 768px) {
+      .why-ktp-circles {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          padding: 20px 10px;
+      }
+
+      .why-ktp-circles::before {
+          display: none;
+      }
+
+      .why-ktp-content h2 {
+          font-size: 2.8rem;
+          margin-bottom: 20px;
+      }
+
+      .ktp-circle {
+          width: 240px;
+          height: 240px;
+          padding: 25px;
+      }
+
+      .circle-icon {
+          font-size: 2.5rem;
+      }
+
+      .circle-title {
+          font-size: 1.15rem;
+      }
+
+      .circle-description {
+          font-size: 0.85rem;
+      }
+  }
+
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+      :root {
+          --white: #0f172a;
+          --black: #f8fafc;
+          --gray: #1e293b;
+          --light-gray: #334155;
+          --text-secondary: #cbd5e1;
+          --text-muted: #94a3b8;
+          --border: #475569;
+      }
+  }
+</style>
+</head>
+
+<body>
+<!-- Animated background -->
+<div class="bg-decoration">
                     </div>
-                    
-                    
-                    <!-- Nav -->
-                    <div class="header-nav">
-                      <div class="header-nav-wrapper">
-                        <nav class="header-nav-list">
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="about.html" data-animation-role="header-element">
-                              About
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="recruitment.html" data-animation-role="header-element">
-                              Recruitment
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="brothers.html" data-animation-role="header-element">
-                              Brothers
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="ktp_in_action.html" data-animation-role="header-element">
-                              KTP in Action
-                            </a>
-                          </div>
-                          
-                          <div class="header-nav-item header-nav-item--collection">
-                            <a href="contact.html" data-animation-role="header-element">
-                              Contact
-                            </a>
-                          </div>
-                          
-                        </nav>
+
+<!-- Header will be injected here by header.js -->
+
+<main class="main-content">
+  <!-- Hero Section -->
+  <section class="hero-section">
+      <h1 class="page-title">About Kappa Theta Pi</h1>
+      <p class="page-subtitle">Building the future of technology through brotherhood, innovation, and professional excellence</p>
+  </section>
+  
+  <!-- Presidential Welcome Section -->
+  <section class="presidential-section">
+      <div class="presidential-image-container">
+          <img src="assets/founders-images/HaleyHS.JPG" alt="Haley Kahn - President" class="presidential-image" loading="lazy">
                       </div>
-                    </div>
-                    
-                  </div> 
-                
-                  <style>
-                    .top-bun, 
-                    .patty, 
-                    .bottom-bun {
-                      height: 1px;
-                    }
-                  </style>
-                
-                  <!-- Removed Burger Menu -->
-                
-                </div>
-              
-              </div>
-      
-              <!-- Removed Mobile Menu Navigation -->
-              
-
-            </header>
-
-
-    <main id="page" class="container" role="main">
-      
-      <article class="sections" id="sections" data-page-sections="60ee545f77e2cd4113f18f38">
-        
-        <section data-test="page-section" data-section-theme="black" class="page-section 
-          layout-engine-section
-          background-width--full-bleed
-          section-height--large
-          content-width--narrow
-          horizontal-alignment--left
-          vertical-alignment--middle
-          has-background
-          " data-current-context="{
-          
-            &quot;backgroundImageId&quot;: null,
-            &quot;backgroundMediaEffect&quot;: null,
-            &quot;divider&quot;: null,
-            &quot;typeName&quot;: &quot;page&quot;
-            }" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" style="padding-top: 97.5938px;" data-active="true">
-      
-        
-      
-      
-      
-      
-      
-        
-        <!-- start coding here -->
-        <div class="about-container">
-          <!-- Presidential Welcome Section -->
-          <div class="white-background" id="presidential-section">
-            <div class="presidential-section">
-              <img src="./assets/founders-images/HaleyHS.JPG" alt="Presidential Image" class="presidential-image" loading="lazy">
-              <div class="presidential-content">
-                <h2 class="title">A Presidential Welcome</h2>
-                <p class="presidential-letter">
-                  Welcome to KTP’s official website! My name is Haley Kahn, and I am a founder of KTP and the presiding president of KTP’s Rho Chapter. I decided to found KTP at Vandy in order to fill a whitespace. I noticed that despite CS being one of the largest and fastest-growing majors at Vandy, there lacked a community for tech-oriented individuals. While there existed organizations that focused specifically on programming or niches in computer science, there was little in the way of professional development combined with a social community.<br><br>
-                  
-                  In KTP’s short time as an organization on campus, we have welcomed many new members and held official recruitment events, workshops, speaker events, and we are looking forward to events with recruiters this fall! Being a pre-professional fraternity, we value having amazing opportunities for our members. This means connecting with faculty, networking with other students, and even getting amazing speakers from Fortune 500 companies to come speak and connect with us.<br><br>
-                  
-                  As professional as we are, we also want to build a social organization here on campus! We have hosted really fun events for our members such as Big-Little, bonding activities, study breaks, and a date party! While we wanted to give members opportunities for professional development, building a community of supportive brothers was a big priority when creating this organization.<br><br>
-                  
-                  As president, I hope to leave a lasting impression on the Vanderbilt community. With new KTP chapters popping up around the country, I am excited to help grow KTP both nationally and here at Vanderbilt. I hope you’ll follow our journey and consider joining us!
+      <div class="presidential-content">
+          <h2>A Presidential Welcome</h2>
+          <p>
+              Welcome to KTP's official website! My name is Haley Kahn, and I am a founder of KTP and the presiding president of KTP's Rho Chapter. I decided to found KTP at Vandy in order to fill a whitespace. I noticed that despite CS being one of the largest and fastest-growing majors at Vandy, there lacked a community for tech-oriented individuals.
+          </p>
+          <p>
+              While there existed organizations that focused specifically on programming or niches in computer science, there was little in the way of professional development combined with a social community. In KTP's short time as an organization on campus, we have welcomed many new members and held official recruitment events, workshops, speaker events, and we are looking forward to events with recruiters this fall!
+          </p>
+          <p>
+              Being a pre-professional fraternity, we value having amazing opportunities for our members. This means connecting with faculty, networking with other students, and even getting amazing speakers from Fortune 500 companies to come speak and connect with us. As professional as we are, we also want to build a social organization here on campus!
+          </p>
+          <p>
+              We have hosted really fun events for our members such as Big-Little, bonding activities, study breaks, and a date party! While we wanted to give members opportunities for professional development, building a community of supportive brothers was a big priority when creating this organization.
+          </p>
+          <p>
+              As president, I hope to leave a lasting impression on the Vanderbilt community. With new KTP chapters popping up around the country, I am excited to help grow KTP both nationally and here at Vanderbilt. I hope you'll follow our journey and consider joining us!
                 </p>
-              </div>
-            </div>
-          </div>
+                    </div>
+  </section>
         
-          <!-- Why KTP? Section (Separate Div, Full Width, Distinct Background) -->
-          <div class="why-ktp-section">
+  <!-- Why KTP Section -->
+  <section class="why-ktp-section">
             <div class="why-ktp-content">
-              <h2 class="title">Why KTP?</h2>
+          <h2>Why KTP?</h2>
           
-              <div class="why-ktp-carousel">
-                <!-- Carousel Wrapper -->
-                <div class="slides">
-                  <!-- Slide 1: Professional Development -->
-                  <div class="slide active">
-                    <div class="slide-content">
-                      <h3>Professional Development</h3>
-                      <p>
-                        Gain access to exclusive workshops, seminars, and networking events that will help you build essential skills and connect with industry leaders.
+                        <div class="why-ktp-circles">
+              <!-- Circle 1: Professional Development -->
+              <div class="ktp-circle">
+                  <div class="circle-content">
+                      <div class="circle-icon">💼</div>
+                      <h3 class="circle-title">Professional Development</h3>
+                      <p class="circle-description">
+                          Exclusive workshops, seminars, and networking events to build essential skills and connect with industry leaders.
+                      </p>
+                          </div>
+                      </div>
+
+              <!-- Circle 2: Networking Opportunities -->
+              <div class="ktp-circle">
+                  <div class="circle-content">
+                      <div class="circle-icon">🤝</div>
+                      <h3 class="circle-title">Networking Opportunities</h3>
+                      <p class="circle-description">
+                          Connect with fellow members, alumni, and recruiters from top companies for internships and job placements.
                       </p>
                     </div>
                   </div>
-          
-                  <!-- Slide 2: Networking Opportunities -->
-                  <div class="slide">
-                    <div class="slide-content">
-                      <h3>Networking Opportunities</h3>
-                      <p>
-                        Expand your professional network by interacting with fellow members, alumni, and recruiters from top companies, paving the way for internships and job placements.
+
+              <!-- Circle 3: Community and Support -->
+              <div class="ktp-circle">
+                  <div class="circle-content">
+                      <div class="circle-icon">🏠</div>
+                      <h3 class="circle-title">Community & Support</h3>
+                      <p class="circle-description">
+                          Join a supportive brotherhood fostering personal growth, mutual respect, and lifelong friendships.
+                      </p>
+                  </div>
+                    </div>
+                      
+              <!-- Circle 4: Leadership Experience -->
+              <div class="ktp-circle">
+                  <div class="circle-content">
+                      <div class="circle-icon">⭐</div>
+                      <h3 class="circle-title">Leadership Experience</h3>
+                      <p class="circle-description">
+                          Develop organizational and management skills through fraternity leadership roles preparing you for career challenges.
                       </p>
                     </div>
                   </div>
-          
-                  <!-- Slide 3: Community and Support -->
-                  <div class="slide">
-                    <div class="slide-content">
-                      <h3>Community and Support</h3>
-                      <p>
-                        Become part of a supportive brotherhood that fosters personal growth, mutual respect, and lifelong friendships through various social and bonding activities.
+
+              <!-- Circle 5: Service and Giving Back -->
+              <div class="ktp-circle">
+                  <div class="circle-content">
+                      <div class="circle-icon">❤️</div>
+                      <h3 class="circle-title">Service & Giving Back</h3>
+                      <p class="circle-description">
+                          Engage in meaningful community service projects making a positive impact beyond technology.
                       </p>
-                    </div>
-                  </div>
-          
-                  <!-- Slide 4: Leadership Experience -->
-                  <div class="slide">
-                    <div class="slide-content">
-                      <h3>Leadership Experience</h3>
-                      <p>
-                        Take on leadership roles within the fraternity to develop your organizational and management skills, preparing you for future career challenges.
-                      </p>
-                    </div>
-                  </div>
-          
-                  <!-- Slide 5: Service and Giving Back -->
-                  <div class="slide">
-                    <div class="slide-content">
-                      <h3>Service and Giving Back</h3>
-                      <p>
-                        Engage in meaningful community service projects that allow you to give back to Vanderbilt and the surrounding community, making a positive impact.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-          
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators">
-                  <span class="indicator" data-slide="0" aria-label="Professional Development"></span>
-                  <span class="indicator" data-slide="1" aria-label="Networking Opportunities"></span>
-                  <span class="indicator" data-slide="2" aria-label="Community and Support"></span>
-                  <span class="indicator" data-slide="3" aria-label="Leadership Experience"></span>
-                  <span class="indicator" data-slide="4" aria-label="Service and Giving Back"></span>
                 </div>
               </div>
             </div>
           </div>
-          
-        </div>
-
-              </div>
-                
-            
-          </section>
-          
-        </article>
-        
+      </section>
       </main>
       
-      <footer class="sections" id="footer-sections" data-footer-sections="">
-        
-        <section data-test="page-section" data-section-theme="dark-bold" class="page-section 
-          
-                layout-engine-section
-          
-          background-width--full-bleed
-          
-              section-height--small
-                        
-          content-width--wide
-        
-        horizontal-alignment--left
-        vertical-alignment--middle
-        
-          
-      
-            dark-bold" data-section-id="60ee4f3db240f96f8b2d1242" data-controller="SectionWrapperController" data-current-styles="{...}" data-current-context="{...}" data-animation="none" data-controllers-bound="SectionWrapperController,SectionWrapperController" data-active="true">
-        <div class="section-border">
-          <div class="section-background" style="background-color: black;">
-            <!-- No images in the footer background -->
-          </div>
-        </div>
+<!-- Footer will be injected here by footer.js -->
 
-               
-        <div class="content-wrapper" style="background-color: #2F4A8A !important;">
-          <div class="content">
-            
-            <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
-              <div class="row sqs-row">
-                <div class="col sqs-col-10 span-10">
-                  <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" data-block-type="2" data-border-radii="{...}" id="block-1dc5f0c7232f9c0befd8">
-                    <div class="sqs-block-content">
-                      <!-- Removed image blocks if any -->
-                    </div>
-                  </div>
-                  <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-efcfd78bd8d6e66904f1">
-                    <div class="sqs-block-content">
-                      <div class="sqs-html-content">
-                        <h3 style="white-space: pre-wrap; color: black;">Kappa Theta Pi - Vanderbilt</h3>
-                        
-                        <p class="" style="white-space: pre-wrap; color: black;">© Kappa Theta Pi</p>
-                        
-                      <p class="" style="white-space:pre-wrap;"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1626457237565_14419">
-                    <div class="sqs-block-content">
-                      
-                      
-                      <div class="sqs-svg-icon--outer social-icon-alignment-left social-icons-color- social-icons-size-small social-icons-style-regular ">
-                      <style>
-                        #block-yui_3_17_2_1_1626457237565_14419 .social-icons-style-border .sqs-svg-icon--wrapper {
-                          
-                              box-shadow: 0 0 0 2px inset;
-                            
-                            border: none; 
-                        }
-                      </style>
-                      <nav class="sqs-svg-icon--list">
-                        <a href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
-                          <div>
-                            <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                              <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
-                              <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
-                            </svg>
-                          </div>
-                        </a>
-                      </nav>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col sqs-col-2 span-2">
-                  <div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="{...}" id="block-763c164cea46603b42d4">
-                    <div class="sqs-block-content">
-                      
-                      <div class="sqs-html-content" style="color: black;">
-                        <p class="" style="white-space: pre-wrap;"><strong>Links</strong></p>
-                        <p class="" style="white-space: pre-wrap;"><a href="about.html" style="color: black;">About</a></p>
-                        <p class="" style="white-space: pre-wrap;"><a href="recruitment.html" style="color: black;">Recruitment</a></p>
-                        <p class="" style="white-space: pre-wrap;"></p>
-                        <p class="" style="white-space: pre-wrap;"><a href="ktp_in_action.html" style="color: black;">KTP in Action</a></p>
-                        <p class="" style="white-space: pre-wrap;"><a href="contact.html" style="color: black;">Contact</a></p>
-                        <p class="" style="white-space: pre-wrap;"></p>
-                    </div>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          </div>
-        
-        </div>
-      
-      </section>
-    
-    </footer>
-    
-      
-    </div>
-
-    <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
-  <!-- JavaScript for Carousel Functionality -->
-<style>
-/* Carousel Container */
-.why-ktp-carousel {
-  min-height: 300px; /* Ensure consistent height */
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Carousel Slides */
-.slides {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  flex: 0 0 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-  display: none; /* Hide all slides by default */
-}
-
-.slide.active {
-  display: flex; /* Show the active slide */
-}
-
-/* Slide Content */
-.slide-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100%;
-  justify-content: center;
-}
-
-.slide-content h3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1.5em;
-  margin: 0 0 10px 0;
-}
-
-.slide-content p {
-  flex-grow: 1;
-  overflow: auto;
-  font-size: 1em;
-}
-
-/* Carousel Indicators */
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.indicator.active {
-  background-color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .why-ktp-carousel {
-    min-height: 250px;
-  }
-
-  .slide-content h3 {
-    font-size: 1.3em;
-  }
-
-  .slide-content p {
-    font-size: 0.95em;
-  }
-}
-
-@media (max-width: 480px) {
-  .why-ktp-carousel {
-    min-height: 200px;
-  }
-
-  .slide-content h3 {
-    font-size: 1.1em;
-  }
-
-  .slide-content p {
-    font-size: 0.9em;
-  }
-}
-
-</style>
+<!-- Enhanced JavaScript -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".slide");
-  const indicators = document.querySelectorAll(".indicator");
-  const carousel = document.querySelector(".why-ktp-carousel");
-  let currentIndex = 0;
-  let interval;
+  document.addEventListener("DOMContentLoaded", function () {
+      // Enhanced scroll animation observer with bi-directional animations
+      const observerOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -100px 0px"
+      };
 
-  const rotationInterval = 3000; // 3 seconds per slide
-  const totalSlides = slides.length;
+      const animationObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              // Skip footer elements completely
+              if (entry.target.closest('footer') || entry.target.matches('footer *')) {
+                  return;
+              }
+              
+              if (entry.isIntersecting) {
+                  // Animate in
+                  entry.target.style.opacity = "1";
+                  entry.target.style.transform = "translateY(0) scale(1)";
+                  entry.target.classList.add('in-view');
+              } else {
+                  // Animate out when scrolling away
+                  entry.target.style.opacity = "0.3";
+                  entry.target.style.transform = "translateY(20px) scale(0.98)";
+                  entry.target.classList.remove('in-view');
+              }
+          });
+      }, observerOptions);
 
-  // Function to show a specific slide
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-      indicators[i].classList.toggle("active", i === index);
-    });
-    currentIndex = index;
-    // Save currentIndex to localStorage (Optional)
-    localStorage.setItem("carouselCurrentIndex", index);
-  }
+      // Add parallax scroll effects
+      let ticking = false;
+      function updateScrollAnimations() {
+          const scrolled = window.pageYOffset;
+          const rate = scrolled * -0.5;
+          
+          // Parallax effect on hero section
+          const heroSection = document.querySelector('.hero-section');
+          if (heroSection) {
+              heroSection.style.transform = `translateY(${rate * 0.3}px)`;
+          }
+          
+          // Floating animation for circles based on scroll
+          const circles = document.querySelectorAll('.ktp-circle');
+          circles.forEach((circle, index) => {
+              const offset = scrolled * 0.1 * (index + 1);
+              if (circle.classList.contains('in-view')) {
+                  circle.style.transform = `translateY(${Math.sin(offset * 0.01) * 10}px) scale(${1 + Math.sin(offset * 0.02) * 0.02})`;
+              }
+          });
+          
+          ticking = false;
+      }
 
-  // Function to move to the next slide
-  function nextSlide() {
-    const nextIndex = (currentIndex + 1) % slides.length;
-    showSlide(nextIndex);
-  }
+      function requestTick() {
+          if (!ticking) {
+              requestAnimationFrame(updateScrollAnimations);
+              ticking = true;
+          }
+      }
 
-  // Start auto-rotation
-  function startAutoRotate() {
-    stopAutoRotate(); // Prevent multiple intervals
-    interval = setInterval(nextSlide, rotationInterval);
-  }
+      window.addEventListener('scroll', requestTick);
 
-  // Stop auto-rotation
-  function stopAutoRotate() {
-    if (interval) {
-      clearInterval(interval);
-    }
-  }
+      // Observe elements for animation with staggered effects (excluding footer)
+      const animatedElements = document.querySelectorAll('.presidential-section, .why-ktp-section, .ktp-circle, .presidential-image, .presidential-content');
+      const filteredElements = Array.from(animatedElements).filter(el => {
+          // Exclude footer elements
+          return !el.closest('footer') && !el.matches('footer *');
+      });
+      
+      filteredElements.forEach((el, index) => {
+          // Initial state
+          el.style.opacity = "0";
+          el.style.transform = "translateY(50px) scale(0.95)";
+          el.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+          el.style.transitionDelay = `${index * 0.1}s`;
+          
+          // Add subtle hover animations
+          el.addEventListener('mouseenter', () => {
+              if (el.classList.contains('in-view')) {
+                  el.style.transform = "translateY(-5px) scale(1.02)";
+              }
+          });
+          
+          el.addEventListener('mouseleave', () => {
+              if (el.classList.contains('in-view')) {
+                  el.style.transform = "translateY(0) scale(1)";
+              }
+          });
+          
+          animationObserver.observe(el);
+      });
 
-  // Retrieve saved currentIndex from localStorage (Optional)
-  const savedIndex = localStorage.getItem("carouselCurrentIndex");
-  if (savedIndex !== null && !isNaN(savedIndex) && savedIndex < totalSlides) {
-    currentIndex = parseInt(savedIndex, 10);
-  }
+             // Progress bar removed as requested
 
-  // Initialize the carousel at the saved or first slide
-  showSlide(currentIndex);
+      // Add loading state
+      window.addEventListener("load", () => {
+          document.body.classList.add("loaded");
+          
+          // Animate page title
+          const pageTitle = document.querySelector(".page-title");
+          if (pageTitle) {
+              pageTitle.style.animation = "slideInUp 0.8s ease-out";
+          }
 
-  // Start rotation immediately
-  startAutoRotate();
+          // Animate subtitle
+          const pageSubtitle = document.querySelector(".page-subtitle");
+          if (pageSubtitle) {
+              pageSubtitle.style.animation = "slideInUp 0.8s ease-out 0.2s both";
+          }
+      });
 
-  // Pause auto-rotation on hover and resume on mouse leave
-  carousel.addEventListener("mouseenter", stopAutoRotate);
-  carousel.addEventListener("mouseleave", startAutoRotate);
+      // Performance optimization: Pause animations when not visible
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (mediaQuery.matches) {
+          // Disable animations for users who prefer reduced motion
+          document.documentElement.style.setProperty("--animation-duration", "0s");
+      }
 
-  // Click event for indicators
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", () => {
-      stopAutoRotate();
-      showSlide(index);
-      startAutoRotate();
-    });
+      // Add resize handler for responsive behavior
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+              // Recalculate circle positions if needed
+              const circles = document.querySelectorAll(".ktp-circle");
+              circles.forEach(circle => {
+                  circle.style.transform = circle.style.transform || "translateY(0) scale(1)";
+              });
+          }, 250);
+      });
+
+      // Enhanced circle interactions
+      const circles = document.querySelectorAll('.ktp-circle');
+      circles.forEach((circle, index) => {
+          // Initialize circles for scroll animation
+          circle.style.opacity = "0";
+          circle.style.transform = "translateY(30px) scale(0.9)";
+          circle.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+          circle.style.transitionDelay = `${index * 0.1}s`;
+
+          // Enhanced hover effects
+          circle.addEventListener('mouseenter', () => {
+              circle.style.animationPlayState = 'paused';
+          });
+
+          circle.addEventListener('mouseleave', () => {
+              circle.style.animationPlayState = 'running';
+          });
+
+          // Add click ripple effect for circles
+          circle.addEventListener('click', (e) => {
+              const ripple = document.createElement('div');
+              const rect = circle.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              
+              ripple.style.cssText = `
+                  position: absolute;
+                  border-radius: 50%;
+                  background: rgba(47, 74, 138, 0.2);
+                  transform: scale(0);
+                  animation: ripple 0.8s ease-out;
+                  left: ${x}px;
+                  top: ${y}px;
+                  width: 30px;
+                  height: 30px;
+                  margin-left: -15px;
+                  margin-top: -15px;
+                  pointer-events: none;
+                  z-index: 3;
+              `;
+              
+              circle.appendChild(ripple);
+              
+              setTimeout(() => {
+                  ripple.remove();
+              }, 800);
+          });
+      });
+
+      // Special observer for circles
+      const circleObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.style.opacity = "1";
+                  entry.target.style.transform = "translateY(0) scale(1)";
+              }
+          });
+      }, { threshold: 0.2 });
+
+      circles.forEach(circle => {
+          circleObserver.observe(circle);
+      });
+
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+          @keyframes ripple {
+              to {
+                  transform: scale(4);
+                  opacity: 0;
+              }
+          }
+      `;
+      document.head.appendChild(style);
   });
 
-  // Visibility Change Handling
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stopAutoRotate();
-    } else {
-      startAutoRotate();
+  // Add custom cursor effects
+  document.addEventListener("DOMContentLoaded", () => {
+      const circles = document.querySelectorAll(".ktp-circle");
+      const presidentialImage = document.querySelector(".presidential-image");
+
+      // Add cursor effects to interactive elements
+      [...circles, presidentialImage].forEach(element => {
+          if (element) {
+              element.style.cursor = "pointer";
+              element.addEventListener("mouseenter", () => {
+                  document.body.style.cursor = "pointer";
+              });
+              element.addEventListener("mouseleave", () => {
+                  document.body.style.cursor = "default";
+              });
     }
   });
 });
-
 </script>
 
+<!-- Header Component -->
+<script src="js/header.js"></script>
     
-    
+<!-- Footer Component -->
+<script src="js/footer.js"></script>
   </body>
 </html>
