@@ -9,8 +9,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700&family=Inter:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://static1.squarespace.com/static/versioned-site-css/60ee4f3db240f96f8b2d1216/31/5c5a519771c10ba3470d8101/60ee4f3db240f96f8b2d1230/1573/site.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Footer Styles -->
+    <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
 
     <style>
+        :root {
+            --primary: #2F4A8A;
+            --white: #ffffff;
+            --black: #000000;
+            --gray: #f4f4f4;
+        }
+
         /* General Reset for Margin and Padding */
         * {
             margin: 0;
@@ -18,14 +28,7 @@
             box-sizing: border-box;
         }
 
-        /* General Footer Styles */
-        #footer-sections {
-            color: white !important;
-        }
 
-        #footer-sections * {
-            color: white !important;
-        }
 
         /* Custom Header Styles for Specific Pages */
         body#collection-about header,
@@ -67,14 +70,7 @@
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
 
-        /* Update links in the footer */
-        footer a {
-            color: black !important;
-        }
 
-        footer a:hover {
-            color: #555 !important;
-        }
 
         /* Additional Styles for Brothers Section */
         .brothers-about-container {
@@ -474,72 +470,12 @@
             </article>
         </main>
 
-        <footer class="sections" id="footer-sections" data-footer-sections="">
-          
-          <section class="page-section background-width--full-bleed section-height--small content-width--wide horizontal-alignment--left vertical-alignment--middle dark-bold" style="background-color: black;">
-              <div class="section-border">
-                  <div class="section-background" style="background-color: black;">
-                      <!-- No images in the footer background -->
-                  </div>
-              </div>
 
-              <div class="content-wrapper" style="background-color: #2F4A8A !important;">
-                  <div class="content">
-                      
-                      <div class="sqs-layout sqs-grid-12 columns-12" data-type="page-section" id="page-section-60ee4f3db240f96f8b2d1242">
-                          <div class="row sqs-row">
-                              <div class="col sqs-col-10 span-10">
-                                  <div class="sqs-block html-block sqs-block-html sqs-col-5 span-5 float float-right" id="block-1dc5f0c7232f9c0befd8">
-                                      <div class="sqs-block-content">
-                                          <!-- Removed image blocks if any -->
-                                      </div>
-                                  </div>
-                                  <div class="sqs-block html-block sqs-block-html" id="block-efcfd78bd8d6e66904f1">
-                                      <div class="sqs-block-content">
-                                          <div class="sqs-html-content">
-                                              <h3>Kappa Theta Pi - Vanderbilt</h3>
-                                              <p>© Kappa Theta Pi</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" id="block-yui_3_17_2_1_1626457237565_14419">
-                                      <div class="sqs-block-content">
-                                          <nav class="sqs-svg-icon--list">
-                                              <a href="https://www.instagram.com/ktpvandy/?igsh=ZmIzZXN4a3VmZ21s#" target="_blank" class="sqs-svg-icon--wrapper instagram-unauth" aria-label="instagram-unauth">
-                                                  <div>
-                                                      <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
-                                                          <use class="sqs-use--icon" xlink:href="#instagram-unauth-icon"></use>
-                                                          <use class="sqs-use--mask" xlink:href="#instagram-unauth-mask"></use>
-                                                      </svg>
-                                                  </div>
-                                              </a>
-                                          </nav>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col sqs-col-2 span-2">
-                                  <div class="sqs-block html-block sqs-block-html" id="block-763c164cea46603b42d4">
-                                      <div class="sqs-block-content">
-                                          <div class="sqs-html-content">
-                                              <p><strong>Links</strong></p>
-                                              <p><a href="about.html">About</a></p>
-                                              <p><a href="recruitment.html">Recruitment</a></p>
-                                              <p><a href="ktp_in_action.html">KTP in Action</a></p>
-                                              <p><a href="contact.html">Contact</a></p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  
-                  </div>
-              </div>
-          </section>
-        
-        </footer>
   
 
     </div>
+
+<!-- Footer Component -->
+<script src="js/footer.js"></script>
 </body>
 </html>

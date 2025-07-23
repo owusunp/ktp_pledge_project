@@ -1,0 +1,82 @@
+/* FOOTER STYLES - KTP Website */
+
+/* CSS Variables for consistent theming */
+:root {
+  --primary: #2F4A8A;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #f4f4f4;
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary) !important;
+  color: var(--white) !important;
+  padding: 60px 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-left h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--white) !important;
+}
+
+.footer-left p {
+  font-size: 1rem;
+  color: #ccc !important;
+}
+
+.footer-right h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: var(--white) !important;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right li {
+  margin-bottom: 10px;
+}
+
+.footer-right a {
+  color: #ffffff !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s ease;
+  font-size: 1rem;
+}
+
+.footer-right a:hover {
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  footer {
+    padding: 40px 20px;
+  }
+
+  .footer-left h3 {
+    font-size: 1.5rem;
+  }
+} 

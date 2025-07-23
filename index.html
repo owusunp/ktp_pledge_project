@@ -7,9 +7,12 @@
       </script>
      <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/versioned-site-css/60ee4f3db240f96f8b2d1216/31/5c5a519771c10ba3470d8101/60ee4f3db240f96f8b2d1230/1573/site.css">
    
-     <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
-   
-   <style type="text/css">
+       <link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/vta/5c5a519771c10ba3470d8101/versioned-assets/1728407958569-DI71YIND73BBQN7RBZCZ/static.css">
+  
+  <!-- Footer Styles -->
+  <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
+
+<style type="text/css">
      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap);
      .content-wrapper[data-v-f926e7dc] {
        position: fixed;
@@ -1043,4 +1046,46 @@
    
    
    
-   <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div></body><!----></html>
+   <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
+   
+   <!-- Footer Component -->
+   <script src="js/footer.js"></script>
+   
+       <style>
+    /* CSS Variables for consistent theming */
+    :root {
+      --primary: #2F4A8A;
+      --white: #ffffff;
+      --black: #000000;
+      --gray: #f4f4f4;
+    }
+    
+    /* Hide the existing Squarespace footer */
+    #footer-sections {
+      display: none !important;
+    }
+    
+    /* Ensure footer displays properly on index page */
+    footer {
+      background: var(--primary) !important;
+      color: var(--white) !important;
+    }
+    
+    footer * {
+      color: var(--white) !important;
+    }
+    
+    footer h3, footer h4 {
+      color: var(--white) !important;
+    }
+    
+    footer a {
+      color: var(--white) !important;
+    }
+    
+    footer a:hover {
+      color: var(--white) !important;
+    }
+    </style>
+   
+   </body><!----></html>
