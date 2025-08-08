@@ -118,6 +118,15 @@
                 height: 250px;
             }
         }
+        @media(max-width: 600px){
+      .main-content {
+        height: 30px;
+        width:30;
+        font-size: 1rem;
+        text-align: center;
+        
+      }
+    }
     </style>
 </head>
 
@@ -125,7 +134,7 @@
     <!-- Header will be injected here by header.js -->
     
     <main class="main-content">
-        <div style="height: 10px;"></div> <!-- Creates very minimal vertical space -->
+        <div style="height: 10px; width: 25%;"></div> <!-- Creates very minimal vertical space -->
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="images/ktp1.JPEG" alt="Gallery Image 1">
@@ -164,5 +173,6 @@
     
     <!-- Footer Component -->
     <script src="js/footer.js"></script>
+
 </body>
 </html>

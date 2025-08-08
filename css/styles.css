@@ -390,7 +390,7 @@ body {
 footer {
   background-color: #2F4A8A;
   color: white;
-  padding: 4rem 1rem;
+  padding:11% ;
   margin-top: -7rem; /* adjust this value as needed */
   position: relative;
   z-index: 2; /* make sure it sits above the image */
