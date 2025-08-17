@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kappa Theta Pi - Vanderbilt</title>
+  
+  <!-- Component CSS files -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header-styles/header.css">
+  <link rel="stylesheet" href="css/footer-styles/footer.css">
+  
+  <style>
+    body,
+    p,
+    .content-wrapper,
+    .header,
+    .header a,
+    .header-nav-list a {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    }   
+    /* Global Reset and Base Styles */ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    
+      
+    
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+
+    /* Button */
+    .btn {
+      display: inline-block;
+      background-color: #2F4A8A;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #22366c;
+    }
+
+    /* Hero section - standard layout without header overrides */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .hero-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.40);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translateY(-50%);
+      text-align: left;
+      z-index: 2;
+      color: white;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    /* WELCOME TO KTP */
+    .intro {
+      background-color: #fff;
+      padding: 6rem 1rem;
+      text-align: center;
+    }
+
+    .intro-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .intro p {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    /* Get Involved Section */
+    .involvement-hero {
+      position: relative;
+      height: 75vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .involvement-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .involvement-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .involvement-content {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      padding: 2rem;
+      z-index: 2;
+      max-width: 600px;
+      color: white;
+      text-align: left;
+    }
+
+    .involvement-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .involvement-content p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Learn About Brothers Section */
+    .brothers-fullscreen {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+      overflow: hidden;
+      margin-top: -100px;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right; 
+    }
+
+    .brothers-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+
+    .brothers-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .brothers-content {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      padding: 2rem;
+      z-index: 2;
+      max-width: 600px;
+      color: white;
+      text-align: right;
+    }
+
+    .brothers-content h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .brothers-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* Get Comfortable Section */
+    .comfortable-section {
+      background-color: white;
+      padding: 4rem 2rem;
+    }
+
+    .comfortable-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .comfortable-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .comfortable-text h5 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .comfortable-text h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .comfortable-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .comfortable-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sections */
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 4rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section img {
+      max-width: 100%;
+      height: auto;
+      flex: 1;
+    }
+
+    .section div {
+      flex: 1;
+      padding: 1rem;
+    }
+
+    .section h4 {
+      color: #2F4A8A;
+      font-size: 1rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    /* Learn More Section */
+    .learn-more-hero {
+      position: relative;
+      height: 90vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .learn-more-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center; 
+      z-index: 0;
+    }
+
+    .learn-more-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(82, 0, 88, 0.4);
+      z-index: 1;
+    }
+
+    .learn-more-content {
+      position: absolute;
+      top: 37%;
+      right: 11%;
+      transform: translateY(-50%);
+      z-index: 2;
+      color: white;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .learn-more-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .learn-more-content .btn {
+      background-color: #2F4A8A;
+      color: white;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .learn-more-content .btn:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header will be injected by component -->
+  
+  <section class="hero">
+    <img src="images/campus.jpg" alt="CAMPUS" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Kappa Theta Pi</h1>
+      <p>Vanderbilt's only Professional Technology Fraternity.</p>
+      <a href="about.html" class="btn">Learn about us</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="intro">
+      <div class="intro-container">
+        <h2>Welcome to KTP</h2>
+        <p>
+          Kappa Theta Pi is Vanderbilt's only professional technology fraternity, dedicated to developing leaders in the fields of engineering and technology. As the nation's foremost fraternity for technologists, Kappa Theta Pi fosters professional growth, community service, and a commitment to advancing the tech industry. This mission is exemplified by our members—a diverse and accomplished group of scholars, innovators, athletes, founders, and leaders in various fields. We believe our strength lies in our members' dedication and the support of those who value our vision.
+          <br><br>
+          On behalf of the entire Kappa Theta Pi community, welcome to our website! Here, you can learn more about our mission, our members, and how to get involved.
+        </p>
+      </div>
+    </section>
+
+    <section class="involvement-hero">
+      <img src="images/signature.png" alt="Get Involved" class="involvement-bg" />
+      <div class="involvement-overlay"></div>
+      <div class="involvement-content">
+        <h2>Get involved.</h2>
+        <p>See what makes KTP stand out and learn more about our recruitment process.</p>
+        <a href="recruitment.html" class="btn">Recruitment</a>
+      </div>
+    </section>
+
+    <section class="section brothers-fullscreen">
+      <img src="images/learnAboutOurBrothersBackGround.png" alt="Vanderbilt Logo" class="brothers-bg" />
+      <div class="brothers-overlay"></div>
+      <div class="brothers-content">
+        <h2>Get ahead.</h2>
+        <p>Learn about our accomplished brothers and alumni, and how we can help you.</p>
+        <a href="brothers.html" class="btn">Brothers</a>
+      </div>
+    </section>
+
+    <section class="comfortable-section">
+      <div class="comfortable-container">
+        <div class="comfortable-text">
+          <h5>Get comfortable.</h5>
+          <h2>Explore our home and what makes it special.</h2>
+          <a href="ktp_in_action.html" class="btn">KTP in Action</a>
+        </div>
+        <div class="comfortable-image">
+          <img src="images/ktp10.png" alt="KTP Members in Action" />
+        </div>
+      </div>
+    </section>
+
+    <section class="learn-more-hero">
+      <img src="images/ktp4.jpg" alt="KTP Event" class="learn-more-bg" />
+      <div class="learn-more-overlay"></div>
+      <div class="learn-more-content">
+        <h2>Want to learn more about KTP Vanderbilt?</h2>
+        <a href="contact.html" class="btn">Contact</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer will be injected by component -->
+
+  <!-- Component Scripts -->
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+</html>
