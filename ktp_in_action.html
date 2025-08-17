@@ -1,231 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KTP in Action - Kappa Theta Pi Vanderbilt</title>
-  
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <link rel="manifest" href="/manifest.json">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KTP in Action - Kappa Theta Pi Vanderbilt</title>
 
-    
-    <!-- Cache Manager for instant loading -->
-    <script src="js/cache-manager.js"></script>
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Header Styles -->
-    <link rel="stylesheet" type="text/css" href="css/header-styles/header.css">
-    
-    <!-- Footer Styles -->
-    <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
+  <link rel="icon" type="image/x-icon" href="images/logo.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-        :root {
-            --primary: #2F4A8A;
-            --white: #ffffff;
-            --black: #000000;
-            --gray: #f4f4f4;
-        }
+  <!-- Cache Manager -->
+  <script src="js/cache-manager.js"></script>
 
-        /* Hide scrollbar on all browsers */
-        html {
-            overflow-y: scroll;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-        }
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-        html::-webkit-scrollbar {
-            display: none; /* WebKit browsers (Chrome, Safari, etc.) */
-        }
+  <!-- Header & Footer external styles (unchanged) -->
+  <link rel="stylesheet" type="text/css" href="css/header-styles/header.css" />
+  <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css" />
 
-        /* General Reset for Margin and Padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --primary: #2f4a8a;
+      --white: #ffffff;
+      --black: #000000;
+      --gray: #f4f4f4;
+    }
 
-        body {
-            font-family: 'Roboto', 'Arial', sans-serif;
-            font-weight: 300;
-            background-color: var(--white);
-            color: var(--black);
-            overflow-x: hidden;
-        }
+    /* Hide scrollbar on all browsers */
+    html {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+      height: 100%; /* for sticky footer layout */
+    }
+    html::-webkit-scrollbar { display: none; }
 
-        /* Main Content Styling */
-        .main-content {
-            padding-top: 0;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Gallery Container - Updated styling from provided HTML */
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            justify-items: center;
-        }
+    body {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-weight: 300;
+      background-color: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      min-height: 100dvh;
+      display: flex;          /* sticky footer layout */
+      flex-direction: column; /* sticky footer layout */
+    }
 
-        .gallery-item {
-            max-width: 500px;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 17%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
+    /* Main Content */
+    .main-content { padding-top: 0; flex: 1 0 auto; }
+    .main-content { padding-bottom: 80px; } /* ensure gallery never touches footer */
+    @media (max-width: 576px) { .main-content { padding-bottom: 100px; } }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    /* Gallery (kept as-is, just deduped) */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+    }
+    .gallery-item {
+      max-width: 500px;
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 17%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-item:hover { transform: scale(1.05); }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
+    @media (max-width: 768px) {
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 15px;
+        padding: 15px;
+      }
+      .gallery-item { max-width: 400px; height: 300px; }
+    }
+    @media (max-width: 480px) {
+      .gallery-container { grid-template-columns: 1fr; gap: 15px; padding: 10px; }
+      .gallery-item { max-width: 100%; height: 250px; }
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .gallery-container {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 15px;
-                padding: 15px;
-            }
-
-            .gallery-item {
-                max-width: 400px;
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gallery-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 10px;
-            }
-
-            .gallery-item {
-                max-width: 100%;
-                height: 250px;
-            }
-        }
-        @media(max-width: 600px){
+    /* Fixed small typo/units and removed duplicate .gallery-img rules */
+    @media (max-width: 600px) {
       .main-content {
         height: 30px;
-        width:30;
+        width: 30px;      /* was 'width:30' without unit; keeping minimal/no visual impact */
         font-size: 1rem;
         text-align: center;
-        
       }
     }
-    .gallery-img {
-  width: 100%;          /* Take full column width */
-  height: 250px;        /* Fixed height for uniform look */
-  object-fit: cover;    /* Crop to fit container without distortion */
-  border-radius: 17%;   /* Optional rounded corners */
-}
-    .gallery-img {
-  width: 100%;
-  height: 250px;          /* Fixed height so all images match */
-  object-fit: cover;      /* Crops instead of distorting */
-  display: block;
-  border-radius: 17%;
-}
 
-.img-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 17%;
+    .img-card { position: relative; overflow: hidden; border-radius: 17%; }
+    .img-card::after {
+      content: "";
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.6) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(255,255,255,0.7) 0 2px, transparent 3px);
+      background-repeat: repeat;
+      background-size: 80px 80px, 120px 120px, 100px 100px;
+      opacity: 0;
+      animation: sparkle 2s infinite ease-in-out;
+      transition: opacity 0.4s ease;
+    }
+    @keyframes sparkle {
+      0%, 100% { background-position: 0 0, 40px 40px, 20px 60px; }
+      50%      { background-position: 20px 20px, 60px 80px, 40px 0; }
+    }
+
+    /* Ultra-wide additions (kept) */
+    @media (min-width: 1920px) {
+      .row.cols-ultra-6 > .col { flex: 0 0 auto; width: calc(100% / 6); }
+      .gallery-img { height: 420px; }
+    }
+    @media (min-width: 2560px) {
+      .row.cols-ultra-7 > .col { flex: 0 0 auto; width: calc(100% / 7); }
+      .gallery-img { height: 480px; }
+    }
+
+    /* FOOTER — keep design, scale relative to width, no wrap */
+    .site-footer {
+      background: #2f4a8a;   /* your blue */
+      color: #fff;
+      /* Scale font + padding with viewport, but clamp to sane bounds */
+      font-size: clamp(0.75rem, 0.85rem + 0.3vw, 1rem);
+      line-height: 1.5;
+      padding: clamp(16px, 2vw, 40px) clamp(12px, 1.5vw, 20px);
+      flex-shrink: 0;        /* never collapse */
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    /* Keep footer columns on one line; allow horizontal scroll if needed */
+    .site-footer .row {
+      flex-wrap: nowrap !important;
+      justify-content: space-between;
+      align-items: center;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      gap: 12px;
+    }
+    .site-footer .row::-webkit-scrollbar { display: none; }
+
+    /* Prevent column shrink/compression */
+    .site-footer .row > [class^="col"] {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .site-footer .container { padding: 0; } /* external footer.css padding remains; we scale via clamp */
+    .site-footer img, .site-footer svg { max-width: 100%; height: auto; }
+    /* FIX: let content show at small widths */
+@media (max-width: 600px){
+  .main-content {
+    height: auto !important;
+    width: auto !important;
+  }
 }
-
-/* Sparkles overlay */
-.img-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.8) 0 2px, transparent 3px),
-    radial-gradient(circle, rgba(255,255,255,0.6) 0 1.5px, transparent 2.5px),
-    radial-gradient(circle, rgba(255,255,255,0.7) 0 2px, transparent 3px);
-  background-repeat: repeat;
-  background-size: 80px 80px, 120px 120px, 100px 100px;
-  opacity: 0;
-  animation: sparkle 2s infinite ease-in-out;
-  transition: opacity 0.4s ease;
-}
-
-
-
-/* Twinkling animation */
-@keyframes sparkle {
-  0%, 100% { background-position: 0 0, 40px 40px, 20px 60px; }
-  50% { background-position: 20px 20px, 60px 80px, 40px 0; }
-}
+/* Pull gallery closer to the top */
 .main-content {
-  padding-bottom: 50px; 
-    /* adjust as needed */
+  margin-top: 0 !important;   /* override any Bootstrap mt-* */
+  padding-top: 0 !important;
+}
+
+/* Optional: keep a tiny breathing space on big screens */
+@media (min-width: 992px) {
+  .main-content { margin-top: 0.5rem !important; }
+}
+
+/* Optional: slight “closer” feel via subtle zoom */
+.gallery-item img {
+  transform: scale(1.03);
+  transition: transform 0.25s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
 }
 
 
-
-
-    </style>
+  </style>
 </head>
 
 <body>
-    <!-- Header will be injected here by header.js -->
-    
-    <main class="main-content container mt-4">
+  <!-- Header injected by header.js -->
+  <main class="main-content container">
     <div style="height: 10px; width: 25%;"></div>
 
     <div class="row row-cols-4 g-4">
-        <div class="col"><img src="images/20240317_204023_BC4B2D (1).JPEG" class="img-fluid rounded" alt="Gallery Image 1"></div>
-        <div class="col"><img src="images/IMG_2241.jpg" class="img-fluid rounded" alt="Gallery Image 2"></div>
-        <div class="col"><img src="images/20240421_102232_B3884D.jpg" class="img-fluid rounded" alt="Gallery Image 3"></div>
-        <div class="col"><img src="images/ktp6.jpg" class="img-fluid rounded" alt="Gallery Image 4"></div>
-        
-        <div class="col"><img src="images/ktp5.jpg" class="img-fluid rounded" alt="Gallery Image 5"></div>
-        <div class="col"><img src="images/ktp10.jpg" class="img-fluid rounded" alt="Gallery Image 6"></div>
-        <div class="col"><img src="images/20240929_195838_B9392B.jpg" class="img-fluid rounded" alt="Gallery Image 7"></div>
-        <div class="col"><img src="images/ktp8.jpg" class="img-fluid rounded" alt="Gallery Image 8"></div>
-        
-        <div class="col"><img src="images/ktp9.jpg" class="img-fluid rounded" alt="Gallery Image 9"></div>
-        <div class="col"><img src="./images/in_action_imgs/20240221_212408_B620B0 (1).JPEG" class="img-fluid rounded" alt="Gallery Image 10"></div>
-        <div class="col"><img src="./images/in_action_imgs/20240411_144339_B41C7F.JPEG" class="img-fluid rounded" alt="Gallery Image 11"></div>
-        <div class="col"><img src="./images/in_action_imgs/20241008_174906_B80125.JPEG" class="img-fluid rounded" alt="Gallery Image 12"></div>
-        
-        <div class="col"><img src="./images/in_action_imgs/20241011_172430_B93AE2.JPEG" class="img-fluid rounded" alt="Gallery Image 13"></div>
-        <div class="col"><img src="./images/in_action_imgs/20241113_214147_BBD666 (1).JPEG" class="img-fluid rounded" alt="Gallery Image 14"></div>
-        <div class="col"><img src="./images/in_action_imgs/20250403_205343_BFA1AB (2).JPEG" class="img-fluid rounded" alt="Gallery Image 15"></div>
-        <div class="col"><img src="./images/in_action_imgs/20250108_031623_B6226A.JPEG" class="img-fluid rounded" alt="Gallery Image 16"></div>
-        
-        <div class="col"><img src="./images/in_action_imgs/20250403_205628_B47813.jpg" class="img-fluid rounded" alt="Gallery Image 17"></div>
-        <div class="col"><img src="./images/in_action_imgs/20240420_133053_BBE9D4.jpg" class="img-fluid rounded" alt="Gallery Image 18"></div>
-        <div class="col"><img src="./images/in_action_imgs/20250417_215103_B1DA7D (5).jpg" class="img-fluid rounded" alt="Gallery Image 19"></div>
-        <div class="col"><img src="./images/in_action_imgs/20241118_142052_B5668F.jpg" class="img-fluid rounded" alt="Gallery Image 20"></div>
+      <div class="col"><img src="images/20240317_204023_BC4B2D (1).JPEG" class="img-fluid rounded" alt="Gallery Image 1" /></div>
+      <div class="col"><img src="images/IMG_2241.jpg" class="img-fluid rounded" alt="Gallery Image 2" /></div>
+      <div class="col"><img src="images/20240421_102232_B3884D.jpg" class="img-fluid rounded" alt="Gallery Image 3" /></div>
+      <div class="col"><img src="images/ktp6.jpg" class="img-fluid rounded" alt="Gallery Image 4" /></div>
+
+      <div class="col"><img src="images/ktp5.jpg" class="img-fluid rounded" alt="Gallery Image 5" /></div>
+      <div class="col"><img src="images/ktp10.jpg" class="img-fluid rounded" alt="Gallery Image 6" /></div>
+      <div class="col"><img src="images/20240929_195838_B9392B.jpg" class="img-fluid rounded" alt="Gallery Image 7" /></div>
+      <div class="col"><img src="images/ktp8.jpg" class="img-fluid rounded" alt="Gallery Image 8" /></div>
+
+      <div class="col"><img src="images/ktp9.jpg" class="img-fluid rounded" alt="Gallery Image 9" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20240221_212408_B620B0 (1).JPEG" class="img-fluid rounded" alt="Gallery Image 10" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20240411_144339_B41C7F.JPEG" class="img-fluid rounded" alt="Gallery Image 11" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20241008_174906_B80125.JPEG" class="img-fluid rounded" alt="Gallery Image 12" /></div>
+
+      <div class="col"><img src="./images/in_action_imgs/20241011_172430_B93AE2.JPEG" class="img-fluid rounded" alt="Gallery Image 13" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20241113_214147_BBD666 (1).JPEG" class="img-fluid rounded" alt="Gallery Image 14" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20250403_205343_BFA1AB (2).JPEG" class="img-fluid rounded" alt="Gallery Image 15" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20250108_031623_B6226A.JPEG" class="img-fluid rounded" alt="Gallery Image 16" /></div>
+
+      <div class="col"><img src="./images/in_action_imgs/20250403_205628_B47813.jpg" class="img-fluid rounded" alt="Gallery Image 17" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20240420_133053_BBE9D4.jpg" class="img-fluid rounded" alt="Gallery Image 18" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20250417_215103_B1DA7D (5).jpg" class="img-fluid rounded" alt="Gallery Image 19" /></div>
+      <div class="col"><img src="./images/in_action_imgs/20241118_142052_B5668F.jpg" class="img-fluid rounded" alt="Gallery Image 20" /></div>
     </div>
-</main>
+  </main>
 
+  <!-- Footer injected by footer.js -->
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
 
-    <!-- Footer will be injected here by footer.js -->
-
-    <!-- Header Component -->
-    <script src="js/header.js"></script>
-    
-    <!-- Footer Component -->
-    <script src="js/footer.js"></script>
-
+  <!-- Keep a footer root for injection if your script expects it -->
+  <footer class="site-footer"></footer>
 </body>
 </html>
+ 
