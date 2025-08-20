@@ -1,7 +1,7 @@
 <!-- Enhanced JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-      // Interactive SVG benefit points
+      // Interactive SVG benefit points - simplified without animations
       const benefitPoints = document.querySelectorAll('.benefit-point');
       const benefitDetails = document.querySelectorAll('.benefit-detail');
       
@@ -41,84 +41,6 @@
           }
       });
 
-      // Animate connecting lines on scroll
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  const lines = entry.target.querySelectorAll('.connecting-line');
-                  lines.forEach(line => {
-                      line.style.animation = 'drawLine 2s ease-in-out forwards';
-                  });
-              }
-          });
-      }, { threshold: 0.5 });
-
-      const benefitsIllustration = document.querySelector('.ktp-benefits-illustration');
-      if (benefitsIllustration) {
-          observer.observe(benefitsIllustration);
-      }
-
-      // Smooth scroll animation observer
-      const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px"
-      };
-
-      const animationObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = "1";
-                  entry.target.style.transform = "translateY(0)";
-              }
-          });
-      }, observerOptions);
-
-      // Observe elements for animation
-      const animatedElements = document.querySelectorAll('.presidential-section, .why-ktp-section');
-      animatedElements.forEach(el => {
-          el.style.opacity = "0";
-          el.style.transform = "translateY(40px)";
-          el.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-          animationObserver.observe(el);
-      });
-
-      // Add loading state
-      window.addEventListener("load", () => {
-          document.body.classList.add("loaded");
-          
-          // Animate page title
-          const pageTitle = document.querySelector(".page-title");
-          if (pageTitle) {
-              pageTitle.style.animation = "slideInUp 0.8s ease-out";
-          }
-
-          // Animate subtitle
-          const pageSubtitle = document.querySelector(".page-subtitle");
-          if (pageSubtitle) {
-              pageSubtitle.style.animation = "slideInUp 0.8s ease-out 0.2s both";
-          }
-      });
-
-      // Performance optimization: Pause animations when not visible
-      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mediaQuery.matches) {
-          // Disable animations for users who prefer reduced motion
-          document.documentElement.style.setProperty("--animation-duration", "0s");
-      }
-
-      // Add resize handler for responsive behavior
-      let resizeTimeout;
-      window.addEventListener("resize", () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-              // Recalculate benefit detail positions if needed
-              const details = document.querySelectorAll(".benefit-detail");
-              details.forEach(detail => {
-                  detail.classList.remove('active');
-              });
-          }, 250);
-      });
-
       // Add click interactions for mobile
       if (window.innerWidth <= 768) {
           benefitPoints.forEach(point => {
@@ -150,44 +72,21 @@
           });
       }
 
-      // Add parallax effect (removed particles)
-      let ticking = false;
-
-      function requestTick() {
-          if (!ticking) {
-              requestAnimationFrame(() => ticking = false);
-              ticking = true;
-          }
-      }
-
-      window.addEventListener('scroll', requestTick);
-  });
-
-  // Add custom cursor effects
-  document.addEventListener("DOMContentLoaded", () => {
-      const benefitPoints = document.querySelectorAll(".benefit-point");
-      const presidentialImage = document.querySelector(".presidential-image");
-
-      // Add cursor effects to interactive elements
-      [...benefitPoints, presidentialImage].forEach(element => {
-          if (element) {
-              element.style.cursor = "pointer";
-              element.addEventListener("mouseenter", () => {
-                  document.body.style.cursor = "pointer";
+      // Add resize handler for responsive behavior
+      let resizeTimeout;
+      window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+              // Recalculate benefit detail positions if needed
+              const details = document.querySelectorAll(".benefit-detail");
+              details.forEach(detail => {
+                  detail.classList.remove('active');
               });
-              element.addEventListener("mouseleave", () => {
-                  document.body.style.cursor = "default";
-              });
-          }
+          }, 250);
       });
-
-      // Add pulse animation to center KTP circle
-      const centerCircle = document.querySelector('circle[cx="500"][cy="300"]');
-      if (centerCircle) {
-          centerCircle.style.animation = 'pulse 3s ease-in-out infinite';
-      }
   });
-</script><!DOCTYPE html>
+</script>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -269,6 +168,8 @@
       line-height: 1.7;
       letter-spacing: normal;
       max-width: 100vw;
+      margin: 0;
+      padding: 0;
   }
 
 
@@ -276,7 +177,8 @@
   /* Main Content */
   .main-content {
       padding-top: 5px;
-      min-height: 100vh;
+      padding-bottom: 0;
+      min-height: auto;
       position: relative;
       z-index: 1;
   }
@@ -311,7 +213,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 20px;
-      animation: slideInUp 0.8s ease-out;
       text-shadow: 0 4px 20px rgba(47, 74, 138, 0.2);
   }
 
@@ -319,21 +220,11 @@
       font-size: 1.3rem;
       color: #2d3748;
       font-weight: 400;
-      animation: slideInUp 0.8s ease-out 0.2s both;
       max-width: 600px;
       margin: 0 auto;
   }
 
-  @keyframes slideInUp {
-      from {
-          opacity: 0;
-          transform: translateY(30px);
-      }
-      to {
-          opacity: 1;
-          transform: translateY(0);
-      }
-  }
+
 
   /* Presidential Welcome Section */
   .presidential-section {
@@ -363,37 +254,15 @@
       border-radius: 15px;
       object-fit: cover;
       box-shadow: var(--shadow-xl);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       border: 4px solid var(--white);
       position: relative;
       z-index: 2;
-  }
-
-  .presidential-image::before {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      background: var(--gradient-primary);
-      border-radius: 20px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-  }
-
-  .presidential-image-container:hover .presidential-image {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 25px 50px -12px rgba(47, 74, 138, 0.4);
-  }
-
-  .presidential-image-container:hover .presidential-image::before {
-      opacity: 1;
   }
 
   .presidential-content {
       flex: 2;
       min-width: 600px;
       max-width: 1200px;
-      animation: slideInRight 0.8s ease-out;
   }
 
   .presidential-content h2 {
@@ -420,23 +289,20 @@
       margin-bottom: 0;
   }
 
-  @keyframes slideInRight {
-      from {
-          opacity: 0;
-          transform: translateX(50px);
-      }
-      to {
-          opacity: 1;
-          transform: translateX(0);
-      }
-  }
+
 
   /* Why KTP Section */
   .why-ktp-section {
       background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 50%, #f0f8ff 100%);
-      padding: 15px 20px 25px 20px;
+      padding: 15px 0 0 0;
       position: relative;
       overflow: hidden;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-bottom: 0;
+      margin-top: 40px;
+      padding-bottom: 0;
   }
 
   .why-ktp-section::before {
@@ -500,17 +366,6 @@
   /* Interactive benefit points */
   .benefit-point {
       cursor: pointer;
-      transition: all 0.3s ease;
-  }
-
-  .benefit-point:hover .benefit-circle {
-      r: 25;
-      fill: #4A68B8;
-  }
-
-  .benefit-point:hover .benefit-text {
-      font-size: 18px;
-      font-weight: 600;
   }
 
   .benefit-detail {
@@ -522,8 +377,7 @@
       max-width: 280px;
       box-shadow: var(--shadow-lg);
       opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
+      transform: translateY(0);
       pointer-events: none;
       z-index: 10;
   }
@@ -549,20 +403,13 @@
       font-weight: 500;
   }
 
-  /* Animated connecting lines */
+  /* Static connecting lines */
   .connecting-line {
       stroke: var(--primary);
       stroke-width: 3;
       fill: none;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: drawLine 2s ease-in-out forwards;
-  }
-
-  @keyframes drawLine {
-      to {
-          stroke-dashoffset: 0;
-      }
+      stroke-dasharray: none;
+      stroke-dashoffset: 0;
   }
 
   /* Center KTP logo/text */
@@ -577,30 +424,7 @@
 
 
 
-  /* Enhanced animations */
-  @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-  }
 
-  .presidential-section {
-      animation: fadeInUp 1s ease-out;
-  }
-
-  .why-ktp-section {
-      animation: fadeInUp 1s ease-out 0.3s both;
-  }
-
-  @keyframes fadeInUp {
-      from {
-          opacity: 0;
-          transform: translateY(40px);
-      }
-      to {
-          opacity: 1;
-          transform: translateY(0);
-      }
-  }
 
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -788,13 +612,14 @@
   .why-ktp-circles {
       position: relative;
       width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 10px 20px;
+      max-width: 100%;
+      margin: 0;
+      padding: 10px 0 0 0;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      gap: 2px;
+      flex-wrap: nowrap;
   }
 
   /* Connection Lines */
@@ -813,9 +638,9 @@
   }
 
   .ktp-circle {
-      width: 290px;
-      height: 290px;
-      flex-shrink: 0;
+      width: calc(20% - 2px);
+      height: 320px;
+      flex: 1;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
@@ -825,14 +650,14 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 32px;
+      padding: 25px;
       box-sizing: border-box;
       cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 8px 25px rgba(47, 74, 138, 0.2);
       position: relative;
       overflow: hidden;
       z-index: 2;
+      min-width: 0;
   }
 
   .ktp-circle::after {
@@ -897,9 +722,9 @@
   }
 
   .circle-icon {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: var(--primary);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       transition: transform 0.3s ease;
       position: relative;
       z-index: 3;
@@ -910,17 +735,17 @@
   }
 
   .circle-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       line-height: 1.2;
       position: relative;
       z-index: 3;
   }
 
   .circle-description {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       line-height: 1.4;
       color: #1a202c;
       font-weight: 400;
@@ -966,10 +791,11 @@
   /* Responsive design for circles */
   @media (max-width: 768px) {
       .why-ktp-circles {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 20px;
-          padding: 20px 10px;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          gap: 4px;
+          padding: 15px 10px;
+          max-width: 100%;
       }
 
       .why-ktp-circles::before {
@@ -982,21 +808,39 @@
       }
 
       .ktp-circle {
-          width: 240px;
-          height: 240px;
-          padding: 25px;
+          width: calc(50% - 2px);
+          height: 250px;
+          padding: 20px;
+          margin: 0;
+          min-width: 220px;
       }
 
       .circle-icon {
-          font-size: 2.5rem;
+          font-size: 3rem;
       }
 
       .circle-title {
-          font-size: 1.15rem;
+          font-size: 1.25rem;
       }
 
       .circle-description {
-          font-size: 0.85rem;
+          font-size: 0.95rem;
+      }
+  }
+
+  /* Small screen responsive design */
+  @media (max-width: 480px) {
+      .why-ktp-circles {
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px 10px;
+      }
+
+      .ktp-circle {
+          width: 100%;
+          height: 200px;
+          padding: 20px;
+          margin: 0;
       }
   }
 
@@ -1038,7 +882,7 @@
     <!-- President's Welcome Section -->
     <section class="presidential-section">
         <div class="presidential-image-container">
-            <img src="assets/founders-images/LudvigHS.JPG" alt="Ludvig Denker - President" class="presidential-image" loading="lazy">
+            <img src="assets/founders-images/LudvigDenkerHS.jpeg" alt="Ludvig Denker - President" class="presidential-image" loading="lazy">
         </div>
         <div class="presidential-content">
             <h2>A Presidential Welcome</h2>
@@ -1092,9 +936,9 @@
                   <div class="circle-content">
                       <div class="circle-icon">💼</div>
                       <h3 class="circle-title">Professional Development</h3>
-                      <p class="circle-description">
-                          Exclusive workshops, seminars, and networking events to build essential skills and connect with industry leaders.
-                      </p>
+                                              <p class="circle-description">
+                           Exclusive workshops, seminars, and networking events to build essential skills and connect with industry leaders
+                        </p>
                           </div>
                       </div>
 
@@ -1103,9 +947,9 @@
                   <div class="circle-content">
                       <div class="circle-icon">🤝</div>
                       <h3 class="circle-title">Networking Opportunities</h3>
-                      <p class="circle-description">
-                          Connect with fellow members, alumni, and recruiters from top companies for internships and job placements.
-                      </p>
+                                              <p class="circle-description">
+                          Connect with fellow members, alumni, and recruiters from top companies for internships and job placements
+                        </p>
                     </div>
                   </div>
 
@@ -1114,9 +958,9 @@
                   <div class="circle-content">
                       <div class="circle-icon">🏠</div>
                       <h3 class="circle-title">Community & Support</h3>
-                      <p class="circle-description">
-                          Join a supportive brotherhood fostering personal growth, mutual respect, and lifelong friendships.
-                      </p>
+                                              <p class="circle-description">
+                          Join a supportive brotherhood fostering personal growth, mutual respect, and lifelong friendships
+                        </p>
                   </div>
                     </div>
                       
@@ -1125,9 +969,9 @@
                   <div class="circle-content">
                       <div class="circle-icon">⭐</div>
                       <h3 class="circle-title">Leadership Experience</h3>
-                      <p class="circle-description">
-                          Develop organizational and management skills through fraternity leadership roles preparing you for career challenges.
-                      </p>
+                                              <p class="circle-description">
+                          Develop organizational and management skills through fraternity leadership roles preparing you for career challenges
+                        </p>
                     </div>
                   </div>
 
@@ -1136,9 +980,9 @@
                   <div class="circle-content">
                       <div class="circle-icon">❤️</div>
                       <h3 class="circle-title">Service & Giving Back</h3>
-                      <p class="circle-description">
-                          Engage in meaningful community service projects making a positive impact beyond technology.
-                      </p>
+                                              <p class="circle-description">
+                          Engage in meaningful community service projects making a positive impact beyond technology
+                        </p>
                 </div>
               </div>
             </div>
@@ -1151,120 +995,75 @@
 <!-- Enhanced JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-      // Enhanced scroll animation observer with bi-directional animations
-      const observerOptions = {
-          threshold: 0.2,
-          rootMargin: "0px 0px -100px 0px"
-      };
-
-      const animationObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              // Skip footer elements completely
-              if (entry.target.closest('footer') || entry.target.matches('footer *')) {
-                  return;
-              }
-              
-              if (entry.isIntersecting) {
-                  // Animate in
-                  entry.target.style.opacity = "1";
-                  entry.target.style.transform = "translateY(0) scale(1)";
-                  entry.target.classList.add('in-view');
-              } else {
-                  // Animate out when scrolling away
-                  entry.target.style.opacity = "0.3";
-                  entry.target.style.transform = "translateY(20px) scale(0.98)";
-                  entry.target.classList.remove('in-view');
-              }
-          });
-      }, observerOptions);
-
-      // Add parallax scroll effects
-      let ticking = false;
-      function updateScrollAnimations() {
-          const scrolled = window.pageYOffset;
-          const rate = scrolled * -0.5;
-          
-          // Parallax effect on hero section
-          const heroSection = document.querySelector('.hero-section');
-          if (heroSection) {
-              heroSection.style.transform = `translateY(${rate * 0.3}px)`;
-          }
-          
-          // Floating animation for circles based on scroll
-          const circles = document.querySelectorAll('.ktp-circle');
-          circles.forEach((circle, index) => {
-              const offset = scrolled * 0.1 * (index + 1);
-              if (circle.classList.contains('in-view')) {
-                  circle.style.transform = `translateY(${Math.sin(offset * 0.01) * 10}px) scale(${1 + Math.sin(offset * 0.02) * 0.02})`;
-              }
-          });
-          
-          ticking = false;
-      }
-
-      function requestTick() {
-          if (!ticking) {
-              requestAnimationFrame(updateScrollAnimations);
-              ticking = true;
-          }
-      }
-
-      window.addEventListener('scroll', requestTick);
-
-      // Observe elements for animation with staggered effects (excluding footer)
-      const animatedElements = document.querySelectorAll('.presidential-section, .why-ktp-section, .ktp-circle, .presidential-image, .presidential-content');
-      const filteredElements = Array.from(animatedElements).filter(el => {
-          // Exclude footer elements
-          return !el.closest('footer') && !el.matches('footer *');
-      });
+      // Interactive SVG benefit points - simplified without animations
+      const benefitPoints = document.querySelectorAll('.benefit-point');
+      const benefitDetails = document.querySelectorAll('.benefit-detail');
       
-      filteredElements.forEach((el, index) => {
-          // Initial state
-          el.style.opacity = "0";
-          el.style.transform = "translateY(50px) scale(0.95)";
-          el.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-          el.style.transitionDelay = `${index * 0.1}s`;
+      benefitPoints.forEach(point => {
+          const benefitType = point.getAttribute('data-benefit');
+          const detailElement = document.getElementById(`${benefitType}-detail`);
           
-          // Add subtle hover animations
-          el.addEventListener('mouseenter', () => {
-              if (el.classList.contains('in-view')) {
-                  el.style.transform = "translateY(-5px) scale(1.02)";
-              }
-          });
-          
-          el.addEventListener('mouseleave', () => {
-              if (el.classList.contains('in-view')) {
-                  el.style.transform = "translateY(0) scale(1)";
-              }
-          });
-          
-          animationObserver.observe(el);
-      });
-
-             // Progress bar removed as requested
-
-      // Add loading state
-      window.addEventListener("load", () => {
-          document.body.classList.add("loaded");
-          
-          // Animate page title
-          const pageTitle = document.querySelector(".page-title");
-          if (pageTitle) {
-              pageTitle.style.animation = "slideInUp 0.8s ease-out";
-          }
-
-          // Animate subtitle
-          const pageSubtitle = document.querySelector(".page-subtitle");
-          if (pageSubtitle) {
-              pageSubtitle.style.animation = "slideInUp 0.8s ease-out 0.2s both";
+          if (detailElement) {
+              point.addEventListener('mouseenter', () => {
+                  // Hide all other details
+                  benefitDetails.forEach(detail => {
+                      if (detail !== detailElement) {
+                          detail.classList.remove('active');
+                      }
+                  });
+                  
+                  // Show current detail
+                  detailElement.classList.add('active');
+              });
+              
+              point.addEventListener('mouseleave', () => {
+                  setTimeout(() => {
+                      if (!detailElement.matches(':hover')) {
+                          detailElement.classList.remove('active');
+                      }
+                  }, 100);
+              });
+              
+              // Keep detail visible when hovering over it
+              detailElement.addEventListener('mouseenter', () => {
+                  detailElement.classList.add('active');
+              });
+              
+              detailElement.addEventListener('mouseleave', () => {
+                  detailElement.classList.remove('active');
+              });
           }
       });
 
-      // Performance optimization: Pause animations when not visible
-      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mediaQuery.matches) {
-          // Disable animations for users who prefer reduced motion
-          document.documentElement.style.setProperty("--animation-duration", "0s");
+      // Add click interactions for mobile
+      if (window.innerWidth <= 768) {
+          benefitPoints.forEach(point => {
+              point.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  const benefitType = point.getAttribute('data-benefit');
+                  const detailElement = document.getElementById(`${benefitType}-detail`);
+                  
+                  // Toggle current detail
+                  if (detailElement) {
+                      const isActive = detailElement.classList.contains('active');
+                      
+                      // Hide all details
+                      benefitDetails.forEach(detail => {
+                          detail.classList.remove('active');
+                      });
+                      
+                      // Show current detail if it wasn't active
+                      if (!isActive) {
+                          detailElement.classList.add('active');
+                          
+                          // Auto-hide after 4 seconds on mobile
+                          setTimeout(() => {
+                              detailElement.classList.remove('active');
+                          }, 4000);
+                      }
+                  }
+              });
+          });
       }
 
       // Add resize handler for responsive behavior
@@ -1272,108 +1071,14 @@
       window.addEventListener("resize", () => {
           clearTimeout(resizeTimeout);
           resizeTimeout = setTimeout(() => {
-              // Recalculate circle positions if needed
-              const circles = document.querySelectorAll(".ktp-circle");
-              circles.forEach(circle => {
-                  circle.style.transform = circle.style.transform || "translateY(0) scale(1)";
+              // Recalculate benefit detail positions if needed
+              const details = document.querySelectorAll(".benefit-detail");
+              details.forEach(detail => {
+                  detail.classList.remove('active');
               });
           }, 250);
       });
-
-      // Enhanced circle interactions
-      const circles = document.querySelectorAll('.ktp-circle');
-      circles.forEach((circle, index) => {
-          // Initialize circles for scroll animation
-          circle.style.opacity = "0";
-          circle.style.transform = "translateY(30px) scale(0.9)";
-          circle.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-          circle.style.transitionDelay = `${index * 0.1}s`;
-
-          // Enhanced hover effects
-          circle.addEventListener('mouseenter', () => {
-              circle.style.animationPlayState = 'paused';
-          });
-
-          circle.addEventListener('mouseleave', () => {
-              circle.style.animationPlayState = 'running';
-          });
-
-          // Add click ripple effect for circles
-          circle.addEventListener('click', (e) => {
-              const ripple = document.createElement('div');
-              const rect = circle.getBoundingClientRect();
-              const x = e.clientX - rect.left;
-              const y = e.clientY - rect.top;
-              
-              ripple.style.cssText = `
-                  position: absolute;
-                  border-radius: 50%;
-                  background: rgba(47, 74, 138, 0.2);
-                  transform: scale(0);
-                  animation: ripple 0.8s ease-out;
-                  left: ${x}px;
-                  top: ${y}px;
-                  width: 30px;
-                  height: 30px;
-                  margin-left: -15px;
-                  margin-top: -15px;
-                  pointer-events: none;
-                  z-index: 3;
-              `;
-              
-              circle.appendChild(ripple);
-              
-              setTimeout(() => {
-                  ripple.remove();
-              }, 800);
-          });
-      });
-
-      // Special observer for circles
-      const circleObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  entry.target.style.opacity = "1";
-                  entry.target.style.transform = "translateY(0) scale(1)";
-              }
-          });
-      }, { threshold: 0.2 });
-
-      circles.forEach(circle => {
-          circleObserver.observe(circle);
-      });
-
-      // Add CSS for ripple animation
-      const style = document.createElement('style');
-      style.textContent = `
-          @keyframes ripple {
-              to {
-                  transform: scale(4);
-                  opacity: 0;
-              }
-          }
-      `;
-      document.head.appendChild(style);
   });
-
-  // Add custom cursor effects
-  document.addEventListener("DOMContentLoaded", () => {
-      const circles = document.querySelectorAll(".ktp-circle");
-      const presidentialImage = document.querySelector(".presidential-image");
-
-      // Add cursor effects to interactive elements
-      [...circles, presidentialImage].forEach(element => {
-          if (element) {
-              element.style.cursor = "pointer";
-              element.addEventListener("mouseenter", () => {
-                  document.body.style.cursor = "pointer";
-              });
-              element.addEventListener("mouseleave", () => {
-                  document.body.style.cursor = "default";
-              });
-    }
-  });
-});
 </script>
 
 <!-- Header Component -->
