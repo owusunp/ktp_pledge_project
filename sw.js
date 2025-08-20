@@ -2,7 +2,7 @@
 // Caches all resources for offline access and faster loading
 
 const CACHE_NAME = 'ktp-website-v1';
-const STATIC_CACHE = 'ktp-static-v1';
+const STATIC_CACHE = 'ktp-static-v2';
 const FONT_CACHE = 'ktp-fonts-v1';
 
 // Resources to cache immediately
@@ -31,12 +31,12 @@ const PRECACHE_URLS = [
   '/images/home3.jpeg',
   
   // Company logos
-  '/apple.png',
-  '/epichire.png',
-  '/google.jpg',
-  '/microsoft.png',
-  '/nvidia.png',
-  '/Netflix.png'
+  '/images/companies/apple.png',
+  '/images/companies/epichire.png',
+  '/images/companies/google.jpg',
+  '/images/companies/microsoft.png',
+  '/images/companies/nvidia.png',
+  '/images/companies/Netflix.png'
 ];
 
 // Install event - cache resources

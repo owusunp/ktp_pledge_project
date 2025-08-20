@@ -4,7 +4,7 @@ function createHeader() {
     <header>
       <div class="header-title" data-animation-role="header-element">
         <div class="header-title-logo">
-          <a href="index.html" data-animation-role="header-element" class="logo-text">
+          <a href="/" data-animation-role="header-element" class="logo-text">
             <div class="greek-letters">ΚΘΠ</div>
             <div class="chapter-text">RHO CHAPTER</div>
           </a>
@@ -12,11 +12,11 @@ function createHeader() {
       </div>
         
       <nav class="nav-links">
-        <a href="about.html">About</a>
-        <a href="recruitment.html">Recruitment</a>
-        <a href="brothers.html">Brothers</a>
-        <a href="ktp_in_action.html">KTP in Action</a>
-        <a href="contact.html">Contact</a>
+        <a href="/about">About</a>
+        <a href="/recruitment">Recruitment</a>
+        <a href="/brothers">Brothers</a>
+        <a href="/ktp-in-action">KTP in Action</a>
+        <a href="/contact">Contact</a>
       </nav>
     </header>
   `;
