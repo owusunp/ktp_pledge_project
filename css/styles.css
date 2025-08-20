@@ -185,6 +185,49 @@ body {
   text-align: right; 
 }
 
+/* Responsive adjustments for brothers section */
+@media (max-width: 768px) {
+  .brothers-fullscreen {
+    height: 50vh;
+    margin-top: -50px;
+  }
+  
+  .brothers-content {
+    right: 3%;
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  
+  .brothers-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .brothers-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brothers-fullscreen {
+    height: 45vh;
+    margin-top: -30px;
+  }
+  
+  .brothers-content {
+    right: 2%;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .brothers-content h2 {
+    font-size: 2rem;
+  }
+  
+  .brothers-content p {
+    font-size: 1rem;
+  }
+}
+
 .brothers-bg {
   position: absolute;
   top: 0;
@@ -194,6 +237,8 @@ body {
   object-fit: cover;
   object-position: center center;
   z-index: 0;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .brothers-overlay {
