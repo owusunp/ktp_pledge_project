@@ -1,3 +1,16 @@
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://ktpvandy.org/sitemap.xml
+
+# Allow all pages to be crawled
+Allow: /about
+Allow: /brothers
+Allow: /recruitment
+Allow: /ktp-in-action
+Allow: /contact
+
+# Disallow any admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/

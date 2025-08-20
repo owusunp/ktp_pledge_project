@@ -97,6 +97,33 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.png">
 <link rel="manifest" href="/manifest.json">
 
+<!-- Structured Data for About Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Kappa Theta Pi - Vanderbilt University",
+  "description": "Learn about Kappa Theta Pi at Vanderbilt University - our mission, leadership, and what makes us unique",
+  "url": "https://ktpvandy.org/about",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Kappa Theta Pi - Vanderbilt University",
+    "description": "Kappa Theta Pi is Vanderbilt's premier professional technology fraternity. We foster leadership, celebrate diversity, and attain extraordinary success in computer science and engineering.",
+    "foundingDate": "2023",
+    "location": {
+      "@type": "Place",
+      "name": "Vanderbilt University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nashville",
+        "addressRegion": "TN",
+        "addressCountry": "US"
+      }
+    }
+  }
+}
+</script>
+
 <!-- Cache Manager for instant loading -->
 <script src="js/cache-manager.js"></script>
 
