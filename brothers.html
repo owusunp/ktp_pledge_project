@@ -313,6 +313,47 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
+/* Default: 4 per row */
+.brothers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Small screens: 2 per row */
+@media (max-width: 576px) {
+  .brothers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+  .profile-image-container {
+    height: 160px;
+  }
+  .profile-name {
+    font-size: 1rem;
+  }
+}
+
+    
+
+    /* Force exactly 2 cards per row on phones */
+@media (max-width: 576px) {
+  .brothers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2-up */
+    gap: 16px;
+    padding: 10px;
+  }
+  /* Tweak image height so cards feel balanced on small screens */
+  .profile-image-container {
+    height: 160px;
+  }
+  /* Optional: slightly smaller name text to avoid wrapping */
+  .profile-name {
+    font-size: 1.05rem;
+  }
+}
+
 
     </style>
   </head>
@@ -342,7 +383,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/AshankAwasthy.jpg" alt="Ashank Awasthy" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/ashank-awasthy/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -534,7 +575,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/EdwinRivera.png" alt="Edwin Rivera" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/edwin-rivera1/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -550,7 +591,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/EmmyDominguesDaSilva.jpeg" alt="Emmy Abella Domingues da silva" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/emmy-abella/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -582,7 +623,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/EstebanZamora.jpeg" alt="Esteban Zamora" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/esharashidd/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/ez04/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -646,7 +687,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/EvaLouis.jpg" alt="Eva Maria Louis" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/eva-maria-louis/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -726,7 +767,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/HelenHendricks.jpeg" alt="Helen Hendricks" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/helen-hendricks/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -774,7 +815,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/IsabellePham.jpg" alt="Isabelle Pham" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/phamisabelle/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -806,7 +847,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/JackDawson.jpg" alt="Jack Dawson" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/jhdaws/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -886,7 +927,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/JuliaZhang.jpeg" alt="Julia Zhang" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/julia-p-zhang/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -981,7 +1022,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/KierstenBrennan.jpg" alt="Kiersten Brennan" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/kiersten-brennan/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -997,7 +1038,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/KunalBham.jpg" alt="Kunal Bham" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/kunalbham/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1173,7 +1214,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/MohamedBakry.jpg" alt="Mohamed Bakry" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/mohamedbakry04/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1189,7 +1230,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/moses.b.JPG" alt="Moses Banda" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/moses-banda1/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1237,7 +1278,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/NirvaanNagaldinne.jpeg" alt="Nirvaan Nagaldinne" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/nirvaan-nagaldinne/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1301,7 +1342,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/RithikaThambireddy.JPG" alt="Rithika Thambireddy" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/rithika-thambireddy/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1317,7 +1358,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/RyanKhairollahi.jpeg" alt="Ryan Khairollahi" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/ryan-khairollahi/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1333,7 +1374,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/SammyWoody.jpg" alt="Samantha Woody" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/samantha-d-woody/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1349,7 +1390,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/SarahFinfrock.jpeg" alt="Sarah Finfrock" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/sarah-finfrock/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1381,7 +1422,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/SharvSave.jpg" alt="Sharv Save" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/sharvsave/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1397,7 +1438,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/SonyaJayathilake.jpeg" alt="Sonya Jayathilake" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/sonya-jayathilake/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
@@ -1477,7 +1518,7 @@
   <div class="profile-image-container">
     <img src="assets/brother-images-compressed/VarunBussa.jpeg" alt="Varun Bussa" class="profile-image">
     <div class="linkedin-overlay">
-      <a href="#" class="linkedin-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/varunbussa/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
         <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
         <span>View Profile</span>
       </a>
