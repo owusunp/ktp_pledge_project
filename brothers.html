@@ -1,936 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Brothers - Kappa Theta Pi Vanderbilt</title>
-    <meta name="description" content="Meet the brothers of Kappa Theta Pi - Vanderbilt's premier professional technology fraternity">
+    <meta
+      name="description"
+      content="Meet the brothers of Kappa Theta Pi - Vanderbilt's premier professional technology fraternity"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <link rel="manifest" href="/manifest.json">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Structured Data for Brothers Page -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Our Brothers - Kappa Theta Pi Vanderbilt",
-      "description": "Meet the brothers of Kappa Theta Pi - Vanderbilt's premier professional technology fraternity",
-      "url": "https://ktpvandy.org/brothers",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Kappa Theta Pi - Vanderbilt University",
-        "hasPart": [
-          {
-            "@type": "Person",
-            "name": "Ludvig Denker",
-            "jobTitle": "President",
-            "memberOf": "Kappa Theta Pi - Vanderbilt University"
-          },
-          {
-            "@type": "Person", 
-            "name": "Haley Kahn",
-            "jobTitle": "Founder",
-            "memberOf": "Kappa Theta Pi - Vanderbilt University"
-          }
-        ]
-      }
-    }
-    </script>
-
-    <!-- Bootstrap CSS (added) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Cache Manager for instant loading -->
+    <!-- Optional: Cache manager + footer styles (kept as external) -->
     <script src="js/cache-manager.js"></script>
-
-
-    <!-- Footer Styles -->
-    <link rel="stylesheet" type="text/css" href="css/footer-styles/footer.css">
-    <title>Kappa Theta Pi Vanderbilt | Brothers</title>
-<meta name="description" content="Meet the brothers of Kappa Theta Pi at Vanderbilt: leaders in computer science, engineering, and technology innovation across the School of Engineering and the Wond’ry.">
-<link rel="canonical" href="https://ktpvandy.org/brothers">
-<meta name="keywords" content="Vanderbilt computer science, Vanderbilt computer science ranking, Vanderbilt School of Engineering, Vanderbilt School of Engineering reviews, Vanderbilt technology, Vanderbilt Wond'ry, Vanderbilt engineering majors, Vanderbilt mechanical engineering, Vanderbilt aerospace engineering, Vanderbilt electrical engineering, VUIT Vanderbilt, Vanderbilt IT Help Desk, Vanderbilt IT email, Vanderbilt IT ticket, Vanderbilt IT help">
-<meta name="keywords" content="Vanderbilt akpsi,Alpha Chi Omega, Alpha Delta Pi, Chi Omega, Delta Delta Delta, Kappa Alpha Theta, Kappa Delta, Kappa Kappa Gamma, Pi Beta Phi, Zeta Tau Alpha, Alpha Epsilon Pi, Alpha Tau Omega, Beta Theta Pi, Beta Upsilon Chi, Kappa Alpha Order, Kappa Sigma, Lambda Chi Alpha, Phi Delta Theta, Phi Kappa Psi, Pi Kappa Alpha, Sigma Alpha Epsilon, Sigma Nu, Zeta Beta Tau, Alpha Kappa Alpha, Alpha Phi Alpha, Delta Sigma Theta, Kappa Alpha Psi, Omega Psi Phi, Phi Beta Sigma, Sigma Gamma Rho, Zeta Phi Beta, Alpha Psi Lambda, Kappa Delta Chi, Lambda Phi Epsilon
-,Vanderbilt computer science,Vandy AXO, Vandy ADPi, Vandy ChiO, Vandy TriDelt, Vandy Theta, Vandy KD, Vandy KKG, Vandy PiPhi, Vandy ZTA, Vandy AEPi, Vandy ATO, Vandy Beta, Vandy BYX, Vandy KA, Vandy KappaSig, Vandy LambdaChi, Vandy PhiDelt, Vandy PhiPsi, Vandy Pike, Vandy SAE, Vandy SNu, Vandy ZBT, Vandy AKA, Vandy Alpha, Vandy Delta, Vandy Kappas, Vandy Ques, Vandy Sigmas, Vandy SGRho, Vandy Zetas, Vandy APsi, Vandy KDChi, Vandy Lambdas
-,Vanderbilt Fraternities and Sororities,Vanderbilt Greek life How to join a fraternity at Vanderbilt, best fraternities at Vanderbilt, Vanderbilt ECE,Vanderbilt Technology,Fraternities Vanderbilt, Vanderbilt computer science ranking, Vanderbilt School of Engineering, Vanderbilt Frats, Vanderbilt School of Engineering reviews, Vanderbilt technology, Vanderbilt Wond'ry, Vanderbilt engineering majors, Vanderbilt mechanical engineering, Vanderbilt aerospace engineering, Vanderbilt electrical engineering, VUIT Vanderbilt, Vanderbilt IT Help Desk, Vanderbilt IT email, Vanderbilt IT ticket, Vanderbilt IT help">
-  
-<!-- 🔑 SEO & social tags -->
-  <title>Vanderbilt Greek Life & Engineering | Fraternities, Sororities, and Student Life</title>
-  <meta name="description" content="Explore Vanderbilt University Greek Life, including fraternities and sororities like AXO, ADPi, TriDelt, Pike, and more. Learn about Vanderbilt Computer Science, Engineering programs, and campus life.">
-  
-  <!-- Social share preview -->
-  <meta property="og:title" content="Vanderbilt Greek Life & Engineering" />
-  <meta property="og:description" content="Discover fraternities, sororities, and top-ranked engineering programs at Vanderbilt University." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ktpvandy.org/" />
-  <meta property="og:image" content="https://ktpvandy.org/images/preview.jpg" />
-
+    <link rel="stylesheet" href="css/footer-styles/footer.css" />
 
     <style>
-        :root {
-            --primary: #2F4A8A;
-            --white: #ffffff;
-            --black: #000000;
-            --gray: #f4f4f4;
-            --light-gray: #f9f9f9;
-        }
+      :root {
+        --primary: #2f4a8a;
+        --white: #ffffff;
+        --black: #000000;
+        --gray: #f4f4f4;
+        --light-gray: #f9f9f9;
+      }
 
-        /* Hide scrollbar on all browsers */
-        html {
-            overflow-y: scroll;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE 10+ */
-        }
-        html::-webkit-scrollbar { display: none; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* General Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: "Roboto", "Arial", sans-serif;
+        font-weight: 300;
+        background-color: var(--white);
+        color: var(--black);
+        line-height: 1.6;
+        margin: 0;
+      }
 
-        body {
-            font-family: 'Roboto', 'Arial', sans-serif;
-            font-weight: 300;
-            background-color: var(--white);
-            color: var(--black);
-            overflow-x: hidden;
-            line-height: 1.6;
-            opacity: 0;
-            transition: opacity 0.3s ease-in;
-            margin: 0;
-            padding: 0;
-        }
+      .main-content {
+        padding-top: 0;
+      }
 
-        /* Prevent flash of unstyled content */
-        body.loaded { opacity: 1; }
-        body.fonts-loaded { opacity: 1; font-display: swap; }
+      /* Title */
+      .page-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: var(--primary);
+        margin: 20px 0 15px 0;
+      }
 
-        /* Ensure consistent rendering */
-        .brothers-section, .brother-card, .hero-section {
-            opacity: 1; transform: none; transition: none;
-        }
+      /* Tabs */
+      .tab-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .tab-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+      .tab-button {
+        padding: 12px 24px;
+        border: 2px solid var(--primary);
+        background-color: var(--white);
+        color: var(--primary);
+        cursor: pointer;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        min-width: 120px;
+      }
+      .tab-button.active,
+      .tab-button:hover {
+        background-color: var(--primary);
+        color: var(--white);
+      }
 
-        /* Cache-optimized font loading */
-        @font-face {
-            font-family: 'Roboto-Cached';
-            src: local('Roboto'), local('Roboto-Regular');
-            font-display: swap;
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
+      /* Sections */
+      .brothers-section {
+        display: none;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .brothers-section.active {
+        display: block;
+      }
 
-        /* Header spacing adjustment */
-        header { margin-bottom: 0 !important; }
-
-        /* Main Content */
-        .main-content { padding-top: 0px; margin-top: -30px; }
-
-        /* Page Title */
-        .page-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: var(--primary);
-            margin: 0px 0 15px 0;
-        }
-
-        /* Tab Navigation */
-        .tab-container { text-align: center; margin: 20px 0; }
-        .tab-buttons {
-          display: flex; justify-content: center; gap: 20px;
-          margin-bottom: 20px; flex-wrap: wrap;
-        }
-        .tab-button {
-            padding: 12px 24px;
-            border: 2px solid var(--primary);
-            background-color: var(--white);
-            color: var(--primary);
-            cursor: pointer;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            min-width: 120px;
-        }
-        .tab-button:hover { background-color: var(--primary); color: var(--white); }
-        .tab-button.active { background-color: var(--primary); color: var(--white); }
-
-        /* Brothers Grid */
-        .brothers-section {
-            display: none;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .brothers-section.active { display: block; }
+      /* Grid */
+      .brothers-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* phones default */
+        gap: 24px;
+      }
+      @media (min-width: 768px) {
         .brothers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 5px 0;
+          grid-template-columns: repeat(3, minmax(0, 1fr)); /* tablets */
         }
-
-        /* Profile Card */
-        .profile-card {
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
+      }
+      @media (min-width: 992px) {
+        .brothers-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr)); /* desktop */
         }
-        .profile-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+      }
 
+      /* Cards */
+      .profile-card {
+        background: var(--white);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+      }
+      .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .profile-image-container {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        z-index: 1;
+      }
+      @media (min-width: 768px) {
         .profile-image-container {
-            position: relative; 
-            width: 100%; 
-            height: 250px; 
-            overflow: hidden;
-            z-index: 1;
+          height: 220px;
         }
-        .profile-image {
-            width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;
+      }
+      @media (min-width: 992px) {
+        .profile-image-container {
+          height: 250px;
         }
-        .profile-card:hover .profile-image { transform: scale(1.05); }
+      }
 
-        /* LinkedIn Overlay */
-        .linkedin-overlay {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            right: 0; 
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(47, 74, 138, 0.95) 0%, rgba(47, 74, 138, 0.85) 100%);
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            opacity: 0; 
-            transition: all 0.3s ease;
-            z-index: 10;
-            cursor: pointer;
-            backdrop-filter: blur(2px);
-        }
-        .profile-card:hover .linkedin-overlay { 
-            opacity: 1; 
-        }
-        .linkedin-link { 
-            display: flex; 
-            align-items: center; 
-            gap: 12px; 
-            color: var(--white); 
-            text-decoration: none; 
-            font-weight: 600; 
-            transition: all 0.3s ease;
-            padding: 12px 16px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-        .linkedin-link:hover { 
-            transform: scale(1.05); 
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.4);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        .linkedin-icon { 
-            width: 24px; 
-            height: 24px; 
-            filter: brightness(0) invert(1);
-            flex-shrink: 0;
-        }
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .profile-card:hover .profile-image {
+        transform: scale(1.05);
+      }
 
-        /* Profile Info */
-        .profile-info { padding: 20px; text-align: center; }
-        .profile-name { font-size: 1.2rem; font-weight: 500; color: var(--black); margin-bottom: 5px; }
-        .profile-title { font-size: 0.95rem; color: var(--primary); font-weight: 400; }
+      /* Overlay (desktop only) */
+      .linkedin-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(47, 74, 138, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      .linkedin-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .linkedin-icon {
+        width: 22px;
+        height: 22px;
+        filter: brightness(0) invert(1);
+      }
 
-        /* Executive Board Special Styling */
-        .exec-section .profile-card { background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%); }
-        .exec-section .profile-name { color: var(--primary); font-weight: 600; }
-
-        /* Responsive Design (kept minimal; Bootstrap handles most cases) */
-        @media (max-width: 768px) {
-            .page-title { font-size: 2rem; margin: 30px 0; }
-            .tab-buttons { gap: 10px; padding: 0 10px; }
-            .tab-button { padding: 10px 18px; font-size: 0.9rem; min-width: 100px; }
-            .brothers-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 15px; }
-            .profile-image-container { height: 200px; }
-            .profile-info { padding: 15px; }
-        }
-        @media (max-width: 480px) {
-            .brothers-section { padding: 0 10px; }
-            .brothers-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
-            .profile-image-container { height: 180px; }
-            .tab-button { padding: 8px 16px; font-size: 0.85rem; }
-        }
-        @media (max-width: 360px) {
-            .page-title { font-size: 1.6rem; }
-            .tab-buttons { gap: 6px; }
-            .tab-button { min-width: 88px; padding: 8px 10px; font-size: 0.8rem; }
-            .brothers-grid { grid-template-columns: 1fr; gap: 12px; }
-            .profile-image-container { height: 160px; }
-            .profile-info { padding: 12px; }
-        }
-
-        /* Slightly relax overlay for touch devices */
-        @media (hover: none) and (pointer: coarse) {
-          .linkedin-overlay { 
-            opacity: 1; 
-            background: rgba(47, 74, 138, 0.75); 
-          }
-        }
-        
-        /* Ensure hover effects work properly */
-        .profile-card {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Force overlay to show on hover */
+      /* Hover shows overlay on desktop only */
+      @media (hover: hover) and (min-width: 1025px) {
         .profile-card:hover .linkedin-overlay {
-            opacity: 1 !important;
-            visibility: visible !important;
-            pointer-events: auto !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          pointer-events: auto !important;
         }
-        
-        /* Ensure hover effects work on all devices */
-        @media (hover: hover) {
-            .profile-card:hover .linkedin-overlay {
-                opacity: 1 !important;
-                visibility: visible !important;
-            }
+      }
+
+      /* Phones & iPads: hide overlay; names become links via JS */
+      @media (max-width: 1024px) {
+        .linkedin-overlay {
+          display: none !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
         }
-        
-        /* Touch device fallback */
-        @media (hover: none) {
-            .linkedin-overlay {
-                opacity: 0.8;
-                background: rgba(47, 74, 138, 0.8);
-            }
+        .profile-name a[data-li-name]:hover {
+          text-decoration: underline;
         }
-        .brothers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-/* Default: 4 per row */
-.brothers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
+      }
 
-/* Small screens: 2 per row */
-@media (max-width: 576px) {
-  .brothers-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px;
-  }
-  .profile-image-container {
-    height: 160px;
-  }
-  .profile-name {
-    font-size: 1rem;
-  }
-}
+      .profile-info {
+        padding: 15px;
+        text-align: center;
+      }
+      .profile-name {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--black);
+        margin-bottom: 5px;
+      }
+      .profile-title {
+        font-size: 0.95rem;
+        color: var(--primary);
+      }
 
-    
-
-    /* Force exactly 2 cards per row on phones */
-@media (max-width: 576px) {
-  .brothers-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) !important; /* 2-up */
-    gap: 16px;
-    padding: 10px;
-  }
-  /* Tweak image height so cards feel balanced on small screens */
-  .profile-image-container {
-    height: 160px;
-  }
-  /* Optional: slightly smaller name text to avoid wrapping */
-  .profile-name {
-    font-size: 1.05rem;
-  }
-}
-/* Default: 4 per row */
-.brothers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-/* Portrait phones: 2 per row */
-@media (max-width: 576px) and (orientation: portrait) {
-  .brothers-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px;
-  }
-  .profile-image-container { height: 160px; }
-  .profile-name { font-size: 1rem; }
-}
-
-/* Landscape phones: 3 per row */
-@media (max-width: 576px) and (orientation: landscape) {
-  .brothers-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 18px;
-  }
-  .profile-image-container { height: 140px; }
-}
-/* Base: phones (default) — 2 per row */
-.brothers-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* Medium screens (tablets & small laptops): 3 per row */
-@media (min-width: 768px) {
-  .brothers-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-}
-
-/* Laptops & desktops: 4 per row */
-@media (min-width: 992px) {
-  .brothers-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  }
-}
-/* Tweak image heights per breakpoint (optional) */
-.profile-image-container { height: 180px; }          /* phones */
-@media (min-width: 768px) { .profile-image-container { height: 220px; } }  /* medium */
-@media (min-width: 992px) { .profile-image-container { height: 250px; } }  /* large */
-
-
-
+      /* Exec styling */
+      .exec-section .profile-card {
+        background: linear-gradient(135deg, var(--light-gray), var(--white));
+      }
+      .exec-section .profile-name {
+        color: var(--primary);
+        font-weight: 600;
+      }
     </style>
   </head>
 
   <body>
-    <!-- Header will be injected here by header.js -->
-
-    <!-- Main wrapped with Bootstrap container (added) -->
     <main class="main-content container">
       <div class="page-title text-center">Our Brothers</div>
 
       <div class="tab-container">
-        <!-- Added Bootstrap utilities to your existing tab button row -->
         <div class="tab-buttons d-flex flex-wrap justify-content-center gap-2">
-          <button class="tab-button active" onclick="showSection('actives')">Active Members</button>
-          <button class="tab-button" onclick="showSection('eboard')">Executive Board</button>
-          <button class="tab-button" onclick="showSection('alumni')">Alumni</button>
+          <button class="tab-button active" onclick="showSection('actives')">
+            Active Members
+          </button>
+          <button class="tab-button" onclick="showSection('eboard')">
+            Executive Board
+          </button>
+          <button class="tab-button" onclick="showSection('alumni')">
+            Alumni
+          </button>
         </div>
       </div>
 
-      <!-- Active Members Section -->
+      <!-- Active Members -->
       <div id="actives" class="brothers-section active">
         <div class="brothers-grid">
-          
           <!-- Ashank Awasthy -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/AshankAwasthy.jpg" alt="Ashank Awasthy" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ashank-awasthy/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ashank Awasthy</div>
-  </div>
-</div>
-
-<!-- Ben Schiff -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/BenSchiff.png" alt="Benjamin Schiff" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/benjaminmschiff/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ben Schiff</div>
-  </div>
-</div>
-
-<!-- Bennett Davis -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/BennettDavis.jpeg" alt="Bennett Davis" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/bennett-davis36/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Bennett Davis</div>
-  </div>
-</div>
-
-<!-- Brody Haar -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/BrodyHaar.jpg" alt="Brody Haar" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/brodyjghaar/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Brody Haar</div>
-  </div>
-</div>
-
-<!-- Brooke O Sullivan -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/BrookeOSullivan.jpeg" alt="Brooke O'Sullivan" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/brooke-osullivan/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Brooke O'Sullivan</div>
-  </div>
-</div>
-
-<!-- Camryn Phillips -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/CamrynPhillips.jpg" alt="Camryn Phillips" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/camrynphillips/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Camryn Phillips</div>
-  </div>
-</div>
-
-<!-- Caroline Ford -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/CarolineFord.jpg" alt="Caroline Ford" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ford-caroline/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Caroline Ford</div>
-  </div>
-</div>
-
-<!-- Chance Ineza -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/ChanceIneza.jpeg" alt="Chance Ineza" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/chance-ineza/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Chance Ineza</div>
-  </div>
-</div>
-
-<!-- Citiana Frew -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/CitianaFrew.jpeg" alt="Citiana Frew" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/citiana-a-frew/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Citiana Frew</div>
-  </div>
-</div>
-
-<!-- Daphney Talekar -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/DaphneyTalekar.jpeg" alt="Daphney Talekar" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/daphney-talekar/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Daphney Talekar</div>
-  </div>
-</div>
-
-<!-- Delaney Woolbert -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/DelaneyWoolbert.jpg" alt="Delaney Woolbert" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/delaney-woolbert/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Delaney Woolbert</div>
-  </div>
-</div>
-
-<!-- Divija Katakam -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/DivijaKatakam.jpg" alt="Divija Katakam" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/divija-katakam/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Divija Katakam</div>
-  </div>
-</div>
-
-<!-- Edwin Rivera -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EdwinRivera.png" alt="Edwin Rivera" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/edwin-rivera1/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Edwin Rivera</div>
-  </div>
-</div>
-
-<!-- Emmy Abella Domingues da silva -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EmmyDominguesDaSilva.jpeg" alt="Emmy Abella Domingues da silva" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/emmy-abella/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Emmy Abella Domingues da Silva</div>
-  </div>
-</div>
-
-<!-- Esha Rashid -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EshaRashid.jpeg" alt="Esha Rashid" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/esharashidd/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Esha Rashid</div>
-  </div>
-</div>
-
-<!-- Esteban Zamora-->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EstebanZamora.jpeg" alt="Esteban Zamora" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ez04/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Esteban Zamora</div>
-  </div>
-</div>
-
-<!-- Ethan Joslin -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EthanJoslin.jpeg" alt="Ethan Joslin" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ethan-joslin-vanderbilt/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ethan Joslin</div>
-  </div>
-</div>
-
-<!-- Ethan Paik -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EthanPaik.jpeg" alt="Ethan Paik" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ethan-paik/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ethan Paik</div>
-  </div>
-</div>
-  
-    <!-- Eva Cheraisi -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EvaCheraisi.jpeg" alt="Eva Cheraisi" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Eva Cheraisi</div>
-  </div>
-</div>
-
-<!-- Eva Maria Louis -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/EvaLouis.jpg" alt="Eva Maria Louis" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/eva-maria-louis/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Eva Maria Louis</div>
-  </div>
-</div>
-
-<!-- Gaby Frei -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/GabyFrei.jpeg" alt="Gaby Frei" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/gabrielle-frei/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Gaby Frei</div>
-  </div>
-</div>
-
-<!-- Grayson Smith -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/GraysonSmith.jpeg" alt="Grayson Smith" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/grayson-m-smith/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Grayson Smith</div>
-  </div>
-</div>
-
-<!-- Haley Kahn -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/HaleyKahn.jpeg" alt="Haley Kahn" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/haley-kahn/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Haley Kahn</div>
-  </div>
-</div>
-
-<!-- Hassan Adegoke -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/HassanAgedoke.jpeg" alt="Hassan Adegoke" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/hassan-adegoke/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Hassan Agedoke</div>
-  </div>
-</div>
-
-<!-- Helen Hendricks -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/HelenHendricks.jpeg" alt="Helen Hendricks" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/helen-hendricks/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Helen Hendricks</div>
-  </div>
-</div>
-
-<!-- Helena Sena -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/HelenaSena.jpeg" alt="Helena Sena" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/helenadsena/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Helena Sena</div>
-  </div>
-</div>
-
-<!-- Isa Dominguez -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/IsaDominguez.jpeg" alt="Isa Dominguez" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/isa-dominguez/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Isa Dominguez</div>
-  </div>
-</div>
-
-<!-- Isabelle Pham -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/IsabellePham.jpg" alt="Isabelle Pham" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/phamisabelle/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Isabelle Pham</div>
-  </div>
-</div>
-
-<!-- Ishita Sujan -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/IshitaSujan.jpeg?v=2" alt="Ishita Sujan" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ishita-sujan/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ishita Sujan</div>
-  </div>
-</div>
-
-<!-- Jack Dawson -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/JackDawson.jpg" alt="Jack Dawson" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/jhdaws/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Jack Dawson</div>
-  </div>
-</div>
-
-<!-- Jed Kumah -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/JedKumah.jpg" alt="Jed Kumah" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/jedekumah/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Jed Kumah</div>
-  </div>
-</div>
-
-          <!-- Joseph Quinn -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/JosephQuinn.png" alt="Joseph Quinn" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/AshankAwasthy.jpg"
+                alt="Ashank Awasthy"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/josephjquinn/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/ashank-awasthy/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ashank Awasthy</div>
+            </div>
+          </div>
+
+          <!-- Ben Schiff -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/BenSchiff.png"
+                alt="Benjamin Schiff"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/benjaminmschiff/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ben Schiff</div>
+            </div>
+          </div>
+
+          <!-- Bennett Davis -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/BennettDavis.jpeg"
+                alt="Bennett Davis"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/bennett-davis36/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Bennett Davis</div>
+            </div>
+          </div>
+
+          <!-- Brody Haar -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/BrodyHaar.jpg"
+                alt="Brody Haar"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/brodyjghaar/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Brody Haar</div>
+            </div>
+          </div>
+
+          <!-- Brooke O Sullivan -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/BrookeOSullivan.jpeg"
+                alt="Brooke O Sullivan"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/brooke-osullivan/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Brooke O Sullivan</div>
+            </div>
+          </div>
+
+          <!-- Camryn Phillips -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/CamrynPhillips.jpg"
+                alt="Camryn Phillips"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/camrynphillips/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Camryn Phillips</div>
+            </div>
+          </div>
+
+          <!-- Caroline Ford -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/CarolineFord.jpg"
+                alt="Caroline Ford"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ford-caroline/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Caroline Ford</div>
+            </div>
+          </div>
+
+          <!-- Chance Ineza -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/ChanceIneza.jpeg"
+                alt="Chance Ineza"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/chance-ineza/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Chance Ineza</div>
+            </div>
+          </div>
+
+          <!-- Citiana Frew -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/CitianaFrew.jpeg"
+                alt="Citiana Frew"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/citiana-a-frew/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Citiana Frew</div>
+            </div>
+          </div>
+
+          <!-- Daphney Talekar -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/DaphneyTalekar.jpeg"
+                alt="Daphney Talekar"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/daphney-talekar/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Daphney Talekar</div>
+            </div>
+          </div>
+
+          <!-- Delaney Woolbert -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/DelaneyWoolbert.jpg"
+                alt="Delaney Woolbert"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/delaney-woolbert/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Delaney Woolbert</div>
+            </div>
+          </div>
+
+          <!-- Divija Katakam -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/DivijaKatakam.jpg"
+                alt="Divija Katakam"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/divija-katakam/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Divija Katakam</div>
+            </div>
+          </div>
+
+          <!-- Edwin Rivera -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EdwinRivera.png"
+                alt="Edwin Rivera"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/edwin-rivera1/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Edwin Rivera</div>
+            </div>
+          </div>
+
+          <!-- Emmy Abella Domingues da silva -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EmmyDominguesDaSilva.jpeg"
+                alt="Emmy Abella Domingues da silva"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/emmy-abella/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">
+                Emmy Abella Domingues da silva
+              </div>
+            </div>
+          </div>
+
+          <!-- Esha Rashid -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EshaRashid.jpeg"
+                alt="Esha Rashid"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/esharashidd/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Esha Rashid</div>
+            </div>
+          </div>
+
+          <!-- Esteban Zamora -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EstebanZamora.jpeg"
+                alt="Esteban Zamora"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ez04/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Esteban Zamora</div>
+            </div>
+          </div>
+
+          <!-- Ethan Joslin -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EthanJoslin.jpeg"
+                alt="Ethan Joslin"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ethan-joslin-vanderbilt/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ethan Joslin</div>
+            </div>
+          </div>
+
+          <!-- Ethan Paik -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EthanPaik.jpeg"
+                alt="Ethan Paik"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ethan-paik/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ethan Paik</div>
+            </div>
+          </div>
+
+          <!-- Eva Cheraisi -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EvaCheraisi.jpeg"
+                alt="Eva Cheraisi"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Eva Cheraisi</div>
+            </div>
+          </div>
+
+          <!-- Eva Maria Louis -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/EvaLouis.jpg"
+                alt="Eva Maria Louis"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/eva-maria-louis/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Eva Maria Louis</div>
+            </div>
+          </div>
+
+          <!-- Gaby Frei -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/GabyFrei.jpeg"
+                alt="Gaby Frei"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/gabrielle-frei/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Gaby Frei</div>
+            </div>
+          </div>
+
+          <!-- Grayson Smith -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/GraysonSmith.jpeg"
+                alt="Grayson Smith"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/grayson-m-smith/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Grayson Smith</div>
+            </div>
+          </div>
+
+          <!-- Haley Kahn -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/HaleyKahn.jpeg"
+                alt="Haley Kahn"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/haley-kahn/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Haley Kahn</div>
+            </div>
+          </div>
+
+          <!-- Hassan Adegoke (spelled Agedoke in file list) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/HassanAgedoke.jpeg"
+                alt="Hassan Adegoke"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/hassan-adegoke/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Hassan Agedoke</div>
+            </div>
+          </div>
+
+          <!-- Helen Hendricks -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/HelenHendricks.jpeg"
+                alt="Helen Hendricks"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/helen-hendricks/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Helen Hendricks</div>
+            </div>
+          </div>
+
+          <!-- Helena Sena -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/HelenaSena.jpeg"
+                alt="Helena Sena"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/helenadsena/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Helena Sena</div>
+            </div>
+          </div>
+
+          <!-- Isa Dominguez -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/IsaDominguez.jpeg"
+                alt="Isa Dominguez"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/isa-dominguez/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Isa Dominguez</div>
+            </div>
+          </div>
+
+          <!-- Isabelle Pham -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/IsabellePham.jpg"
+                alt="Isabelle Pham"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/phamisabelle/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Isabelle Pham</div>
+            </div>
+          </div>
+
+          <!-- Ishita Sujan -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/IshitaSujan.jpeg?v=2"
+                alt="Ishita Sujan"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ishita-sujan/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ishita Sujan</div>
+            </div>
+          </div>
+
+          <!-- Jack Dawson -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JackDawson.jpg"
+                alt="Jack Dawson"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/jhdaws/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Jack Dawson</div>
+            </div>
+          </div>
+
+          <!-- Jed Kumah -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JedKumah.jpg"
+                alt="Jed Kumah"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/jedekumah/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Jed Kumah</div>
+            </div>
+          </div>
+
+          <!-- John Akok Ring Akok -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JohnAkokRingAkok.JPG"
+                alt="John Akok Ring Akok"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/johnakok/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">John Akok Ring Akok</div>
+            </div>
+          </div>
+
+          <!-- Jolie Hawthorne -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JolieHawthorne.jpg"
+                alt="Jolie Hawthorne"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/jolie-hawthorne/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Jolie Hawthorne</div>
+            </div>
+          </div>
+
+          <!-- Joseph Quinn (Joe Quinn in display) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JosephQuinn.png"
+                alt="Joseph Quinn"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/josephjquinn/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -940,236 +1246,404 @@
             </div>
           </div>
 
-<!-- John Akok Ring Akok -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/JohnAkokRingAkok.JPG" alt="John Akok Ring Akok" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/johnakok/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">John Akok Ring Akok</div>
-  </div>
-</div>
+          <!-- Julia Zhang -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JuliaZhang.jpeg"
+                alt="Julia Zhang"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/julia-p-zhang/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Julia Zhang</div>
+            </div>
+          </div>
 
-<!-- Jolie Hawthorne -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/JolieHawthorne.jpg" alt="Jolie Hawthorne" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/jolie-hawthorne/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Jolie Hawthorne</div>
-  </div>
-</div>
+          <!-- Kaitlyn Hannon -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KaitlynHannon.JPG"
+                alt="Kaitlyn Hannon"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kaitlyn-hannon/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kaitlyn Hannon</div>
+            </div>
+          </div>
 
-<!-- Julia Zhang -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/JuliaZhang.jpeg" alt="Julia Zhang" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/julia-p-zhang/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Julia Zhang</div>
-  </div>
-</div>
+          <!-- Kalyn Day -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KalynDay.jpeg"
+                alt="Kalyn Day"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kalynday/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kalyn Day</div>
+            </div>
+          </div>
 
-<!-- Kaitlyn Hannon -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KaitlynHannon.JPG" alt="Kaitlyn Hannon" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kaitlyn-hannon/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kaitlyn Hannon</div>
-  </div>
-</div>
-<!-- Kalyn Day -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KalynDay.jpeg" alt="Kalyn Day" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kalynday/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kalyn Day</div>
-  </div>
-</div>
+          <!-- Kasey Kautz -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KaseyKautz.jpeg"
+                alt="Kasey Kautz"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kaseykautz/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/broher-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                    onerror="this.src='assets/brother-images-compressed/linkedin.png';"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kasey Kautz</div>
+            </div>
+          </div>
 
-<!-- Kasey Kautz -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KaseyKautz.jpeg" alt="Kasey Kautz" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kaseykautz/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kasey Kautz</div>
-  </div>
-</div>
+          <!-- Katherine Ernst -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KatherineErnst.jpg"
+                alt="Katherine Ernst"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/katherineernst13/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Katherine Ernst</div>
+            </div>
+          </div>
 
-<!-- Katherine Ernst -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KatherineErnst.jpg" alt="Katherine Ernst" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/katherineernst13/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Katherine Ernst</div>
-  </div>
-</div>
+          <!-- Keep Wesner (Natalie Keep) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KeepWesner.jpg"
+                alt="Keep Wesner"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/nataliekeep/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Keep Wesner</div>
+            </div>
+          </div>
 
-<!-- Keep Wesner -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KeepWesner.jpg" alt="Keep Wesner" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/nataliekeep/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Keep Wesner</div>
-  </div>
-</div>
+          <!-- Kiersten Brennan -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KierstenBrennan.jpg"
+                alt="Kiersten Brennan"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kiersten-brennan/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kiersten Brennan</div>
+            </div>
+          </div>
 
-<!-- Kiersten Brennan -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KierstenBrennan.jpg" alt="Kiersten Brennan" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kiersten-brennan/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kiersten Brennan</div>
-  </div>
-</div>
+          <!-- Kunal Bham -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KunalBham.jpg"
+                alt="Kunal Bham"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kunalbham/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kunal Bham</div>
+            </div>
+          </div>
 
-<!-- Kunal Bham -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KunalBham.jpg" alt="Kunal Bham" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kunalbham/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kunal Bham</div>
-  </div>
-</div>
+          <!-- Kyle Chambers -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/KyleChambers.jpeg"
+                alt="Kyle Chambers"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/kyle-alexander-chambers/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Kyle Chambers</div>
+            </div>
+          </div>
 
-<!-- Kyle Chambers -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/KyleChambers.jpeg" alt="Kyle Chambers" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/kyle-alexander-chambers/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Kyle Chambers</div>
-  </div>
-</div>
+          <!-- Lin Borland -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/LinBorland.jpg"
+                alt="Lin Borland"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/linborland/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Lin Borland</div>
+            </div>
+          </div>
 
-<!-- Lin Borland -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/LinBorland.jpg" alt="Lin Borland" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/linborland/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Lin Borland</div>
-  </div>
-</div>
+          <!-- Lizzie Tucker (Elizabeth Tucker) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/LizzieTucker.jpeg"
+                alt="Elizabeth Tucker"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/elizabethtuckerr/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Lizzie Tucker</div>
+            </div>
+          </div>
 
-<!-- Lizzie Tucker -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/LizzieTucker.jpeg" alt="Elizabeth Tucker" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/elizabethtuckerr/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Lizzie Tucker</div>
-  </div>
-</div>
+          <!-- Lucas Slater -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/LucasSlater.jpg"
+                alt="Lucas Slater"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/lucas-slater/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Lucas Slater</div>
+            </div>
+          </div>
 
-<!-- Lucas Slater -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/LucasSlater.jpg" alt="Lucas Slater" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/lucas-slater/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Lucas Slater</div>
-  </div>
-</div>
+          <!-- Luke Golumbic -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/LukeGolumbic.png"
+                alt="Luke Golumbic"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/luke-c-golumbic/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Luke Golumbic</div>
+            </div>
+          </div>
 
           <!-- Ludvig Denker -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/LudvigDenker.jpeg" alt="Ludvig Denker" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/LudvigDenker.jpeg"
+                alt="Ludvig Denker"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/ludvig-denker/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/ludvig-denker/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1179,286 +1653,461 @@
             </div>
           </div>
 
-<!-- Luke Golumbic -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/LukeGolumbic.png" alt="Luke Golumbic" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/luke-c-golumbic/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Luke Golumbic</div>
-  </div>
-</div>
+          <!-- Mai-Xuan Mantwill -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/MaixuanMantwill.jpg"
+                alt="Mai-Xuan Mantwill"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/maixuanmantwill/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Mai-Xuan Mantwill</div>
+            </div>
+          </div>
 
+          <!-- Mason Anton -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/MasonAnton.jpg"
+                alt="Mason Anton"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/mason-anton/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Mason Anton</div>
+            </div>
+          </div>
 
-<!-- Mai-Xuan Mantwill -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/MaixuanMantwill.jpg" alt="Mai-Xuan Mantwill" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/maixuanmantwill/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Mai-Xuan Mantwill</div>
-  </div>
-</div>
+          <!-- Megan Wang -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/MeganWang.jpg"
+                alt="Megan Wang"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/meganzwang/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Megan Wang</div>
+            </div>
+          </div>
 
-<!-- Mason Anton -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/MasonAnton.jpg" alt="Mason Anton" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/mason-anton/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Mason Anton</div>
-  </div>
-</div>
+          <!-- Mick Hooley (Michael Hooley) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/MickHooley.jpeg"
+                alt="Michael Hooley"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/michael-e-hooley/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Mick Hooley</div>
+            </div>
+          </div>
 
-<!-- Megan Wang -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/MeganWang.jpg" alt="Megan Wang" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/meganzwang/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Megan Wang</div>
-  </div>
-</div>
+          <!-- Mohamed Bakry -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/MohamedBakry.jpg"
+                alt="Mohamed Bakry"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/mohamedbakry04/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Mohamed Bakry</div>
+            </div>
+          </div>
 
-<!-- Mick Hooley -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/MickHooley.jpeg" alt="Michael Hooley" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/michael-e-hooley/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Mick Hooley</div>
-  </div>
-</div>
+          <!-- Moses Banda (Bandabilt in display per original) -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/moses.b.JPG"
+                alt="Moses Banda"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/moses-banda1/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Moses Bandabilt</div>
+            </div>
+          </div>
 
-<!-- Mohamed Bakry -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/MohamedBakry.jpg" alt="Mohamed Bakry" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/mohamedbakry04/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Mohamed Bakry</div>
-  </div>
-</div>
+          <!-- Nancy Deng -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/NancyDeng.JPG"
+                alt="Nancy Deng"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/nancydengg/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Nancy Deng</div>
+            </div>
+          </div>
 
-<!-- Moses Banda -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/moses.b.JPG" alt="Moses Banda" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/moses-banda1/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Moses Banda</div>
-  </div>
-</div>
+          <!-- Naya Bakaes -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/NayaBakaes.jpeg"
+                alt="Naya Bakaes"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/nayabakaes/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Naya Bakaes</div>
+            </div>
+          </div>
 
-<!-- Nancy Deng -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/NancyDeng.JPG" alt="Nancy Deng" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/nancydengg/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Nancy Deng</div>
-  </div>
-</div>
+          <!-- Nirvaan Nagaldinne -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/NirvaanNagaldinne.jpeg"
+                alt="Nirvaan Nagaldinne"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/nirvaan-nagaldinne/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Nirvaan Nagaldinne</div>
+            </div>
+          </div>
 
-<!-- Naya Bakaes -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/NayaBakaes.jpeg" alt="Naya Bakaes" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/nayabakaes/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Naya Bakaes</div>
-  </div>
-</div>
+          <!-- Parker Palermo -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/ParkerPalermo.jpeg?v=2"
+                alt="Parker Palermo"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/parker-palermo/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Parker Palermo</div>
+            </div>
+          </div>
 
-<!-- Nirvaan Nagaldinne -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/NirvaanNagaldinne.jpeg" alt="Nirvaan Nagaldinne" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/nirvaan-nagaldinne/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Nirvaan Nagaldinne</div>
-  </div>
-</div>
+          <!-- Prince Owusu Nkrumah -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/PrinceOwusuNkrumah.jpeg"
+                alt="Prince Owusu Nkrumah"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/prince-owusu-nkrumah/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Prince Owusu Nkrumah</div>
+            </div>
+          </div>
 
-<!-- Parker Palermo -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/ParkerPalermo.jpeg?v=2" alt="Parker Palermo" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/parker-palermo/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Parker Palermo</div>
-  </div>
-</div>
+          <!-- Rene Huerta -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/ReneHuerta.JPG"
+                alt="Rene Huerta"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/rene-e-huerta/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Rene Huerta</div>
+            </div>
+          </div>
 
-<!-- Prince Owusu Nkrumah -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/PrinceOwusuNkrumah.jpeg" alt="Prince Owusu Nkrumah" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/prince-owusu-nkrumah/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Prince Owusu Nkrumah</div>
-  </div>
-</div>
+          <!-- Rithika Thambireddy -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/RithikaThambireddy.JPG"
+                alt="Rithika Thambireddy"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/rithika-thambireddy/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Rithika Thambireddy</div>
+            </div>
+          </div>
 
-<!-- Rene Huerta -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/ReneHuerta.JPG" alt="Rene Huerta" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/rene-e-huerta/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Rene Huerta</div>
-  </div>
-</div>
+          <!-- Ryan Khairollahi -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/RyanKhairollahi.jpeg"
+                alt="Ryan Khairollahi"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ryan-khairollahi/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ryan Khairollahi</div>
+            </div>
+          </div>
 
-<!-- Rithika Thambireddy -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/RithikaThambireddy.JPG" alt="Rithika Thambireddy" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/rithika-thambireddy/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Rithika Thambireddy</div>
-  </div>
-</div>
-
-<!-- Ryan Khairollahi -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/RyanKhairollahi.jpeg" alt="Ryan Khairollahi" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/ryan-khairollahi/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Ryan Khairollahi</div>
-  </div>
-</div>
-
-<!-- Samantha Woody -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SammyWoody.jpg" alt="Samantha Woody" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/samantha-d-woody/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Samantha Woody</div>
-  </div>
-</div>
-
-<!-- Sarah Goldstein -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SarahGoldstein.jpg" alt="Sarah Goldstein" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/goldstein-sarah/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sarah Goldstein</div>
-  </div>
-</div>
+          <!-- Samantha Woody -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SammyWoody.jpg"
+                alt="Samantha Woody"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/samantha-d-woody/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Samantha Woody</div>
+            </div>
+          </div>
 
           <!-- Sarah Finfrock -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/SarahFinfrock.jpeg" alt="Sarah Finfrock" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/SarahFinfrock.jpeg"
+                alt="Sarah Finfrock"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/sarah-finfrock/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/sarah-finfrock/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1468,387 +2117,715 @@
             </div>
           </div>
 
-<!-- Sharv Save -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SharvSave.jpg" alt="Sharv Save" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/sharvsave/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sharv Save</div>
-  </div>
-</div>
-
-<!-- Sonya Jayathilake -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SonyaJayathilake.jpeg" alt="Sonya Jayathilake" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/sonya-jayathilake/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sonya Jayathilake</div>
-  </div>
-</div>
-
-<!-- Sophia Hooley -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SophiaHooley.png" alt="Sophia Hooley" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/sophia-hooley/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sophia Hooley</div>
-  </div>
-</div>
-
-<!-- Sophia Pieri -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SophiaPieri.jpeg" alt="Sophia Pieri" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/sophia-pieri-vanderbilt/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sophia Pieri</div>
-  </div>
-</div>
-
-<!-- Sophie Desmarais -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/SophieDesmarais.jpeg" alt="Sophie Desmarais" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/sophie-desmarais/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Sophie Desmarais</div>
-  </div>
-</div>
-
-<!-- Tapan Sidhwani -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/TapanSidhwani.jpg" alt="Tapan Sidhwani" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/tapan-sidhwani-163007226/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Tapan Sidhwani</div>
-  </div>
-</div>
-
-<!-- Varun Bussa -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/VarunBussa.jpeg" alt="Varun Bussa" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/varunbussa/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Varun Bussa</div>
-  </div>
-</div>
-
-<!-- Vittoria Riedling -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/VittoriaRiedling.jpeg?v=2" alt="Vittoria Riedling" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/vittoria-riedling/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Vittoria Riedling</div>
-  </div>
-</div>
-
-<!-- Walker Pence -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/WalkerPence.jpg" alt="Walker Pence" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/walker-pence/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Walker Pence</div>
-  </div>
-</div>
-
-<!-- Yeabsera Ababu -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/YeabseraAbabu.jpg" alt="Yeabsera Ababu" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/yeabsera-ababu/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Yeabsera Ababu</div>
-  </div>
-</div>
-
-<!-- Yehan Subasinghe -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/YehanSubasinghe.jpeg" alt="Yehan Subasinghe" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/yehansubasinghe/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Yehan Subasinghe</div>
-  </div>
-</div>
-
-<!-- Zuzanna Szul -->
-<div class="profile-card">
-  <div class="profile-image-container">
-    <img src="assets/brother-images-compressed/ZuzannaSzul.jpeg" alt="Zuzanna Szul" class="profile-image">
-    <div class="linkedin-overlay">
-      <a href="https://www.linkedin.com/in/zuzanna-szul/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-        <span>View Profile</span>
-      </a>
-    </div>
-  </div>
-  <div class="profile-info">
-    <div class="profile-name">Zuzanna Szul</div>
-  </div>
-</div>
-</div>
-</div>
-
-    <!-- Executive Board Section -->
-<div id="eboard" class="brothers-section exec-section">
-  <div class="brothers-grid">
-
-    <!-- Ludvig Denker - President -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/LudvigDenkerHS.jpeg" alt="Ludvig Denker" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/ludvig-denker/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Ludvig Denker</div>
-        <div class="profile-title">President</div>
-      </div>
-    </div>
-
-    <!-- Chance Ineza - VP External Affairs -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/Chance.I.JPEG" alt="Chance Ineza" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/chance-ineza/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Chance Ineza</div>
-        <div class="profile-title">VP of External Affairs</div>
-      </div>
-    </div>
-
-    <!-- Vittoria Riedling - VP Internal Affairs -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/Vittoria.R.JPEG" alt="Vittoria Riedling" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/vittoria-riedling/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Vittoria Riedling</div>
-        <div class="profile-title">VP of Internal Affairs</div>
-      </div>
-    </div>
-
-    <!-- Grayson Smith - VP Technical Development -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/Grayson.S.PNG" alt="Grayson Smith" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/grayson-m-smith/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Grayson Smith</div>
-        <div class="profile-title">VP of Technical Development</div>
-      </div>
-    </div>
-
-    <!-- Yehan Subasinghe - VP DEI -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/yehan.S.JPEG" alt="Yehan Subasinghe" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/yehansubasinghe/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Yehan Subasinghe</div>
-        <div class="profile-title">VP of Diversity, Equity, and Inclusion</div>
-      </div>
-    </div>
-
-    <!-- Mason Anton - VP Social -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/Mason.A.JPEG" alt="Mason Anton" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/mason-anton/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Mason Anton</div>
-        <div class="profile-title">VP of Social Engagement</div>
-      </div>
-    </div>
-
-    <!-- Ishita Sujan - VP Finance -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/IShita.S.JPEG" alt="Ishita Sujan" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/ishita-sujan/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Ishita Sujan</div>
-        <div class="profile-title">VP of Finance</div>
-      </div>
-    </div>
-
-    <!-- Lin Borland - VP Marketing -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/lin.B.JPEG" alt="Lin Borland" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/linborland/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Lin Borland</div>
-        <div class="profile-title">VP of Marketing</div>
-      </div>
-    </div>
-
-    <!-- Naya Bakaes - VP Operations -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/Naya.B.JPEG" alt="Naya Bakaes" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/nayabakaes/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Naya Bakaes</div>
-        <div class="profile-title">VP of Operations</div>
-      </div>
-    </div>
-
-    <!-- Eva Cheraisi - VP Professional Dev -->
-    <div class="profile-card">
-      <div class="profile-image-container">
-        <img src="assets/founders-images-compressed/EvaP.jpg" alt="Eva Cheraisi" class="profile-image">
-        <div class="linkedin-overlay">
-          <a href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-            <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
-            <span>View Profile</span>
-          </a>
-        </div>
-      </div>
-      <div class="profile-info">
-        <div class="profile-name">Eva Cheraisi</div>
-        <div class="profile-title">VP of Professional Development</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-      <!-- Alumni Section -->
-      <div id="alumni" class="brothers-section">
-        <div class="brothers-grid">
-                   <!-- Jenna Holland -->
+          <!-- Sarah Goldstein -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/JennaHolland.jpg" alt="Jenna Holland" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/SarahGoldstein.jpg"
+                alt="Sarah Goldstein"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/jennavholland/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/goldstein-sarah/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sarah Goldstein</div>
+            </div>
+          </div>
+
+          <!-- Sharv Save -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SharvSave.jpg"
+                alt="Sharv Save"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/sharvsave/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sharv Save</div>
+            </div>
+          </div>
+
+          <!-- Sonya Jayathilake -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SonyaJayathilake.jpeg"
+                alt="Sonya Jayathilake"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/sonya-jayathilake/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sonya Jayathilake</div>
+            </div>
+          </div>
+
+          <!-- Sophia Hooley -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SophiaHooley.png"
+                alt="Sophia Hooley"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/sophia-hooley/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sophia Hooley</div>
+            </div>
+          </div>
+
+          <!-- Sophia Pieri -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SophiaPieri.jpeg"
+                alt="Sophia Pieri"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/sophia-pieri-vanderbilt/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sophia Pieri</div>
+            </div>
+          </div>
+
+          <!-- Sophie Desmarais -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/SophieDesmarais.jpeg"
+                alt="Sophie Desmarais"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/sophie-desmarais/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Sophie Desmarais</div>
+            </div>
+          </div>
+
+          <!-- Tapan Sidhwani -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/TapanSidhwani.jpg"
+                alt="Tapan Sidhwani"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/tapan-sidhwani-163007226/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Tapan Sidhwani</div>
+            </div>
+          </div>
+
+          <!-- Varun Bussa -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/VarunBussa.jpeg"
+                alt="Varun Bussa"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/varunbussa/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Varun Bussa</div>
+            </div>
+          </div>
+
+          <!-- Vittoria Riedling -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/VittoriaRiedling.jpeg?v=2"
+                alt="Vittoria Riedling"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/vittoria-riedling/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Vittoria Riedling</div>
+            </div>
+          </div>
+
+          <!-- Walker Pence -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/WalkerPence.jpg"
+                alt="Walker Pence"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/walker-pence/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Walker Pence</div>
+            </div>
+          </div>
+
+          <!-- Yeabsera Ababu -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/YeabseraAbabu.jpg"
+                alt="Yeabsera Ababu"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/yeabsera-ababu/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Yeabsera Ababu</div>
+            </div>
+          </div>
+
+          <!-- Yehan Subasinghe -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/YehanSubasinghe.jpeg"
+                alt="Yehan Subasinghe"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/yehansubasinghe/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Yehan Subasinghe</div>
+            </div>
+          </div>
+
+          <!-- Zuzanna Szul -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/ZuzannaSzul.jpeg"
+                alt="Zuzanna Szul"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/zuzanna-szul/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Zuzanna Szul</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Executive Board -->
+      <div id="eboard" class="brothers-section exec-section">
+        <div class="brothers-grid">
+          <!-- Ludvig Denker - President -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/LudvigDenkerHS.jpeg"
+                alt="Ludvig Denker"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ludvig-denker/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ludvig Denker</div>
+              <div class="profile-title">President</div>
+            </div>
+          </div>
+
+          <!-- Chance Ineza - VP External Affairs -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/Chance.I.JPEG"
+                alt="Chance Ineza"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/chance-ineza/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Chance Ineza</div>
+              <div class="profile-title">VP of External Affairs</div>
+            </div>
+          </div>
+
+          <!-- Vittoria Riedling - VP Internal Affairs -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/Vittoria.R.JPEG"
+                alt="Vittoria Riedling"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/vittoria-riedling/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Vittoria Riedling</div>
+              <div class="profile-title">VP of Internal Affairs</div>
+            </div>
+          </div>
+
+          <!-- Grayson Smith - VP Technical Development -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/Grayson.S.PNG"
+                alt="Grayson Smith"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/grayson-m-smith/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Grayson Smith</div>
+              <div class="profile-title">VP of Technical Development</div>
+            </div>
+          </div>
+
+          <!-- Yehan Subasinghe - VP DEI -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/yehan.S.JPEG"
+                alt="Yehan Subasinghe"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/yehansubasinghe/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Yehan Subasinghe</div>
+              <div class="profile-title">
+                VP of Diversity, Equity, and Inclusion
+              </div>
+            </div>
+          </div>
+
+          <!-- Mason Anton - VP Social -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/Mason.A.JPEG"
+                alt="Mason Anton"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/mason-anton/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Mason Anton</div>
+              <div class="profile-title">VP of Social Engagement</div>
+            </div>
+          </div>
+
+          <!-- Ishita Sujan - VP Finance -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/IShita.S.JPEG"
+                alt="Ishita Sujan"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/ishita-sujan/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Ishita Sujan</div>
+              <div class="profile-title">VP of Finance</div>
+            </div>
+          </div>
+
+          <!-- Lin Borland - VP Marketing -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/lin.B.JPEG"
+                alt="Lin Borland"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/linborland/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Lin Borland</div>
+              <div class="profile-title">VP of Marketing</div>
+            </div>
+          </div>
+
+          <!-- Naya Bakaes - VP Operations -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/Naya.B.JPEG"
+                alt="Naya Bakaes"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/nayabakaes/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Naya Bakaes</div>
+              <div class="profile-title">VP of Operations</div>
+            </div>
+          </div>
+
+          <!-- Eva Cheraisi - VP Professional Development -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/founders-images-compressed/EvaP.jpg"
+                alt="Eva Cheraisi"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/eva-cheraisi-7a470b1a6/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
+                  <span>View Profile</span>
+                </a>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name">Eva Cheraisi</div>
+              <div class="profile-title">VP of Professional Development</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alumni -->
+      <div id="alumni" class="brothers-section">
+        <div class="brothers-grid">
+          <!-- Jenna Holland -->
+          <div class="profile-card">
+            <div class="profile-image-container">
+              <img
+                src="assets/brother-images-compressed/JennaHolland.jpg"
+                alt="Jenna Holland"
+                class="profile-image"
+              />
+              <div class="linkedin-overlay">
+                <a
+                  href="https://www.linkedin.com/in/jennavholland/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1862,10 +2839,23 @@
           <!-- Katherine Oung -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/KatherineOung.jpg" alt="Katherine Oung" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/KatherineOung.jpg"
+                alt="Katherine Oung"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/katherine-oung/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/katherine-oung/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1879,10 +2869,23 @@
           <!-- Kendelle Grubbs -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/KendelleGrubbs.jpg" alt="Kendelle Grubbs" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/KendelleGrubbs.jpg"
+                alt="Kendelle Grubbs"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/kendelle-grubbs/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/kendelle-grubbs/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1893,13 +2896,26 @@
             </div>
           </div>
 
-          <!-- Lorita Rozenbaum -->
+          <!-- Zofia Luther -->
           <div class="profile-card">
             <div class="profile-image-container">
-              <img src="assets/brother-images-compressed/LolitaRozenbaum.jpeg" alt="Lorita Rozenbaum" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/LolitaRozenbaum.jpeg"
+                alt="Lorita Rozenbaum"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/lolitarozenbaum/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/lolitarozenbaum/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1913,10 +2929,23 @@
           <!-- Zofia Luther -->
           <div class="profile-card">
             <div class="profile-image-container">
-                              <img src="assets/brother-images-compressed/ZofiaLuther.JPG?v=2" alt="Zofia Luther" class="profile-image">
+              <img
+                src="assets/brother-images-compressed/ZofiaLuther.JPG?v=2"
+                alt="Zofia Luther"
+                class="profile-image"
+              />
               <div class="linkedin-overlay">
-                <a href="https://www.linkedin.com/in/zofialuther/" class="linkedin-link" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/brother-images-compressed/linkedin.png" alt="LinkedIn" class="linkedin-icon">
+                <a
+                  href="https://www.linkedin.com/in/zofialuther/"
+                  class="linkedin-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="assets/brother-images-compressed/linkedin.png"
+                    alt="LinkedIn"
+                    class="linkedin-icon"
+                  />
                   <span>View Profile</span>
                 </a>
               </div>
@@ -1926,134 +2955,120 @@
               <div class="profile-title">Alumni</div>
             </div>
           </div>
-
         </div>
       </div>
     </main>
 
-    <!-- Footer will be injected here by footer.js -->
+    <!-- Optional header/footer injectors if you have them -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 
-    <!-- Caching and Flash Prevention JavaScript -->
+    <!-- Tabs -->
     <script>
-      // Register service worker for comprehensive caching
-      if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js')
-              .then(registration => console.log('Service Worker registered'))
-              .catch(error => console.log('Service Worker registration failed'));
+      function showSection(id) {
+        document
+          .querySelectorAll(".brothers-section")
+          .forEach((s) => s.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-button")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        if (event && event.target) event.target.classList.add("active");
       }
-
-      // Instant font loading with cache
-      document.addEventListener("DOMContentLoaded", function() {
-          const cachedFont = localStorage.getItem('font-Roboto');
-          if (cachedFont) {
-              document.body.classList.add('loaded', 'fonts-loaded');
-          } else {
-              document.body.classList.add('loaded');
-              if (window.CacheManager) {
-                  window.CacheManager.manageCacheSize();
-              }
-          }
-      });
-
-      // Immediate fallback
-      window.addEventListener("load", function() {
-          document.body.classList.add('loaded');
-          document.body.style.opacity = '1';
-      });
-
-      // Font loading optimization
-      if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(function() {
-              document.body.classList.add('loaded', 'fonts-loaded');
-          });
-      }
-
-      // Performance monitoring
-      window.addEventListener('load', function() {
-          if ('performance' in window) {
-              const perfData = performance.getEntriesByType('navigation')[0];
-              console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-          }
-      });
     </script>
 
-    <!-- Tab Switching JavaScript -->
+    <!-- Name auto-linking for <=1024px -->
     <script>
-      function showSection(sectionId) {
-        // Hide all sections
-        document.querySelectorAll('.brothers-section').forEach(section => {
-          section.classList.remove('active');
-        });
-        // Remove active class from all buttons
-        document.querySelectorAll('.tab-button').forEach(button => {
-          button.classList.remove('active');
-        });
-        // Show selected section
-        document.getElementById(sectionId).classList.add('active');
-        // Add active class to clicked button
-        event.target.classList.add('active');
-      }
+      (function () {
+        const QUERY = "(max-width: 1024px)";
 
-      // Initialize page
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('Brothers page loaded successfully');
-        
-        // Progressive loading strategy for profile images only
-        const profileImages = document.querySelectorAll('.profile-image');
-        
-        // Load first 12 images immediately (visible in viewport)
+        function linkNames() {
+          document.querySelectorAll(".profile-card").forEach((card) => {
+            const nameEl = card.querySelector(".profile-name");
+            if (!nameEl) return;
+            if (nameEl.querySelector("a[data-li-name]")) return;
+
+            const overlayA = card.querySelector(".linkedin-overlay a[href]");
+            const href = overlayA ? overlayA.getAttribute("href") : null;
+            if (!href) return;
+
+            const text = (nameEl.textContent || "").trim();
+            if (!text) return;
+
+            const a = document.createElement("a");
+            a.href = href;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.dataset.liName = "1";
+            a.style.color = "inherit";
+            a.style.textDecoration = "none";
+            a.style.cursor = "pointer";
+            a.textContent = text;
+
+            nameEl.textContent = "";
+            nameEl.appendChild(a);
+          });
+        }
+
+        function unlinkNames() {
+          document.querySelectorAll(".profile-name a[data-li-name]").forEach((a) => {
+            const parent = a.parentElement;
+            if (!parent) return;
+            parent.textContent = a.textContent || "";
+          });
+        }
+
+        function apply() {
+          const isSmall = window.matchMedia(QUERY).matches;
+          if (isSmall) linkNames();
+          else unlinkNames();
+        }
+
+        window.addEventListener("load", apply);
+
+        let t;
+        window.addEventListener("resize", () => {
+          clearTimeout(t);
+          t = setTimeout(apply, 150);
+        });
+      })();
+    </script>
+
+    <!-- Perf: eager-load a few images; lazy rest -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const profileImages = document.querySelectorAll(".profile-image");
         profileImages.forEach((img, index) => {
-          if (index < 12) {
-            // First 12 images load immediately
-            img.setAttribute('loading', 'eager');
-          } else {
-            // Rest load lazily
-            img.setAttribute('loading', 'lazy');
-          }
+          img.setAttribute("loading", index < 12 ? "eager" : "lazy");
         });
-        
-        // Ensure LinkedIn overlays work properly
-        const linkedinOverlays = document.querySelectorAll('.linkedin-overlay');
-        linkedinOverlays.forEach(overlay => {
-          // Ensure overlay is properly positioned and visible on hover
-          overlay.style.pointerEvents = 'auto';
-        });
-        
-        // Add intersection observer for better performance
-        if ('IntersectionObserver' in window) {
-          const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                  img.src = img.dataset.src;
-                  img.removeAttribute('data-src');
+
+        if ("IntersectionObserver" in window) {
+          const imageObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  if (img.dataset && img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
+                  }
                   observer.unobserve(img);
                 }
-              }
-            });
-          }, {
-            rootMargin: '50px 0px',
-            threshold: 0.1
-          });
-          
-          // Observe images that are not in initial viewport
-          profileImages.forEach((img, index) => {
-            if (index >= 12) {
-              imageObserver.observe(img);
-            }
+              });
+            },
+            { rootMargin: "50px 0px", threshold: 0.1 }
+          );
+
+          profileImages.forEach((img, idx) => {
+            if (idx >= 12) imageObserver.observe(img);
           });
         }
       });
     </script>
 
-    <!-- Header Component -->
-    <script src="js/header.js"></script>
-
-    <!-- Footer Component -->
-    <script src="js/footer.js"></script>
-
-    <!-- Bootstrap JS Bundle (added) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </body>
 </html>

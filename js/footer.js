@@ -31,8 +31,8 @@ function createFooter() {
           align-items: start;
         }
         .footer-col--left   { grid-area: left;   padding-left: 20px; }
-        .footer-col--middle { grid-area: middle; justify-self: center; }
-        .footer-col--brand  { grid-area: right;  padding-right: 20px; justify-self: end; }
+        .footer-col--middle { grid-area: middle; justify-self: center; text-align: center; }
+        .footer-col--brand  { grid-area: right;  padding-right: 20px; justify-self: end; text-align: right; }
 
         .footer-col h4 {
           margin: 0 0 10px;
@@ -70,9 +70,7 @@ function createFooter() {
           stroke-linecap: round; stroke-linejoin: round;
         }
         .social-icon--fill { fill: currentColor; }
-        .social-title {
-          font-size: 15px; font-weight: 500; color: var(--text); transform: translateY(1px);
-        }
+        .social-title { font-size: 15px; font-weight: 500; color: var(--text); transform: translateY(1px); }
 
         /* Beep doodle */
         .footer-beep { margin-top: auto; }
@@ -92,7 +90,6 @@ function createFooter() {
         /* ---------- PHONE: two divisions on first row; doodle below right ---------- */
         @media (max-width: 767.98px) {
           .footer-top {
-            /* Two columns on the first row; second row reserved for the doodle */
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
@@ -103,7 +100,6 @@ function createFooter() {
             align-items: start;
           }
 
-          /* Left column (Menu) */
           .footer-col--left {
             grid-area: left;
             padding-left: 0;
@@ -111,7 +107,6 @@ function createFooter() {
             text-align: left;
           }
 
-          /* Right column (Follow Us) */
           .footer-col--middle {
             grid-area: right;
             justify-self: end;
@@ -121,22 +116,20 @@ function createFooter() {
             align-items: flex-end; /* title directly above IG/Git rows */
           }
 
-          /* Doodle goes below, aligned under right column */
           .footer-col--brand {
             grid-area: beep;
             display: block;
-            justify-self: end;   /* sits under the right column */
+            justify-self: end;
             padding-right: 0;
             text-align: right;
           }
-          .footer-col--brand h4 { display: none; } /* hide extra title on phone */
+          .footer-col--brand h4 { display: none; }
           .beep-img { height: 72px; width: 72px; transform: rotate(8deg); }
 
-          /* Tighten bottom text a bit on phones, still centered */
           .footer-bottom p { font-size: 14px; }
         }
 
-        /* ---------- Optional: very small phones ---------- */
+        /* ---------- Very small phones ---------- */
         @media (max-width: 360px) {
           .social-title { display: none; } /* icons only if space is tight */
         }
@@ -146,7 +139,7 @@ function createFooter() {
         <div class="footer-top">
           <!-- Left: Menu -->
           <div class="footer-col footer-col--left">
-            <h4>Menu</h4>
+            <h4>Navigation</h4>
             <ul class="footer-list">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
@@ -156,7 +149,7 @@ function createFooter() {
             </ul>
           </div>
 
-          <!-- Right: Follow Us -->
+          <!-- Middle / Right on phone: Follow Us -->
           <div class="footer-col footer-col--middle">
             <h4>Follow Us</h4>
             <div class="social-grid" aria-label="Social links">
@@ -188,11 +181,11 @@ function createFooter() {
             </div>
           </div>
 
-          <!-- Beep doodle: below right column on phones; right column on desktop -->
+          <!-- Right on desktop / below right on phone: Beep -->
           <div class="footer-col footer-col--brand">
             <h4>Kappa Theta Pi Vandy</h4>
             <div class="footer-beep">
-              <img src="/images/beep doodle.png" alt="Beep" class="beep-img">
+              <img src="/images/beep%20doodle.png" alt="Beep" class="beep-img">
             </div>
           </div>
         </div>
@@ -200,8 +193,7 @@ function createFooter() {
         <!-- Bottom (always centered) -->
         <div class="footer-bottom">
           <p>Developed and maintained by Rho Chapter</p>
-          <p>© Kappa Theta Pi - KTP 2025. All rights reserved.</p>
-          
+          <p>© Kappa Theta Pi 2025. All rights reserved.</p>
         </div>
       </div>
     </footer>
