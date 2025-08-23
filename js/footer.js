@@ -1,4 +1,5 @@
-// Footer component for KTP website (center-locked middle col, right col pinned to edge)
+// Footer: Desktop = 3 cols (Menu | Follow Us | Beep).
+// Phone = 2 cols (Menu left | Follow Us right), Beep sits BELOW under the right column.
 function createFooter() {
   return `
     <footer>
@@ -18,13 +19,9 @@ function createFooter() {
           font-family: "Roboto", Arial, sans-serif;
           font-size: 16px;
         }
-        .footer-wrap {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 22px;
-        }
+        .footer-wrap { max-width: 1200px; margin: 0 auto; padding: 0 22px; }
 
-        /* --- Top row layout --- */
+        /* ---------- Desktop/Tablet: 3 columns ---------- */
         .footer-top {
           display: grid;
           grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
@@ -44,18 +41,13 @@ function createFooter() {
           color: var(--text);
         }
 
-        /* Left: Menu */
+        /* Menu */
         .footer-list { list-style: none; padding: 0; margin: 0; }
         .footer-list li { margin: 6px 0; }
         .footer-list a { color: var(--text-dim); text-decoration: none; }
         .footer-list a:hover { text-decoration: underline; }
 
-        /* Middle: Follow Us */
-        .footer-col--middle {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+        /* Follow Us */
         .social-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -69,70 +61,90 @@ function createFooter() {
           color: var(--text);
           text-decoration: none;
           line-height: 1;
+          border-radius: 6px;
+          padding: 2px 0;
         }
-        .social-icon {
-          width: var(--icon);
-          height: var(--icon);
-          display: block;
-        }
+        .social-icon { width: var(--icon); height: var(--icon); display: block; }
         .social-icon--outline {
-          stroke: currentColor;
-          fill: none;
-          stroke-width: var(--sw);
-          stroke-linecap: round;
-          stroke-linejoin: round;
+          stroke: currentColor; fill: none; stroke-width: var(--sw);
+          stroke-linecap: round; stroke-linejoin: round;
         }
         .social-icon--fill { fill: currentColor; }
         .social-title {
-          font-size: 15px;
-          font-weight: 500;
-          color: var(--text);
-          transform: translateY(1px);
+          font-size: 15px; font-weight: 500; color: var(--text); transform: translateY(1px);
         }
 
-        /* Right: Beep doodle */
+        /* Beep doodle */
         .footer-beep { margin-top: auto; }
         .beep-img {
-          height: 100px;
-          width: 100px;
-          transform: rotate(10deg);
-          display: block;
-          filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+          height: 100px; width: 100px; transform: rotate(10deg);
+          display: block; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
         }
 
-        /* Bottom row */
+        /* Bottom */
         .footer-bottom {
           border-top: 1px solid var(--line);
           padding-top: 12px;
-          text-align: center;
+          text-align: center; /* always centered */
         }
-        .footer-bottom p {
-          margin: 3px 0;
-          font-size: 15px;
-          color: var(--text-dim);
+        .footer-bottom p { margin: 3px 0; font-size: 15px; color: var(--text-dim); }
+
+        /* ---------- PHONE: two divisions on first row; doodle below right ---------- */
+        @media (max-width: 767.98px) {
+          .footer-top {
+            /* Two columns on the first row; second row reserved for the doodle */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+              "left right"   /* row 1: Menu | Follow Us */
+              ".    beep";   /* row 2: doodle under right column */
+            gap: 16px;
+            padding-bottom: 10px;
+            align-items: start;
+          }
+
+          /* Left column (Menu) */
+          .footer-col--left {
+            grid-area: left;
+            padding-left: 0;
+            justify-self: start;
+            text-align: left;
+          }
+
+          /* Right column (Follow Us) */
+          .footer-col--middle {
+            grid-area: right;
+            justify-self: end;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* title directly above IG/Git rows */
+          }
+
+          /* Doodle goes below, aligned under right column */
+          .footer-col--brand {
+            grid-area: beep;
+            display: block;
+            justify-self: end;   /* sits under the right column */
+            padding-right: 0;
+            text-align: right;
+          }
+          .footer-col--brand h4 { display: none; } /* hide extra title on phone */
+          .beep-img { height: 72px; width: 72px; transform: rotate(8deg); }
+
+          /* Tighten bottom text a bit on phones, still centered */
+          .footer-bottom p { font-size: 14px; }
         }
 
-        /* Responsive */
-        @media (max-width: 820px) {
-          .footer-top {
-            grid-template-columns: 1fr;
-            grid-template-areas:
-              "left"
-              "middle"
-              "right";
-            gap: 18px;
-            text-align: center;
-          }
-          .footer-col--left,
-          .footer-col--brand { padding: 0; justify-self: center; }
-          .footer-col--middle { justify-self: center; }
-          .beep-img { height: 72px; width: 72px; transform: rotate(8deg); }
+        /* ---------- Optional: very small phones ---------- */
+        @media (max-width: 360px) {
+          .social-title { display: none; } /* icons only if space is tight */
         }
       </style>
 
       <div class="footer-wrap">
         <div class="footer-top">
-          <!-- Col 1: Menu -->
+          <!-- Left: Menu -->
           <div class="footer-col footer-col--left">
             <h4>Menu</h4>
             <ul class="footer-list">
@@ -144,7 +156,7 @@ function createFooter() {
             </ul>
           </div>
 
-          <!-- Col 2: Follow Us -->
+          <!-- Right: Follow Us -->
           <div class="footer-col footer-col--middle">
             <h4>Follow Us</h4>
             <div class="social-grid" aria-label="Social links">
@@ -158,7 +170,7 @@ function createFooter() {
                 <span class="social-title">Instagram</span>
               </a>
 
-              <!-- GitHub -->
+              <!-- GitHub (brand-accurate) -->
               <a class="social-linkRow" href="https://github.com/ktpvandy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <svg viewBox="0 0 16 16" class="social-icon social-icon--fill" aria-hidden="true">
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.292 6.533 5.47 7.594.4.074.546-.174.546-.386
@@ -176,7 +188,7 @@ function createFooter() {
             </div>
           </div>
 
-          <!-- Col 3: KTP Vandy -->
+          <!-- Beep doodle: below right column on phones; right column on desktop -->
           <div class="footer-col footer-col--brand">
             <h4>Kappa Theta Pi Vandy</h4>
             <div class="footer-beep">
@@ -185,10 +197,11 @@ function createFooter() {
           </div>
         </div>
 
-        <!-- Bottom -->
+        <!-- Bottom (always centered) -->
         <div class="footer-bottom">
           <p>Developed and maintained by Rho Chapter</p>
-          <p>© Kappa Theta Pi 2025. All rights reserved.</p>
+          <p>© Kappa Theta Pi - KTP 2025. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>
@@ -200,7 +213,6 @@ function injectFooter() {
   const footerHtml = createFooter();
   document.body.insertAdjacentHTML('beforeend', footerHtml);
 }
-
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', injectFooter);
 } else {

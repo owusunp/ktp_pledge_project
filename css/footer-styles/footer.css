@@ -2,6 +2,7 @@
 footer {
   background: #1f4f8b;
   color: #fff;
+  background-color: rgb(19 75 145 / var(--tw-bg-opacity, 1));
 }
 .footer-wrap {
   max-width: 1200px;
