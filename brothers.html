@@ -353,6 +353,32 @@
     font-size: 1.05rem;
   }
 }
+/* Default: 4 per row */
+.brothers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Portrait phones: 2 per row */
+@media (max-width: 576px) and (orientation: portrait) {
+  .brothers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+  .profile-image-container { height: 160px; }
+  .profile-name { font-size: 1rem; }
+}
+
+/* Landscape phones: 3 per row */
+@media (max-width: 576px) and (orientation: landscape) {
+  .brothers-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px;
+  }
+  .profile-image-container { height: 140px; }
+}
+
 
 
     </style>

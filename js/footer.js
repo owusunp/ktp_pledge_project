@@ -1,54 +1,208 @@
-// Footer component for KTP website
+// Footer component for KTP website (center-locked middle col, right col pinned to edge)
 function createFooter() {
   return `
     <footer>
-      <div class="footer-container">
-        <div class="footer-left">
-          <h3>Kappa Theta Pi – Vanderbilt</h3>
-          <div class="footer-links">
-            <a href="https://instagram.com/ktpvandy" target="_blank" rel="noopener noreferrer" class="footer-link instagram-link">
-              <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-              Instagram
-            </a>
+      <style>
+        :root {
+          --ktp-blue: #1f4f8b;
+          --text: #ffffff;
+          --text-dim: rgba(255,255,255,0.88);
+          --line: rgba(255,255,255,0.22);
+          --icon: 24px;
+          --sw: 1.8;
+        }
+        footer {
+          background: var(--ktp-blue);
+          color: var(--text);
+          padding: 28px 0 22px;
+          font-family: "Roboto", Arial, sans-serif;
+          font-size: 16px;
+        }
+        .footer-wrap {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 22px;
+        }
+
+        /* --- Top row layout --- */
+        .footer-top {
+          display: grid;
+          grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+          grid-template-areas: "left middle right";
+          gap: 36px;
+          padding-bottom: 16px;
+          align-items: start;
+        }
+        .footer-col--left   { grid-area: left;   padding-left: 20px; }
+        .footer-col--middle { grid-area: middle; justify-self: center; }
+        .footer-col--brand  { grid-area: right;  padding-right: 20px; justify-self: end; }
+
+        .footer-col h4 {
+          margin: 0 0 10px;
+          font-weight: 700;
+          font-size: 18px;
+          color: var(--text);
+        }
+
+        /* Left: Menu */
+        .footer-list { list-style: none; padding: 0; margin: 0; }
+        .footer-list li { margin: 6px 0; }
+        .footer-list a { color: var(--text-dim); text-decoration: none; }
+        .footer-list a:hover { text-decoration: underline; }
+
+        /* Middle: Follow Us */
+        .footer-col--middle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .social-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 12px;
+          margin-top: 6px;
+        }
+        .social-linkRow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--text);
+          text-decoration: none;
+          line-height: 1;
+        }
+        .social-icon {
+          width: var(--icon);
+          height: var(--icon);
+          display: block;
+        }
+        .social-icon--outline {
+          stroke: currentColor;
+          fill: none;
+          stroke-width: var(--sw);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .social-icon--fill { fill: currentColor; }
+        .social-title {
+          font-size: 15px;
+          font-weight: 500;
+          color: var(--text);
+          transform: translateY(1px);
+        }
+
+        /* Right: Beep doodle */
+        .footer-beep { margin-top: auto; }
+        .beep-img {
+          height: 100px;
+          width: 100px;
+          transform: rotate(10deg);
+          display: block;
+          filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+        }
+
+        /* Bottom row */
+        .footer-bottom {
+          border-top: 1px solid var(--line);
+          padding-top: 12px;
+          text-align: center;
+        }
+        .footer-bottom p {
+          margin: 3px 0;
+          font-size: 15px;
+          color: var(--text-dim);
+        }
+
+        /* Responsive */
+        @media (max-width: 820px) {
+          .footer-top {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "left"
+              "middle"
+              "right";
+            gap: 18px;
+            text-align: center;
+          }
+          .footer-col--left,
+          .footer-col--brand { padding: 0; justify-self: center; }
+          .footer-col--middle { justify-self: center; }
+          .beep-img { height: 72px; width: 72px; transform: rotate(8deg); }
+        }
+      </style>
+
+      <div class="footer-wrap">
+        <div class="footer-top">
+          <!-- Col 1: Menu -->
+          <div class="footer-col footer-col--left">
+            <h4>Menu</h4>
+            <ul class="footer-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="brothers.html">Brothers</a></li>
+              <li><a href="recruitment.html">Recruitment</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
-          <p class="copyright">© Kappa Theta Pi</p>
+
+          <!-- Col 2: Follow Us -->
+          <div class="footer-col footer-col--middle">
+            <h4>Follow Us</h4>
+            <div class="social-grid" aria-label="Social links">
+              <!-- Instagram -->
+              <a class="social-linkRow" href="https://instagram.com/ktpvandy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" class="social-icon social-icon--outline" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4.2"/>
+                  <circle cx="17" cy="7" r="1.3" fill="currentColor"/>
+                </svg>
+                <span class="social-title">Instagram</span>
+              </a>
+
+              <!-- GitHub -->
+              <a class="social-linkRow" href="https://github.com/ktpvandy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 16 16" class="social-icon social-icon--fill" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.292 6.533 5.47 7.594.4.074.546-.174.546-.386
+                           0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17
+                           -.727-.497.055-.487.055-.487.803.056 1.225.825 1.225.825.714 1.223 1.872.87 2.329.665
+                           .072-.517.28-.87.508-1.07-1.777-.202-3.644-.888-3.644-3.953 0-.873.312-1.588.823-2.148
+                           -.083-.202-.357-1.017.078-2.12 0 0 .672-.215 2.2.82A7.68 7.68 0 0 1 8 4.868
+                           c.68.003 1.366.092 2.005.27 1.527-1.035 2.198-.82 2.198-.82.437 1.103.163 1.918.08 2.12
+                           .513.56.823 1.275.823 2.148 0 3.073-1.87 3.748-3.65 3.946.287.247.543.734.543 1.48
+                           0 1.07-.01 1.933-.01 2.195 0 .214.144.463.55.384C13.71 14.53 16 11.54 16 8
+                           c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                <span class="social-title">GitHub</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 3: KTP Vandy -->
+          <div class="footer-col footer-col--brand">
+            <h4>Kappa Theta Pi Vandy</h4>
+            <div class="footer-beep">
+              <img src="/images/beep doodle.png" alt="Beep" class="beep-img">
+            </div>
+          </div>
         </div>
-        <div class="footer-right">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="recruitment.html">Recruitment</a></li>
-            <li><a href="ktp-in-action.html">KTP in Action</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+          <p>Developed and maintained by Rho Chapter</p>
+          <p>© Kappa Theta Pi 2025. All rights reserved.</p>
         </div>
       </div>
     </footer>
   `;
 }
 
-// Function to inject footer into page
+// Inject footer
 function injectFooter() {
-  // Add footer CSS link if not already present
-  if (!document.querySelector('#footer-css-link')) {
-    const linkTag = document.createElement('link');
-    linkTag.id = 'footer-css-link';
-    linkTag.rel = 'stylesheet';
-    linkTag.href = 'css/footer-styles/footer.css';
-    document.head.appendChild(linkTag);
-  }
-
-  // Add footer HTML
   const footerHtml = createFooter();
   document.body.insertAdjacentHTML('beforeend', footerHtml);
 }
 
-// Auto-inject footer when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', injectFooter);
 } else {
   injectFooter();
-} 
+}
