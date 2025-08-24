@@ -165,7 +165,7 @@ function createFooter() {
               </a>
 
               <!-- GitHub (brand-accurate) -->
-              <a class="social-linkRow" href="https://github.com/ktpvandy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a class="social-linkRow" href="" target="" rel="noopener noreferrer" aria-label="GitHub">
                 <svg viewBox="0 0 16 16" class="social-icon social-icon--fill" aria-hidden="true">
                   <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.292 6.533 5.47 7.594.4.074.546-.174.546-.386
                            0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17
