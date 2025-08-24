@@ -12,18 +12,15 @@
 html {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  -ms-overflow-style: none; /* IE 10+ */
 }
+html::-webkit-scrollbar { display: none; }
 
-html::-webkit-scrollbar {
-  display: none; /* WebKit browsers (Chrome, Safari, etc.) */
-}
+body { overflow-x: hidden; }
 
-body {
-  overflow-x: hidden;
-}
-
-/* HEADER */
+/* =========================
+   Desktop / Tablet (baseline)
+   ========================= */
 header {
   background-color: var(--white);
   display: flex;
@@ -34,9 +31,7 @@ header {
   box-sizing: border-box;
 }
 
-.logo {
-  height: 50px;
-}
+.logo { height: 50px; }
 
 /* Logo Text Styles */
 .logo-text {
@@ -71,38 +66,114 @@ header {
   gap: 35px;
 }
 
+/* Default (desktop/tablet) links: bold */
 .nav-links a {
   text-decoration: none;
   color: var(--black);
-  font-weight: 300;
+  font-weight: 362;   /* ✅ bold for non-mobile */
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: var(--primary);
-}
+.nav-links a:hover { color: var(--primary); }
 
-/* Mobile Responsiveness */
+/* =========================
+   Phones (mobile-only changes)
+   ========================= */
 @media (max-width: 768px) {
+  /* Header padding so it doesn't hug top/edges; respects iOS notches */
   header {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px 20px;
+    align-items: stretch;
+    gap: 8px;
+    padding: calc(env(safe-area-inset-top, 0px) + 14px) 12px 14px 12px;
   }
 
-  .greek-letters {
-    font-size: 2.8rem;
+  /* Hide desktop link row on phones */
+  .nav-links { display: none !important; }
+
+  /* Mobile header row: logo left, hamburger right, nudged inward */
+  .mobile-header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;          /* anchor for dropdown */
+    padding: 0 6px;              /* nudges logo + button inward slightly */
   }
 
-  .chapter-text {
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
+  /* Logo on mobile: top-left & slightly smaller */
+  .mobile-header .logo-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .mobile-header .greek-letters {
+    font-size: 2.4rem;
+    margin-bottom: 0;
+  }
+  .mobile-header .chapter-text {
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
   }
 
-  .nav-links {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+  /* Hamburger button (dark 3 lines) */
+  .mobile-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 6px 8px;
+    margin-left: auto; /* keep right-aligned within padded row */
   }
-} 
+  .mobile-toggler.navbar-light .navbar-toggler-icon,
+  .navbar-light .navbar-toggler-icon {
+    /* dark bars for light (white) background */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* Floating dropdown panel (small overlay near top-right) */
+  .mobile-menu {
+    position: absolute;
+    top: calc(100% + 10px);   /* just below the header row */
+    right: 6px;               /* align with inward hamburger offset */
+    width: 240px;             /* compact panel */
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.12),
+      0 2px 8px rgba(0,0,0,0.06);
+    padding: 8px 0;
+    z-index: 1000;
+
+    /* smooth fade/slide */
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .mobile-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 12px 16px;
+    margin: 2px 8px;       /* breathing room inside panel */
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
+    border-radius: 8px;
+  }
+  .mobile-menu a:hover {
+    background: var(--gray);
+    color: var(--black);
+  }
+
+  /* Hide the desktop header title block on phones, if present */
+  .header-title { display: none !important; }
+}
