@@ -1,4 +1,4 @@
-// Ensure Bootstrap CSS/JS exist (for hamburger functionality)
+// Ensure Bootstrap CSS/JS exist (for offcanvas)
 function ensureBootstrap() {
   if (!document.querySelector('#bootstrap-css-link')) {
     const css = document.createElement('link');
@@ -38,59 +38,57 @@ function createHeader() {
 
       <!-- Mobile header (phones only) -->
       <div class="mobile-header d-md-none">
-        <!-- Logo: top-left -->
+        <!-- Logo: top-left (unchanged) -->
         <a href="/" class="logo-text">
           <div class="greek-letters">ΚΘΠ</div>
           <div class="chapter-text">RHO CHAPTER</div>
         </a>
 
-        <!-- Hamburger: top-right (dark 3 lines) -->
+        <!-- Hamburger: top-right — now triggers Offcanvas (operation change only) -->
         <button
           class="navbar-toggler mobile-toggler navbar-light"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mobileMenu"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobileDrawer"
+          aria-controls="mobileDrawer"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Mobile dropdown panel (floating overlay) -->
-        <div id="mobileMenu" class="collapse mobile-menu">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/recruitment">Recruitment</a>
-          <a href="/brothers">Brothers</a>
-          <a href="/ktp-in-action">KTP in Action</a>
-          <a href="/contact">Contact</a>
+        <!-- Offcanvas drawer (slides in from right) -->
+        <div class="offcanvas offcanvas-end mobile-drawer"
+             tabindex="-1"
+             id="mobileDrawer"
+             aria-labelledby="mobileDrawerLabel"
+             data-bs-backdrop="true"
+             data-bs-scroll="false">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileDrawerLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="mobile-nav">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/recruitment">Recruitment</a>
+              <a href="/brothers">Brothers</a>
+              <a href="/ktp-in-action">KTP in Action</a>
+              <a href="/contact">Contact</a>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
   `;
 }
 
-// Close menu on link click or outside click
-function enableMobileMenuDismiss() {
-  const menu = document.getElementById('mobileMenu');
-  const toggler = document.querySelector('.mobile-toggler');
-  if (!menu || !toggler) return;
-
-  // Close on menu link tap
-  menu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      const collapse = bootstrap.Collapse.getOrCreateInstance(menu);
-      collapse.hide();
-    });
-  });
-
-  // Close when clicking outside the menu/toggler
-  document.addEventListener('click', (e) => {
-    const isInside = menu.contains(e.target) || toggler.contains(e.target);
-    if (!isInside && menu.classList.contains('show')) {
-      const collapse = bootstrap.Collapse.getOrCreateInstance(menu);
-      collapse.hide();
-    }
+// Close drawer when a link is tapped (optional quality-of-life)
+function enableMobileDrawerDismiss() {
+  const drawerEl = document.getElementById('mobileDrawer');
+  if (!drawerEl || !window.bootstrap) return;
+  const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(drawerEl);
+  drawerEl.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => offcanvas.hide());
   });
 }
 
@@ -105,18 +103,18 @@ function injectHeader() {
     document.head.appendChild(linkTag);
   }
 
-  // Add Bootstrap for mobile navbar
+  // Add Bootstrap for offcanvas
   ensureBootstrap();
 
   // Add header HTML at the beginning of body
   const headerHtml = createHeader();
   document.body.insertAdjacentHTML('afterbegin', headerHtml);
 
-  // Enable dismiss behavior when Bootstrap is ready
+  // Enable link-tap dismiss when Bootstrap is ready
   if (window.bootstrap) {
-    enableMobileMenuDismiss();
+    enableMobileDrawerDismiss();
   } else {
-    window.addEventListener('load', enableMobileMenuDismiss);
+    window.addEventListener('load', enableMobileDrawerDismiss);
   }
 }
 
