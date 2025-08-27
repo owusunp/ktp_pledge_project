@@ -44,37 +44,46 @@ function createHeader() {
           <div class="chapter-text">RHO CHAPTER</div>
         </a>
 
-        <!-- Hamburger: top-right — now triggers Offcanvas (operation change only) -->
+        <!-- Hamburger: top-right — triggers full-screen overlay -->
         <button
-          class="navbar-toggler mobile-toggler navbar-light"
+          class="mobile-menu-toggle"
           type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#mobileDrawer"
-          aria-controls="mobileDrawer"
+          id="mobileMenuToggle"
           aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
-        <!-- Offcanvas drawer (slides in from right) -->
-        <div class="offcanvas offcanvas-end mobile-drawer"
-             tabindex="-1"
-             id="mobileDrawer"
-             aria-labelledby="mobileDrawerLabel"
-             data-bs-backdrop="true"
-             data-bs-scroll="false">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="mobileDrawerLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <nav class="mobile-nav">
-              <a href="/">Home</a>
+        <!-- Full-screen mobile menu overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+          <div class="mobile-menu-content">
+            <!-- Logo in top-left -->
+            <div class="mobile-menu-logo">
+              <div class="greek-letters">ΚΘΠ</div>
+              <div class="chapter-text">RHO CHAPTER</div>
+            </div>
+            
+            <!-- Close button in top-right -->
+            <button class="mobile-menu-close" id="mobileMenuClose">
+              <span>×</span>
+            </button>
+            
+            <!-- Navigation links centered -->
+            <nav class="mobile-menu-nav">
               <a href="/about">About</a>
               <a href="/recruitment">Recruitment</a>
               <a href="/brothers">Brothers</a>
               <a href="/ktp-in-action">KTP in Action</a>
               <a href="/contact">Contact</a>
             </nav>
+            
+            <!-- Social media icon at bottom -->
+            <div class="mobile-menu-social">
+              <a href="https://www.linkedin.com/company/kappa-theta-pi-vanderbilt" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -82,13 +91,40 @@ function createHeader() {
   `;
 }
 
-// Close drawer when a link is tapped (optional quality-of-life)
-function enableMobileDrawerDismiss() {
-  const drawerEl = document.getElementById('mobileDrawer');
-  if (!drawerEl || !window.bootstrap) return;
-  const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(drawerEl);
-  drawerEl.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => offcanvas.hide());
+// Mobile menu functionality
+function enableMobileMenu() {
+  const overlay = document.getElementById('mobileMenuOverlay');
+  const toggle = document.getElementById('mobileMenuToggle');
+  const close = document.getElementById('mobileMenuClose');
+  
+  if (!overlay || !toggle || !close) return;
+  
+  // Open menu
+  toggle.addEventListener('click', () => {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  });
+  
+  // Close menu
+  close.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scroll
+  });
+  
+  // Close when clicking overlay background
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close when clicking navigation links
+  overlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
   });
 }
 
@@ -110,12 +146,8 @@ function injectHeader() {
   const headerHtml = createHeader();
   document.body.insertAdjacentHTML('afterbegin', headerHtml);
 
-  // Enable link-tap dismiss when Bootstrap is ready
-  if (window.bootstrap) {
-    enableMobileDrawerDismiss();
-  } else {
-    window.addEventListener('load', enableMobileDrawerDismiss);
-  }
+  // Enable mobile menu functionality
+  enableMobileMenu();
 }
 
 // Auto-inject header when DOM is ready
