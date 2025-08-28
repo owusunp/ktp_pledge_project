@@ -100,12 +100,19 @@ header {
     width: 100%;
     position: relative;          /* anchor for dropdown/drawer */
     padding: 0 6px;              /* nudges logo + button inward slightly */
+    z-index: 10000;
   }
 
   /* Logo on mobile: top-left & slightly smaller */
   .mobile-header .logo-text {
     align-items: flex-start;
     text-align: left;
+    position: relative;
+    z-index: 10000;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+    text-decoration: none;
   }
   .mobile-header .greek-letters {
     font-size: 2.4rem;
@@ -190,6 +197,13 @@ header {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-overlay.active {
@@ -307,6 +321,8 @@ header {
   flex-direction: column;
   gap: 4px;
   margin-left: auto;
+  position: relative;
+  z-index: 10000;
 }
 
 .mobile-menu-toggle span {

@@ -1,5 +1,18 @@
 <!-- Enhanced JavaScript -->
 <script>
+  // Immediately set white background to prevent blue flash
+  document.documentElement.style.backgroundColor = '#ffffff';
+  document.body.style.backgroundColor = '#ffffff';
+  
+  // Temporarily disable service worker to test blue background flash
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for(let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+  
   document.addEventListener("DOMContentLoaded", function () {
       // Interactive SVG benefit points - simplified without animations
       const benefitPoints = document.querySelectorAll('.benefit-point');
@@ -208,7 +221,7 @@
   body {
       font-family: 'Roboto', 'Arial', sans-serif;
       font-weight: 300;
-      background: linear-gradient(180deg, var(--white) 0%, var(--gray) 100%);
+      background: #ffffff !important;
       color: var(--text-primary);
       overflow-x: hidden;
       line-height: 1.7;
@@ -254,10 +267,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
       font-weight: 700;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #2F4A8A;
       margin-bottom: 20px;
       text-shadow: 0 4px 20px rgba(47, 74, 138, 0.2);
   }
@@ -277,7 +287,7 @@
       display: flex;
       align-items: center;
       gap: 60px;
-      padding: 20px;
+      padding: 0;
       max-width: 1400px;
       margin: 0 auto;
       flex-wrap: wrap;
@@ -292,17 +302,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0;
+      padding: 0;
   }
 
   .presidential-image {
-      width: 500px;
-      height: 500px;
-      border-radius: 15px;
+      width: 600px;
+      height: 600px;
+      border-radius: 0;
       object-fit: cover;
-      box-shadow: var(--shadow-xl);
-      border: 4px solid var(--white);
+      box-shadow: none;
+      border: none;
       position: relative;
       z-index: 2;
+      margin-top: 20px;
   }
 
   .presidential-content {
@@ -490,13 +503,13 @@
       .presidential-section {
           flex-direction: column;
           text-align: center;
-          padding: 20px 15px;
-          gap: 30px;
+          padding: 5px 15px;
+          gap: 0;
       }
 
       .presidential-image {
-          width: 350px;
-          height: 350px;
+          width: 450px;
+          height: 450px;
       }
 
       .why-ktp-section {
@@ -532,22 +545,24 @@
       }
 
       .presidential-image {
-          width: 400px;
-          height: 400px;
+          width: 500px;
+          height: 500px;
       }
 
       .presidential-content h2 {
           font-size: 2.2rem;
           text-align: center;
+          margin-bottom: 10px;
       }
 
       .presidential-content p {
           font-size: 1.05rem;
           text-align: left;
+          margin-bottom: 0.8rem;
       }
 
       .why-ktp-section {
-          padding: 80px 15px;
+          padding: 40px 15px;
       }
 
       .why-ktp-content h2 {
@@ -580,17 +595,20 @@
       }
 
       .presidential-image {
-          width: 260px;
-          height: 260px;
+          width: 350px;
+          height: 350px;
       }
 
       .presidential-content h2 {
           font-size: 1.9rem;
+          margin-bottom: 8px;
       }
 
       .presidential-content p {
           color: #1a202c;
           font-weight: 400;
+          font-size: 1rem;
+          margin-bottom: 0.6rem;
       }
 
       .why-ktp-section {
@@ -621,7 +639,7 @@
       }
 
       .why-ktp-section {
-          padding: 60px 10px;
+          padding: 30px 10px;
       }
 
       .why-ktp-content h2 {
