@@ -235,6 +235,7 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
+  
 
     .next:hover {
       background: rgba(0, 0, 0, 0.8);
@@ -369,10 +370,6 @@
         width: 90%;
       }
     }
-
-    .next{
-      display: none;    
-    }
   </style>
 </head>
 <body>
@@ -412,6 +409,7 @@
 
 
   <div class="next">&#10095;</div>
+
 </section>
 
 <section class="brotherhood">
@@ -526,8 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
              slideshow.style.opacity = "1";
          }, 300);
      }
-
-         // Progress bar removed as requested
+            
 
     // Add loading state animations
     window.addEventListener("load", () => {
