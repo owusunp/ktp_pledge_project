@@ -165,20 +165,41 @@ function createFooter() {
               </a>
 
               <!-- GitHub (brand-accurate) -->
-              <a class="social-linkRow" href="" target="" rel="noopener noreferrer" aria-label="GitHub">
-                <svg viewBox="0 0 16 16" class="social-icon social-icon--fill" aria-hidden="true">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.292 6.533 5.47 7.594.4.074.546-.174.546-.386
-                           0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17
-                           -.727-.497.055-.487.055-.487.803.056 1.225.825 1.225.825.714 1.223 1.872.87 2.329.665
-                           .072-.517.28-.87.508-1.07-1.777-.202-3.644-.888-3.644-3.953 0-.873.312-1.588.823-2.148
-                           -.083-.202-.357-1.017.078-2.12 0 0 .672-.215 2.2.82A7.68 7.68 0 0 1 8 4.868
-                           c.68.003 1.366.092 2.005.27 1.527-1.035 2.198-.82 2.198-.82.437 1.103.163 1.918.08 2.12
-                           .513.56.823 1.275.823 2.148 0 3.073-1.87 3.748-3.65 3.946.287.247.543.734.543 1.48
-                           0 1.07-.01 1.933-.01 2.195 0 .214.144.463.55.384C13.71 14.53 16 11.54 16 8
-                           c0-4.42-3.58-8-8-8z"/>
-                </svg>
-                <span class="social-title">GitHub</span>
-              </a>
+              <!-- TikTok -->
+<a class="social-linkRow" 
+   href="https://www.tiktok.com/@ktpvandy" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="TikTok">
+  <svg viewBox="0 0 48 48" class="social-icon social-icon--fill" aria-hidden="true">
+    <path d="M30 4h6.2c.3 2.7 1.4 4.9 3.4 6.7 1.5 1.4 3.2 2.3 5.3 2.7v6.3c-2.1.1-4.1-.3-6-1.2v13.6
+             c0 8.2-6.6 14.9-14.9 15-3.5 0-6.7-1.2-9.2-3.3-2.7-2.3-4.3-5.7-4.3-9.4 0-6.7 5.4-12.1 12.1-12.1
+             1 0 2 .1 2.9.4v6.8c-.8-.2-1.5-.4-2.4-.3-3 .2-5.3 2.7-5.3 5.7 0 1.6.7 3.1 1.9 4.2 1.2 1 2.7 1.5
+             4.3 1.4 3-.2 5.4-2.7 5.4-5.7V4z"/>
+  </svg>
+  <span class="social-title">TikTok</span>
+</a>
+
+              <div class="social-grid" aria-label="Social links">
+  <!-- Instagram ... -->
+  <!-- GitHub ... -->
+  <!-- LinkedIn -->
+  <!-- LinkedIn -->
+<!-- LinkedIn -->
+<a class="social-linkRow" 
+   href="https://www.linkedin.com/company/kappa-theta-pi-rho/posts/?feedView=all" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="LinkedIn">
+  <svg viewBox="0 0 24 24" class="social-icon social-icon--fill" aria-hidden="true" style="transform: scale(0.92);">
+    <path d="M4.98 3.5C4.98 5 3.9 6.1 2.4 6.1 1 6.1 0 5 0 3.5 0 2 1 1 2.4 1c1.5 0 2.58 1 2.58 2.5zM.2 8.3h4.4V24H.2V8.3zM8.5 8.3h4.2v2.1h.06c.59-1.1 2-2.3 4.1-2.3 4.4 0 5.2 2.9 5.2 6.6V24h-4.4v-7.9c0-1.9 0-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.2V24H8.5V8.3z"/>
+  </svg>
+  <span class="social-title">LinkedIn</span>
+</a>
+
+
+</div>
+
             </div>
           </div>
 

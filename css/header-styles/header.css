@@ -381,3 +381,51 @@ header {
   /* Backdrop: slightly dim, not too dark (Amazon-ish) */
   .offcanvas-backdrop.show { opacity: 0.25; }
 }
+/* --- Fix overlay stacking and interactions --- */
+@media (max-width: 768px) {
+  /* Put the overlay above everything in the header */
+  .mobile-header { z-index: 1000; }               /* lower than overlay */
+  .mobile-menu-overlay { z-index: 2000; }         /* higher than header */
+  .mobile-menu-content { z-index: 2001; }
+  .mobile-menu-close { z-index: 2002; }
+
+  /* Optional: hide header bits while the overlay is open */
+  header.menu-open .logo-text,
+  header.menu-open .mobile-menu-toggle { visibility: hidden; }
+}
+
+/* Remove duplicate rule (you had this twice); keep one */
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+/* --- Overlay always above header --- */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;          /* avoids mobile address-bar jump */
+  background: #fff;
+  z-index: 99999;          /* higher than any header child */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.mobile-menu-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+
+/* Lower the header children that were above the overlay */
+.mobile-header .logo-text,
+.mobile-header .mobile-menu-toggle { z-index: 1 !important; }
+
+/* Optional: hide header bits during overlay to prevent peeking */
+@media (max-width: 768px) {
+  header.menu-open .logo-text,
+  header.menu-open .mobile-menu-toggle { visibility: hidden; }
+}
+
+/* Smooth layers inside the overlay */
+.mobile-menu-content { position: relative; z-index: 100000; }
+
+/* (Cleanup) You had this rule duplicated—keep only ONE copy */
+body.menu-locked { position: fixed; width: 100%; }

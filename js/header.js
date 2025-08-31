@@ -1,4 +1,25 @@
 // Ensure Bootstrap CSS/JS exist (for offcanvas)
+// Prevent overlay flash before JS activates
+(function guard() {
+  if (document.getElementById('header-critical-guard')) return;
+  const s = document.createElement('style');
+  s.id = 'header-critical-guard';
+  s.textContent = `
+    .mobile-menu-overlay {
+      opacity: 0; 
+      visibility: hidden; 
+      pointer-events: none;
+    }
+    .mobile-menu-overlay.active {
+      opacity: 1; 
+      visibility: visible; 
+      pointer-events: auto;
+    }
+  `;
+  document.head.appendChild(s);
+})();
+
+// Load Bootstrap CSS quickly (JS optional)
 function ensureBootstrap() {
   if (!document.querySelector('#bootstrap-css-link')) {
     const css = document.createElement('link');
@@ -7,14 +28,16 @@ function ensureBootstrap() {
     css.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
     document.head.appendChild(css);
   }
-  if (!document.querySelector('#bootstrap-js-bundle')) {
-    const js = document.createElement('script');
-    js.id = 'bootstrap-js-bundle';
-    js.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
-    js.defer = true;
-    document.head.appendChild(js);
-  }
+  // JS bundle usually not needed for your header; comment if unused
+  // if (!document.querySelector('#bootstrap-js-bundle')) {
+  //   const js = document.createElement('script');
+  //   js.id = 'bootstrap-js-bundle';
+  //   js.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
+  //   js.defer = true;
+  //   document.head.appendChild(js);
+  // }
 }
+
 
 // Header component for KTP website
 function createHeader() {
@@ -156,3 +179,12 @@ if (document.readyState === 'loading') {
 } else {
   injectHeader();
 }
+const y = window.scrollY;
+document.body.classList.add('menu-locked');
+document.body.style.top = `-${y}px`;
+// ...
+const restore = parseInt(document.body.style.top || '0') * -1;
+document.body.classList.remove('menu-locked');
+document.body.style.top = '';
+window.scrollTo(0, restore);
+
