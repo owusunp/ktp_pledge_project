@@ -127,6 +127,122 @@
       body#collection-contact header .header-nav-list a:hover {
           color: #555 !important;
       }
+      /* ===== MOBILE READABILITY PACK ===================================== */
+@media (max-width: 768px) {
+  :root{
+    --space-1: 8px;
+    --space-2: 12px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --content-max: 65ch;         /* ideal line length */
+    --page-pad: 16px;            /* page side padding */
+  }
+
+  /* Keep content inside a comfortable column */
+  .content-wrapper .content,
+  .sqs-layout,
+  .sqs-layout .row,
+  .sqs-layout .col {
+    padding-left: var(--page-pad) !important;
+    padding-right: var(--page-pad) !important;
+    box-sizing: border-box;
+  }
+
+  /* Fix inline white-space rules Squarespace injects */
+  .sqs-html-content [style*="white-space:pre-wrap"] {
+    white-space: normal !important;
+  }
+
+  /* Typographic scale + clean line lengths */
+  .sqs-html-content h1,
+  .sqs-html-content h2,
+  .sqs-html-content h3 {
+    text-wrap: balance;                  /* nicer line breaks for headings */
+    line-height: 1.15;
+    margin: 0 0 var(--space-3);
+    max-width: var(--content-max);
+  }
+  .sqs-html-content h1 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); }
+  .sqs-html-content h2 { font-size: clamp(1.4rem, 4vw, 1.9rem); }
+  .sqs-html-content h3 { font-size: clamp(1.15rem, 3.4vw, 1.35rem); }
+
+  .sqs-html-content p,
+  .sqs-html-content li,
+  .sqs-html-content blockquote {
+    font-size: clamp(0.98rem, 2.9vw, 1.05rem);
+    line-height: 1.55;
+    margin: 0 0 var(--space-3);
+    max-width: var(--content-max);
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  /* Center big hero copy, left-align body copy elsewhere */
+  [data-section-theme="black"] .sqs-html-content,
+  [data-section-theme="dark"] .sqs-html-content {
+    text-align: left;                       /* more readable than fully centered */
+  }
+  /* If you want the very first hero centered, keep this: */
+  section:first-of-type .sqs-html-content { text-align: center; }
+
+  /* Buttons: easy to tap, consistent width */
+  .sqs-block-button .sqs-block-button-element,
+  .image-button .sqs-button-element--primary,
+  .sqs-button-element--primary {
+    display: inline-block;
+    padding: 12px 18px !important;
+    border-radius: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    width: auto;                             /* not full-bleed */
+    max-width: 100%;
+  }
+  /* Add some breathing room around button blocks */
+  .sqs-block-button { margin-top: var(--space-3); }
+
+  /* Image cards & captions: keep text readable width */
+  .image-card-wrapper .image-card {
+    padding: var(--space-3);
+  }
+  .image-card .image-title,
+  .image-card .image-subtitle {
+    max-width: var(--content-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Rotating image box: predictable height via aspect-ratio */
+  .sqs-image-shape-container-element.content-fit {
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+  #rotating-image {
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Section padding: unify vertical rhythm */
+  .page-section .content-wrapper { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+
+  /* Keep background images from overwhelming copy */
+  .section-background-overlay { opacity: .33 !important; } /* adjust per section if needed */
+
+  /* Avoid edge collisions with iOS safe areas */
+  body { padding-left: max(var(--page-pad), env(safe-area-inset-left)); padding-right: max(var(--page-pad), env(safe-area-inset-right)); }
+}
+
+/* Small phones: tighten a bit more */
+@media (max-width: 360px){
+  .sqs-html-content h1{ font-size: 1.7rem; }
+  .sqs-html-content h2{ font-size: 1.3rem; }
+  .sqs-html-content p { font-size: 0.98rem; }
+}
+
+
   }
 </style>
 <meta name="google-site-verification" content="6eqJ8v-aLbCYjf7VrvS45d8JDUze6M1AZIAu3txJI3E" />
